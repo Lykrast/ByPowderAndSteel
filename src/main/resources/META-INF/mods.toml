@@ -6,7 +6,7 @@ license="MIT License for code https://github.com/Lykrast/ByPowderAndSteel/blob/m
 [[mods]]
 modId="bypowderandsteel"
 version="${file.jarVersion}"
-displayName="By Powder And Steel"
+displayName="By Powder and Steel"
 displayURL="https://modrinth.com/mod/bpas"
 credits=""
 authors="Lykrast"
