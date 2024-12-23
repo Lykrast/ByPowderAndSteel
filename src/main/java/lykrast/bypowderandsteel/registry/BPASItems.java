@@ -1,0 +1,65 @@
+package lykrast.bypowderandsteel.registry;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Supplier;
+
+import lykrast.bypowderandsteel.ByPowderAndSteel;
+import lykrast.gunswithoutroses.item.BulletItem;
+import lykrast.gunswithoutroses.item.GunItem;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraftforge.common.Tags;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegisterEvent;
+import net.minecraftforge.registries.RegistryObject;
+
+public class BPASItems {	
+	public static final DeferredRegister<Item> REG = DeferredRegister.create(ForgeRegistries.ITEMS, ByPowderAndSteel.MODID);
+	private static List<RegistryObject<? extends Item>> orderedItemsCreative = new ArrayList<>();
+	public static RegistryObject<GunItem> gunsteelGun;
+	public static RegistryObject<BulletItem> gunsteelBullet;
+	public static RegistryObject<Item> gunsteelScrap, gunsteelIngot, gunsteelNugget;
+	
+	public static void makeCreativeTab(RegisterEvent event) {
+		event.register(Registries.CREATIVE_MODE_TAB, helper -> {
+			helper.register(ResourceKey.create(Registries.CREATIVE_MODE_TAB, ByPowderAndSteel.rl("bypowderandsteel")),
+					CreativeModeTab.builder().title(Component.translatable("itemGroup.bypowderandsteel")).icon(() -> new ItemStack(gunsteelGun.get()))
+							.displayItems((parameters, output) -> orderedItemsCreative.forEach(i -> output.accept(i.get()))).build());
+		});
+	}
+	
+	static {
+		//Guns
+		gunsteelGun = initItem(() -> new GunItem(defP().durability(513), 0, 1, 16, 2, 14).repair(() -> Ingredient.of(Tags.Items.INGOTS_IRON)), "gunsteel_gun");
+		
+		//Bullets
+		gunsteelBullet = initItem(() -> new BulletItem(defP(), 6), "gunsteel_bullet");
+		
+		//Materials
+		gunsteelScrap = initItem(() -> new Item(defP()), "gunsteel_scrap");
+		gunsteelIngot = initItem(() -> new Item(defP()), "gunsteel_ingot");
+		gunsteelNugget = initItem(() -> new Item(defP()), "gunsteel_nugget");
+	}
+
+	public static Item.Properties defP() {
+		return new Item.Properties();
+	}
+
+	public static Item.Properties noStack() {
+		return new Item.Properties().stacksTo(1);
+	}
+
+	public static <I extends Item> RegistryObject<I> initItem(Supplier<I> item, String name) {
+		REG.register(name, item);
+		RegistryObject<I> rego = RegistryObject.create(ByPowderAndSteel.rl(name), ForgeRegistries.ITEMS);
+		orderedItemsCreative.add(rego);
+		return rego;
+	}
+}
