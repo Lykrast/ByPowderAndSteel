@@ -37,7 +37,7 @@ public class BPASItems {
 	
 	static {
 		//Guns
-		gunsteelGun = initItem(() -> new GunItem(defP().durability(513), 0, 1, 16, 2, 14).repair(() -> Ingredient.of(Tags.Items.INGOTS_IRON)), "gunsteel_gun");
+		gunsteelGun = initItem(() -> new GunItem(defP().durability(502), 0, 1, 16, 2, 14).repair(() -> Ingredient.of(Tags.Items.INGOTS_IRON)), "gunsteel_gun");
 		
 		//Bullets
 		gunsteelBullet = initItem(() -> new BulletItem(defP(), 6), "gunsteel_bullet");

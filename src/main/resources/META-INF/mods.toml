@@ -1,7 +1,7 @@
 modLoader="javafml"
 loaderVersion="[43,)"
 issueTrackerURL="https://github.com/Lykrast/bypowderandsteel/issues"
-license="MIT License for code https://github.com/Lykrast/bypowderandsteel/blob/head/LICENSE"
+license="MIT License for code https://github.com/Lykrast/ByPowderAndSteel/blob/main/LICENSE"
 
 [[mods]]
 modId="bypowderandsteel"

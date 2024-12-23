@@ -1,6 +1,6 @@
 {
 	"replace": false,
 	"values": [
-		"bypowderandsteel:gunsteel_bullet"
+		"#forge:raw_materials/gunsteel"
 	]
 }
