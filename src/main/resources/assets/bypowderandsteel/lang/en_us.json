@@ -10,6 +10,9 @@
 	"block.bypowderandsteel.gunsteel_scrap_block": "Block of Gunsteel Scrap",
 	"block.bypowderandsteel.gunsteel_block": "Block of Gunsteel",
 	"block.bypowderandsteel.gunsteel_bricks": "Gunsteel Bricks",
+	"block.bypowderandsteel.gunsteel_chiseled": "Chiseled Gunsteel Bricks",
+	"block.bypowderandsteel.gunsteel_pillar": "Gunsteel Pillar",
+	"block.bypowderandsteel.gunsteel_lamp": "Gunsteel Lamp",
 
 	"itemGroup.bypowderandsteel": "By Powder and Steel"
 }

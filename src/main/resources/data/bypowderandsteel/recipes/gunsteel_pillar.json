@@ -1,0 +1,11 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"#",
+		"#"
+	],
+	"key": {
+		"#": { "item": "bypowderandsteel:gunsteel_bricks" }
+	},
+	"result": { "item": "bypowderandsteel:gunsteel_pillar", "count": 2 }
+}

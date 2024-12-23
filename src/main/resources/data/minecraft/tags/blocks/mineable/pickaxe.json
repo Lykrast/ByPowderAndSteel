@@ -3,6 +3,9 @@
 	"values": [
 		"bypowderandsteel:gunsteel_scrap_block",
 		"bypowderandsteel:gunsteel_block",
-		"bypowderandsteel:gunsteel_bricks"
+		"bypowderandsteel:gunsteel_bricks",
+		"bypowderandsteel:gunsteel_chiseled",
+		"bypowderandsteel:gunsteel_pillar",
+		"bypowderandsteel:gunsteel_lamp"
 	]
 }

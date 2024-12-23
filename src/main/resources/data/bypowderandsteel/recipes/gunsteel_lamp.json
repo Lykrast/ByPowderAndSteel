@@ -1,0 +1,13 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		" # ",
+		"#T#",
+		" # "
+	],
+	"key": {
+		"#": { "tag": "forge:ingots/gunsteel" },
+		"T": { "item": "minecraft:torch" }
+	},
+	"result": { "item": "bypowderandsteel:gunsteel_lamp" }
+}

@@ -1,0 +1,30 @@
+{
+	"variants": {
+		"facing=up": {
+			"model": "bypowderandsteel:block/gunsteel_pillar"
+		},
+		"facing=down": {
+			"model": "bypowderandsteel:block/gunsteel_pillar",
+			"x": 180
+		},
+		"facing=north": {
+			"model": "bypowderandsteel:block/gunsteel_pillar",
+			"x": 90
+		},
+		"facing=east": {
+			"model": "bypowderandsteel:block/gunsteel_pillar",
+			"x": 90,
+			"y": 90
+		},
+		"facing=south": {
+			"model": "bypowderandsteel:block/gunsteel_pillar",
+			"x": 90,
+			"y": 180
+		},
+		"facing=west": {
+			"model": "bypowderandsteel:block/gunsteel_pillar",
+			"x": 90,
+			"y": 270
+		}
+    }
+}

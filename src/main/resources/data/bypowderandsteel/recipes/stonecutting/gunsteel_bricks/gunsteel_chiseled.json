@@ -1,0 +1,6 @@
+{
+	"type": "minecraft:stonecutting",
+	"count": 1,
+	"ingredient": { "tag": "bypowderandsteel:gunsteel_bricks" },
+	"result": "bypowderandsteel:gunsteel_chiseled"
+}
