@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"group": "bypowderandsteel_gunsteel_ingot",
+	"ingredients": [
+		{ "tag": "forge:storage_blocks/gunsteel" }
+	],
+	"result": { "item": "bypowderandsteel:gunsteel_ingot", "count": 9 }
+}

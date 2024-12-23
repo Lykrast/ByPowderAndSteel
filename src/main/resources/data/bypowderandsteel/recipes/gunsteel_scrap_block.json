@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"###",
+		"###",
+		"###"
+	],
+	"key": {
+		"#": { "tag": "forge:raw_materials/gunsteel" }
+	},
+	"result": { "item": "bypowderandsteel:gunsteel_scrap_block" }
+}

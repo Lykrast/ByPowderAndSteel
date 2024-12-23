@@ -22,16 +22,20 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class BPASItems {	
 	public static final DeferredRegister<Item> REG = DeferredRegister.create(ForgeRegistries.ITEMS, ByPowderAndSteel.MODID);
-	private static List<RegistryObject<? extends Item>> orderedItemsCreative = new ArrayList<>();
 	public static RegistryObject<GunItem> gunsteelGun;
 	public static RegistryObject<BulletItem> gunsteelBullet;
 	public static RegistryObject<Item> gunsteelScrap, gunsteelIngot, gunsteelNugget;
+	
+	private static List<RegistryObject<? extends Item>> orderedItemsCreative = new ArrayList<>();
 	
 	public static void makeCreativeTab(RegisterEvent event) {
 		event.register(Registries.CREATIVE_MODE_TAB, helper -> {
 			helper.register(ResourceKey.create(Registries.CREATIVE_MODE_TAB, ByPowderAndSteel.rl("bypowderandsteel")),
 					CreativeModeTab.builder().title(Component.translatable("itemGroup.bypowderandsteel")).icon(() -> new ItemStack(gunsteelGun.get()))
-							.displayItems((parameters, output) -> orderedItemsCreative.forEach(i -> output.accept(i.get()))).build());
+							.displayItems((parameters, output) -> {
+								orderedItemsCreative.forEach(i -> output.accept(i.get()));
+								BPASBlocks.orderedBlockItems.forEach(i -> output.accept(i.get()));
+							}).build());
 		});
 	}
 	

@@ -3,6 +3,7 @@ package lykrast.bypowderandsteel;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import lykrast.bypowderandsteel.registry.BPASBlocks;
 import lykrast.bypowderandsteel.registry.BPASItems;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -18,6 +19,7 @@ public class ByPowderAndSteel {
 	
 	public ByPowderAndSteel() {
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+		BPASBlocks.REG.register(bus);
 		BPASItems.REG.register(bus);
 		bus.addListener(BPASItems::makeCreativeTab);
 	}

@@ -7,5 +7,9 @@
 	"item.bypowderandsteel.gunsteel_ingot": "Gunsteel Ingot",
 	"item.bypowderandsteel.gunsteel_nugget": "Gunsteel Nugget",
 
+	"block.bypowderandsteel.gunsteel_scrap_block": "Block of Gunsteel Scrap",
+	"block.bypowderandsteel.gunsteel_block": "Block of Gunsteel",
+	"block.bypowderandsteel.gunsteel_bricks": "Gunsteel Bricks",
+
 	"itemGroup.bypowderandsteel": "By Powder and Steel"
 }
