@@ -1,5 +1,9 @@
 {
 	"item.bypowderandsteel.gunsteel_gun": "Gunsteel Gun",
+	"item.bypowderandsteel.peashooter": "Peashooter",
+	"item.bypowderandsteel.corn_gatling": "Corn Gatling",
+	"item.bypowderandsteel.arctic_pistol": "Arctic Pistol",
+	"item.bypowderandsteel.arctic_sniper": "Arctic Sniper",
 
 	"item.bypowderandsteel.gunsteel_bullet": "Gunsteel Bullet",
 	"item.bypowderandsteel.caliberry": "Caliberry",
@@ -11,9 +15,9 @@
 	"item.bypowderandsteel.gunsteel_ingot": "Gunsteel Ingot",
 	"item.bypowderandsteel.gunsteel_nugget": "Gunsteel Nugget",
 	"item.bypowderandsteel.caliberry_grilled": "Grilled Caliberry",
-	"item.bypowderandsteel.honey_glazed_grilled_caliberry_stick": "Honey-Glazed Grilled Caliberry Skewer",
 	"item.bypowderandsteel.caliberry_large_slice": "Large Caliberry Slice",
 	"item.bypowderandsteel.caliberry_large_slice_grilled": "Grilled Large Caliberry Slice",
+	"item.bypowderandsteel.honey_glazed_grilled_caliberry_stick": "Honey-Glazed Grilled Caliberry Skewer",
 	"item.bypowderandsteel.caliberry_ice_cream": "Caliberry Ice Cream",
 	"item.bypowderandsteel.living_herb": "Living Herb",
 	"item.bypowderandsteel.milspec_ice": "Milspec Ice",
