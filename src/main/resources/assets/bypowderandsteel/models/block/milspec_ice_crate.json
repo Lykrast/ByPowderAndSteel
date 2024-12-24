@@ -1,0 +1,8 @@
+{
+	"parent": "minecraft:block/cube_bottom_top",
+	"textures": {
+		"bottom": "bypowderandsteel:block/milspec_ice_crate_bottom",
+		"side": "bypowderandsteel:block/milspec_ice_crate_side",
+		"top": "bypowderandsteel:block/milspec_ice_crate_top"
+	}
+}

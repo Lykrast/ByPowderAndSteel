@@ -1,0 +1,7 @@
+{
+	"type": "minecraft:smelting",
+	"cookingtime": 200,
+	"experience": 0.35,
+	"ingredient": { "item": "bypowderandsteel:milspec_ice" },
+	"result": "bypowderandsteel:milspec_ice_grilled"
+}

@@ -6,6 +6,10 @@
 	"item.bypowderandsteel.gunsteel_scrap": "Gunsteel Scrap",
 	"item.bypowderandsteel.gunsteel_ingot": "Gunsteel Ingot",
 	"item.bypowderandsteel.gunsteel_nugget": "Gunsteel Nugget",
+	"item.bypowderandsteel.living_herb": "Living Herb",
+	"item.bypowderandsteel.milspec_ice": "Milspec Ice",
+	"item.bypowderandsteel.milspec_ice_grilled": "Grilled Ice",
+	"item.bypowderandsteel.heptacle": "Heptacle",
 
 	"block.bypowderandsteel.gunsteel_scrap_block": "Block of Gunsteel Scrap",
 	"block.bypowderandsteel.gunsteel_block": "Block of Gunsteel",
@@ -13,6 +17,16 @@
 	"block.bypowderandsteel.gunsteel_chiseled": "Chiseled Gunsteel Bricks",
 	"block.bypowderandsteel.gunsteel_pillar": "Gunsteel Pillar",
 	"block.bypowderandsteel.gunsteel_lamp": "Gunsteel Lamp",
+
+	"block.bypowderandsteel.living_herb_sack": "Sack of Living Herb",
+	"block.bypowderandsteel.living_herb_block": "Living Herb Block",
+
+	"block.bypowderandsteel.milspec_ice_crate": "Crate of Milspec Ice",
+	"block.bypowderandsteel.milspec_ice_block": "Block of Milspec Ice",
+	"block.bypowderandsteel.milspec_ice_bricks": "Milspec Ice Bricks",
+	"block.bypowderandsteel.milspec_ice_tiles": "Milspec Ice Tiles",
+	"block.bypowderandsteel.milspec_ice_chiseled": "Chiseled Milspec Ice Bricks",
+	"block.bypowderandsteel.milspec_ice_pillar": "Milspec Ice Pillar",
 
 	"itemGroup.bypowderandsteel": "By Powder and Steel"
 }

@@ -1,0 +1,8 @@
+{
+	"parent": "minecraft:block/cube_bottom_top",
+	"textures": {
+		"bottom": "bypowderandsteel:block/living_herb_sack_bottom",
+		"side": "bypowderandsteel:block/living_herb_sack_side",
+		"top": "bypowderandsteel:block/living_herb_sack_top"
+	}
+}

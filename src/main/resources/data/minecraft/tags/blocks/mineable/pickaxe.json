@@ -6,6 +6,11 @@
 		"bypowderandsteel:gunsteel_bricks",
 		"bypowderandsteel:gunsteel_chiseled",
 		"bypowderandsteel:gunsteel_pillar",
-		"bypowderandsteel:gunsteel_lamp"
+		"bypowderandsteel:milspec_ice_block",
+		"bypowderandsteel:milspec_ice_bricks",
+		"bypowderandsteel:gunsteel_lamp",
+		"bypowderandsteel:milspec_ice_tiles",
+		"bypowderandsteel:milspec_ice_chiseled",
+		"bypowderandsteel:milspec_ice_pillar"
 	]
 }

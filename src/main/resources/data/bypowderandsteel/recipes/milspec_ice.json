@@ -1,0 +1,7 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{ "item": "bypowderandsteel:milspec_ice_crate" }
+	],
+	"result": { "item": "bypowderandsteel:milspec_ice", "count": 9 }
+}

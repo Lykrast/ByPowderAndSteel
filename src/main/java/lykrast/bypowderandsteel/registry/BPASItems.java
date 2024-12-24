@@ -10,6 +10,7 @@ import lykrast.gunswithoutroses.item.GunItem;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -25,6 +26,9 @@ public class BPASItems {
 	public static RegistryObject<GunItem> gunsteelGun;
 	public static RegistryObject<BulletItem> gunsteelBullet;
 	public static RegistryObject<Item> gunsteelScrap, gunsteelIngot, gunsteelNugget;
+	public static RegistryObject<Item> livingHerb;
+	public static RegistryObject<Item> milspecIce, milspecIceGrilled;
+	public static RegistryObject<Item> heptacle;
 	
 	private static List<RegistryObject<? extends Item>> orderedItemsCreative = new ArrayList<>();
 	
@@ -50,6 +54,13 @@ public class BPASItems {
 		gunsteelScrap = initItem(() -> new Item(defP()), "gunsteel_scrap");
 		gunsteelIngot = initItem(() -> new Item(defP()), "gunsteel_ingot");
 		gunsteelNugget = initItem(() -> new Item(defP()), "gunsteel_nugget");
+		
+		livingHerb = initItem(() -> new Item(defP()), "living_herb");
+		
+		milspecIce = initItem(() -> new Item(defP()), "milspec_ice");
+		milspecIceGrilled = initItem(() -> new Item(defP().food(food(4, 0.4))), "milspec_ice_grilled");
+		
+		heptacle = initItem(() -> new Item(defP()), "heptacle");
 	}
 
 	public static Item.Properties defP() {
@@ -58,6 +69,10 @@ public class BPASItems {
 
 	public static Item.Properties noStack() {
 		return new Item.Properties().stacksTo(1);
+	}
+	
+	public static FoodProperties food(int hunger, double saturation) {
+		return (new FoodProperties.Builder()).nutrition(hunger).saturationMod((float)saturation).build();
 	}
 
 	public static <I extends Item> RegistryObject<I> initItem(Supplier<I> item, String name) {

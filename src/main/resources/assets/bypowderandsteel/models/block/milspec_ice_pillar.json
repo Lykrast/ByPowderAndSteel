@@ -1,0 +1,7 @@
+{
+	"parent": "minecraft:block/cube_column",
+	"textures": {
+		"end": "bypowderandsteel:block/milspec_ice_pillar_top",
+		"side": "bypowderandsteel:block/milspec_ice_pillar_side"
+	}
+}

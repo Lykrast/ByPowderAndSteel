@@ -1,0 +1,7 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{ "item": "bypowderandsteel:living_herb_sack" }
+	],
+	"result": { "item": "bypowderandsteel:living_herb", "count": 9 }
+}
