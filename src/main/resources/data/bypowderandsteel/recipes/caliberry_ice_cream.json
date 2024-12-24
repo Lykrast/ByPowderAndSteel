@@ -1,0 +1,11 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{ "tag": "bypowderandsteel:raw_caliberry" },
+		{ "tag": "bypowderandsteel:raw_caliberry" },
+		{ "item": "bypowderandsteel:milspec_ice" },
+		{ "item": "minecraft:sugar" },
+		{ "item": "minecraft:bowl" }
+	],
+	"result": { "item": "bypowderandsteel:caliberry_ice_cream" }
+}

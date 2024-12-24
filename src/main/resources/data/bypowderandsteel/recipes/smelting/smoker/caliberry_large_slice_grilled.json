@@ -1,0 +1,7 @@
+{
+	"type": "minecraft:smoking",
+	"cookingtime": 100,
+	"experience": 0.35,
+	"ingredient": { "item": "bypowderandsteel:caliberry_large_slice" },
+	"result": "bypowderandsteel:caliberry_large_slice_grilled"
+}

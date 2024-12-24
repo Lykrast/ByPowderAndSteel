@@ -1,0 +1,6 @@
+{
+	"parent": "item/generated",
+	"textures": {
+		"layer0": "bypowderandsteel:item/honey_glazed_grilled_caliberry_stick"
+	}
+}

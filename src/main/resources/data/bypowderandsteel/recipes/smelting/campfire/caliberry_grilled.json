@@ -1,0 +1,7 @@
+{
+	"type": "minecraft:campfire_cooking",
+	"cookingtime": 600,
+	"experience": 0.35,
+	"ingredient": { "item": "bypowderandsteel:caliberry" },
+	"result": "bypowderandsteel:caliberry_grilled"
+}

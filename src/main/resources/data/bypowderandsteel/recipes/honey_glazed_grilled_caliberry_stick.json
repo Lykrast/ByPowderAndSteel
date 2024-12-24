@@ -1,0 +1,14 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		" HC",
+		" C ",
+		"S  "
+	],
+	"key": {
+		"C": { "item": "bypowderandsteel:caliberry_grilled" },
+		"H": { "item": "minecraft:honey_bottle" },
+		"S": { "item": "minecraft:stick" }
+	},
+	"result": { "item": "bypowderandsteel:honey_glazed_grilled_caliberry_stick" }
+}
