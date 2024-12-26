@@ -1,5 +1,11 @@
 package lykrast.bypowderandsteel.entity;
 
+import lykrast.bypowderandsteel.entity.ai.GunGoal;
+import lykrast.bypowderandsteel.misc.BPASUtils;
+import lykrast.bypowderandsteel.registry.BPASItems;
+import lykrast.gunswithoutroses.item.BulletItem;
+import lykrast.gunswithoutroses.registry.GWRAttributes;
+import lykrast.gunswithoutroses.registry.GWRItems;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.RandomSource;
@@ -9,25 +15,65 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.goal.AvoidEntityGoal;
+import net.minecraft.world.entity.ai.goal.FleeSunGoal;
+import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
+import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
+import net.minecraft.world.entity.ai.goal.RestrictSunGoal;
+import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
+import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
+import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.animal.IronGolem;
+import net.minecraft.world.entity.animal.Wolf;
 import net.minecraft.world.entity.monster.AbstractSkeleton;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 
-public class CowbonesEntity extends AbstractSkeleton {
+public class CowbonesEntity extends AbstractSkeleton implements GunMob {
 	public CowbonesEntity(EntityType<? extends CowbonesEntity> type, Level world) {
 		super(type, world);
 	}
 
 	@Override
+	protected void registerGoals() {
+		goalSelector.addGoal(2, new RestrictSunGoal(this));
+		goalSelector.addGoal(3, new FleeSunGoal(this, 1));
+		goalSelector.addGoal(3, new AvoidEntityGoal<>(this, Wolf.class, 6, 1, 1.2));
+		goalSelector.addGoal(4, new GunGoal<>(this, 1, 20, 15));
+		goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(this, 1));
+		goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 8));
+		goalSelector.addGoal(6, new RandomLookAroundGoal(this));
+		targetSelector.addGoal(1, new HurtByTargetGoal(this));
+		targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
+		targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, IronGolem.class, true));
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public BulletItem getBullet() {
+		return BPASItems.gunsteelBullet.get();
+	}
+
+	@Override
+	public double getAddedSpread() {
+		//same as skeletons, 10/6/2 for easy/normal/hard
+		return 14 - level().getDifficulty().getId() * 4;
+	}
+
+	@Override
+	public void reassessWeaponGoal() {
+	}
+
+	@Override
 	protected void populateDefaultEquipmentSlots(RandomSource random, DifficultyInstance difficulty) {
 		//no super to not have armor
-		setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.BOW));
+		setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(GWRItems.ironGun.get()));
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
-		//mimics having a leather chest and boots
-		return AbstractSkeleton.createAttributes().add(Attributes.ARMOR, 4);
+		//armor mimics having a leather chest and boots
+		return BPASUtils.baseGunMobAttributes().add(Attributes.MOVEMENT_SPEED, 0.25).add(Attributes.ARMOR, 4).add(GWRAttributes.dmgBase.get(), -3).add(GWRAttributes.fireDelay.get(), 2);
 	}
 
 	@Override
