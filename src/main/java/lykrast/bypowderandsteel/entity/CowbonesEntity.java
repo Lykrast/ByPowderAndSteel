@@ -1,11 +1,12 @@
 package lykrast.bypowderandsteel.entity;
 
+import lykrast.bypowderandsteel.ByPowderAndSteel;
 import lykrast.bypowderandsteel.entity.ai.GunGoal;
 import lykrast.bypowderandsteel.misc.BPASUtils;
 import lykrast.bypowderandsteel.registry.BPASItems;
 import lykrast.gunswithoutroses.item.BulletItem;
 import lykrast.gunswithoutroses.registry.GWRAttributes;
-import lykrast.gunswithoutroses.registry.GWRItems;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.RandomSource;
@@ -27,6 +28,7 @@ import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.animal.Wolf;
 import net.minecraft.world.entity.monster.AbstractSkeleton;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
@@ -68,7 +70,10 @@ public class CowbonesEntity extends AbstractSkeleton implements GunMob {
 	@Override
 	protected void populateDefaultEquipmentSlots(RandomSource random, DifficultyInstance difficulty) {
 		//no super to not have armor
-		setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(GWRItems.ironGun.get()));
+		Item gun = BPASItems.desertRevolver.get();
+		//1/3 of the time have the revolver with different stats, otherwise have a default gun
+		if (random.nextInt(3) < 2) gun = BPASUtils.randomDefaultGun(random);
+		setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(gun));
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
@@ -94,6 +99,11 @@ public class CowbonesEntity extends AbstractSkeleton implements GunMob {
 	@Override
 	protected SoundEvent getStepSound() {
 		return SoundEvents.SKELETON_STEP;
+	}
+	
+	@Override
+	protected ResourceLocation getDefaultLootTable() {
+		return ByPowderAndSteel.rl("entities/cowbones");
 	}
 
 }

@@ -2,6 +2,8 @@
 	"item.bypowderandsteel.gunsteel_gun": "Gunsteel Gun",
 	"item.bypowderandsteel.peashooter": "Peashooter",
 	"item.bypowderandsteel.corn_gatling": "Corn Gatling",
+	"item.bypowderandsteel.desert_revolver": "Desert Revolver",
+	"item.bypowderandsteel.desert_shotgun": "Desert Shotgun",
 	"item.bypowderandsteel.arctic_pistol": "Arctic Pistol",
 	"item.bypowderandsteel.arctic_sniper": "Arctic Sniper",
 
@@ -9,7 +11,7 @@
 	"item.bypowderandsteel.caliberry": "Caliberry",
 	"item.bypowderandsteel.caliberry_large": "Large Caliberry",
 
-	"tooltip.bypowderandsteel.bullet.knockback": "+%1$s Knockback",
+	"tooltip.bypowderandsteel.bullet.knockback": "+%1$s knockback",
 
 	"item.bypowderandsteel.gunsteel_scrap": "Gunsteel Scrap",
 	"item.bypowderandsteel.gunsteel_ingot": "Gunsteel Ingot",
@@ -20,6 +22,7 @@
 	"item.bypowderandsteel.honey_glazed_grilled_caliberry_stick": "Honey-Glazed Grilled Caliberry Skewer",
 	"item.bypowderandsteel.caliberry_ice_cream": "Caliberry Ice Cream",
 	"item.bypowderandsteel.living_herb": "Living Herb",
+	"item.bypowderandsteel.cowbones_horn": "Cowbones Horn",
 	"item.bypowderandsteel.milspec_ice": "Milspec Ice",
 	"item.bypowderandsteel.milspec_ice_grilled": "Grilled Ice",
 	"item.bypowderandsteel.heptacle": "Heptacle",

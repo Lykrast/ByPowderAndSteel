@@ -30,12 +30,13 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class BPASItems {	
 	public static final DeferredRegister<Item> REG = DeferredRegister.create(ForgeRegistries.ITEMS, ByPowderAndSteel.MODID);
-	public static RegistryObject<GunItem> gunsteelGun, peashooter, cornGatling, arcticPistol, arcticSniper;
+	public static RegistryObject<GunItem> gunsteelGun, peashooter, cornGatling, desertRevolver, desertShotgun, arcticPistol, arcticSniper;
 	public static RegistryObject<BulletItem> gunsteelBullet, caliberry, caliberryLarge;
 	public static RegistryObject<Item> cowbonesEgg;
 	public static RegistryObject<Item> gunsteelScrap, gunsteelIngot, gunsteelNugget;
 	public static RegistryObject<Item> caliberryGrilled, caliberrySlice, caliberrySliceGrilled, caliberryHoney, caliberryIce;
 	public static RegistryObject<Item> livingHerb;
+	public static RegistryObject<Item> cowbonesHorn;
 	public static RegistryObject<Item> milspecIce, milspecIceGrilled;
 	public static RegistryObject<Item> heptacle;
 	
@@ -55,8 +56,10 @@ public class BPASItems {
 	static {
 		//Guns
 		gunsteelGun = initItem(() -> new GunItem(defP().durability(502), 0, 1, 16, 2, 16).repair(() -> Ingredient.of(ItemTags.create(new ResourceLocation("forge", "ingots/gunsteel")))), "gunsteel_gun");
-		peashooter = initItem(() -> new GunItem(defP().durability(924), 0, 1, 14, 3, 20).chanceFreeShot(0.25).repair(() -> Ingredient.of(livingHerb.get())), "peashooter");
+		peashooter = initItem(() -> new GunItem(defP().durability(924), 0, 1, 16, 2, 20).chanceFreeShot(0.25).repair(() -> Ingredient.of(livingHerb.get())), "peashooter");
 		cornGatling = initItem(() -> new GatlingItem(defP().durability(924), 0, 0.6, 5, 4, 20).chanceFreeShot(0.5).repair(() -> Ingredient.of(livingHerb.get())), "corn_gatling");
+		desertRevolver = initItem(() -> new GunItem(defP().durability(753), 0, 1, 13, 4, 14).repair(() -> Ingredient.of(cowbonesHorn.get())), "desert_revolver");
+		desertShotgun = initItem(() -> new GunItem(defP().durability(753), 0, 0.5, 18, 6, 14).projectiles(3).fireSound(GWRSounds.shotgun).repair(() -> Ingredient.of(cowbonesHorn.get())), "desert_shotgun");
 		arcticPistol = initItem(() -> new GunItem(defP().durability(630), 1, 1, 18, 1, 8).repair(() -> Ingredient.of(milspecIce.get())), "arctic_pistol");
 		arcticSniper = initItem(() -> new GunItem(defP().durability(630), 2, 1, 24, 0, 8).headshotMult(1.5).fireSound(GWRSounds.sniper).repair(() -> Ingredient.of(milspecIce.get())), "arctic_sniper");
 		
@@ -80,6 +83,8 @@ public class BPASItems {
 		caliberryIce = initItem(() -> new ContainerFoodItem(defP().food(food(8, 0.4)).craftRemainder(Items.BOWL)), "caliberry_ice_cream");
 		
 		livingHerb = initItem(() -> new Item(defP()), "living_herb");
+		
+		cowbonesHorn = initItem(() -> new Item(defP()), "cowbones_horn");
 		
 		milspecIce = initItem(() -> new Item(defP()), "milspec_ice");
 		milspecIceGrilled = initItem(() -> new Item(defP().food(food(4, 0.4))), "milspec_ice_grilled");
