@@ -118,6 +118,7 @@ public class GunGoal<T extends Mob & GunMob> extends Goal {
 				ItemStack bullet = mob.getBulletStack();
 				attackTime = Math.max(gunItem.getFireDelay(gun, mob), attackIntervalMin);
 				gunItem.shootAt(mob, target, gun, bullet, mob.getBullet(), mob.getAddedSpread(), true);
+				mob.playSound(gunItem.getFireSound(), 1, 1.0F / (mob.getRandom().nextFloat() * 0.4F + 0.8F));
 			}
 
 //			if (mob.isUsingItem()) {
