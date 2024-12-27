@@ -44,8 +44,10 @@
 	"block.bypowderandsteel.milspec_ice_chiseled": "Chiseled Milspec Ice Bricks",
 	"block.bypowderandsteel.milspec_ice_pillar": "Milspec Ice Pillar",
 
+	"entity.bypowderandsteel.gunome": "Gunome",
 	"entity.bypowderandsteel.cowbones": "Cowbones",
 
+	"item.bypowderandsteel.gunome_spawn_egg": "Gunome Spawn Egg",
 	"item.bypowderandsteel.cowbones_spawn_egg": "Cowbones Spawn Egg",
 
 	"itemGroup.bypowderandsteel": "By Powder and Steel"

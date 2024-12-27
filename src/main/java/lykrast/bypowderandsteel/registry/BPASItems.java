@@ -32,7 +32,7 @@ public class BPASItems {
 	public static final DeferredRegister<Item> REG = DeferredRegister.create(ForgeRegistries.ITEMS, ByPowderAndSteel.MODID);
 	public static RegistryObject<GunItem> gunsteelGun, peashooter, cornGatling, desertRevolver, desertShotgun, arcticPistol, arcticSniper;
 	public static RegistryObject<BulletItem> gunsteelBullet, caliberry, caliberryLarge;
-	public static RegistryObject<Item> cowbonesEgg;
+	public static RegistryObject<Item> gunomeEgg, cowbonesEgg;
 	public static RegistryObject<Item> gunsteelScrap, gunsteelIngot, gunsteelNugget;
 	public static RegistryObject<Item> caliberryGrilled, caliberrySlice, caliberrySliceGrilled, caliberryHoney, caliberryIce;
 	public static RegistryObject<Item> livingHerb;
@@ -69,6 +69,7 @@ public class BPASItems {
 		caliberryLarge = initItem(() -> new KnockbackBulletItem(defP().food(food(4, 0.6)), 6, 2), "caliberry_large");
 		
 		//Spawn Eggs
+		gunomeEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.gunome, 0x1F6878, 0xDB2F4C, defP()), "gunome_spawn_egg");
 		cowbonesEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.cowbones, 0xEED9B3, 0x994141, defP()), "cowbones_spawn_egg");
 		
 		//Materials

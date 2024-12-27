@@ -42,7 +42,7 @@ public class CowbonesEntity extends AbstractSkeleton implements GunMob {
 		goalSelector.addGoal(2, new RestrictSunGoal(this));
 		goalSelector.addGoal(3, new FleeSunGoal(this, 1));
 		goalSelector.addGoal(3, new AvoidEntityGoal<>(this, Wolf.class, 6, 1, 1.2));
-		goalSelector.addGoal(4, new GunGoal<>(this, 1, 20, 15));
+		goalSelector.addGoal(4, new GunGoal<>(this, 1, 4, 15));
 		goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(this, 1));
 		goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 8));
 		goalSelector.addGoal(6, new RandomLookAroundGoal(this));
@@ -81,6 +81,7 @@ public class CowbonesEntity extends AbstractSkeleton implements GunMob {
 		return BPASUtils.baseGunMobAttributes().add(Attributes.MOVEMENT_SPEED, 0.25).add(Attributes.ARMOR, 4).add(GWRAttributes.dmgBase.get(), -3).add(GWRAttributes.fireDelay.get(), 2);
 	}
 
+	//TODO sounds
 	@Override
 	protected SoundEvent getAmbientSound() {
 		return SoundEvents.SKELETON_AMBIENT;
