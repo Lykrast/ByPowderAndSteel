@@ -22,6 +22,7 @@ public class BPASBlocks {
 	public static final DeferredRegister<Block> REG = DeferredRegister.create(ForgeRegistries.BLOCKS, ByPowderAndSteel.MODID);
 	public static RegistryObject<Block> gunsteelScrapBlock, gunsteelBlock;
 	public static RegistryObject<Block> gunsteelBricks, gunsteelChiseled, gunsteelPillar, gunsteelLamp;
+	public static RegistryObject<Block> caliberrySack;
 	public static RegistryObject<Block> livingHerbSack;
 	public static RegistryObject<Block> livingHerb;
 	public static RegistryObject<Block> milspecIceCrate;
@@ -37,6 +38,8 @@ public class BPASBlocks {
 		gunsteelPillar = makeBlock("gunsteel_pillar", () -> new OrientablePillarBlock(Block.Properties.copy(gunsteelBricks.get())));
 		gunsteelLamp = makeBlock("gunsteel_lamp", () -> new Block(Block.Properties.copy(gunsteelBricks.get()).lightLevel((state) -> 15)));
 
+		caliberrySack = makeBlock("caliberry_sack", () -> new Block(Block.Properties.copy(Blocks.YELLOW_WOOL)));
+		
 		livingHerbSack = makeBlock("living_herb_sack", () -> new Block(Block.Properties.copy(Blocks.GREEN_WOOL)));
 		livingHerb = makeBlock("living_herb_block", () -> new Block(Block.Properties.copy(Blocks.MOSS_BLOCK)));
 		

@@ -1,0 +1,7 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{ "item": "bypowderandsteel:caliberry_sack" }
+	],
+	"result": { "item": "bypowderandsteel:caliberry", "count": 9 }
+}
