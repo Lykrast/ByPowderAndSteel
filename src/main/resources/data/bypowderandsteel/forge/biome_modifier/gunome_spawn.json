@@ -1,0 +1,10 @@
+{
+	"type": "forge:add_spawns",
+	"biomes": "#bypowderandsteel:has_gunome",
+	"spawners": {
+		"type": "bypowderandsteel:gunome",
+		"weight": 50,
+		"minCount": 4,
+		"maxCount": 6
+	}
+}
