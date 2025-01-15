@@ -6,6 +6,7 @@ import org.apache.logging.log4j.Logger;
 import lykrast.bypowderandsteel.registry.BPASBlocks;
 import lykrast.bypowderandsteel.registry.BPASEntities;
 import lykrast.bypowderandsteel.registry.BPASItems;
+import lykrast.bypowderandsteel.registry.BPASVillagers;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -24,6 +25,10 @@ public class ByPowderAndSteel {
 		BPASItems.REG.register(bus);
 		bus.addListener(BPASItems::makeCreativeTab);
 		BPASEntities.REG.register(bus);
+		BPASVillagers.POI.register(bus);
+		BPASVillagers.PROFESSION.register(bus);
+		
+		//TODO hero of the village stuff
 	}
 	
 	public static ResourceLocation rl(String name) {
