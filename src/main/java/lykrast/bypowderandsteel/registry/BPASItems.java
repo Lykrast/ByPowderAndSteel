@@ -34,11 +34,19 @@ public class BPASItems {
 	public static RegistryObject<BulletItem> gunsteelBullet, caliberry, caliberryLarge;
 	public static RegistryObject<Item> gunomeEgg, cowbonesEgg;
 	public static RegistryObject<Item> gunsteelScrap, gunsteelIngot, gunsteelNugget;
+	//forest
 	public static RegistryObject<Item> caliberryGrilled, caliberrySlice, caliberrySliceGrilled, caliberryHoney, caliberryIce;
 	public static RegistryObject<Item> livingHerb;
+	//desert
 	public static RegistryObject<Item> cowbonesHorn;
+	//tundra
 	public static RegistryObject<Item> milspecIce, milspecIceGrilled;
+	//underground
+	public static RegistryObject<Item> damagedDevice;
+	//nether
 	public static RegistryObject<Item> heptacle;
+	//end
+	public static RegistryObject<Item> gravioliumCell;
 	
 	private static List<RegistryObject<? extends Item>> orderedItemsCreative = new ArrayList<>();
 	
@@ -89,8 +97,12 @@ public class BPASItems {
 		
 		milspecIce = initItem(() -> new Item(defP()), "milspec_ice");
 		milspecIceGrilled = initItem(() -> new Item(defP().food(food(4, 0.4))), "milspec_ice_grilled");
+
+		damagedDevice = initItem(() -> new Item(defP()), "damaged_device");
 		
 		heptacle = initItem(() -> new Item(defP()), "heptacle");
+		
+		gravioliumCell = initItem(() -> new Item(defP()), "graviolium_cell");
 	}
 
 	public static Item.Properties defP() {

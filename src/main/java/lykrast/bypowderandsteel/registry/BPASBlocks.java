@@ -23,11 +23,17 @@ public class BPASBlocks {
 	public static RegistryObject<Block> gunsmithingTable;
 	public static RegistryObject<Block> gunsteelScrapBlock, gunsteelBlock;
 	public static RegistryObject<Block> gunsteelBricks, gunsteelChiseled, gunsteelPillar, gunsteelLamp;
+	//forest
 	public static RegistryObject<Block> caliberrySack;
 	public static RegistryObject<Block> livingHerbSack;
 	public static RegistryObject<Block> livingHerb;
+	//desert
+	//tundra
 	public static RegistryObject<Block> milspecIceCrate;
 	public static RegistryObject<Block> milspecIceBlock, milspecIceBricks, milspecIceTiles, milspecIceChiseled, milspecIcePillar;
+	//underground
+	//nether
+	//end
 
 	public static List<RegistryObject<? extends Item>> orderedBlockItems = new ArrayList<>();
 	
