@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"SS",
+		"WW"
+	],
+	"key": {
+		"S": { "tag": "forge:ingots/gunsteel" },
+		"W": { "tag": "minecraft:planks" }
+	},
+	"result": { "item": "bypowderandsteel:gunsmithing_table" }
+}

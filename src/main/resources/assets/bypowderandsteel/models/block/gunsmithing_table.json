@@ -1,0 +1,12 @@
+{
+	"parent": "minecraft:block/cube",
+	"textures": {
+		"down": "bypowderandsteel:block/gunsmithing_table_bottom",
+		"east": "bypowderandsteel:block/gunsmithing_table_front",
+		"north": "bypowderandsteel:block/gunsmithing_table_side",
+		"particle": "bypowderandsteel:block/gunsmithing_table_front",
+		"south": "bypowderandsteel:block/gunsmithing_table_side",
+		"up": "bypowderandsteel:block/gunsmithing_table_top",
+		"west": "bypowderandsteel:block/gunsmithing_table_front"
+	}
+}

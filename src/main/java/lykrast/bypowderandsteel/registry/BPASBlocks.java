@@ -20,6 +20,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class BPASBlocks {
 	public static final DeferredRegister<Block> REG = DeferredRegister.create(ForgeRegistries.BLOCKS, ByPowderAndSteel.MODID);
+	public static RegistryObject<Block> gunsmithingTable;
 	public static RegistryObject<Block> gunsteelScrapBlock, gunsteelBlock;
 	public static RegistryObject<Block> gunsteelBricks, gunsteelChiseled, gunsteelPillar, gunsteelLamp;
 	public static RegistryObject<Block> caliberrySack;
@@ -31,6 +32,8 @@ public class BPASBlocks {
 	public static List<RegistryObject<? extends Item>> orderedBlockItems = new ArrayList<>();
 	
 	static {
+		gunsmithingTable = makeBlock("gunsmithing_table", () -> new Block(Block.Properties.copy(Blocks.CRAFTING_TABLE)));
+		
 		gunsteelScrapBlock = makeBlock("gunsteel_scrap_block", () -> new Block(Block.Properties.copy(Blocks.RAW_IRON_BLOCK)));
 		gunsteelBlock = makeBlock("gunsteel_block", () -> new Block(Block.Properties.copy(Blocks.IRON_BLOCK)));
 		gunsteelBricks = makeBlock("gunsteel_bricks", () -> new Block(Block.Properties.copy(Blocks.IRON_BLOCK).strength(2, 6))); //same hardness as bricks so easier to mine
