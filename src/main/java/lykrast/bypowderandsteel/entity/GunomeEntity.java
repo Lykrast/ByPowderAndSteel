@@ -3,6 +3,7 @@ package lykrast.bypowderandsteel.entity;
 import javax.annotation.Nullable;
 
 import lykrast.bypowderandsteel.ByPowderAndSteel;
+import lykrast.bypowderandsteel.entity.ai.AvoidTargetGoal;
 import lykrast.bypowderandsteel.entity.ai.GunGoal;
 import lykrast.bypowderandsteel.misc.BPASUtils;
 import lykrast.bypowderandsteel.registry.BPASEntities;
@@ -48,6 +49,7 @@ public class GunomeEntity extends Monster implements GunMob {
 	@Override
 	protected void registerGoals() {
 		goalSelector.addGoal(1, new FloatGoal(this));
+		goalSelector.addGoal(3, new AvoidTargetGoal(this, 4, 10, 1.2));
 		goalSelector.addGoal(4, new GunGoal<>(this, 1, 4, 10));
 		goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(this, 1));
 		goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 8));
