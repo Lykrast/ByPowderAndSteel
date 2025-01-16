@@ -99,6 +99,8 @@ public class ShrubhulkModel extends EntityModel<ShrubhulkEntity> {
 		}
 		
 		body.xRot = 0;
+		rightArm.yRot = 0;
+		leftArm.yRot = 0;
 		
 		//animate now that we have the swung arm to return to neutral
 		//because a slam is not supposed to be interrupted by another anim, just ease neutral -> windup -> slam -> neutral
