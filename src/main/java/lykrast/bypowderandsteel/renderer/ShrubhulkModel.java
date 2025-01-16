@@ -5,6 +5,7 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 
 import lykrast.bypowderandsteel.ByPowderAndSteel;
 import lykrast.bypowderandsteel.entity.ShrubhulkEntity;
+import lykrast.bypowderandsteel.misc.BPASUtils;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
@@ -20,6 +21,7 @@ public class ShrubhulkModel extends EntityModel<ShrubhulkEntity> {
 	// Made with Blockbench 4.1.5 then adjusted later for animations and shit
 	public static final ModelLayerLocation MODEL = new ModelLayerLocation(ByPowderAndSteel.rl("shrubhulk"), "main");
 	private final ModelPart body, head, rightArm, leftArm, rightLeg, leftLeg;
+	private float animProgress;
 
 	public ShrubhulkModel(ModelPart root) {
 		body = root.getChild("MainBody");
@@ -48,6 +50,14 @@ public class ShrubhulkModel extends EntityModel<ShrubhulkEntity> {
 				PartPose.offset(2.9F, 12.0F, 4.0F));
 		
 		return LayerDefinition.create(meshdefinition, 64, 64);
+	}
+	
+	@Override
+	public void prepareMobModel(ShrubhulkEntity entity, float limbSwing, float limbSwingAmount, float partialTick) {
+		//the super is empty
+		animProgress = entity.getAnimProgress(partialTick);
+		if (entity.clientAnim == ShrubhulkEntity.ANIM_SLAM) animProgress = BPASUtils.easeOutQuad(animProgress);
+		else animProgress = BPASUtils.easeInQuad(animProgress);
 	}
 
 	@Override
@@ -86,6 +96,45 @@ public class ShrubhulkModel extends EntityModel<ShrubhulkEntity> {
 			leftLeg.xRot = -1.4137167F;
 			leftLeg.yRot = (-Mth.PI / 10F);
 			leftLeg.zRot = -0.07853982F;
+		}
+		
+		body.xRot = 0;
+		
+		//animate now that we have the swung arm to return to neutral
+		//because a slam is not supposed to be interrupted by another anim, just ease neutral -> windup -> slam -> neutral
+		if (entity.clientAnim == ShrubhulkEntity.ANIM_WINDUP) {
+			//reminder: blockbench angles for X and Y are negated for some reason
+			body.xRot = -35*animProgress * Mth.DEG_TO_RAD;
+			head.xRot = Mth.lerp(animProgress, head.xRot, 45*Mth.DEG_TO_RAD);
+			head.yRot = head.yRot*(1-animProgress);
+			rightArm.xRot = Mth.lerp(animProgress, rightArm.xRot, -95*Mth.DEG_TO_RAD);
+			rightArm.yRot = -25*animProgress * Mth.DEG_TO_RAD;
+			rightArm.zRot = rightArm.zRot*(1-animProgress);
+			leftArm.xRot = Mth.lerp(animProgress, leftArm.xRot, -95*Mth.DEG_TO_RAD);
+			leftArm.yRot = 25*animProgress * Mth.DEG_TO_RAD;
+			leftArm.zRot = leftArm.zRot*(1-animProgress);
+		}
+		else if (entity.clientAnim == ShrubhulkEntity.ANIM_SLAM) {
+			body.xRot = Mth.lerp(animProgress, -35*Mth.DEG_TO_RAD, 55*Mth.DEG_TO_RAD);
+			head.xRot = 45*Mth.DEG_TO_RAD;
+			head.yRot = 0;
+			rightArm.xRot = -95*Mth.DEG_TO_RAD;
+			rightArm.yRot = -25*Mth.DEG_TO_RAD;
+			rightArm.zRot = 0;
+			leftArm.xRot = -95*Mth.DEG_TO_RAD;
+			leftArm.yRot = 25*Mth.DEG_TO_RAD;
+			leftArm.zRot = 0;
+		}
+		else if (entity.clientAnim == ShrubhulkEntity.ANIM_NEUTRAL && animProgress < 0.99) {
+			body.xRot = 55*(1-animProgress) * Mth.DEG_TO_RAD;
+			head.xRot = Mth.lerp(animProgress, 45*Mth.DEG_TO_RAD, head.xRot);
+			head.yRot = head.yRot*animProgress;
+			rightArm.xRot = Mth.lerp(animProgress, -95*Mth.DEG_TO_RAD, rightArm.xRot);
+			rightArm.yRot = -25*(1-animProgress) * Mth.DEG_TO_RAD;
+			rightArm.zRot = rightArm.zRot*animProgress;
+			leftArm.xRot = Mth.lerp(animProgress, -95*Mth.DEG_TO_RAD, leftArm.xRot);
+			leftArm.yRot = 25*(1-animProgress) * Mth.DEG_TO_RAD;
+			leftArm.zRot = leftArm.zRot*animProgress;
 		}
 	}
 

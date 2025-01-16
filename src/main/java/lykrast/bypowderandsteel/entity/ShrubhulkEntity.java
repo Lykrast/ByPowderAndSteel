@@ -27,7 +27,9 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class ShrubhulkEntity extends Monster {
+public class ShrubhulkEntity extends AnimatedMonster {
+	//animations
+	public static final int ANIM_NEUTRAL = 0, ANIM_WINDUP = 1, ANIM_SLAM = 2;
 
 	public ShrubhulkEntity(EntityType<? extends ShrubhulkEntity> type, Level world) {
 		super(type, world);
@@ -56,8 +58,24 @@ public class ShrubhulkEntity extends Monster {
 	}
 
 	@Override
+	protected void setupNewAnimation() {
+		if (clientAnim == ANIM_SLAM) animDur = 3;
+		else if (clientAnim == ANIM_WINDUP) animDur = 9;
+		else animDur = 10;
+	}
+
+	@Override
 	protected ResourceLocation getDefaultLootTable() {
 		return ByPowderAndSteel.rl("entities/shrubhulk");
+	}
+
+	@Override
+	public void tick() {
+		super.tick();
+
+		if (level().isClientSide() && clientAnim == ANIM_SLAM && animProg == 2) {
+			level().addParticle(ParticleTypes.EXPLOSION_EMITTER, getX(), getY(), getZ(), 0, 0, 0);
+		}
 	}
 
 	//TODO sounds
@@ -106,13 +124,13 @@ public class ShrubhulkEntity extends Monster {
 		@Override
 		public void start() {
 			windup = true;
-			timer = 10;
-			//TODO animation
+			timer = 15;
+			hulk.setAnimation(ANIM_WINDUP);
 		}
 
 		@Override
 		public void stop() {
-
+			hulk.setAnimation(ANIM_NEUTRAL);
 		}
 
 		@Override
@@ -127,7 +145,7 @@ public class ShrubhulkEntity extends Monster {
 				//shrubhulk's base is 0.99x2.4x0.99 so +2.5 on each side for x/z and 1.8 for y
 				for (LivingEntity target : hulk.level().getEntitiesOfClass(LivingEntity.class, hulk.getBoundingBox().inflate(2.5, 1.8, 2.5))) {
 					//TODO reduce friendly fire between forest monsters
-					if (target.isAlive() && !target.isInvulnerable() && target != hulk) {
+					if (target.isAlive() && !target.isInvulnerable() && target != hulk && !hulk.isAlliedTo(target)) {
 						if (hulk.doHurtTarget(target)) {
 							double mult = Math.max(0, 1 - target.getAttributeValue(Attributes.KNOCKBACK_RESISTANCE));
 							target.setDeltaMovement(target.getDeltaMovement().add(0, 0.3 * mult, 0));
@@ -136,8 +154,9 @@ public class ShrubhulkEntity extends Monster {
 				}
 				hulk.playSound(SoundEvents.GENERIC_EXPLODE, 1, (1 + (hulk.random.nextFloat() - hulk.random.nextFloat()) * 0.2F) * 0.7F);
 				//particles are for client so will be on the animation itself
-				//hulk.level().addParticle(ParticleTypes.EXPLOSION_EMITTER, hulk.getX(), hulk.getY(), hulk.getZ(), 0, 0, 0);
 			}
+			else if (windup && timer == 3) hulk.setAnimation(ANIM_SLAM);
+			else if (!windup && timer == 10) hulk.setAnimation(ANIM_NEUTRAL);
 		}
 
 		@Override

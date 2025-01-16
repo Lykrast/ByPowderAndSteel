@@ -27,4 +27,18 @@ public class BPASUtils {
 		if (random.nextFloat() < 0.1) return GWRItems.goldGun.get();
 		else return random.nextBoolean() ? GWRItems.ironGun.get() : BPASItems.gunsteelGun.get();
 	}
+	
+	//those take a float from 0 to 1, for animation smoothing
+	public static float easeInQuad(float progress) {
+		return progress*progress;
+	}
+	public static float easeOutQuad(float progress) {
+		progress = 1-progress;
+		return 1-(progress*progress);
+	}
+	public static float easeInOut(float progress) {
+		//https://math.stackexchange.com/questions/121720/ease-in-out-function/121755#121755
+		float sq = progress * progress;
+		return sq / (2 * (sq - progress)+1);
+	}
 }
