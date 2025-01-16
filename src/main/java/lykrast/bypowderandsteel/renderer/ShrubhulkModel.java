@@ -6,6 +6,7 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import lykrast.bypowderandsteel.ByPowderAndSteel;
 import lykrast.bypowderandsteel.entity.ShrubhulkEntity;
 import lykrast.bypowderandsteel.misc.BPASUtils;
+import net.minecraft.client.model.AnimationUtils;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
@@ -97,6 +98,9 @@ public class ShrubhulkModel extends EntityModel<ShrubhulkEntity> {
 			leftLeg.yRot = (-Mth.PI / 10F);
 			leftLeg.zRot = -0.07853982F;
 		}
+		
+		AnimationUtils.bobModelPart(rightArm, ageInTicks, 1);
+		AnimationUtils.bobModelPart(leftArm, ageInTicks, -1);
 		
 		body.xRot = 0;
 		rightArm.yRot = 0;

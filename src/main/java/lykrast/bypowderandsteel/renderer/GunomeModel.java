@@ -95,6 +95,9 @@ public class GunomeModel extends EntityModel<GunomeEntity> implements ArmedModel
 			leftLeg.yRot = (-Mth.PI / 10F);
 			leftLeg.zRot = -0.07853982F;
 		}
+		
+		AnimationUtils.bobModelPart(rightArm, ageInTicks, 1);
+		AnimationUtils.bobModelPart(leftArm, ageInTicks, -1);
 
 		//This part from skeleton
 		//TODO better pose
