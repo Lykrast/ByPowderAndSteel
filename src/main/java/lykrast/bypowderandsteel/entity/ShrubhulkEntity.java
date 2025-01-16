@@ -1,0 +1,150 @@
+package lykrast.bypowderandsteel.entity;
+
+import java.util.EnumSet;
+
+import lykrast.bypowderandsteel.ByPowderAndSteel;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.goal.FloatGoal;
+import net.minecraft.world.entity.ai.goal.Goal;
+import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
+import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
+import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
+import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
+import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
+import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.animal.IronGolem;
+import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
+
+public class ShrubhulkEntity extends Monster {
+
+	public ShrubhulkEntity(EntityType<? extends ShrubhulkEntity> type, Level world) {
+		super(type, world);
+	}
+
+	@Override
+	protected void registerGoals() {
+		goalSelector.addGoal(1, new FloatGoal(this));
+		goalSelector.addGoal(3, new SlamAttack(this, 2));
+		//this one makes it approach target without actually doing a melee attack
+		goalSelector.addGoal(4, new MeleeAttackGoal(this, 1, false) {
+			@Override
+			protected void checkAndPerformAttack(LivingEntity target, double distance) {
+			}
+		});
+		goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(this, 1));
+		goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 8));
+		goalSelector.addGoal(6, new RandomLookAroundGoal(this));
+		targetSelector.addGoal(1, new HurtByTargetGoal(this));
+		targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
+		targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, IronGolem.class, true));
+	}
+
+	public static AttributeSupplier.Builder createAttributes() {
+		return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 50).add(Attributes.ATTACK_DAMAGE, 12).add(Attributes.MOVEMENT_SPEED, 0.22).add(Attributes.KNOCKBACK_RESISTANCE, 1);
+	}
+
+	@Override
+	protected ResourceLocation getDefaultLootTable() {
+		return ByPowderAndSteel.rl("entities/shrubhulk");
+	}
+
+	//TODO sounds
+	@Override
+	protected SoundEvent getAmbientSound() {
+		return SoundEvents.ZOMBIE_AMBIENT;
+	}
+
+	@Override
+	protected SoundEvent getHurtSound(DamageSource source) {
+		return SoundEvents.ZOMBIE_HURT;
+	}
+
+	@Override
+	protected SoundEvent getDeathSound() {
+		return SoundEvents.ZOMBIE_DEATH;
+	}
+
+	@Override
+	protected void playStepSound(BlockPos pos, BlockState state) {
+		this.playSound(SoundEvents.ZOMBIE_STEP, 0.15F, 1);
+	}
+
+	private static class SlamAttack extends Goal {
+		private ShrubhulkEntity hulk;
+		private double startRangeSqr;
+		private int timer;
+		private boolean windup;
+
+		public SlamAttack(ShrubhulkEntity hulk, double startRange) {
+			this.hulk = hulk;
+			startRangeSqr = startRange * startRange;
+			setFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.LOOK));
+		}
+
+		@Override
+		public boolean canUse() {
+			return hulk.getTarget() != null && hulk.distanceToSqr(hulk.getTarget()) <= startRangeSqr;
+		}
+
+		@Override
+		public boolean canContinueToUse() {
+			return windup || timer > 0;
+		}
+
+		@Override
+		public void start() {
+			windup = true;
+			timer = 10;
+			//TODO animation
+		}
+
+		@Override
+		public void stop() {
+
+		}
+
+		@Override
+		public void tick() {
+			timer--;
+			if (windup && timer < 0) {
+				//timer for the winddown
+				timer = 15;
+				windup = false;
+				//perform the slam
+				//to match the explosion visuals it needs to be 6x6x6 (so 3 on each side from center)
+				//shrubhulk's base is 0.99x2.4x0.99 so +2.5 on each side for x/z and 1.8 for y
+				for (LivingEntity target : hulk.level().getEntitiesOfClass(LivingEntity.class, hulk.getBoundingBox().inflate(2.5, 1.8, 2.5))) {
+					//TODO reduce friendly fire between forest monsters
+					if (target.isAlive() && !target.isInvulnerable() && target != hulk) {
+						if (hulk.doHurtTarget(target)) {
+							double mult = Math.max(0, 1 - target.getAttributeValue(Attributes.KNOCKBACK_RESISTANCE));
+							target.setDeltaMovement(target.getDeltaMovement().add(0, 0.3 * mult, 0));
+						}
+					}
+				}
+				hulk.playSound(SoundEvents.GENERIC_EXPLODE, 1, (1 + (hulk.random.nextFloat() - hulk.random.nextFloat()) * 0.2F) * 0.7F);
+				//particles are for client so will be on the animation itself
+				//hulk.level().addParticle(ParticleTypes.EXPLOSION_EMITTER, hulk.getX(), hulk.getY(), hulk.getZ(), 0, 0, 0);
+			}
+		}
+
+		@Override
+		public boolean requiresUpdateEveryTick() {
+			return true;
+		}
+
+	}
+
+}
