@@ -2,6 +2,7 @@ package lykrast.bypowderandsteel;
 
 import lykrast.bypowderandsteel.registry.BPASEntities;
 import lykrast.bypowderandsteel.renderer.*;
+import net.minecraft.client.model.EvokerFangsModel;
 import net.minecraft.client.model.HumanoidArmorModel;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.LayerDefinitions;
@@ -27,6 +28,8 @@ public class ClientStuff {
 		//underground
 		//nether
 		//end
+		//projectiles
+		event.registerEntityRenderer(BPASEntities.shrubsnapperFang.get(), (context) -> new ShrubsnapperFangRenderer(context));
 	}
 
 	@SubscribeEvent
@@ -38,5 +41,7 @@ public class ClientStuff {
     	event.registerLayerDefinition(CowbonesModel.OVERLAY, () -> LayerDefinition.create(HumanoidModel.createMesh(new CubeDeformation(0.25f), 0), 64, 32));
     	event.registerLayerDefinition(CowbonesModel.INNER_ARMOR, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.INNER_ARMOR_DEFORMATION), 64, 32));
     	event.registerLayerDefinition(CowbonesModel.OUTER_ARMOR, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 32));
+    	//projectiles
+		event.registerLayerDefinition(ShrubsnapperFangRenderer.MODEL, () -> EvokerFangsModel.createBodyLayer());
 	}
 }

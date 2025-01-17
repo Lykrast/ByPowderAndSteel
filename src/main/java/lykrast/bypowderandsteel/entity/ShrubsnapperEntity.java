@@ -28,7 +28,6 @@ import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.projectile.EvokerFangs;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -188,7 +187,6 @@ public class ShrubsnapperEntity extends AnimatedMonster {
 		}
 		
 		//Copied from evoker but with a return if the claw could be spawned
-		//TODO custom fangs
 		private boolean createFang(double x, double z, double yMin, double yMax, float rot, int delay) {
 			BlockPos pos = BlockPos.containing(x, yMax, z);
 			boolean foundGround = false;
@@ -213,7 +211,7 @@ public class ShrubsnapperEntity extends AnimatedMonster {
 				pos = pos.below();
 			} while (pos.getY() >= Mth.floor(yMin) - 1);
 
-			if (foundGround) snapper.level().addFreshEntity(new EvokerFangs(snapper.level(), x, pos.getY() + yOffset, z, rot, delay, snapper));
+			if (foundGround) snapper.level().addFreshEntity(new ShrubsnapperFangEntity(snapper.level(), x, pos.getY() + yOffset, z, rot, delay, snapper));
 			return foundGround;
 		}
 
