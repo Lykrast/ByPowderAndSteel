@@ -1,0 +1,10 @@
+{
+	"type": "forge:add_spawns",
+	"biomes": "#bypowderandsteel:has_shrub_monster",
+	"spawners": {
+		"type": "bypowderandsteel:shrubsnapper",
+		"weight": 30,
+		"minCount": 3,
+		"maxCount": 4
+	}
+}
