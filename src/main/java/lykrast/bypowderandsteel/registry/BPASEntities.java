@@ -16,11 +16,13 @@ public class BPASEntities {
 	public static final DeferredRegister<EntityType<?>> REG = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, ByPowderAndSteel.MODID);
 	public static RegistryObject<EntityType<GunomeEntity>> gunome;
 	public static RegistryObject<EntityType<ShrubhulkEntity>> shrubhulk;
+	public static RegistryObject<EntityType<ShrubsnapperEntity>> shrubsnapper;
 	public static RegistryObject<EntityType<CowbonesEntity>> cowbones;
 	
 	static {
 		gunome = REG.register("gunome", () -> EntityType.Builder.of(GunomeEntity::new, MobCategory.MONSTER).sized(0.45F, 1.25F).clientTrackingRange(8).build(""));
 		shrubhulk = REG.register("shrubhulk", () -> EntityType.Builder.of(ShrubhulkEntity::new, MobCategory.MONSTER).sized(0.99F, 2.4F).clientTrackingRange(8).build(""));
+		shrubsnapper = REG.register("shrubsnapper", () -> EntityType.Builder.of(ShrubsnapperEntity::new, MobCategory.MONSTER).sized(0.99F, 2.4F).clientTrackingRange(8).build(""));
 		cowbones = REG.register("cowbones", () -> EntityType.Builder.of(CowbonesEntity::new, MobCategory.MONSTER).sized(0.6F, 1.99F).clientTrackingRange(8).build(""));
 	}
 
@@ -28,6 +30,7 @@ public class BPASEntities {
 	public static void registerEntityAttributes(final EntityAttributeCreationEvent event) {
 		event.put(gunome.get(), GunomeEntity.createAttributes().build());
 		event.put(shrubhulk.get(), ShrubhulkEntity.createAttributes().build());
+		event.put(shrubsnapper.get(), ShrubsnapperEntity.createAttributes().build());
 		event.put(cowbones.get(), CowbonesEntity.createAttributes().build());
 	}
 

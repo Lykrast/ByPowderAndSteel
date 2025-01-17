@@ -52,10 +52,12 @@
 
 	"entity.bypowderandsteel.gunome": "Gunome",
 	"entity.bypowderandsteel.shrubhulk": "Shrubhulk",
+	"entity.bypowderandsteel.shrubsnapper": "Shrubsnapper",
 	"entity.bypowderandsteel.cowbones": "Cowbones",
 
 	"item.bypowderandsteel.gunome_spawn_egg": "Gunome Spawn Egg",
 	"item.bypowderandsteel.shrubhulk_spawn_egg": "Shrubhulk Spawn Egg",
+	"item.bypowderandsteel.shrubsnapper_spawn_egg": "Shrubsnapper Spawn Egg",
 	"item.bypowderandsteel.cowbones_spawn_egg": "Cowbones Spawn Egg",
 
 	"entity.minecraft.villager.bypowderandsteel.gunsmith": "Gunsmith",
