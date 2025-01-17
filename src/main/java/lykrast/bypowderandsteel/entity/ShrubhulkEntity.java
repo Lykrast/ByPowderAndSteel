@@ -54,7 +54,7 @@ public class ShrubhulkEntity extends AnimatedMonster {
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
-		return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 50).add(Attributes.ATTACK_DAMAGE, 12).add(Attributes.MOVEMENT_SPEED, 0.22).add(Attributes.KNOCKBACK_RESISTANCE, 1);
+		return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 50).add(Attributes.ATTACK_DAMAGE, 10).add(Attributes.MOVEMENT_SPEED, 0.22).add(Attributes.KNOCKBACK_RESISTANCE, 1);
 	}
 
 	@Override

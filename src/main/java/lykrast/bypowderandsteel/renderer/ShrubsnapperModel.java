@@ -4,6 +4,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 
 import lykrast.bypowderandsteel.ByPowderAndSteel;
+import lykrast.bypowderandsteel.entity.ShrubhulkEntity;
 import lykrast.bypowderandsteel.entity.ShrubsnapperEntity;
 import lykrast.bypowderandsteel.misc.BPASUtils;
 import net.minecraft.client.model.AnimationUtils;
@@ -121,8 +122,8 @@ public class ShrubsnapperModel extends EntityModel<ShrubsnapperEntity> {
 		rightForearm.zRot = 0;
 		leftForearm.xRot = 0;
 		leftForearm.zRot = 0;
-		AnimationUtils.bobModelPart(rightForearm, ageInTicks + 10, 0.4f);
-		AnimationUtils.bobModelPart(leftForearm, ageInTicks + 10, -0.4f);
+		AnimationUtils.bobModelPart(rightForearm, ageInTicks + 20, 0.4f);
+		AnimationUtils.bobModelPart(leftForearm, ageInTicks + 20, -0.4f);
 		
 		body.xRot = BODY_BASE_X_ROT;
 		rightArm.yRot = 0;
@@ -160,7 +161,7 @@ public class ShrubsnapperModel extends EntityModel<ShrubsnapperEntity> {
 			rightArm.zRot = 150*Mth.DEG_TO_RAD*(1-animProgress);
 			leftArm.xRot = -60*Mth.DEG_TO_RAD*animProgress;
 			leftArm.yRot = Mth.lerp(animProgress, 45*Mth.DEG_TO_RAD, -10*Mth.DEG_TO_RAD);
-			leftArm.zRot = 150*Mth.DEG_TO_RAD*(1-animProgress);
+			leftArm.zRot = -150*Mth.DEG_TO_RAD*(1-animProgress);
 			rightForearm.xRot = Mth.lerp(animProgress, -115*Mth.DEG_TO_RAD, -5*Mth.DEG_TO_RAD);
 			rightForearm.zRot = -10*Mth.DEG_TO_RAD*animProgress;
 			leftForearm.xRot = Mth.lerp(animProgress, -115*Mth.DEG_TO_RAD, -5*Mth.DEG_TO_RAD);
@@ -186,7 +187,24 @@ public class ShrubsnapperModel extends EntityModel<ShrubsnapperEntity> {
 			rightTrunk.y = 8;
 			leftTrunk.y = 8;
 		}
-		//TODO winddown to neutral
+		else if (entity.clientAnim == ShrubhulkEntity.ANIM_NEUTRAL && animProgress < 0.99) {
+			//TODO same animation as above
+			body.xRot = Mth.lerp(animProgress, 5*Mth.DEG_TO_RAD, body.xRot);
+			head.xRot = Mth.lerp(animProgress, HEAD_BASE_X_ROT, head.xRot);
+			head.yRot = head.yRot*animProgress;
+			rightArm.xRot = Mth.lerp(animProgress, -60*Mth.DEG_TO_RAD, rightArm.xRot);
+			rightArm.yRot = Mth.lerp(animProgress, 20*Mth.DEG_TO_RAD, rightArm.yRot);
+			rightArm.zRot = rightArm.zRot*animProgress;
+			leftArm.xRot = Mth.lerp(animProgress, -60*Mth.DEG_TO_RAD, leftArm.xRot);
+			leftArm.yRot = Mth.lerp(animProgress, -20*Mth.DEG_TO_RAD, leftArm.yRot);
+			leftArm.zRot = leftArm.zRot*animProgress;
+			rightForearm.xRot = Mth.lerp(animProgress, -5*Mth.DEG_TO_RAD, rightForearm.xRot);
+			rightForearm.zRot = Mth.lerp(animProgress, -25*Mth.DEG_TO_RAD, rightForearm.zRot);
+			leftForearm.xRot = Mth.lerp(animProgress, -5*Mth.DEG_TO_RAD, leftForearm.xRot);
+			leftForearm.zRot = Mth.lerp(animProgress, 25*Mth.DEG_TO_RAD, leftForearm.zRot);
+			rightTrunk.y = Mth.lerp(animProgress, 8, rightTrunk.y);
+			leftTrunk.y = Mth.lerp(animProgress, 8, leftTrunk.y);
+		}
 	}
 
 	@Override

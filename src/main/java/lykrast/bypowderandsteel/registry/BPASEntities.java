@@ -22,7 +22,7 @@ public class BPASEntities {
 	static {
 		gunome = REG.register("gunome", () -> EntityType.Builder.of(GunomeEntity::new, MobCategory.MONSTER).sized(0.45F, 1.25F).clientTrackingRange(8).build(""));
 		shrubhulk = REG.register("shrubhulk", () -> EntityType.Builder.of(ShrubhulkEntity::new, MobCategory.MONSTER).sized(0.99F, 2.4F).clientTrackingRange(8).build(""));
-		shrubsnapper = REG.register("shrubsnapper", () -> EntityType.Builder.of(ShrubsnapperEntity::new, MobCategory.MONSTER).sized(0.99F, 2.4F).clientTrackingRange(8).build(""));
+		shrubsnapper = REG.register("shrubsnapper", () -> EntityType.Builder.of(ShrubsnapperEntity::new, MobCategory.MONSTER).sized(0.85F, 2.8F).clientTrackingRange(8).build(""));
 		cowbones = REG.register("cowbones", () -> EntityType.Builder.of(CowbonesEntity::new, MobCategory.MONSTER).sized(0.6F, 1.99F).clientTrackingRange(8).build(""));
 	}
 

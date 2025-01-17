@@ -12,7 +12,7 @@ public class ShrubsnapperRenderer extends MobRenderer<ShrubsnapperEntity, Shrubs
 	private static final ResourceLocation TEXTURE = ByPowderAndSteel.rl("textures/entity/shrubsnapper.png"), GLOW = ByPowderAndSteel.rl("textures/entity/shrubsnapper_glow.png");
 
 	public ShrubsnapperRenderer(EntityRendererProvider.Context context) {
-		super(context, new ShrubsnapperModel(context.bakeLayer(ShrubsnapperModel.MODEL)), 0.7f);
+		super(context, new ShrubsnapperModel(context.bakeLayer(ShrubsnapperModel.MODEL)), 0.5f);
 		addLayer(new GenericGlowLayer<>(this, GLOW));
 	}
 
