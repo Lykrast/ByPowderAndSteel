@@ -4,6 +4,7 @@ import lykrast.bypowderandsteel.registry.BPASItems;
 import lykrast.gunswithoutroses.item.GunItem;
 import lykrast.gunswithoutroses.registry.GWRAttributes;
 import lykrast.gunswithoutroses.registry.GWRItems;
+import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.monster.Monster;
@@ -40,5 +41,19 @@ public class BPASUtils {
 		//https://math.stackexchange.com/questions/121720/ease-in-out-function/121755#121755
 		float sq = progress * progress;
 		return sq / (2 * (sq - progress)+1);
+	}
+
+	//this is protected in humanoidmodel
+	public static float rotlerpRad(float progress, float start, float end) {
+		float f = (end - start) % Mth.TWO_PI;
+		if (f < -Mth.PI) {
+			f += Mth.TWO_PI;
+		}
+
+		if (f >= Mth.PI) {
+			f -= Mth.TWO_PI;
+		}
+
+		return start + progress * f;
 	}
 }
