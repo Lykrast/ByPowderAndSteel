@@ -18,6 +18,7 @@ public class BPASEntities {
 	public static RegistryObject<EntityType<ShrubhulkEntity>> shrubhulk;
 	public static RegistryObject<EntityType<ShrubsnapperEntity>> shrubsnapper;
 	public static RegistryObject<EntityType<CowbonesEntity>> cowbones;
+	public static RegistryObject<EntityType<SaberSentryEntity>> sabersentry;
 	//projectiles
 	public static RegistryObject<EntityType<ShrubsnapperFangEntity>> shrubsnapperFang;
 	
@@ -26,6 +27,7 @@ public class BPASEntities {
 		shrubhulk = REG.register("shrubhulk", () -> EntityType.Builder.of(ShrubhulkEntity::new, MobCategory.MONSTER).sized(0.99F, 2.4F).clientTrackingRange(8).build(""));
 		shrubsnapper = REG.register("shrubsnapper", () -> EntityType.Builder.of(ShrubsnapperEntity::new, MobCategory.MONSTER).sized(0.85F, 2.8F).clientTrackingRange(8).build(""));
 		cowbones = REG.register("cowbones", () -> EntityType.Builder.of(CowbonesEntity::new, MobCategory.MONSTER).sized(0.6F, 1.99F).clientTrackingRange(8).build(""));
+		sabersentry = REG.register("sabersentry", () -> EntityType.Builder.of(SaberSentryEntity::new, MobCategory.MONSTER).sized(0.9F, 3.3F).clientTrackingRange(8).build(""));
 		
 		//projectiles
 		//I dunno why this one bein dum dum with the types
@@ -38,6 +40,7 @@ public class BPASEntities {
 		event.put(shrubhulk.get(), ShrubhulkEntity.createAttributes().build());
 		event.put(shrubsnapper.get(), ShrubsnapperEntity.createAttributes().build());
 		event.put(cowbones.get(), CowbonesEntity.createAttributes().build());
+		event.put(sabersentry.get(), SaberSentryEntity.createAttributes().build());
 	}
 
 }
