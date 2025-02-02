@@ -6,6 +6,8 @@
 	"item.bypowderandsteel.desert_shotgun": "Desert Shotgun",
 	"item.bypowderandsteel.arctic_pistol": "Arctic Pistol",
 	"item.bypowderandsteel.arctic_sniper": "Arctic Sniper",
+	"item.bypowderandsteel.raygun": "Raygun",
+	"tooltip.bypowderandsteel.raygun": "Projectiles are slower",
 
 	"item.bypowderandsteel.gunsteel_bullet": "Gunsteel Bullet",
 	"item.bypowderandsteel.caliberry": "Caliberry",
