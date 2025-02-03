@@ -27,6 +27,7 @@ public class ClientStuff {
 		//tundra
 		//underground
 		event.registerEntityRenderer(BPASEntities.sabersentry.get(), (context) -> new SaberSentryRenderer(context));
+		event.registerEntityRenderer(BPASEntities.mechaminator.get(), (context) -> new MechaminatorRenderer(context));
 		//nether
 		//end
 		//projectiles
@@ -43,6 +44,7 @@ public class ClientStuff {
     	event.registerLayerDefinition(CowbonesModel.INNER_ARMOR, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.INNER_ARMOR_DEFORMATION), 64, 32));
     	event.registerLayerDefinition(CowbonesModel.OUTER_ARMOR, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 32));
 		event.registerLayerDefinition(SaberSentryModel.MODEL, () -> SaberSentryModel.createBodyLayer());
+		event.registerLayerDefinition(MechaminatorModel.MODEL, () -> MechaminatorModel.createBodyLayer());
     	//projectiles
 		event.registerLayerDefinition(ShrubsnapperFangRenderer.MODEL, () -> EvokerFangsModel.createBodyLayer());
 	}
