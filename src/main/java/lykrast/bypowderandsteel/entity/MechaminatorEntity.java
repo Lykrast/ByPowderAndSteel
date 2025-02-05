@@ -8,7 +8,6 @@ import lykrast.bypowderandsteel.misc.BPASUtils;
 import lykrast.bypowderandsteel.registry.BPASItems;
 import lykrast.gunswithoutroses.item.BulletItem;
 import lykrast.gunswithoutroses.registry.GWRAttributes;
-import lykrast.gunswithoutroses.registry.GWRItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
@@ -34,6 +33,7 @@ import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
@@ -60,7 +60,7 @@ public class MechaminatorEntity extends Monster implements GunMob {
 	@SuppressWarnings("unchecked")
 	@Override
 	public BulletItem getBullet() {
-		return GWRItems.ironBullet.get();
+		return BPASItems.phaseBullet.get();
 	}
 
 	@Override
@@ -70,7 +70,7 @@ public class MechaminatorEntity extends Monster implements GunMob {
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
-		return BPASUtils.baseGunMobAttributes().add(Attributes.MAX_HEALTH, 20).add(Attributes.ARMOR, 15).add(Attributes.MOVEMENT_SPEED, 0.19).add(GWRAttributes.fireDelay.get(), 2);
+		return BPASUtils.baseGunMobAttributes().add(Attributes.MAX_HEALTH, 20).add(Attributes.ARMOR, 15).add(Attributes.MOVEMENT_SPEED, 0.19).add(GWRAttributes.dmgBase.get(), -2).add(GWRAttributes.fireDelay.get(), 2.5);
 	}
 
 	@SuppressWarnings("deprecation")
@@ -88,7 +88,10 @@ public class MechaminatorEntity extends Monster implements GunMob {
 
 	@Override
 	protected void populateDefaultEquipmentSlots(RandomSource random, DifficultyInstance difficulty) {
-		setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(BPASItems.raygun.get()));
+		Item gun = BPASItems.raygun.get();
+		//1/3 of the time have the raygun, otherwise have a default gun
+		if (random.nextInt(3) < 2) gun = BPASUtils.randomDefaultGun(random);
+		setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(gun));
 	}
 	
 	@Override

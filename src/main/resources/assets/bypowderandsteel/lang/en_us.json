@@ -12,8 +12,10 @@
 	"item.bypowderandsteel.gunsteel_bullet": "Gunsteel Bullet",
 	"item.bypowderandsteel.caliberry": "Caliberry",
 	"item.bypowderandsteel.caliberry_large": "Large Caliberry",
+	"item.bypowderandsteel.phase_bullet": "Phase Bullet",
 
 	"tooltip.bypowderandsteel.bullet.knockback": "+%1$s knockback",
+	"tooltip.bypowderandsteel.bullet.slow": "Speed greatly limited",
 
 	"item.bypowderandsteel.gunsteel_scrap": "Gunsteel Scrap",
 	"item.bypowderandsteel.gunsteel_ingot": "Gunsteel Ingot",
@@ -59,6 +61,8 @@
 	"entity.bypowderandsteel.cowbones": "Cowbones",
 	"entity.bypowderandsteel.sabersentry": "Saber Sentry",
 	"entity.bypowderandsteel.mechaminator": "Mechaminator",
+
+	"entity.bypowderandsteel.slow_bullet": "Slow Bullet",
 
 	"item.bypowderandsteel.gunome_spawn_egg": "Gunome Spawn Egg",
 	"item.bypowderandsteel.shrubhulk_spawn_egg": "Shrubhulk Spawn Egg",

@@ -1,5 +1,6 @@
 package lykrast.bypowderandsteel;
 
+import lykrast.bypowderandsteel.entity.SlowBulletEntity;
 import lykrast.bypowderandsteel.registry.BPASEntities;
 import lykrast.bypowderandsteel.renderer.*;
 import net.minecraft.client.model.EvokerFangsModel;
@@ -8,6 +9,7 @@ import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.LayerDefinitions;
 import net.minecraft.client.model.geom.builders.CubeDeformation;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -30,8 +32,10 @@ public class ClientStuff {
 		event.registerEntityRenderer(BPASEntities.mechaminator.get(), (context) -> new MechaminatorRenderer(context));
 		//nether
 		//end
-		//projectiles
+		//mob projectiles
 		event.registerEntityRenderer(BPASEntities.shrubsnapperFang.get(), (context) -> new ShrubsnapperFangRenderer(context));
+		//custom bullets
+		event.registerEntityRenderer(BPASEntities.slowBullet.get(), (context) -> new ThrownItemRenderer<SlowBulletEntity>(context));
 	}
 
 	@SubscribeEvent

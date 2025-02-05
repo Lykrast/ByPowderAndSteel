@@ -30,7 +30,7 @@ import net.minecraftforge.registries.RegistryObject;
 public class BPASItems {	
 	public static final DeferredRegister<Item> REG = DeferredRegister.create(ForgeRegistries.ITEMS, ByPowderAndSteel.MODID);
 	public static RegistryObject<GunItem> gunsteelGun, peashooter, cornGatling, desertRevolver, desertShotgun, arcticPistol, arcticSniper, raygun;
-	public static RegistryObject<BulletItem> gunsteelBullet, caliberry, caliberryLarge;
+	public static RegistryObject<BulletItem> gunsteelBullet, caliberry, caliberryLarge, phaseBullet;
 	public static RegistryObject<Item> gunomeEgg, shrubhulkEgg, shrubsnapperEgg, cowbonesEgg, sabersentryEgg, mechaminatorEgg;
 	public static RegistryObject<Item> gunsteelScrap, gunsteelIngot, gunsteelNugget;
 	//forest
@@ -76,6 +76,7 @@ public class BPASItems {
 		gunsteelBullet = initItem(() -> new BulletItem(defP(), 6), "gunsteel_bullet");
 		caliberry = initItem(() -> new KnockbackBulletItem(defP().food(food(1, 0.6)), 4, 1), "caliberry");
 		caliberryLarge = initItem(() -> new KnockbackBulletItem(defP().food(food(4, 0.6)), 6, 2), "caliberry_large");
+		phaseBullet = initItem(() -> new SlowBulletItem(defP(), 8), "phase_bullet");
 		
 		//Spawn Eggs
 		gunomeEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.gunome, 0x1F6878, 0xDB2F4C, defP()), "gunome_spawn_egg");

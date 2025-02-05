@@ -20,8 +20,10 @@ public class BPASEntities {
 	public static RegistryObject<EntityType<CowbonesEntity>> cowbones;
 	public static RegistryObject<EntityType<SaberSentryEntity>> sabersentry;
 	public static RegistryObject<EntityType<MechaminatorEntity>> mechaminator;
-	//projectiles
+	//mob projectiles
 	public static RegistryObject<EntityType<ShrubsnapperFangEntity>> shrubsnapperFang;
+	//custom bullets
+	public static RegistryObject<EntityType<SlowBulletEntity>> slowBullet;
 	
 	static {
 		gunome = REG.register("gunome", () -> EntityType.Builder.of(GunomeEntity::new, MobCategory.MONSTER).sized(0.45F, 1.25F).clientTrackingRange(8).build(""));
@@ -31,9 +33,12 @@ public class BPASEntities {
 		sabersentry = REG.register("sabersentry", () -> EntityType.Builder.of(SaberSentryEntity::new, MobCategory.MONSTER).sized(0.9F, 3.3F).clientTrackingRange(8).build(""));
 		mechaminator = REG.register("mechaminator", () -> EntityType.Builder.of(MechaminatorEntity::new, MobCategory.MONSTER).sized(0.75F, 1.99F).clientTrackingRange(8).build(""));
 		
-		//projectiles
+		//mob projectiles
 		//I dunno why this one bein dum dum with the types
 		shrubsnapperFang = REG.register("shrubsnapper_fang", () -> EntityType.Builder.<ShrubsnapperFangEntity>of(ShrubsnapperFangEntity::new, MobCategory.MISC).sized(0.5F, 0.8F).clientTrackingRange(6).updateInterval(2).build(""));
+		
+		//custom bullets
+		slowBullet = REG.register("bullet_slow", () -> EntityType.Builder.<SlowBulletEntity>of(SlowBulletEntity::new, MobCategory.MISC).sized(0.3125f, 0.3125f).setUpdateInterval(2).setTrackingRange(64).setShouldReceiveVelocityUpdates(true).build(""));
 	}
 
 	@SubscribeEvent
