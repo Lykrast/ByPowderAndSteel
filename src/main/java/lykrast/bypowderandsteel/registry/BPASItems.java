@@ -31,7 +31,7 @@ public class BPASItems {
 	public static final DeferredRegister<Item> REG = DeferredRegister.create(ForgeRegistries.ITEMS, ByPowderAndSteel.MODID);
 	public static RegistryObject<GunItem> gunsteelGun, peashooter, cornGatling, desertRevolver, desertShotgun, arcticPistol, arcticSniper, raygun;
 	public static RegistryObject<BulletItem> gunsteelBullet, caliberry, caliberryLarge, phaseBullet;
-	public static RegistryObject<Item> gunomeEgg, shrubhulkEgg, shrubsnapperEgg, cowbonesEgg, sabersentryEgg, mechaminatorEgg;
+	public static RegistryObject<Item> gunomeEgg, shrubhulkEgg, shrubsnapperEgg, cowbonesEgg, zombieSealEgg, sabersentryEgg, mechaminatorEgg;
 	public static RegistryObject<Item> gunsteelScrap, gunsteelIngot, gunsteelNugget;
 	//forest
 	public static RegistryObject<Item> caliberryGrilled, caliberrySlice, caliberrySliceGrilled, caliberryHoney, caliberryIce;
@@ -82,6 +82,7 @@ public class BPASItems {
 		gunomeEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.gunome, 0x1F6878, 0xDB2F4C, defP()), "gunome_spawn_egg");
 		shrubhulkEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.shrubhulk, 0x67A124, 0x4A381E, defP()), "shrubhulk_spawn_egg");
 		shrubsnapperEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.shrubsnapper, 0x528919, 0x3F311D, defP()), "shrubsnapper_spawn_egg");
+		zombieSealEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.zombieSeal, 0x3E475B, 0x698E45, defP()), "zombie_seal_spawn_egg");
 		cowbonesEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.cowbones, 0xEED9B3, 0x994141, defP()), "cowbones_spawn_egg");
 		sabersentryEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.sabersentry, 0xF4F4E1, 0x383635, defP()), "sabersentry_spawn_egg");
 		mechaminatorEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.mechaminator, 0xAAA7A6, 0xF74572, defP()), "mechaminator_spawn_egg");
