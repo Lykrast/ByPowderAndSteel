@@ -3,6 +3,7 @@ package lykrast.bypowderandsteel.entity;
 import java.util.EnumSet;
 
 import lykrast.bypowderandsteel.ByPowderAndSteel;
+import lykrast.bypowderandsteel.entity.ai.ApproachTargetGoal;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.resources.ResourceLocation;
@@ -16,7 +17,6 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
-import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
@@ -40,11 +40,7 @@ public class ShrubhulkEntity extends AnimatedMonster {
 		goalSelector.addGoal(1, new FloatGoal(this));
 		goalSelector.addGoal(3, new SlamAttack(this, 2));
 		//this one makes it approach target without actually doing a melee attack
-		goalSelector.addGoal(4, new MeleeAttackGoal(this, 1, false) {
-			@Override
-			protected void checkAndPerformAttack(LivingEntity target, double distance) {
-			}
-		});
+		goalSelector.addGoal(4, new ApproachTargetGoal(this, 1, false));
 		goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(this, 1));
 		goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 8));
 		goalSelector.addGoal(6, new RandomLookAroundGoal(this));
