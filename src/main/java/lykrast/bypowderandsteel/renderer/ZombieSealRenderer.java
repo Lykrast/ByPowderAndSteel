@@ -42,7 +42,7 @@ public class ZombieSealRenderer extends HumanoidMobRenderer<ZombieSealEntity, Zo
 	public void render(ZombieSealEntity entity, float yaw, float partialTicks, PoseStack poseStack, MultiBufferSource buffer, int packedLight) {
 		super.render(entity, yaw, partialTicks, poseStack, buffer, packedLight);
 		LivingEntity target = entity.getActiveAttackTarget();
-		if (target != null) {
+		if (target != null && entity.isAlive()) {
 			float animTime = 0;//entity.getClientSideAttackTime() + partialTicks;
 			float f2 = animTime * 0.5F % 1.0F;
 			float sealEyeOffset = entity.getEyeHeight();

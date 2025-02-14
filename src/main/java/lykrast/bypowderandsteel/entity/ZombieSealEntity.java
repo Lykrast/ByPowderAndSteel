@@ -89,8 +89,8 @@ public class ZombieSealEntity extends Monster implements GunMob {
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
-		return BPASUtils.baseGunMobAttributes().add(Attributes.MAX_HEALTH, 20).add(Attributes.ARMOR, 4).add(Attributes.MOVEMENT_SPEED, 0.19).add(GWRAttributes.dmgBase.get(), -3)
-				.add(GWRAttributes.fireDelay.get(), 3);
+		return BPASUtils.baseGunMobAttributes().add(Attributes.MAX_HEALTH, 20).add(Attributes.ARMOR, 4).add(Attributes.MOVEMENT_SPEED, 0.23).add(Attributes.FOLLOW_RANGE, 32)
+				.add(GWRAttributes.dmgBase.get(), -4).add(GWRAttributes.fireDelay.get(), 3);
 	}
 
 	@Override
@@ -261,6 +261,7 @@ public class ZombieSealEntity extends Monster implements GunMob {
 				seal.getLookControl().setLookAt(target, 90, 90);
 				seal.setActiveAttackTarget(target.getId());
 				seal.setAggressive(true);
+				//TODO targeting sound
 			}
 		}
 
@@ -286,6 +287,7 @@ public class ZombieSealEntity extends Monster implements GunMob {
 					seeTime -= 2;
 				}
 				else {
+					if (seeTime < 0) seeTime = 0;
 					seeTime++;
 					if (seeTime >= 50) {
 						ItemStack gun =  seal.getMainHandItem();
@@ -293,7 +295,8 @@ public class ZombieSealEntity extends Monster implements GunMob {
 						ItemStack bullet = seal.getBulletStack();
 						seal.attackCooldown = gunItem.getFireDelay(gun, seal);
 						gunItem.shootAt(seal, target, gun, bullet, seal.getBullet(), seal.getAddedSpread(), true);
-						seal.playSound(gunItem.getFireSound(), 1, 1.0F / (seal.getRandom().nextFloat() * 0.4F + 0.8F));
+						//volume 4 should be heard 64 blocks away (headshot sound is 5)
+						seal.playSound(gunItem.getFireSound(), 4, 1.0F / (seal.getRandom().nextFloat() * 0.4F + 0.8F));
 					}
 				}
 			}
