@@ -32,7 +32,7 @@ public class BPASItems {
 	public static RegistryObject<GunItem> gunsteelGun, peashooter, cornGatling, desertRevolver, desertShotgun, arcticPistol, arcticSniper, raygun;
 	public static RegistryObject<BulletItem> gunsteelBullet, caliberry, caliberryLarge, phaseBullet;
 	public static RegistryObject<Item> gunomeEgg, shrubhulkEgg, shrubsnapperEgg, cowbonesEgg, zombieSealEgg, sabersentryEgg, mechaminatorEgg;
-	public static RegistryObject<Item> gunsteelScrap, gunsteelIngot, gunsteelNugget;
+	public static RegistryObject<Item> gunsteelScrap, gunsteelIngot, gunsteelNugget, assemblyBasic;
 	//forest
 	public static RegistryObject<Item> caliberryGrilled, caliberrySlice, caliberrySliceGrilled, caliberryHoney, caliberryIce;
 	public static RegistryObject<Item> livingHerb;
@@ -91,6 +91,7 @@ public class BPASItems {
 		gunsteelScrap = initItem(() -> new Item(defP()), "gunsteel_scrap");
 		gunsteelIngot = initItem(() -> new Item(defP()), "gunsteel_ingot");
 		gunsteelNugget = initItem(() -> new Item(defP()), "gunsteel_nugget");
+		assemblyBasic = initItem(() -> new Item(defP()), "assembly_basic");
 
 		caliberryGrilled = initItem(() -> new Item(defP().food(food(2, 0.6))), "caliberry_grilled");
 		caliberrySlice = initItem(() -> new Item(defP().food(food(1, 0.6))), "caliberry_large_slice");
