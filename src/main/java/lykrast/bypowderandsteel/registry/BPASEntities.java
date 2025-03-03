@@ -1,10 +1,21 @@
 package lykrast.bypowderandsteel.registry;
 
 import lykrast.bypowderandsteel.ByPowderAndSteel;
-import lykrast.bypowderandsteel.entity.*;
+import lykrast.bypowderandsteel.entity.BlasterSentryEntity;
+import lykrast.bypowderandsteel.entity.CowbonesEntity;
+import lykrast.bypowderandsteel.entity.GunomeEntity;
+import lykrast.bypowderandsteel.entity.SaberSentryEntity;
+import lykrast.bypowderandsteel.entity.ShrubhulkEntity;
+import lykrast.bypowderandsteel.entity.ShrubsnapperEntity;
+import lykrast.bypowderandsteel.entity.ShrubsnapperFangEntity;
+import lykrast.bypowderandsteel.entity.SlowBulletEntity;
+import lykrast.bypowderandsteel.entity.ZombieSealEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
+import net.minecraft.world.entity.SpawnPlacements;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
+import net.minecraftforge.event.entity.SpawnPlacementRegisterEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
@@ -52,6 +63,12 @@ public class BPASEntities {
 		event.put(zombieSeal.get(), ZombieSealEntity.createAttributes().build());
 		event.put(sabersentry.get(), SaberSentryEntity.createAttributes().build());
 		event.put(blastersentry.get(), BlasterSentryEntity.createAttributes().build());
+	}
+	
+	@SubscribeEvent
+	public static void registerSpawnPlacements(final SpawnPlacementRegisterEvent event) {
+		event.register(sabersentry.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, SaberSentryEntity::spawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+		event.register(blastersentry.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, BlasterSentryEntity::spawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
 	}
 
 }
