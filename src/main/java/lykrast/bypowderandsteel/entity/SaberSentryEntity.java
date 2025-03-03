@@ -60,7 +60,7 @@ public class SaberSentryEntity extends AnimatedMonster {
 	@Override
 	protected void setupNewAnimation() {
 		if (clientAnim == ANIM_SLASH) animDur = 3;
-		else if (clientAnim == ANIM_SPIN_START) animDur = 5;
+		else if (clientAnim == ANIM_WINDUP || clientAnim == ANIM_SPIN_START) animDur = 5;
 		else animDur = 10;
 	}
 
@@ -234,7 +234,7 @@ public class SaberSentryEntity extends AnimatedMonster {
 						//raise arms to prepare attack, with a minimum time
 						sentry.setAnimation(ANIM_WINDUP);
 						phase = 1;
-						time = 20;
+						time = 8;
 					}
 					break;
 				case 1:
@@ -244,10 +244,10 @@ public class SaberSentryEntity extends AnimatedMonster {
 						sentry.setAnimation(ANIM_RUN);
 						phase = 0;
 					}
-					else if (time <= 0 && distanceSqr <= 4) {
+					else if (time <= 0 && distanceSqr <= 5) {
 						//swing!
 						//sentry.setAnimation(ANIM_SLASH);
-						time = 15;
+						time = 20;
 						phase = 2;
 					}
 					break;
@@ -270,8 +270,8 @@ public class SaberSentryEntity extends AnimatedMonster {
 						//recovery animation
 						sentry.getNavigation().stop();
 						//and strike when animation is done
-						if (time == 13) sentry.setAnimation(ANIM_SLASH);
-						else if (time == 10) sentry.swing();
+						if (time == 15) sentry.setAnimation(ANIM_SLASH);
+						else if (time == 13) sentry.swing();
 					}
 					break;
 				case 3:
