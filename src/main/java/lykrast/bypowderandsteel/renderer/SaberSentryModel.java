@@ -21,13 +21,16 @@ public class SaberSentryModel extends EntityModel<SaberSentryEntity> {
 	// Made with Blockbench 4.1.5 then adjusted later for animations and shit
 	public static final ModelLayerLocation MODEL = new ModelLayerLocation(ByPowderAndSteel.rl("sabersentry"), "main");
 	private final ModelPart lowerBody, upperBody, rightLeg, leftLeg, head, leftArm, leftForearm, rightArm, rightForearm, leftLowerLeg, rightLowerLeg;
-	private float animProgress;
+	private float animProgress, spinAmount;
 	private Pose anim, prevAnim;
-	//ANIM_NEUTRAL = 0, ANIM_RUN = 1, ANIM_WINDUP = 2, ANIM_SLASH = 3
+	//ANIM_NEUTRAL = 0, ANIM_RUN = 1, ANIM_WINDUP = 2, ANIM_SLASH = 3, ANIM_SPIN_START = 4, ANIM_SPINNING = 5, ANIM_SPIN_STOP = 6
 	public static final Pose[] POSES = {new Pose(),
 			new Pose().lowerBody(-30, 0, 0).upperBody(10, 0, 0).head(20, 0, 0).rightArm(0, 0, 30).rightForearm(40, 0, 0).leftArm(0, 0, -30).leftForearm(40, 0, 0),
 			new Pose().lowerBody(10, 0, 0).upperBody(10, 0, 0).lockHead().rightArm(120, 20, 0).rightForearm(40, 0, 0).leftArm(120, -20, 0).leftForearm(40, 0, 0),
-			new Pose().lowerBody(-35, 0, 0).upperBody(-15, 0, 0).lockHead().rightArm(60, 15, 0).leftArm(60, -15, 0)
+			new Pose().lowerBody(-35, 0, 0).upperBody(-15, 0, 0).lockHead().rightArm(60, 15, 0).leftArm(60, -15, 0),
+			new Pose().lowerBody(-15, 0, 0).rightArm(0, 0, 90).leftArm(0, 0, -90).lockHead(),
+			new Pose().lowerBody(-50, 0, 0).rightArm(0, 0, 90).leftArm(0, 0, -90).lockHead(),
+			new Pose().rightArm(0, 0, 90).leftArm(0, 0, -90).lockHead()
 			};
 
 	public SaberSentryModel(ModelPart root) {
@@ -82,6 +85,7 @@ public class SaberSentryModel extends EntityModel<SaberSentryEntity> {
 	public void prepareMobModel(SaberSentryEntity entity, float limbSwing, float limbSwingAmount, float partialTick) {
 		//the super is empty
 		animProgress = entity.getAnimProgress(partialTick);
+		spinAmount = entity.getSpinAngle(partialTick);
 		anim = POSES[entity.clientAnim];
 		prevAnim = POSES[entity.prevAnim];
 		if (entity.clientAnim == SaberSentryEntity.ANIM_SLASH) animProgress = BPASUtils.easeOutQuad(animProgress);
@@ -135,6 +139,8 @@ public class SaberSentryModel extends EntityModel<SaberSentryEntity> {
 		leftLeg.zRot = Math.min(Mth.abs(rightLeg.xRot)*1/8f, 10*Mth.DEG_TO_RAD);
 		
 		anim.interpolate(this, prevAnim, animProgress);
+		//Upper body y rotation reserved for spinnin
+		upperBody.yRot = spinAmount * Mth.DEG_TO_RAD;
 	}
 
 	@Override

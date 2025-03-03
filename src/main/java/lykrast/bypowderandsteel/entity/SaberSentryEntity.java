@@ -5,6 +5,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.EntityType;
@@ -24,13 +25,20 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
 
 public class SaberSentryEntity extends AnimatedMonster {
 	//animations
-	public static final int ANIM_NEUTRAL = 0, ANIM_RUN = 1, ANIM_WINDUP = 2, ANIM_SLASH = 3;
+	public static final int ANIM_NEUTRAL = 0, ANIM_RUN = 1, ANIM_WINDUP = 2, ANIM_SLASH = 3, ANIM_SPIN_START = 4, ANIM_SPINNING = 5, ANIM_SPIN_STOP = 6;
+	public int spinTime;
+	public float spinAngle, spinPrev;
 
 	public SaberSentryEntity(EntityType<? extends SaberSentryEntity> type, Level world) {
 		super(type, world);
+		spinTime = 0;
+		spinAngle = 0;
+		spinPrev = 0;
 	}
 
 	@Override
@@ -46,13 +54,88 @@ public class SaberSentryEntity extends AnimatedMonster {
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
-		return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 30).add(Attributes.ARMOR, 12).add(Attributes.ATTACK_DAMAGE, 10).add(Attributes.MOVEMENT_SPEED, 0.26);
+		return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 30).add(Attributes.ARMOR, 12).add(Attributes.ATTACK_DAMAGE, 8).add(Attributes.MOVEMENT_SPEED, 0.26);
 	}
 
 	@Override
 	protected void setupNewAnimation() {
 		if (clientAnim == ANIM_SLASH) animDur = 3;
+		else if (clientAnim == ANIM_SPIN_START) animDur = 5;
 		else animDur = 10;
+	}
+
+	@Override
+	public void tick() {
+		super.tick();
+
+		if (level().isClientSide()) {
+			//same spin logic as dame fortuna
+			spinPrev = spinAngle;
+			if (clientAnim == ANIM_SPINNING) {
+				//spinning up
+				if (spinTime < 20) {
+					spinTime++;
+					//keep spin angle at 0 to know our offset when we spin down
+				}
+				//stable spinning
+				else {
+					spinAngle += 36;
+					if (spinAngle >= 360) spinAngle = 0;
+				}
+			}
+			else {
+				if (spinAngle > 0) {
+					//finish our full turn 
+					spinAngle += 36;
+					if (spinAngle >= 360) spinAngle = 0;
+				}
+				else if (spinTime > 0) {
+					spinTime--;
+				}
+			}
+		}
+	}
+
+//	@SuppressWarnings("resource")
+//	@Override
+//	public void aiStep() {
+//		//Blaze particles for debug
+//		if (level().isClientSide) {
+//			AABB hitbox = getHitbox();
+//			level().addParticle(ParticleTypes.CRIT, hitbox.minX, hitbox.minY, hitbox.minZ, 0, 0, 0);
+//			level().addParticle(ParticleTypes.CRIT, hitbox.minX, hitbox.minY, hitbox.maxZ, 0, 0, 0);
+//			level().addParticle(ParticleTypes.CRIT, hitbox.minX, hitbox.maxY, hitbox.minZ, 0, 0, 0);
+//			level().addParticle(ParticleTypes.CRIT, hitbox.minX, hitbox.maxY, hitbox.maxZ, 0, 0, 0);
+//			level().addParticle(ParticleTypes.CRIT, hitbox.maxX, hitbox.minY, hitbox.minZ, 0, 0, 0);
+//			level().addParticle(ParticleTypes.CRIT, hitbox.maxX, hitbox.minY, hitbox.maxZ, 0, 0, 0);
+//			level().addParticle(ParticleTypes.CRIT, hitbox.maxX, hitbox.maxY, hitbox.minZ, 0, 0, 0);
+//			level().addParticle(ParticleTypes.CRIT, hitbox.maxX, hitbox.maxY, hitbox.maxZ, 0, 0, 0);
+//		}
+//
+//		super.aiStep();
+//	}
+	
+	private float getEasedSpin(float progress) {
+		//0.9x^2 means we spin a full 360° after 10 ticks
+		//and derivative at x = 10 is 36, matching the constant speed rate when stable
+		return 0.9f*progress*progress;
+	}
+	
+	public float getSpinAngle(float partial) {
+		if (clientAnim == ANIM_SPINNING) {
+			//spinning up
+			if (spinTime < 20) return getEasedSpin(spinTime + partial);
+			//stable spin
+			else return Mth.rotLerp(partial, spinPrev, spinAngle);
+		}
+		//spinning down
+		else {
+			//finishing the turn
+			if (spinAngle > 0) return Mth.rotLerp(partial, spinPrev, spinAngle);
+			//actual spin down
+			else if (spinTime > 0) return 360-getEasedSpin(spinTime - partial);
+			else return 0;
+		}
 	}
 
 	@Override
@@ -91,13 +174,24 @@ public class SaberSentryEntity extends AnimatedMonster {
 	protected void playStepSound(BlockPos pos, BlockState state) {
 		this.playSound(SoundEvents.IRON_GOLEM_STEP, 0.15F, 1);
 	}
+	
+	public void swing() {
+		//on the model it's like reaching 1 block in front and to either side, so move 1 block in front and extend by 0.5
+		//and since the model is scaled by 1.5, 0.75 on either side
+		//but it's mostly eyeballed here
+		AABB hitbox = getBoundingBox().inflate(0.75, 0, 0.75).move(Vec3.directionFromRotation(0, getYRot()));
+        for(LivingEntity entity : level().getEntitiesOfClass(LivingEntity.class, hitbox)) {
+        	if (!(entity instanceof SaberSentryEntity) && entity.isAlive()) doHurtTarget(entity);
+        }
+	}
 
-	//kinda all janky for now but should be a good placeholder until I do proper chase and spin attack
-	//TODO do my own so I have proper control
 	private static class ChaseAndSwing extends MeleeAttackGoal {
 		private SaberSentryEntity sentry;
-		//0 approach, 1 windup, 2 recover
+		//0 approach, 1 windup, 2 recover, 3 start spin, 4 spinning, 5 recovering spin
 		private int phase;
+		//ticksUntilNextAttack is private so I'm making my own countdown
+		private int time;
+		//TODO THE SPEED MODIFIER IS PRIVAAAATE have to actually copy the logic to redo it
 
 		public ChaseAndSwing(SaberSentryEntity sentry, double speed, boolean seeThroughWalls) {
 			super(sentry, speed, seeThroughWalls);
@@ -109,6 +203,7 @@ public class SaberSentryEntity extends AnimatedMonster {
 			super.start();
 			sentry.setAnimation(ANIM_RUN);
 			phase = 0;
+			time = 0;
 		}
 
 		@Override
@@ -118,40 +213,104 @@ public class SaberSentryEntity extends AnimatedMonster {
 		}
 
 		@Override
+		public void tick() {
+			if (time > 0) time--;
+			//stop spinning if target is dead
+			if (phase == 4 && (sentry.getTarget() == null || !sentry.getTarget().isAlive())) {
+				sentry.setAnimation(ANIM_SPIN_STOP);
+				phase = 5;
+				time = 20;
+			}
+			super.tick();
+		}
+
+		@Override
 		protected void checkAndPerformAttack(LivingEntity target, double distanceSqr) {
-			if (phase == 0) {
-				if (distanceSqr < 9) {
-					sentry.setAnimation(ANIM_WINDUP);
-					resetAttackCooldown();
-					phase = 1;
-				}
-			}
-			else if (phase == 1) {
-				if (distanceSqr > 16) {
-					sentry.setAnimation(ANIM_RUN);
-					phase = 0;
-				}
-				else if (getTicksUntilNextAttack() <= 0 && distanceSqr <= getAttackReachSqr(target)) {
-					sentry.setAnimation(ANIM_SLASH);
-					sentry.doHurtTarget(target);
-					resetAttackCooldown();
-					phase = 2;
-				}
-			}
-			else if (phase == 2) {
-				if (getTicksUntilNextAttack() <= 0) {
-					sentry.setAnimation(ANIM_RUN);
-					phase = 0;
-				}
-				else {
-					sentry.getNavigation().stop();
-				}
+			//this is only called when target is alive, so we do the transition animations above
+			switch (phase) {
+				case 0:
+					//running at target
+					if (distanceSqr < 9) {
+						//raise arms to prepare attack, with a minimum time
+						sentry.setAnimation(ANIM_WINDUP);
+						phase = 1;
+						time = 20;
+					}
+					break;
+				case 1:
+					//arms raised
+					if (distanceSqr > 16) {
+						//target too far, return to run animation
+						sentry.setAnimation(ANIM_RUN);
+						phase = 0;
+					}
+					else if (time <= 0 && distanceSqr <= 4) {
+						//swing!
+						//sentry.setAnimation(ANIM_SLASH);
+						time = 15;
+						phase = 2;
+					}
+					break;
+				case 2:
+					//swinging
+					if (time <= 0) {
+						//recovery animation done, spin if near, run if far
+						if (distanceSqr < 16) {
+							sentry.setAnimation(ANIM_SPIN_START);
+							phase = 3;
+							time = 7;
+							sentry.getNavigation().stop();
+						}
+						else {
+							sentry.setAnimation(ANIM_RUN);
+							phase = 0;
+						}
+					}
+					else {
+						//recovery animation
+						sentry.getNavigation().stop();
+						//and strike when animation is done
+						if (time == 13) sentry.setAnimation(ANIM_SLASH);
+						else if (time == 10) sentry.swing();
+					}
+					break;
+				case 3:
+					//starting to spin
+					if (time <= 0) {
+						sentry.setAnimation(ANIM_SPINNING);
+						phase = 4;
+						time = 5;
+					}
+					else sentry.getNavigation().stop();
+					break;
+				case 4:
+					//spinning
+					if (time <= 0) {
+						//strike every 5 ticks (180°)
+						sentry.swing();
+						//if target is too far, stop spinning
+						if (distanceSqr > 25) {
+							sentry.setAnimation(ANIM_SPIN_STOP);
+							phase = 5;
+							time = 20;
+						}
+						else time = 5;
+					}
+					break;
+				case 5:
+					//stopping spin, resume chase when done
+					if (time <= 0) {
+						sentry.setAnimation(ANIM_RUN);
+						phase = 0;
+					}
+					else sentry.getNavigation().stop();
+					break;
 			}
 		}
 
 		@Override
 		public boolean canContinueToUse() {
-			if ((phase == 2 || phase == 1) && getTicksUntilNextAttack() > 0) return true;
+			if (phase > 0 && time > 0) return true;
 			return super.canContinueToUse();
 		}
 	}
