@@ -20,7 +20,7 @@ public class BPASEntities {
 	public static RegistryObject<EntityType<CowbonesEntity>> cowbones;
 	public static RegistryObject<EntityType<ZombieSealEntity>> zombieSeal;
 	public static RegistryObject<EntityType<SaberSentryEntity>> sabersentry;
-	public static RegistryObject<EntityType<MechaminatorEntity>> mechaminator;
+	public static RegistryObject<EntityType<BlasterSentryEntity>> blastersentry;
 	//mob projectiles
 	public static RegistryObject<EntityType<ShrubsnapperFangEntity>> shrubsnapperFang;
 	//custom bullets
@@ -33,7 +33,7 @@ public class BPASEntities {
 		cowbones = REG.register("cowbones", () -> EntityType.Builder.of(CowbonesEntity::new, MobCategory.MONSTER).sized(0.6F, 1.99F).clientTrackingRange(8).build(""));
 		zombieSeal = REG.register("zombie_seal", () -> EntityType.Builder.of(ZombieSealEntity::new, MobCategory.MONSTER).sized(0.6F, 1.99F).clientTrackingRange(8).build(""));
 		sabersentry = REG.register("sabersentry", () -> EntityType.Builder.of(SaberSentryEntity::new, MobCategory.MONSTER).sized(0.9F, 3.3F).clientTrackingRange(8).build(""));
-		mechaminator = REG.register("mechaminator", () -> EntityType.Builder.of(MechaminatorEntity::new, MobCategory.MONSTER).sized(0.75F, 1.99F).clientTrackingRange(8).build(""));
+		blastersentry = REG.register("blastersentry", () -> EntityType.Builder.of(BlasterSentryEntity::new, MobCategory.MONSTER).sized(0.75F, 1.99F).clientTrackingRange(8).build(""));
 		
 		//mob projectiles
 		//I dunno why this one bein dum dum with the types
@@ -51,7 +51,7 @@ public class BPASEntities {
 		event.put(cowbones.get(), CowbonesEntity.createAttributes().build());
 		event.put(zombieSeal.get(), ZombieSealEntity.createAttributes().build());
 		event.put(sabersentry.get(), SaberSentryEntity.createAttributes().build());
-		event.put(mechaminator.get(), MechaminatorEntity.createAttributes().build());
+		event.put(blastersentry.get(), BlasterSentryEntity.createAttributes().build());
 	}
 
 }

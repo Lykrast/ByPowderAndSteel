@@ -4,7 +4,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 
 import lykrast.bypowderandsteel.ByPowderAndSteel;
-import lykrast.bypowderandsteel.entity.MechaminatorEntity;
+import lykrast.bypowderandsteel.entity.BlasterSentryEntity;
 import net.minecraft.client.model.ArmedModel;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
@@ -18,12 +18,12 @@ import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.HumanoidArm;
 
-public class MechaminatorModel extends EntityModel<MechaminatorEntity> implements ArmedModel {
+public class BlasterSentryModel extends EntityModel<BlasterSentryEntity> implements ArmedModel {
 	// Made with Blockbench 4.1.5 then adjusted later for animations and shit
-	public static final ModelLayerLocation MODEL = new ModelLayerLocation(ByPowderAndSteel.rl("mechaminator"), "main");
+	public static final ModelLayerLocation MODEL = new ModelLayerLocation(ByPowderAndSteel.rl("blastersentry"), "main");
 	private final ModelPart base, body, head, eye, arm;
 
-	public MechaminatorModel(ModelPart root) {
+	public BlasterSentryModel(ModelPart root) {
 		base = root.getChild("base");
 		body = root.getChild("body");
 		head = root.getChild("head");
@@ -59,7 +59,7 @@ public class MechaminatorModel extends EntityModel<MechaminatorEntity> implement
 	}
 
 	@Override
-	public void setupAnim(MechaminatorEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+	public void setupAnim(BlasterSentryEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 		//Mostly adapted from HumanoidModel
 		boolean falling = entity.getFallFlyingTicks() > 4;
 		head.yRot = netHeadYaw * Mth.DEG_TO_RAD;

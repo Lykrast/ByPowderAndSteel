@@ -39,9 +39,9 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class MechaminatorEntity extends Monster implements GunMob {
+public class BlasterSentryEntity extends Monster implements GunMob {
 
-	public MechaminatorEntity(EntityType<? extends MechaminatorEntity> type, Level world) {
+	public BlasterSentryEntity(EntityType<? extends BlasterSentryEntity> type, Level world) {
 		super(type, world);
 	}
 
@@ -96,7 +96,7 @@ public class MechaminatorEntity extends Monster implements GunMob {
 	
 	@Override
 	protected ResourceLocation getDefaultLootTable() {
-		return ByPowderAndSteel.rl("entities/mechaminator");
+		return ByPowderAndSteel.rl("entities/blastersentry");
 	}
 
 	@Override
