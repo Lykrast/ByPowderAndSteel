@@ -3,8 +3,8 @@
 	"biomes": "#bypowderandsteel:has_sentry",
 	"spawners": {
 		"type": "bypowderandsteel:sabersentry",
-		"weight": 60,
+		"weight": 75,
 		"minCount": 2,
-		"maxCount": 3
+		"maxCount": 4
 	}
 }
