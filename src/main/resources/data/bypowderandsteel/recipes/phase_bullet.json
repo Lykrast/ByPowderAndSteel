@@ -1,0 +1,15 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{ "item": "bypowderandsteel:damaged_device" },
+		{ "item": "bypowderandsteel:damaged_device" },
+		{ "item": "bypowderandsteel:damaged_device" },
+		{ "item": "bypowderandsteel:damaged_device" },
+		{ "tag": "forge:dusts/redstone" },
+		{ "tag": "forge:dusts/redstone" },
+		{ "tag": "forge:dusts/redstone" },
+		{ "tag": "forge:dusts/redstone" },
+		{ "tag": "forge:gunpowder" }
+	],
+	"result": { "item": "bypowderandsteel:phase_bullet", "count": 32 }
+}
