@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"MMF",
+		"GAH",
+		"M H"
+	],
+	"key": {
+		"A": { "item": "bypowderandsteel:assembly_basic" },
+		"F": { "item": "minecraft:flint" },
+		"G": { "tag": "forge:ingots/gunsteel" },
+		"M": { "item": "bypowderandsteel:cowbones_horn" },
+		"H": { "tag": "forge:leather" }
+	},
+	"result": { "item": "bypowderandsteel:desert_shotgun" }
+}

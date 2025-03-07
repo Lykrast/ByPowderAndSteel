@@ -1,0 +1,15 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"MMF",
+		"MAH",
+		"  H"
+	],
+	"key": {
+		"A": { "item": "bypowderandsteel:assembly_basic" },
+		"F": { "item": "minecraft:flint" },
+		"M": { "item": "bypowderandsteel:cowbones_horn" },
+		"H": { "tag": "forge:leather" }
+	},
+	"result": { "item": "bypowderandsteel:desert_revolver" }
+}
