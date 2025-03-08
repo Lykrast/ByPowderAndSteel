@@ -48,6 +48,14 @@
 	"block.bypowderandsteel.living_herb_sack": "Sack of Living Herb",
 	"block.bypowderandsteel.living_herb_block": "Living Herb Block",
 
+	"block.bypowderandsteel.cowbones_horn_crate": "Crate of Cowbones Horns",
+	"block.bypowderandsteel.bovony": "Bovony",
+	"block.bypowderandsteel.bovony_tiles_big": "Big Bovony tiles",
+	"block.bypowderandsteel.bovony_tiles": "Bovony Tiles",
+	"block.bypowderandsteel.bovony_bricks": "Bovony Bricks",
+	"block.bypowderandsteel.bovony_chiseled": "Chiseled Bovony",
+	"block.bypowderandsteel.bovony_pillar": "Bovony Pillar",
+
 	"block.bypowderandsteel.milspec_ice_crate": "Crate of Milspec Ice",
 	"block.bypowderandsteel.milspec_ice_block": "Block of Milspec Ice",
 	"block.bypowderandsteel.milspec_ice_bricks": "Milspec Ice Bricks",

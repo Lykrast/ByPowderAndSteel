@@ -1,0 +1,11 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"##",
+		"##"
+	],
+	"key": {
+		"#": { "item": "bypowderandsteel:cowbones_horn" }
+	},
+	"result": { "item": "bypowderandsteel:bovony" }
+}

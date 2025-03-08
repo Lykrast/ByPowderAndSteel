@@ -1,0 +1,8 @@
+{
+	"parent": "minecraft:block/cube_bottom_top",
+	"textures": {
+		"bottom": "bypowderandsteel:block/cowbones_horn_crate_bottom",
+		"side": "bypowderandsteel:block/cowbones_horn_crate_side",
+		"top": "bypowderandsteel:block/cowbones_horn_crate_top"
+	}
+}

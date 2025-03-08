@@ -28,6 +28,8 @@ public class BPASBlocks {
 	public static RegistryObject<Block> livingHerbSack;
 	public static RegistryObject<Block> livingHerb;
 	//desert
+	public static RegistryObject<Block> cowbonesHornCrate;
+	public static RegistryObject<Block> bovony, bovonyTilesBig, bovonyTiles, bovonyBricks, bovonyChiseled, bovonyPillar;
 	//tundra
 	public static RegistryObject<Block> milspecIceCrate;
 	public static RegistryObject<Block> milspecIceBlock, milspecIceBricks, milspecIceTiles, milspecIceChiseled, milspecIcePillar;
@@ -51,6 +53,14 @@ public class BPASBlocks {
 		
 		livingHerbSack = makeBlock("living_herb_sack", () -> new Block(Block.Properties.copy(Blocks.GREEN_WOOL)));
 		livingHerb = makeBlock("living_herb_block", () -> new Block(Block.Properties.copy(Blocks.MOSS_BLOCK)));
+		
+		cowbonesHornCrate = makeBlock("cowbones_horn_crate", () -> new Block(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
+		bovony = makeBlock("bovony", () -> new Block(Block.Properties.copy(Blocks.TUFF).mapColor(MapColor.TERRACOTTA_BLACK)));
+		bovonyTilesBig = makeBlock("bovony_tiles_big", () -> new Block(Block.Properties.copy(bovony.get())));
+		bovonyTiles = makeBlock("bovony_tiles", () -> new Block(Block.Properties.copy(bovony.get())));
+		bovonyBricks = makeBlock("bovony_bricks", () -> new Block(Block.Properties.copy(bovony.get())));
+		bovonyChiseled = makeBlock("bovony_chiseled", () -> new Block(Block.Properties.copy(bovony.get())));
+		bovonyPillar = makeBlock("bovony_pillar", () -> new RotatedPillarBlock(Block.Properties.copy(bovony.get())));
 		
 		milspecIceCrate = makeBlock("milspec_ice_crate", () -> new Block(Block.Properties.copy(Blocks.DARK_OAK_PLANKS)));
 		milspecIceBlock = makeBlock("milspec_ice_block", () -> new Block(Block.Properties.copy(Blocks.BRICKS).mapColor(MapColor.ICE).sound(SoundType.GLASS).instrument(NoteBlockInstrument.CHIME)));

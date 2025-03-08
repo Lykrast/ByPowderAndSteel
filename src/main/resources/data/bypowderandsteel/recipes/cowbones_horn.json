@@ -1,0 +1,7 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{ "item": "bypowderandsteel:cowbones_horn_crate" }
+	],
+	"result": { "item": "bypowderandsteel:cowbones_horn", "count": 9 }
+}

@@ -1,0 +1,11 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"##",
+		"##"
+	],
+	"key": {
+		"#": { "item": "bypowderandsteel:bovony_tiles_big" }
+	},
+	"result": { "item": "bypowderandsteel:bovony_tiles", "count": 4 }
+}

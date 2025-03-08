@@ -1,0 +1,7 @@
+{
+	"parent": "minecraft:block/cube_column",
+	"textures": {
+		"end": "bypowderandsteel:block/bovony_pillar_top",
+		"side": "bypowderandsteel:block/bovony_pillar_side"
+	}
+}
