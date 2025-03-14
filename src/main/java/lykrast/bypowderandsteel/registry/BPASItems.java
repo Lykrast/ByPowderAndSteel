@@ -2,6 +2,7 @@ package lykrast.bypowderandsteel.registry;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.function.Supplier;
 
 import lykrast.bypowderandsteel.ByPowderAndSteel;
@@ -14,8 +15,11 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -31,13 +35,15 @@ public class BPASItems {
 	public static final DeferredRegister<Item> REG = DeferredRegister.create(ForgeRegistries.ITEMS, ByPowderAndSteel.MODID);
 	public static RegistryObject<GunItem> gunsteelGun, peashooter, cornGatling, desertRevolver, desertShotgun, arcticPistol, arcticSniper, raygun;
 	public static RegistryObject<BulletItem> gunsteelBullet, caliberry, caliberryLarge, phaseBullet;
+	public static ArmorMaterial marauder;
+	public static RegistryObject<ArmorItem> marauderHelmet, marauderChestplate, marauderLeggings, marauderBoots;
 	public static RegistryObject<Item> gunomeEgg, shrubhulkEgg, shrubsnapperEgg, cowbonesEgg, zombieSealEgg, sabersentryEgg, blastersentryEgg;
 	public static RegistryObject<Item> gunsteelScrap, gunsteelIngot, gunsteelNugget, assemblyBasic;
 	//forest
 	public static RegistryObject<Item> caliberryGrilled, caliberrySlice, caliberrySliceGrilled, caliberryHoney, caliberryIce;
 	public static RegistryObject<Item> livingHerb;
 	//desert
-	public static RegistryObject<Item> cowbonesHorn;
+	public static RegistryObject<Item> cowbonesHorn, marauderPatch;
 	//tundra
 	public static RegistryObject<Item> milspecIce, milspecIceGrilled;
 	//underground
@@ -78,6 +84,18 @@ public class BPASItems {
 		caliberryLarge = initItem(() -> new KnockbackBulletItem(defP().food(food(4, 0.6)), 6, 2), "caliberry_large");
 		phaseBullet = initItem(() -> new SlowBulletItem(defP(), 8), "phase_bullet");
 		
+		//Armor
+		//TODO sounds
+		marauder = new CustomArmorMaterial("marauder", 7, Map.of(
+				ArmorItem.Type.HELMET, 1,
+				ArmorItem.Type.CHESTPLATE, 3,
+				ArmorItem.Type.LEGGINGS, 2,
+				ArmorItem.Type.BOOTS, 1), 20, () -> SoundEvents.ARMOR_EQUIP_LEATHER, () -> marauderPatch.get(), 0, 0);
+		marauderHelmet = initItem(() -> new ArmorItem(marauder, ArmorItem.Type.HELMET, defP()), "marauder_helmet");
+		marauderChestplate = initItem(() -> new ArmorItem(marauder, ArmorItem.Type.CHESTPLATE, defP()), "marauder_chestplate");
+		marauderLeggings = initItem(() -> new ArmorItem(marauder, ArmorItem.Type.LEGGINGS, defP()), "marauder_leggings");
+		marauderBoots = initItem(() -> new ArmorItem(marauder, ArmorItem.Type.BOOTS, defP()), "marauder_boots");
+		
 		//Spawn Eggs
 		gunomeEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.gunome, 0x1F6878, 0xDB2F4C, defP()), "gunome_spawn_egg");
 		shrubhulkEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.shrubhulk, 0x67A124, 0x4A381E, defP()), "shrubhulk_spawn_egg");
@@ -102,6 +120,7 @@ public class BPASItems {
 		livingHerb = initItem(() -> new Item(defP()), "living_herb");
 		
 		cowbonesHorn = initItem(() -> new Item(defP()), "cowbones_horn");
+		marauderPatch = initItem(() -> new Item(defP()), "marauder_patch");
 		
 		milspecIce = initItem(() -> new Item(defP()), "milspec_ice");
 		milspecIceGrilled = initItem(() -> new Item(defP().food(food(4, 0.4))), "milspec_ice_grilled");
