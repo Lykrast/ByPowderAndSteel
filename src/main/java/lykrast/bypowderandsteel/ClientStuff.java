@@ -32,6 +32,7 @@ public class ClientStuff {
 		event.registerEntityRenderer(BPASEntities.sabersentry.get(), (context) -> new SaberSentryRenderer(context));
 		event.registerEntityRenderer(BPASEntities.blastersentry.get(), (context) -> new BlasterSentryRenderer(context));
 		//nether
+		event.registerEntityRenderer(BPASEntities.gunnubusCrimson.get(), (context) -> new GunnubusCrimsonRenderer(context));
 		//end
 		//mob projectiles
 		event.registerEntityRenderer(BPASEntities.shrubsnapperFang.get(), (context) -> new ShrubsnapperFangRenderer(context));
@@ -41,18 +42,27 @@ public class ClientStuff {
 
 	@SubscribeEvent
 	public static void registerLayer(EntityRenderersEvent.RegisterLayerDefinitions event) {
+		//forest
 		event.registerLayerDefinition(GunomeModel.MODEL, () -> GunomeModel.createBodyLayer());
 		event.registerLayerDefinition(ShrubhulkModel.MODEL, () -> ShrubhulkModel.createBodyLayer());
 		event.registerLayerDefinition(ShrubsnapperModel.MODEL, () -> ShrubsnapperModel.createBodyLayer());
+		//desert
 		event.registerLayerDefinition(CowbonesModel.MODEL, () -> CowbonesModel.createBodyLayer());
     	event.registerLayerDefinition(CowbonesModel.OVERLAY, () -> LayerDefinition.create(HumanoidModel.createMesh(new CubeDeformation(0.25f), 0), 64, 32));
     	event.registerLayerDefinition(CowbonesModel.INNER_ARMOR, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.INNER_ARMOR_DEFORMATION), 64, 32));
     	event.registerLayerDefinition(CowbonesModel.OUTER_ARMOR, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 32));
+    	//tundra
 		event.registerLayerDefinition(ZombieSealModel.MODEL, () -> ZombieSealModel.createBodyLayer());
     	event.registerLayerDefinition(ZombieSealModel.INNER_ARMOR, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.INNER_ARMOR_DEFORMATION), 64, 32));
     	event.registerLayerDefinition(ZombieSealModel.OUTER_ARMOR, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 32));
+    	//underground
 		event.registerLayerDefinition(SaberSentryModel.MODEL, () -> SaberSentryModel.createBodyLayer());
 		event.registerLayerDefinition(BlasterSentryModel.MODEL, () -> BlasterSentryModel.createBodyLayer());
+		//nether
+		event.registerLayerDefinition(GunnubusModel.MODEL, () -> GunnubusModel.createBodyLayer());
+    	event.registerLayerDefinition(GunnubusModel.INNER_ARMOR, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.INNER_ARMOR_DEFORMATION), 64, 32));
+    	event.registerLayerDefinition(GunnubusModel.OUTER_ARMOR, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 32));
+		//end
     	//projectiles
 		event.registerLayerDefinition(ShrubsnapperFangRenderer.MODEL, () -> EvokerFangsModel.createBodyLayer());
 	}

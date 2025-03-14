@@ -37,7 +37,7 @@ public class BPASItems {
 	public static RegistryObject<BulletItem> gunsteelBullet, caliberry, caliberryLarge, phaseBullet;
 	public static ArmorMaterial marauder;
 	public static RegistryObject<ArmorItem> marauderHelmet, marauderChestplate, marauderLeggings, marauderBoots;
-	public static RegistryObject<Item> gunomeEgg, shrubhulkEgg, shrubsnapperEgg, cowbonesEgg, zombieSealEgg, sabersentryEgg, blastersentryEgg;
+	public static RegistryObject<Item> gunomeEgg, shrubhulkEgg, shrubsnapperEgg, cowbonesEgg, zombieSealEgg, sabersentryEgg, blastersentryEgg, gunnubusCrimsonEgg;
 	public static RegistryObject<Item> gunsteelScrap, gunsteelIngot, gunsteelNugget, assemblyBasic;
 	//forest
 	public static RegistryObject<Item> caliberryGrilled, caliberrySlice, caliberrySliceGrilled, caliberryHoney, caliberryIce;
@@ -104,6 +104,7 @@ public class BPASItems {
 		cowbonesEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.cowbones, 0xEED9B3, 0x994141, defP()), "cowbones_spawn_egg");
 		sabersentryEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.sabersentry, 0xF4F4E1, 0x383635, defP()), "sabersentry_spawn_egg");
 		blastersentryEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.blastersentry, 0xAAA7A6, 0xF74572, defP()), "blastersentry_spawn_egg");
+		gunnubusCrimsonEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.gunnubusCrimson, 0xDB5952, 0x4F4A47, defP()), "gunnubus_crimson_spawn_egg");
 		
 		//Materials
 		gunsteelScrap = initItem(() -> new Item(defP()), "gunsteel_scrap");

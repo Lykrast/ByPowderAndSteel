@@ -1,0 +1,10 @@
+{
+	"type": "forge:add_spawns",
+	"biomes": "#bypowderandsteel:has_gunnubus_crimson",
+	"spawners": {
+		"type": "bypowderandsteel:gunnubus_crimson",
+		"weight": 2,
+		"minCount": 2,
+		"maxCount": 4
+	}
+}
