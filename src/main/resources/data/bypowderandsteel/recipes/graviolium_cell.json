@@ -1,0 +1,7 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{ "item": "bypowderandsteel:graviolium_tank" }
+	],
+	"result": { "item": "bypowderandsteel:graviolium_cell", "count": 9 }
+}

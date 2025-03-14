@@ -36,6 +36,7 @@ public class BPASBlocks {
 	//underground
 	//nether
 	//end
+	public static RegistryObject<Block> gravioliumTank;
 
 	public static List<RegistryObject<? extends Item>> orderedBlockItems = new ArrayList<>();
 	
@@ -68,6 +69,8 @@ public class BPASBlocks {
 		milspecIceTiles = makeBlock("milspec_ice_tiles", () -> new Block(Block.Properties.copy(milspecIceBlock.get())));
 		milspecIceChiseled = makeBlock("milspec_ice_chiseled", () -> new Block(Block.Properties.copy(milspecIceBlock.get())));
 		milspecIcePillar = makeBlock("milspec_ice_pillar", () -> new RotatedPillarBlock(Block.Properties.copy(milspecIceBlock.get())));
+		
+		gravioliumTank = makeBlock("graviolium_tank", () -> new RotatedPillarBlock(Block.Properties.copy(Blocks.IRON_BLOCK)));
 	}
 	
 	private static RegistryObject<Block> makeBlock(String name, Supplier<Block> block) {

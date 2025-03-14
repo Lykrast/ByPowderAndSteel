@@ -5,11 +5,18 @@
 		"bypowderandsteel:gunsteel_bricks",
 		"bypowderandsteel:gunsteel_chiseled",
 		"bypowderandsteel:gunsteel_pillar",
+		"bypowderandsteel:gunsteel_lamp",
+		"bypowderandsteel:bovony",
+		"bypowderandsteel:bovony_tiles_big",
+		"bypowderandsteel:bovony_tiles",
+		"bypowderandsteel:bovony_bricks",
+		"bypowderandsteel:bovony_chiseled",
+		"bypowderandsteel:bovony_pillar",
 		"bypowderandsteel:milspec_ice_block",
 		"bypowderandsteel:milspec_ice_bricks",
-		"bypowderandsteel:gunsteel_lamp",
 		"bypowderandsteel:milspec_ice_tiles",
 		"bypowderandsteel:milspec_ice_chiseled",
-		"bypowderandsteel:milspec_ice_pillar"
+		"bypowderandsteel:milspec_ice_pillar",
+		"bypowderandsteel:graviolium_tank"
 	]
 }
