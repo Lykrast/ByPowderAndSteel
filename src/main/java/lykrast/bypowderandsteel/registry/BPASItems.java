@@ -7,9 +7,11 @@ import java.util.function.Supplier;
 
 import lykrast.bypowderandsteel.ByPowderAndSteel;
 import lykrast.bypowderandsteel.item.*;
+import lykrast.bypowderandsteel.misc.BPASUtils;
 import lykrast.gunswithoutroses.item.BulletItem;
 import lykrast.gunswithoutroses.item.GatlingItem;
 import lykrast.gunswithoutroses.item.GunItem;
+import lykrast.gunswithoutroses.registry.GWRAttributes;
 import lykrast.gunswithoutroses.registry.GWRSounds;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -17,6 +19,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
@@ -91,10 +94,18 @@ public class BPASItems {
 				ArmorItem.Type.CHESTPLATE, 3,
 				ArmorItem.Type.LEGGINGS, 2,
 				ArmorItem.Type.BOOTS, 1), 20, () -> SoundEvents.ARMOR_EQUIP_LEATHER, () -> marauderPatch.get(), 0, 0);
-		marauderHelmet = initItem(() -> new ArmorItem(marauder, ArmorItem.Type.HELMET, defP()), "marauder_helmet");
-		marauderChestplate = initItem(() -> new ArmorItem(marauder, ArmorItem.Type.CHESTPLATE, defP()), "marauder_chestplate");
-		marauderLeggings = initItem(() -> new ArmorItem(marauder, ArmorItem.Type.LEGGINGS, defP()), "marauder_leggings");
-		marauderBoots = initItem(() -> new ArmorItem(marauder, ArmorItem.Type.BOOTS, defP()), "marauder_boots");
+		marauderHelmet = initItem(() -> new AttributeArmorItem(marauder, ArmorItem.Type.HELMET, defP())
+				.attribute(GWRAttributes.dmgBase, new AttributeModifier(BPASUtils.armorUUID(ArmorItem.Type.HELMET), "gundmg", 0.5, AttributeModifier.Operation.ADDITION))
+				.done(), "marauder_helmet");
+		marauderChestplate = initItem(() -> new AttributeArmorItem(marauder, ArmorItem.Type.CHESTPLATE, defP())
+				.attribute(GWRAttributes.dmgBase, new AttributeModifier(BPASUtils.armorUUID(ArmorItem.Type.CHESTPLATE), "gundmg", 1, AttributeModifier.Operation.ADDITION))
+				.done(), "marauder_chestplate");
+		marauderLeggings = initItem(() -> new AttributeArmorItem(marauder, ArmorItem.Type.LEGGINGS, defP())
+				.attribute(GWRAttributes.dmgBase, new AttributeModifier(BPASUtils.armorUUID(ArmorItem.Type.LEGGINGS), "gundmg", 1, AttributeModifier.Operation.ADDITION))
+				.done(), "marauder_leggings");
+		marauderBoots = initItem(() -> new AttributeArmorItem(marauder, ArmorItem.Type.BOOTS, defP())
+				.attribute(GWRAttributes.dmgBase, new AttributeModifier(BPASUtils.armorUUID(ArmorItem.Type.BOOTS), "gundmg", 0.5, AttributeModifier.Operation.ADDITION))
+				.done(), "marauder_boots");
 		
 		//Spawn Eggs
 		gunomeEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.gunome, 0x1F6878, 0xDB2F4C, defP()), "gunome_spawn_egg");
