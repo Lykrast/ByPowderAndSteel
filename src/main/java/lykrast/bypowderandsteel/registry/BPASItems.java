@@ -20,6 +20,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
@@ -38,8 +39,9 @@ public class BPASItems {
 	public static final DeferredRegister<Item> REG = DeferredRegister.create(ForgeRegistries.ITEMS, ByPowderAndSteel.MODID);
 	public static RegistryObject<GunItem> gunsteelGun, peashooter, cornGatling, desertRevolver, desertShotgun, arcticPistol, arcticSniper, raygun;
 	public static RegistryObject<BulletItem> gunsteelBullet, caliberry, caliberryLarge, phaseBullet;
-	public static ArmorMaterial marauder;
+	public static ArmorMaterial marauder, sentry;
 	public static RegistryObject<ArmorItem> marauderHelmet, marauderChestplate, marauderLeggings, marauderBoots;
+	public static RegistryObject<ArmorItem> sentryHelmet, sentryChestplate, sentryLeggings, sentryBoots;
 	public static RegistryObject<Item> gunomeEgg, shrubhulkEgg, shrubsnapperEgg, cowbonesEgg, zombieSealEgg, sabersentryEgg, blastersentryEgg, gunnubusCrimsonEgg;
 	public static RegistryObject<Item> gunsteelScrap, gunsteelIngot, gunsteelNugget, assemblyBasic;
 	//forest
@@ -89,6 +91,7 @@ public class BPASItems {
 		
 		//Armor
 		//TODO sounds
+		//similar to leather
 		marauder = new CustomArmorMaterial("marauder", 7, Map.of(
 				ArmorItem.Type.HELMET, 1,
 				ArmorItem.Type.CHESTPLATE, 3,
@@ -106,6 +109,24 @@ public class BPASItems {
 		marauderBoots = initItem(() -> new AttributeArmorItem(marauder, ArmorItem.Type.BOOTS, defP())
 				.attribute(GWRAttributes.dmgBase, new AttributeModifier(BPASUtils.armorUUID(ArmorItem.Type.BOOTS), "gundmg", 0.5, AttributeModifier.Operation.ADDITION))
 				.done(), "marauder_boots");
+		//similar to iron TODO material
+		sentry = new CustomArmorMaterial("sentry", 17, Map.of(
+				ArmorItem.Type.HELMET, 2,
+				ArmorItem.Type.CHESTPLATE, 6,
+				ArmorItem.Type.LEGGINGS, 5,
+				ArmorItem.Type.BOOTS, 2), 7, () -> SoundEvents.ARMOR_EQUIP_IRON, () -> damagedDevice.get(), 0, 0);
+		sentryHelmet = initItem(() -> new AttributeArmorItem(sentry, ArmorItem.Type.HELMET, defP())
+				.attribute(GWRAttributes.spread, new AttributeModifier(BPASUtils.armorUUID(ArmorItem.Type.HELMET), "gunspread", -0.2, AttributeModifier.Operation.MULTIPLY_TOTAL))
+				.done(), "sentry_helmet");
+		sentryChestplate = initItem(() -> new AttributeArmorItem(sentry, ArmorItem.Type.CHESTPLATE, defP())
+				.attribute(GWRAttributes.chanceUseAmmo, new AttributeModifier(BPASUtils.armorUUID(ArmorItem.Type.CHESTPLATE), "ammosave", -0.2, AttributeModifier.Operation.MULTIPLY_TOTAL))
+				.done(), "sentry_chestplate");
+		sentryLeggings = initItem(() -> new AttributeArmorItem(sentry, ArmorItem.Type.LEGGINGS, defP())
+				.attribute(GWRAttributes.fireDelay, new AttributeModifier(BPASUtils.armorUUID(ArmorItem.Type.LEGGINGS), "gunspd", -0.15, AttributeModifier.Operation.MULTIPLY_TOTAL))
+				.done(), "sentry_leggings");
+		sentryBoots = initItem(() -> new AttributeArmorItem(sentry, ArmorItem.Type.BOOTS, defP())
+				.attribute(Attributes.KNOCKBACK_RESISTANCE, new AttributeModifier(BPASUtils.armorUUID(ArmorItem.Type.BOOTS), "Armor knockback resistance", 0.3, AttributeModifier.Operation.ADDITION))
+				.done(), "sentry_boots");
 		
 		//Spawn Eggs
 		gunomeEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.gunome, 0x1F6878, 0xDB2F4C, defP()), "gunome_spawn_egg");
