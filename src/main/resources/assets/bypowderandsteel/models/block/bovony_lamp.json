@@ -1,0 +1,7 @@
+{
+	"parent": "minecraft:block/cube_column",
+	"textures": {
+		"end": "bypowderandsteel:block/bovony_lamp_top",
+		"side": "bypowderandsteel:block/bovony_lamp_side"
+	}
+}

@@ -1,0 +1,13 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		" # ",
+		"#T#",
+		" # "
+	],
+	"key": {
+		"#": { "item": "bypowderandsteel:cowbones_horn" },
+		"T": { "item": "minecraft:torch" }
+	},
+	"result": { "item": "bypowderandsteel:bovony_lamp" }
+}

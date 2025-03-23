@@ -1,0 +1,16 @@
+{
+	"variants": {
+		"axis=y": {
+			"model": "bypowderandsteel:block/bovony_lamp"
+		},
+		"axis=z": {
+			"model": "bypowderandsteel:block/bovony_lamp",
+			"x": 90
+		},
+		"axis=x": {
+			"model": "bypowderandsteel:block/bovony_lamp",
+			"x": 90,
+			"y": 90
+		}
+	}
+}
