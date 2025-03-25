@@ -1,0 +1,9 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{ "item": "bypowderandsteel:battery_soda" },
+		{ "item": "minecraft:milk_bucket" },
+		{ "item": "bypowderandsteel:milspec_ice" }
+	],
+	"result": { "item": "bypowderandsteel:bilkshake", "count": 2 }
+}

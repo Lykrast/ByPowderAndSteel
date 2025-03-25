@@ -1,0 +1,10 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{ "item": "bypowderandsteel:damaged_device" },
+		{ "tag": "forge:dusts/redstone" },
+		{ "item": "minecraft:sugar" },
+		{ "item": "minecraft:water_bucket" }
+	],
+	"result": { "item": "bypowderandsteel:battery_soda", "count": 4 }
+}

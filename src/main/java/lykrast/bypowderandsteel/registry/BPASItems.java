@@ -52,7 +52,7 @@ public class BPASItems {
 	//tundra
 	public static RegistryObject<Item> milspecIce, milspecIceGrilled;
 	//underground
-	public static RegistryObject<Item> damagedDevice;
+	public static RegistryObject<Item> damagedDevice, batterySoda, bilkshake;
 	//nether
 	public static RegistryObject<Item> heptacle;
 	//end
@@ -159,6 +159,8 @@ public class BPASItems {
 		milspecIceGrilled = initItem(() -> new Item(defP().food(food(4, 0.4))), "milspec_ice_grilled");
 
 		damagedDevice = initItem(() -> new Item(defP()), "damaged_device");
+		batterySoda = initItem(() -> new DrinkItem(defP().food(food(4, 0.4))), "battery_soda");
+		bilkshake = initItem(() -> new BilkshakeItem(defP().food((new FoodProperties.Builder()).nutrition(6).saturationMod((float)0.4).alwaysEat().build())), "bilkshake");
 		
 		heptacle = initItem(() -> new Item(defP()), "heptacle");
 		
