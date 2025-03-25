@@ -1,0 +1,49 @@
+{
+	"variants": {
+		"facing=north,age=0": {
+			"model": "bypowderandsteel:block/caliberry_vine_0"
+		},
+		"facing=south,age=0": {
+			"model": "bypowderandsteel:block/caliberry_vine_0",
+			"y": 180
+		},
+		"facing=west,age=0": {
+			"model": "bypowderandsteel:block/caliberry_vine_0",
+			"y": 270
+		},
+		"facing=east,age=0": {
+			"model": "bypowderandsteel:block/caliberry_vine_0",
+			"y": 90
+		},
+		"facing=north,age=1": {
+			"model": "bypowderandsteel:block/caliberry_vine_1"
+		},
+		"facing=south,age=1": {
+			"model": "bypowderandsteel:block/caliberry_vine_1",
+			"y": 180
+		},
+		"facing=west,age=1": {
+			"model": "bypowderandsteel:block/caliberry_vine_1",
+			"y": 270
+		},
+		"facing=east,age=1": {
+			"model": "bypowderandsteel:block/caliberry_vine_1",
+			"y": 90
+		},
+		"facing=north,age=2": {
+			"model": "bypowderandsteel:block/caliberry_vine_2"
+		},
+		"facing=south,age=2": {
+			"model": "bypowderandsteel:block/caliberry_vine_2",
+			"y": 180
+		},
+		"facing=west,age=2": {
+			"model": "bypowderandsteel:block/caliberry_vine_2",
+			"y": 270
+		},
+		"facing=east,age=2": {
+			"model": "bypowderandsteel:block/caliberry_vine_2",
+			"y": 90
+		}
+	}
+}

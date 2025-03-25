@@ -160,7 +160,7 @@ public class BPASItems {
 
 		damagedDevice = initItem(() -> new Item(defP()), "damaged_device");
 		batterySoda = initItem(() -> new DrinkItem(defP().food(food(4, 0.4))), "battery_soda");
-		bilkshake = initItem(() -> new BilkshakeItem(defP().food((new FoodProperties.Builder()).nutrition(6).saturationMod((float)0.4).alwaysEat().build())), "bilkshake");
+		bilkshake = initItem(() -> new BilkshakeItem(defP().food((new FoodProperties.Builder()).nutrition(6).saturationMod(0.4f).alwaysEat().build())), "bilkshake");
 		
 		heptacle = initItem(() -> new Item(defP()), "heptacle");
 		

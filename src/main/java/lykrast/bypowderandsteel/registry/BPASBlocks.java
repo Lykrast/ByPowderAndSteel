@@ -5,15 +5,17 @@ import java.util.List;
 import java.util.function.Supplier;
 
 import lykrast.bypowderandsteel.ByPowderAndSteel;
-import lykrast.bypowderandsteel.block.OrientablePillarBlock;
+import lykrast.bypowderandsteel.block.*;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -24,7 +26,7 @@ public class BPASBlocks {
 	public static RegistryObject<Block> gunsteelScrapBlock, gunsteelBlock;
 	public static RegistryObject<Block> gunsteelBricks, gunsteelChiseled, gunsteelPillar, gunsteelLamp;
 	//forest
-	public static RegistryObject<Block> caliberrySack;
+	public static RegistryObject<Block> caliberryVine, caliberrySack;
 	public static RegistryObject<Block> livingHerbSack;
 	public static RegistryObject<Block> livingHerb;
 	//desert
@@ -50,6 +52,8 @@ public class BPASBlocks {
 		gunsteelPillar = makeBlock("gunsteel_pillar", () -> new OrientablePillarBlock(Block.Properties.copy(gunsteelBricks.get())));
 		gunsteelLamp = makeBlock("gunsteel_lamp", () -> new Block(Block.Properties.copy(gunsteelBricks.get()).lightLevel((state) -> 15)));
 
+		//like vines but not replaceable
+		caliberryVine = makeBlock("caliberry_vine", () -> new CaliberryVineBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().randomTicks().strength(0.2f).sound(SoundType.VINE).ignitedByLava().pushReaction(PushReaction.DESTROY)));
 		caliberrySack = makeBlock("caliberry_sack", () -> new Block(Block.Properties.copy(Blocks.YELLOW_WOOL)));
 		
 		livingHerbSack = makeBlock("living_herb_sack", () -> new Block(Block.Properties.copy(Blocks.GREEN_WOOL)));

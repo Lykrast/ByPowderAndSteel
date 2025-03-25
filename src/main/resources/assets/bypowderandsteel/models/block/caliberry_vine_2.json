@@ -1,0 +1,8 @@
+{
+	"parent": "minecraft:block/ladder",
+	"render_type": "minecraft:cutout_mipped",
+	"textures": {
+		"particle": "bypowderandsteel:block/caliberry_vine_2",
+		"texture": "bypowderandsteel:block/caliberry_vine_2"
+	}
+}

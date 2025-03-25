@@ -1,0 +1,28 @@
+{
+	"type":"minecraft:block",
+	"functions": [{ "function":"minecraft:explosion_decay" }],
+	"pools":[
+		{
+			"bonus_rolls": 0,
+			"entries": [{
+				"type": "minecraft:item",
+				"name": "bypowderandsteel:caliberry_vine"
+			}],
+			"rolls": 1
+		},
+		{
+			"bonus_rolls": 0,
+			"conditions": [{
+				"block": "bypowderandsteel:caliberry_vine",
+				"condition": "minecraft:block_state_property",
+				"properties": { "age": "2" }
+			}],
+			"entries": [{
+				"type": "minecraft:loot_table",
+				"name": "bypowderandsteel:blocks/caliberry_vine_harvest"
+			}],
+			"rolls": 1
+		}
+	],
+	"random_sequence": "bypowderandsteel:blocks/caliberry_vine"
+}
