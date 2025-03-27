@@ -1,0 +1,13 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"DDD",
+		"GGG",
+		"  G"
+	],
+	"key": {
+		"D": { "tag": "forge:gems/diamond" },
+		"G": { "tag": "forge:ingots/gunsteel" }
+	},
+	"result": { "item": "bypowderandsteel:assembly_diamond" }
+}
