@@ -2,7 +2,10 @@
 	"values": [
 		"bypowderandsteel:gunsteel_gun",
 		"bypowderandsteel:peashooter",
+		"bypowderandsteel:desert_revolver",
 		"bypowderandsteel:arctic_pistol",
+		"bypowderandsteel:buccaneer_flintlock",
+		"bypowderandsteel:buccaneer_cannon",
 		"bypowderandsteel:raygun"
 	]
 }

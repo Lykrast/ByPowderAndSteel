@@ -37,7 +37,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class BPASItems {	
 	public static final DeferredRegister<Item> REG = DeferredRegister.create(ForgeRegistries.ITEMS, ByPowderAndSteel.MODID);
-	public static RegistryObject<GunItem> gunsteelGun, peashooter, cornGatling, desertRevolver, desertShotgun, arcticPistol, arcticSniper, raygun;
+	public static RegistryObject<GunItem> gunsteelGun, peashooter, cornGatling, desertRevolver, desertShotgun, arcticPistol, arcticSniper, buccaneerFlintlock, buccaneerCannon, raygun;
 	public static RegistryObject<BulletItem> gunsteelBullet, caliberry, caliberryLarge, phaseBullet;
 	public static ArmorMaterial marauder, sentry;
 	public static RegistryObject<ArmorItem> marauderHelmet, marauderChestplate, marauderLeggings, marauderBoots;
@@ -51,6 +51,7 @@ public class BPASItems {
 	public static RegistryObject<Item> cowbonesHorn, marauderPatch;
 	//tundra
 	public static RegistryObject<Item> milspecIce, milspecIceGrilled;
+	//ocean
 	//underground
 	public static RegistryObject<Item> damagedDevice, batterySoda, bilkshake;
 	//nether
@@ -81,6 +82,9 @@ public class BPASItems {
 		desertShotgun = initItem(() -> new GunItem(defP().durability(753), 0, 0.5, 18, 6, 14).projectiles(3).fireSound(GWRSounds.shotgun).repair(() -> Ingredient.of(cowbonesHorn.get())), "desert_shotgun");
 		arcticPistol = initItem(() -> new GunItem(defP().durability(630), 1, 1, 18, 1, 8).repair(() -> Ingredient.of(milspecIce.get())), "arctic_pistol");
 		arcticSniper = initItem(() -> new GunItem(defP().durability(630), 2, 1, 24, 0, 8).headshotMult(1.5).fireSound(GWRSounds.sniper).repair(() -> Ingredient.of(milspecIce.get())), "arctic_sniper");
+		//TODO finish up the pirate side
+		buccaneerFlintlock = initItem(() -> new GunItem(defP().durability(687), 2, 1.25, 25, 4, 12).repair(() -> Ingredient.of(cowbonesHorn.get())), "buccaneer_flintlock");
+		buccaneerCannon = initItem(() -> new GunItem(defP().durability(687), 2, 2, 35, 6, 12).fireSound(GWRSounds.shotgun).repair(() -> Ingredient.of(cowbonesHorn.get())), "buccaneer_cannon");
 		raygun = initItem(() -> new RaygunItem(defP().durability(1053), 2, 1, 20, 0.75, 10).repair(() -> Ingredient.of(damagedDevice.get())), "raygun");
 		
 		//Bullets
