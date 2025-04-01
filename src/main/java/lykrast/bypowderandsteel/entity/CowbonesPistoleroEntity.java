@@ -32,13 +32,15 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
-public class CowbonesEntity extends AbstractSkeleton implements GunMob {
-	public CowbonesEntity(EntityType<? extends CowbonesEntity> type, Level world) {
+public class CowbonesPistoleroEntity extends AbstractSkeleton implements GunMob {
+	public CowbonesPistoleroEntity(EntityType<? extends CowbonesPistoleroEntity> type, Level world) {
 		super(type, world);
 	}
 
 	@Override
 	protected void registerGoals() {
+		//TODO I'm not happy with them cause it's almost impossible to dodge their damage
+		//need to find a mitigation, like how gunomes flee when near
 		goalSelector.addGoal(2, new RestrictSunGoal(this));
 		goalSelector.addGoal(3, new FleeSunGoal(this, 1));
 		goalSelector.addGoal(3, new AvoidEntityGoal<>(this, Wolf.class, 6, 1, 1.2));
@@ -104,7 +106,7 @@ public class CowbonesEntity extends AbstractSkeleton implements GunMob {
 	
 	@Override
 	protected ResourceLocation getDefaultLootTable() {
-		return ByPowderAndSteel.rl("entities/cowbones");
+		return ByPowderAndSteel.rl("entities/cowbones_pistolero");
 	}
 
 }

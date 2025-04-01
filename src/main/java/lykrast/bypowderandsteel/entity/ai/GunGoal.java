@@ -15,19 +15,25 @@ public class GunGoal<T extends Mob & GunMob> extends Goal {
 	private final T mob;
 	private final double speedModifier;
 	private int attackIntervalMin;
-	private final double attackRadiusSqr;
+	private final double strafeRadiusSqr, attackRadiusSqr;
 	private int attackTime = -1;
 	private int seeTime;
 	private boolean strafingClockwise;
 	private boolean strafingBackwards;
 	private int strafingTime = -1;
 
-	public GunGoal(T mob, double speed, int minAttackInterval, double range) {
+	public GunGoal(T mob, double speed, int minAttackInterval, double strafeRange, double attackRange) {
+		//-1 strafe to disable strafing, -1 range to disable the max range
 		this.mob = mob;
 		this.speedModifier = speed;
 		this.attackIntervalMin = minAttackInterval;
-		this.attackRadiusSqr = range * range;
+		this.strafeRadiusSqr = strafeRange > 0 ? strafeRange * strafeRange : -1;
+		this.attackRadiusSqr = attackRange > 0 ? attackRange * attackRange : -1;
 		this.setFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.LOOK));
+	}
+
+	public GunGoal(T mob, double speed, int minAttackInterval, double strafeRange) {
+		this(mob, speed, minAttackInterval, strafeRange, -1);
 	}
 
 	@Override
@@ -78,7 +84,7 @@ public class GunGoal<T extends Mob & GunMob> extends Goal {
 			else --seeTime;
 
 			//strafing
-			if (!(targetDistance > attackRadiusSqr) && seeTime >= 20) {
+			if (strafeRadiusSqr > 0 && targetDistance <= strafeRadiusSqr && seeTime >= 20) {
 				mob.getNavigation().stop();
 				++strafingTime;
 			}
@@ -95,8 +101,8 @@ public class GunGoal<T extends Mob & GunMob> extends Goal {
 			}
 
 			if (strafingTime > -1) {
-				if (targetDistance > attackRadiusSqr * 0.75) strafingBackwards = false;
-				else if (targetDistance < attackRadiusSqr * 0.25) strafingBackwards = true;
+				if (targetDistance > strafeRadiusSqr * 0.75) strafingBackwards = false;
+				else if (targetDistance < strafeRadiusSqr * 0.25) strafingBackwards = true;
 
 				mob.getMoveControl().strafe(strafingBackwards ? -0.5F : 0.5F, strafingClockwise ? 0.5F : -0.5F);
 				Entity vehicle = mob.getControlledVehicle();
@@ -112,7 +118,7 @@ public class GunGoal<T extends Mob & GunMob> extends Goal {
 			}
 			
 			//shoot
-			if (--attackTime <= 0 && seeTime >= 20 && los) {
+			if (--attackTime <= 0 && seeTime >= 20 && los && (attackRadiusSqr < 0 || targetDistance <= attackRadiusSqr)) {
 				ItemStack gun =  mob.getMainHandItem();
 				GunItem gunItem = (GunItem) gun.getItem();
 				ItemStack bullet = mob.getBulletStack();

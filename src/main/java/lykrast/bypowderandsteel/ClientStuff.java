@@ -25,7 +25,8 @@ public class ClientStuff {
 		event.registerEntityRenderer(BPASEntities.shrubhulk.get(), (context) -> new ShrubhulkRenderer(context));
 		event.registerEntityRenderer(BPASEntities.shrubsnapper.get(), (context) -> new ShrubsnapperRenderer(context));
 		//desert
-		event.registerEntityRenderer(BPASEntities.cowbones.get(), (context) -> new CowbonesRenderer(context));
+		event.registerEntityRenderer(BPASEntities.cowbonesPistolero.get(), (context) -> new CowbonesPistoleroRenderer(context));
+		event.registerEntityRenderer(BPASEntities.cowbonesBuckaroo.get(), (context) -> new CowbonesBuckarooRenderer(context));
 		//tundra
 		event.registerEntityRenderer(BPASEntities.zombieSeal.get(), (context) -> new ZombieSealRenderer(context));
 		//underground
@@ -47,10 +48,14 @@ public class ClientStuff {
 		event.registerLayerDefinition(ShrubhulkModel.MODEL, () -> ShrubhulkModel.createBodyLayer());
 		event.registerLayerDefinition(ShrubsnapperModel.MODEL, () -> ShrubsnapperModel.createBodyLayer());
 		//desert
-		event.registerLayerDefinition(CowbonesModel.MODEL, () -> CowbonesModel.createBodyLayer());
-    	event.registerLayerDefinition(CowbonesModel.OVERLAY, () -> LayerDefinition.create(HumanoidModel.createMesh(new CubeDeformation(0.25f), 0), 64, 32));
-    	event.registerLayerDefinition(CowbonesModel.INNER_ARMOR, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.INNER_ARMOR_DEFORMATION), 64, 32));
-    	event.registerLayerDefinition(CowbonesModel.OUTER_ARMOR, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 32));
+		event.registerLayerDefinition(CowbonesPistoleroRenderer.MODEL, () -> CowbonesModel.createBodyLayer());
+    	event.registerLayerDefinition(CowbonesPistoleroRenderer.OVERLAY, () -> LayerDefinition.create(HumanoidModel.createMesh(new CubeDeformation(0.25f), 0), 64, 32));
+    	event.registerLayerDefinition(CowbonesPistoleroRenderer.INNER_ARMOR, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.INNER_ARMOR_DEFORMATION), 64, 32));
+    	event.registerLayerDefinition(CowbonesPistoleroRenderer.OUTER_ARMOR, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 32));
+		event.registerLayerDefinition(CowbonesBuckarooRenderer.MODEL, () -> CowbonesModel.createBodyLayer());
+    	event.registerLayerDefinition(CowbonesBuckarooRenderer.OVERLAY, () -> LayerDefinition.create(HumanoidModel.createMesh(new CubeDeformation(0.25f), 0), 64, 32));
+    	event.registerLayerDefinition(CowbonesBuckarooRenderer.INNER_ARMOR, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.INNER_ARMOR_DEFORMATION), 64, 32));
+    	event.registerLayerDefinition(CowbonesBuckarooRenderer.OUTER_ARMOR, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 32));
     	//tundra
 		event.registerLayerDefinition(ZombieSealModel.MODEL, () -> ZombieSealModel.createBodyLayer());
     	event.registerLayerDefinition(ZombieSealModel.INNER_ARMOR, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.INNER_ARMOR_DEFORMATION), 64, 32));

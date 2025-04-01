@@ -1,10 +1,7 @@
 package lykrast.bypowderandsteel.renderer;
 
-import lykrast.bypowderandsteel.ByPowderAndSteel;
-import lykrast.bypowderandsteel.entity.CowbonesEntity;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.SkeletonModel;
-import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.CubeDeformation;
@@ -12,13 +9,10 @@ import net.minecraft.client.model.geom.builders.CubeListBuilder;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.monster.RangedAttackMob;
 
-public class CowbonesModel extends SkeletonModel<CowbonesEntity> {
-	public static final ModelLayerLocation MODEL = new ModelLayerLocation(ByPowderAndSteel.rl("cowbones"), "main");
-	public static final ModelLayerLocation OVERLAY = new ModelLayerLocation(ByPowderAndSteel.rl("cowbones"), "overlay");
-	public static final ModelLayerLocation INNER_ARMOR = new ModelLayerLocation(ByPowderAndSteel.rl("cowbones"), "inner_armor");
-	public static final ModelLayerLocation OUTER_ARMOR = new ModelLayerLocation(ByPowderAndSteel.rl("cowbones"), "outer_armor");
-
+public class CowbonesModel<T extends Mob & RangedAttackMob> extends SkeletonModel<T> {
 	public CowbonesModel(ModelPart modelpart) {
 		super(modelpart);
 	}

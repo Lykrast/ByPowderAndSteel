@@ -42,7 +42,7 @@ public class BPASItems {
 	public static ArmorMaterial marauder, sentry;
 	public static RegistryObject<ArmorItem> marauderHelmet, marauderChestplate, marauderLeggings, marauderBoots;
 	public static RegistryObject<ArmorItem> sentryHelmet, sentryChestplate, sentryLeggings, sentryBoots;
-	public static RegistryObject<Item> gunomeEgg, shrubhulkEgg, shrubsnapperEgg, cowbonesEgg, zombieSealEgg, sabersentryEgg, blastersentryEgg, gunnubusCrimsonEgg;
+	public static RegistryObject<Item> gunomeEgg, shrubhulkEgg, shrubsnapperEgg, cowbonesPistoleroEgg, cowbonesBuckarooEgg, zombieSealEgg, sabersentryEgg, blastersentryEgg, gunnubusCrimsonEgg;
 	public static RegistryObject<Item> gunsteelScrap, gunsteelIngot, gunsteelNugget, assemblyBasic, assemblyDiamond;
 	//forest
 	public static RegistryObject<Item> caliberryGrilled, caliberrySlice, caliberrySliceGrilled, caliberryHoney, caliberryIce;
@@ -137,7 +137,8 @@ public class BPASItems {
 		shrubhulkEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.shrubhulk, 0x67A124, 0x4A381E, defP()), "shrubhulk_spawn_egg");
 		shrubsnapperEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.shrubsnapper, 0x528919, 0x3F311D, defP()), "shrubsnapper_spawn_egg");
 		zombieSealEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.zombieSeal, 0x3E475B, 0x698E45, defP()), "zombie_seal_spawn_egg");
-		cowbonesEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.cowbones, 0xEED9B3, 0x994141, defP()), "cowbones_spawn_egg");
+		cowbonesPistoleroEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.cowbonesPistolero, 0xEED9B3, 0x994141, defP()), "cowbones_pistolero_spawn_egg");
+		cowbonesBuckarooEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.cowbonesBuckaroo, 0xEED9B3, 0xD7AB4D, defP()), "cowbones_buckaroo_spawn_egg");
 		sabersentryEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.sabersentry, 0xF4F4E1, 0x383635, defP()), "sabersentry_spawn_egg");
 		blastersentryEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.blastersentry, 0xAAA7A6, 0xF74572, defP()), "blastersentry_spawn_egg");
 		gunnubusCrimsonEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.gunnubusCrimson, 0xDB5952, 0x4F4A47, defP()), "gunnubus_crimson_spawn_egg");

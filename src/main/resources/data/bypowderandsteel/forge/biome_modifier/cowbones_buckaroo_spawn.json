@@ -2,8 +2,8 @@
 	"type": "forge:add_spawns",
 	"biomes": "#bypowderandsteel:has_cowbones",
 	"spawners": {
-		"type": "bypowderandsteel:cowbones",
-		"weight": 50,
+		"type": "bypowderandsteel:cowbones_buckaroo",
+		"weight": 40,
 		"minCount": 2,
 		"maxCount": 4
 	}

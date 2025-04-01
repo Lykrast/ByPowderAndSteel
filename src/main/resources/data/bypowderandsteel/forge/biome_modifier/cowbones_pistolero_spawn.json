@@ -1,0 +1,10 @@
+{
+	"type": "forge:add_spawns",
+	"biomes": "#bypowderandsteel:has_cowbones",
+	"spawners": {
+		"type": "bypowderandsteel:cowbones_pistolero",
+		"weight": 40,
+		"minCount": 2,
+		"maxCount": 4
+	}
+}

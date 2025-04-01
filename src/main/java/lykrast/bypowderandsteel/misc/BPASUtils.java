@@ -40,6 +40,7 @@ public class BPASUtils {
 
 	public static float easeInOut(float progress) {
 		//https://math.stackexchange.com/questions/121720/ease-in-out-function/121755#121755
+		//TODO hey maybe smoothstep is better? 3x^2-2x^3, less jagged and less maths but like dunno if I could spot the differences, will have to test when I use that
 		float sq = progress * progress;
 		return sq / (2 * (sq - progress) + 1);
 	}

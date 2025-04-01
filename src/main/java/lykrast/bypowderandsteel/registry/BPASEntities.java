@@ -22,7 +22,8 @@ public class BPASEntities {
 	public static RegistryObject<EntityType<ShrubhulkEntity>> shrubhulk;
 	public static RegistryObject<EntityType<ShrubsnapperEntity>> shrubsnapper;
 	//desert
-	public static RegistryObject<EntityType<CowbonesEntity>> cowbones;
+	public static RegistryObject<EntityType<CowbonesPistoleroEntity>> cowbonesPistolero;
+	public static RegistryObject<EntityType<CowbonesBuckarooEntity>> cowbonesBuckaroo;
 	//tundra
 	public static RegistryObject<EntityType<ZombieSealEntity>> zombieSeal;
 	//underground
@@ -37,14 +38,22 @@ public class BPASEntities {
 	public static RegistryObject<EntityType<SlowBulletEntity>> slowBullet;
 	
 	static {
+		//forest
 		gunome = REG.register("gunome", () -> EntityType.Builder.of(GunomeEntity::new, MobCategory.MONSTER).sized(0.45F, 1.25F).clientTrackingRange(8).build(""));
 		shrubhulk = REG.register("shrubhulk", () -> EntityType.Builder.of(ShrubhulkEntity::new, MobCategory.MONSTER).sized(0.99F, 2.4F).clientTrackingRange(8).build(""));
 		shrubsnapper = REG.register("shrubsnapper", () -> EntityType.Builder.of(ShrubsnapperEntity::new, MobCategory.MONSTER).sized(0.85F, 2.8F).clientTrackingRange(8).build(""));
-		cowbones = REG.register("cowbones", () -> EntityType.Builder.of(CowbonesEntity::new, MobCategory.MONSTER).sized(0.6F, 1.99F).clientTrackingRange(8).build(""));
+		//desert
+		cowbonesPistolero = REG.register("cowbones_pistolero", () -> EntityType.Builder.of(CowbonesPistoleroEntity::new, MobCategory.MONSTER).sized(0.6F, 1.99F).clientTrackingRange(8).build(""));
+		cowbonesBuckaroo = REG.register("cowbones_buckaroo", () -> EntityType.Builder.of(CowbonesBuckarooEntity::new, MobCategory.MONSTER).sized(0.6F, 1.99F).clientTrackingRange(8).build(""));
+		//tundra
 		zombieSeal = REG.register("zombie_seal", () -> EntityType.Builder.of(ZombieSealEntity::new, MobCategory.MONSTER).sized(0.6F, 1.99F).clientTrackingRange(8).build(""));
+		//ocean
+		//underground
 		sabersentry = REG.register("sabersentry", () -> EntityType.Builder.of(SaberSentryEntity::new, MobCategory.MONSTER).sized(0.9F, 3.3F).clientTrackingRange(8).build(""));
 		blastersentry = REG.register("blastersentry", () -> EntityType.Builder.of(BlasterSentryEntity::new, MobCategory.MONSTER).sized(0.75F, 1.99F).clientTrackingRange(8).build(""));
+		//nether
 		gunnubusCrimson = REG.register("gunnubus_crimson", () -> EntityType.Builder.of(GunnubusCrimsonEntity::new, MobCategory.MONSTER).sized(1.2F, 3.99F).clientTrackingRange(8).build(""));
+		//end
 		
 		//mob projectiles
 		//I dunno why this one bein dum dum with the types
@@ -59,7 +68,8 @@ public class BPASEntities {
 		event.put(gunome.get(), GunomeEntity.createAttributes().build());
 		event.put(shrubhulk.get(), ShrubhulkEntity.createAttributes().build());
 		event.put(shrubsnapper.get(), ShrubsnapperEntity.createAttributes().build());
-		event.put(cowbones.get(), CowbonesEntity.createAttributes().build());
+		event.put(cowbonesPistolero.get(), CowbonesPistoleroEntity.createAttributes().build());
+		event.put(cowbonesBuckaroo.get(), CowbonesBuckarooEntity.createAttributes().build());
 		event.put(zombieSeal.get(), ZombieSealEntity.createAttributes().build());
 		event.put(sabersentry.get(), SaberSentryEntity.createAttributes().build());
 		event.put(blastersentry.get(), BlasterSentryEntity.createAttributes().build());
