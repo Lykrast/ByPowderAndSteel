@@ -64,6 +64,12 @@
 
 	"block.bypowderandsteel.living_herb_sack": "Sack of Living Herb",
 	"block.bypowderandsteel.living_herb_block": "Living Herb Block",
+	"block.bypowderandsteel.living_herb_framed": "Framed Living Herb",
+	"block.bypowderandsteel.living_herb_cross_cardinal": "Cardinal Crossed Living Herb",
+	"block.bypowderandsteel.living_herb_cross_diagonal": "Diagonal Crossed Living Herb",
+	"block.bypowderandsteel.living_herb_cross_combined": "Combined Crossed Living Herb",
+	"block.bypowderandsteel.living_herb_lattice": "Living Herb Lattice",
+	"block.bypowderandsteel.living_herb_lattice_double": "Double Living Herb Lattice",
 
 	"block.bypowderandsteel.cowbones_horn_crate": "Crate of Cowbones Horns",
 	"block.bypowderandsteel.bovony": "Bovony",

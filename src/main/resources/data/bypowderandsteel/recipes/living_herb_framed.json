@@ -1,0 +1,13 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		" S ",
+		"S#S",
+		" S "
+	],
+	"key": {
+		"S": { "tag": "forge:rods/wooden" },
+		"#": { "item": "bypowderandsteel:living_herb_block" }
+	},
+	"result": { "item": "bypowderandsteel:living_herb_framed" }
+}

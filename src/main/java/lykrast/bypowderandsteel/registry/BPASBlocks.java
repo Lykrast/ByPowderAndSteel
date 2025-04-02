@@ -28,7 +28,7 @@ public class BPASBlocks {
 	//forest
 	public static RegistryObject<Block> caliberryVine, caliberrySack;
 	public static RegistryObject<Block> livingHerbSack;
-	public static RegistryObject<Block> livingHerb;
+	public static RegistryObject<Block> livingHerb, lhFramed, lhCrossCardinal, lhCrossDiagonal, lhCrossCombined, lhLattice, lhLatticeDouble;
 	//desert
 	public static RegistryObject<Block> cowbonesHornCrate;
 	public static RegistryObject<Block> bovony, bovonyTilesBig, bovonyTiles, bovonyBricks, bovonyChiseled, bovonyPillar, bovonyLamp;
@@ -58,6 +58,12 @@ public class BPASBlocks {
 		
 		livingHerbSack = makeBlock("living_herb_sack", () -> new Block(Block.Properties.copy(Blocks.GREEN_WOOL)));
 		livingHerb = makeBlock("living_herb_block", () -> new Block(Block.Properties.copy(Blocks.MOSS_BLOCK)));
+		lhFramed = makeBlock("living_herb_framed", () -> new Block(Block.Properties.copy(livingHerb.get())));
+		lhCrossCardinal = makeBlock("living_herb_cross_cardinal", () -> new Block(Block.Properties.copy(livingHerb.get())));
+		lhCrossDiagonal = makeBlock("living_herb_cross_diagonal", () -> new Block(Block.Properties.copy(livingHerb.get())));
+		lhCrossCombined = makeBlock("living_herb_cross_combined", () -> new Block(Block.Properties.copy(livingHerb.get())));
+		lhLattice = makeBlock("living_herb_lattice", () -> new Block(Block.Properties.copy(livingHerb.get())));
+		lhLatticeDouble = makeBlock("living_herb_lattice_double", () -> new Block(Block.Properties.copy(livingHerb.get())));
 		
 		cowbonesHornCrate = makeBlock("cowbones_horn_crate", () -> new Block(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
 		bovony = makeBlock("bovony", () -> new Block(Block.Properties.copy(Blocks.TUFF).mapColor(MapColor.TERRACOTTA_BLACK)));

@@ -1,0 +1,13 @@
+{
+	"type":"minecraft:block",
+	"pools":[{
+		"bonus_rolls": 0,
+		"conditions": [{ "condition":"minecraft:survives_explosion" }],
+		"entries": [{
+			"type": "minecraft:item",
+			"name": "bypowderandsteel:living_herb_cross_combined"
+		}],
+		"rolls": 1
+	}],
+	"random_sequence": "bypowderandsteel:blocks/living_herb_cross_combined"
+}
