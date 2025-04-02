@@ -1,5 +1,19 @@
 {
 	"variants": {
-		"": { "model": "bypowderandsteel:block/gunsmithing_table" }
+		"facing=east": {
+			"model": "bypowderandsteel:block/gunsmithing_table",
+			"y": 90
+		},
+		"facing=north": {
+			"model": "bypowderandsteel:block/gunsmithing_table"
+		},
+		"facing=south": {
+			"model": "bypowderandsteel:block/gunsmithing_table",
+			"y": 180
+		},
+		"facing=west": {
+			"model": "bypowderandsteel:block/gunsmithing_table",
+			"y": 270
+		}
 	}
 }

@@ -1,12 +1,19 @@
 {
 	"parent": "minecraft:block/cube",
+	"display": {
+		"firstperson_righthand": {
+			"rotation": [ 0, 135, 0 ],
+			"translation": [ 0, 0, 0 ],
+			"scale": [ 0.40, 0.40, 0.40 ]
+		}
+	},
 	"textures": {
 		"down": "bypowderandsteel:block/gunsmithing_table_bottom",
-		"east": "bypowderandsteel:block/gunsmithing_table_front",
-		"north": "bypowderandsteel:block/gunsmithing_table_side",
+		"east": "bypowderandsteel:block/gunsmithing_table_side",
+		"north": "bypowderandsteel:block/gunsmithing_table_front",
 		"particle": "bypowderandsteel:block/gunsmithing_table_front",
-		"south": "bypowderandsteel:block/gunsmithing_table_side",
+		"south": "bypowderandsteel:block/gunsmithing_table_back",
 		"up": "bypowderandsteel:block/gunsmithing_table_top",
-		"west": "bypowderandsteel:block/gunsmithing_table_front"
+		"west": "bypowderandsteel:block/gunsmithing_table_side"
 	}
 }

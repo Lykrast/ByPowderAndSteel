@@ -43,7 +43,7 @@ public class BPASBlocks {
 	public static List<RegistryObject<? extends Item>> orderedBlockItems = new ArrayList<>();
 	
 	static {
-		gunsmithingTable = makeBlock("gunsmithing_table", () -> new Block(Block.Properties.copy(Blocks.CRAFTING_TABLE)));
+		gunsmithingTable = makeBlock("gunsmithing_table", () -> new GunsmithingTableBlock(Block.Properties.copy(Blocks.CRAFTING_TABLE)));
 		
 		gunsteelScrapBlock = makeBlock("gunsteel_scrap_block", () -> new Block(Block.Properties.copy(Blocks.RAW_IRON_BLOCK)));
 		gunsteelBlock = makeBlock("gunsteel_block", () -> new Block(Block.Properties.copy(Blocks.IRON_BLOCK)));
