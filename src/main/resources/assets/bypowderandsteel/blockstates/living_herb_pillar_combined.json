@@ -1,0 +1,16 @@
+{
+	"variants": {
+		"axis=y": {
+			"model": "bypowderandsteel:block/living_herb_pillar_combined"
+		},
+		"axis=z": {
+			"model": "bypowderandsteel:block/living_herb_pillar_combined",
+			"x": 90
+		},
+		"axis=x": {
+			"model": "bypowderandsteel:block/living_herb_pillar_combined",
+			"x": 90,
+			"y": 90
+		}
+	}
+}

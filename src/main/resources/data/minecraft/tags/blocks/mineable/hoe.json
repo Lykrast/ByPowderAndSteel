@@ -6,6 +6,12 @@
 		"bypowderandsteel:living_herb_cross_diagonal",
 		"bypowderandsteel:living_herb_cross_combined",
 		"bypowderandsteel:living_herb_lattice",
-		"bypowderandsteel:living_herb_lattice_double"
+		"bypowderandsteel:living_herb_lattice_double",
+		"bypowderandsteel:living_herb_pillar_cardinal",
+		"bypowderandsteel:living_herb_pillar_diagonal",
+		"bypowderandsteel:living_herb_pillar_combined",
+		"bypowderandsteel:living_herb_pillar_diagonal_cardinal",
+		"bypowderandsteel:living_herb_pillar_combined_cardinal",
+		"bypowderandsteel:living_herb_pillar_diagonal_combined"
 	]
 }

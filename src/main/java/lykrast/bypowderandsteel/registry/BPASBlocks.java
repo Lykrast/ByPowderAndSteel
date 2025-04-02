@@ -29,6 +29,7 @@ public class BPASBlocks {
 	public static RegistryObject<Block> caliberryVine, caliberrySack;
 	public static RegistryObject<Block> livingHerbSack;
 	public static RegistryObject<Block> livingHerb, lhFramed, lhCrossCardinal, lhCrossDiagonal, lhCrossCombined, lhLattice, lhLatticeDouble;
+	public static RegistryObject<Block> lhPillarCardinal, lhPillarDiagonal, lhPillarCombined, lhPillarDiaCar, lhPillarComCar, lhPillarDiaCom;
 	//desert
 	public static RegistryObject<Block> cowbonesHornCrate;
 	public static RegistryObject<Block> bovony, bovonyTilesBig, bovonyTiles, bovonyBricks, bovonyChiseled, bovonyPillar, bovonyLamp;
@@ -64,6 +65,12 @@ public class BPASBlocks {
 		lhCrossCombined = makeBlock("living_herb_cross_combined", () -> new Block(Block.Properties.copy(livingHerb.get())));
 		lhLattice = makeBlock("living_herb_lattice", () -> new Block(Block.Properties.copy(livingHerb.get())));
 		lhLatticeDouble = makeBlock("living_herb_lattice_double", () -> new Block(Block.Properties.copy(livingHerb.get())));
+		lhPillarCardinal = makeBlock("living_herb_pillar_cardinal", () -> new RotatedPillarBlock(Block.Properties.copy(livingHerb.get())));
+		lhPillarDiagonal = makeBlock("living_herb_pillar_diagonal", () -> new RotatedPillarBlock(Block.Properties.copy(livingHerb.get())));
+		lhPillarCombined = makeBlock("living_herb_pillar_combined", () -> new RotatedPillarBlock(Block.Properties.copy(livingHerb.get())));
+		lhPillarDiaCar = makeBlock("living_herb_pillar_diagonal_cardinal", () -> new OrientablePillarBlock(Block.Properties.copy(livingHerb.get())));
+		lhPillarComCar = makeBlock("living_herb_pillar_combined_cardinal", () -> new OrientablePillarBlock(Block.Properties.copy(livingHerb.get())));
+		lhPillarDiaCom = makeBlock("living_herb_pillar_diagonal_combined", () -> new OrientablePillarBlock(Block.Properties.copy(livingHerb.get())));
 		
 		cowbonesHornCrate = makeBlock("cowbones_horn_crate", () -> new Block(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
 		bovony = makeBlock("bovony", () -> new Block(Block.Properties.copy(Blocks.TUFF).mapColor(MapColor.TERRACOTTA_BLACK)));

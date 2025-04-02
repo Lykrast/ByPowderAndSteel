@@ -70,6 +70,12 @@
 	"block.bypowderandsteel.living_herb_cross_combined": "Combined Crossed Living Herb",
 	"block.bypowderandsteel.living_herb_lattice": "Living Herb Lattice",
 	"block.bypowderandsteel.living_herb_lattice_double": "Double Living Herb Lattice",
+	"block.bypowderandsteel.living_herb_pillar_cardinal": "Cardinal Living Herb Pillar",
+	"block.bypowderandsteel.living_herb_pillar_diagonal": "Diagonal Living Herb Pillar",
+	"block.bypowderandsteel.living_herb_pillar_combined": "Combined Living Herb Pillar",
+	"block.bypowderandsteel.living_herb_pillar_diagonal_cardinal": "Diagonal-Cardinal Living Herb Pillar",
+	"block.bypowderandsteel.living_herb_pillar_combined_cardinal": "Combined-Cardinal Living Herb Pillar",
+	"block.bypowderandsteel.living_herb_pillar_diagonal_combined": "Diagonal-Combined Living Herb Pillar",
 
 	"block.bypowderandsteel.cowbones_horn_crate": "Crate of Cowbones Horns",
 	"block.bypowderandsteel.bovony": "Bovony",
