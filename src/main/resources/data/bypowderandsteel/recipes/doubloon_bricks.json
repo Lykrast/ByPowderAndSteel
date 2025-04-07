@@ -1,0 +1,11 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"##",
+		"##"
+	],
+	"key": {
+		"#": { "item": "bypowderandsteel:sunken_doubloon" }
+	},
+	"result": { "item": "bypowderandsteel:doubloon_bricks" }
+}

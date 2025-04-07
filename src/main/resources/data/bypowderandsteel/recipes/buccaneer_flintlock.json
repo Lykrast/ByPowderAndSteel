@@ -1,0 +1,15 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"MMF",
+		"MAH",
+		"  H"
+	],
+	"key": {
+		"A": { "item": "bypowderandsteel:assembly_basic" },
+		"F": { "item": "minecraft:flint" },
+		"M": { "item": "bypowderandsteel:sunken_doubloon" },
+		"H": { "tag": "minecraft:planks" }
+	},
+	"result": { "item": "bypowderandsteel:buccaneer_flintlock" }
+}

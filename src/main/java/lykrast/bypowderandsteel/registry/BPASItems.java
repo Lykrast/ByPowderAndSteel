@@ -52,6 +52,7 @@ public class BPASItems {
 	//tundra
 	public static RegistryObject<Item> milspecIce, milspecIceGrilled;
 	//ocean
+	public static RegistryObject<Item> sunkenDoubloon;
 	//underground
 	public static RegistryObject<Item> damagedDevice, batterySoda, bilkshake;
 	//nether
@@ -163,6 +164,8 @@ public class BPASItems {
 		
 		milspecIce = initItem(() -> new Item(defP()), "milspec_ice");
 		milspecIceGrilled = initItem(() -> new Item(defP().food(food(4, 0.4))), "milspec_ice_grilled");
+		
+		sunkenDoubloon = initItem(() -> new Item(defP()), "sunken_doubloon");
 
 		damagedDevice = initItem(() -> new Item(defP()), "damaged_device");
 		batterySoda = initItem(() -> new DrinkItem(defP().food(food(4, 0.4))), "battery_soda");

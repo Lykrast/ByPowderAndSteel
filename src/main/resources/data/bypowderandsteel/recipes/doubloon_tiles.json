@@ -1,0 +1,11 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"##",
+		"##"
+	],
+	"key": {
+		"#": { "item": "bypowderandsteel:doubloon_bricks" }
+	},
+	"result": { "item": "bypowderandsteel:doubloon_tiles", "count": 4 }
+}

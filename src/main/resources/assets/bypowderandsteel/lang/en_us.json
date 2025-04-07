@@ -44,6 +44,7 @@
 	"item.bypowderandsteel.marauder_patch": "Marauder Patch",
 	"item.bypowderandsteel.milspec_ice": "Milspec Ice",
 	"item.bypowderandsteel.milspec_ice_grilled": "Grilled Ice",
+	"item.bypowderandsteel.sunken_doubloon": "Sunken Doubloon",
 	"item.bypowderandsteel.damaged_device": "Damaged Device",
 	"item.bypowderandsteel.battery_soda": "Battery Soda",
 	"item.bypowderandsteel.bilkshake": "Bilkshake",
@@ -92,6 +93,11 @@
 	"block.bypowderandsteel.milspec_ice_tiles": "Milspec Ice Tiles",
 	"block.bypowderandsteel.milspec_ice_chiseled": "Chiseled Milspec Ice Bricks",
 	"block.bypowderandsteel.milspec_ice_pillar": "Milspec Ice Pillar",
+
+	"block.bypowderandsteel.sunken_doubloon_crate": "Crate of Sunken Doubloons",
+	"block.bypowderandsteel.doubloon_bricks": "Doubloon Bricks",
+	"block.bypowderandsteel.doubloon_tiles": "Doubloon Tiles",
+	"block.bypowderandsteel.doubloon_chiseled": "Chiseled Doubloon Bricks",
 
 	"block.bypowderandsteel.graviolium_tank": "Graviolium Tank",
 

@@ -1,0 +1,7 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{ "item": "bypowderandsteel:sunken_doubloon_crate" }
+	],
+	"result": { "item": "bypowderandsteel:sunken_doubloon", "count": 9 }
+}

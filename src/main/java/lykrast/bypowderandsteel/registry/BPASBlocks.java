@@ -36,6 +36,9 @@ public class BPASBlocks {
 	//tundra
 	public static RegistryObject<Block> milspecIceCrate;
 	public static RegistryObject<Block> milspecIceBlock, milspecIceBricks, milspecIceTiles, milspecIceChiseled, milspecIcePillar;
+	//ocean
+	public static RegistryObject<Block> doubloonCrate;
+	public static RegistryObject<Block> doubloonBricks, doubloonTiles, doubloonChiseled;
 	//underground
 	//nether
 	//end
@@ -87,6 +90,11 @@ public class BPASBlocks {
 		milspecIceTiles = makeBlock("milspec_ice_tiles", () -> new Block(Block.Properties.copy(milspecIceBlock.get())));
 		milspecIceChiseled = makeBlock("milspec_ice_chiseled", () -> new Block(Block.Properties.copy(milspecIceBlock.get())));
 		milspecIcePillar = makeBlock("milspec_ice_pillar", () -> new RotatedPillarBlock(Block.Properties.copy(milspecIceBlock.get())));
+		
+		doubloonCrate = makeBlock("sunken_doubloon_crate", () -> new Block(Block.Properties.copy(Blocks.BIRCH_PLANKS)));
+		doubloonBricks = makeBlock("doubloon_bricks", () -> new Block(Block.Properties.copy(Blocks.GOLD_BLOCK)));
+		doubloonTiles = makeBlock("doubloon_tiles", () -> new Block(Block.Properties.copy(doubloonBricks.get())));
+		doubloonChiseled = makeBlock("doubloon_chiseled", () -> new Block(Block.Properties.copy(doubloonBricks.get())));
 		
 		gravioliumTank = makeBlock("graviolium_tank", () -> new RotatedPillarBlock(Block.Properties.copy(Blocks.IRON_BLOCK)));
 	}

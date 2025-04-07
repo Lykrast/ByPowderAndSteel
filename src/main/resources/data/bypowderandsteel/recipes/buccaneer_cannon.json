@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"MMF",
+		"GAH",
+		"M H"
+	],
+	"key": {
+		"A": { "item": "bypowderandsteel:assembly_basic" },
+		"F": { "item": "minecraft:flint" },
+		"G": { "tag": "forge:ingots/gunsteel" },
+		"M": { "item": "bypowderandsteel:sunken_doubloon" },
+		"H": { "tag": "minecraft:planks" }
+	},
+	"result": { "item": "bypowderandsteel:buccaneer_cannon" }
+}
