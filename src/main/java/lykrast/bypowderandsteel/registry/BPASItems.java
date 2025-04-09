@@ -78,7 +78,7 @@ public class BPASItems {
 		//TODO sounds
 		gunsteelGun = initItem(() -> new GunItem(defP().durability(502), 0, 1, 16, 2, 16).repair(() -> Ingredient.of(ItemTags.create(new ResourceLocation("forge", "ingots/gunsteel")))), "gunsteel_gun");
 		peashooter = initItem(() -> new GunItem(defP().durability(924), 0, 1, 16, 2, 20).chanceFreeShot(0.25).repair(() -> Ingredient.of(livingHerb.get())), "peashooter");
-		cornGatling = initItem(() -> new GatlingItem(defP().durability(924), 0, 0.6, 5, 4, 20).chanceFreeShot(0.5).repair(() -> Ingredient.of(livingHerb.get())), "corn_gatling");
+		cornGatling = initItem(() -> new GatlingItem(defP().durability(924), 0, 0.5, 5, 5, 20).chanceFreeShot(0.5).repair(() -> Ingredient.of(livingHerb.get())), "corn_gatling");
 		desertRevolver = initItem(() -> new GunItem(defP().durability(753), 0, 1, 13, 4, 14).repair(() -> Ingredient.of(cowbonesHorn.get())), "desert_revolver");
 		desertShotgun = initItem(() -> new GunItem(defP().durability(753), 0, 0.5, 18, 6, 14).projectiles(3).fireSound(GWRSounds.shotgun).repair(() -> Ingredient.of(cowbonesHorn.get())), "desert_shotgun");
 		arcticPistol = initItem(() -> new GunItem(defP().durability(630), 1, 1, 18, 1, 8).repair(() -> Ingredient.of(milspecIce.get())), "arctic_pistol");

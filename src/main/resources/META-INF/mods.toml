@@ -29,6 +29,6 @@ Mob addon for Guns Without Roses.
 [[dependencies.bypowderandsteel]]
     modId="gunswithoutroses"
     mandatory=true
-    versionRange="[1.20.1-2.2.0,)"
+    versionRange="[1.20.1-2.3.0,)"
     ordering="AFTER"
     side="BOTH"
