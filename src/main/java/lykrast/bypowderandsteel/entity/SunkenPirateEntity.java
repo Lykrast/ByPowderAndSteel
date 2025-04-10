@@ -75,7 +75,7 @@ public class SunkenPirateEntity extends Monster implements GunMob {
 	@Override
 	protected void registerGoals() {
 		goalSelector.addGoal(1, new DrownedGoToWaterGoal(this, 1));
-		goalSelector.addGoal(2, new PirateGunGoal(this, 0.8, 4, -1, 16, 5));
+		goalSelector.addGoal(2, new PirateGunGoal(this, 1, 4, -1, 16, 8));
 		goalSelector.addGoal(3, new DrownedAttackGoal(this, 1.2, false));
 		goalSelector.addGoal(5, new DrownedGoToBeachGoal(this, 1));
 		goalSelector.addGoal(6, new DrownedSwimUpGoal(this, 1, level().getSeaLevel()));
@@ -101,7 +101,7 @@ public class SunkenPirateEntity extends Monster implements GunMob {
 
 	public static AttributeSupplier.Builder createAttributes() {
 		return BPASUtils.baseGunMobAttributes().add(Attributes.MAX_HEALTH, 20).add(Attributes.ARMOR, 2).add(Attributes.ATTACK_DAMAGE, 4).add(Attributes.MOVEMENT_SPEED, 0.23)
-				.add(GWRAttributes.dmgTotal.get(), 0.5).add(GWRAttributes.fireDelay.get(), 2);
+				.add(Attributes.FOLLOW_RANGE, 32).add(GWRAttributes.dmgTotal.get(), 0.5).add(GWRAttributes.fireDelay.get(), 2);
 	}
 
 	//Similar spawn rule as drowned
@@ -109,9 +109,18 @@ public class SunkenPirateEntity extends Monster implements GunMob {
 	public static boolean spawnRules(EntityType<? extends Monster> entity, ServerLevelAccessor world, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
 		if (!world.getFluidState(pos.below()).is(FluidTags.WATER)) return false;
 		else {
-			return pos.getY() < world.getSeaLevel() - 3 && world.getDifficulty() != Difficulty.PEACEFUL && isDarkEnoughToSpawn(world, pos, random)
+			//drowned spawn 1 in 40 for oceans and 1 in 15 for rivers
+			//have to do it otherwise these mobs too common
+			return world.getDifficulty() != Difficulty.PEACEFUL && pos.getY() < world.getSeaLevel() - 5 && random.nextInt(30) == 0 && isDarkEnoughToSpawn(world, pos, random)
 					&& (spawnType == MobSpawnType.SPAWNER || world.getFluidState(pos).is(FluidTags.WATER));
 		}
+	}
+
+	@Override
+	public boolean checkSpawnObstruction(LevelReader world) {
+		//I did not catch this one on my first copy pasting and it's essential to have them actually spawn underwater aaaaaaaaaaaaaaaaa
+		//it took me debugger to catch it
+		return world.isUnobstructed(this);
 	}
 
 	@SuppressWarnings("deprecation")
@@ -224,9 +233,7 @@ public class SunkenPirateEntity extends Monster implements GunMob {
 		if (isControlledByLocalInstance() && isInWater() && wantsToSwim()) {
 			moveRelative(0.01F, p_32394_);
 			move(MoverType.SELF, getDeltaMovement());
-			//for drowneds this is 0.9
-			//I'm making the gals faster
-			setDeltaMovement(getDeltaMovement().scale(1.25));
+			setDeltaMovement(getDeltaMovement().scale(0.9));
 		}
 		else {
 			super.travel(p_32394_);
@@ -301,8 +308,9 @@ public class SunkenPirateEntity extends Monster implements GunMob {
 				float targetAngle = (float) (Mth.atan2(dz, dx) * Mth.RAD_TO_DEG) - 90;
 				mob.setYRot(rotlerp(mob.getYRot(), targetAngle, 90));
 				mob.yBodyRot = mob.getYRot();
-				float targetSpeed = (float) (speedModifier * mob.getAttributeValue(Attributes.MOVEMENT_SPEED));
-				float speed = Mth.lerp(0.125F, mob.getSpeed(), targetSpeed);
+				//increase underwater speed
+				float targetSpeed = (float) (speedModifier * mob.getAttributeValue(Attributes.MOVEMENT_SPEED) * 1.5);
+				float speed = Mth.lerp(0.125f, mob.getSpeed(), targetSpeed);
 				mob.setSpeed(speed);
 				mob.setDeltaMovement(mob.getDeltaMovement().add(speed * dx * 0.005, speed * dy * 0.1, speed * dz * 0.005));
 			}
