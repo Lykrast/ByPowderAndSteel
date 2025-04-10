@@ -29,6 +29,8 @@ public class ClientStuff {
 		event.registerEntityRenderer(BPASEntities.cowbonesBuckaroo.get(), (context) -> new CowbonesBuckarooRenderer(context));
 		//tundra
 		event.registerEntityRenderer(BPASEntities.zombieSeal.get(), (context) -> new ZombieSealRenderer(context));
+		//ocean
+		event.registerEntityRenderer(BPASEntities.sunkenPirate.get(), (context) -> new SunkenPirateRenderer(context));
 		//underground
 		event.registerEntityRenderer(BPASEntities.sabersentry.get(), (context) -> new SaberSentryRenderer(context));
 		event.registerEntityRenderer(BPASEntities.blastersentry.get(), (context) -> new BlasterSentryRenderer(context));
@@ -60,13 +62,17 @@ public class ClientStuff {
 		event.registerLayerDefinition(ZombieSealModel.MODEL, () -> ZombieSealModel.createBodyLayer());
     	event.registerLayerDefinition(ZombieSealModel.INNER_ARMOR, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.INNER_ARMOR_DEFORMATION), 64, 32));
     	event.registerLayerDefinition(ZombieSealModel.OUTER_ARMOR, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 32));
+    	//ocean
+		event.registerLayerDefinition(SunkenPirateRenderer.MODEL, () -> GunnubusModel.createBodyLayer());
+    	event.registerLayerDefinition(SunkenPirateRenderer.INNER_ARMOR, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.INNER_ARMOR_DEFORMATION), 64, 32));
+    	event.registerLayerDefinition(SunkenPirateRenderer.OUTER_ARMOR, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 32));
     	//underground
 		event.registerLayerDefinition(SaberSentryModel.MODEL, () -> SaberSentryModel.createBodyLayer());
 		event.registerLayerDefinition(BlasterSentryModel.MODEL, () -> BlasterSentryModel.createBodyLayer());
 		//nether
-		event.registerLayerDefinition(GunnubusModel.MODEL, () -> GunnubusModel.createBodyLayer());
-    	event.registerLayerDefinition(GunnubusModel.INNER_ARMOR, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.INNER_ARMOR_DEFORMATION), 64, 32));
-    	event.registerLayerDefinition(GunnubusModel.OUTER_ARMOR, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 32));
+		event.registerLayerDefinition(GunnubusCrimsonRenderer.MODEL, () -> GunnubusModel.createBodyLayer());
+    	event.registerLayerDefinition(GunnubusCrimsonRenderer.INNER_ARMOR, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.INNER_ARMOR_DEFORMATION), 64, 32));
+    	event.registerLayerDefinition(GunnubusCrimsonRenderer.OUTER_ARMOR, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 32));
 		//end
     	//projectiles
 		event.registerLayerDefinition(ShrubsnapperFangRenderer.MODEL, () -> EvokerFangsModel.createBodyLayer());

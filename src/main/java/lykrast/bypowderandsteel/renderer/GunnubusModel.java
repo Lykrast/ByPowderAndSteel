@@ -1,9 +1,7 @@
 package lykrast.bypowderandsteel.renderer;
 
-import lykrast.bypowderandsteel.ByPowderAndSteel;
 import net.minecraft.client.model.AnimationUtils;
 import net.minecraft.client.model.HumanoidModel;
-import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.CubeDeformation;
@@ -15,10 +13,6 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Mob;
 
 public class GunnubusModel<T extends Mob> extends HumanoidModel<T> {
-	public static final ModelLayerLocation MODEL = new ModelLayerLocation(ByPowderAndSteel.rl("gunnubus"), "main");
-	public static final ModelLayerLocation INNER_ARMOR = new ModelLayerLocation(ByPowderAndSteel.rl("gunnubus"), "inner_armor");
-	public static final ModelLayerLocation OUTER_ARMOR = new ModelLayerLocation(ByPowderAndSteel.rl("gunnubus"), "outer_armor");
-
 	public GunnubusModel(ModelPart modelpart) {
 		super(modelpart);
 	}

@@ -26,6 +26,8 @@ public class BPASEntities {
 	public static RegistryObject<EntityType<CowbonesBuckarooEntity>> cowbonesBuckaroo;
 	//tundra
 	public static RegistryObject<EntityType<ZombieSealEntity>> zombieSeal;
+	//ocean
+	public static RegistryObject<EntityType<SunkenPirateEntity>> sunkenPirate;
 	//underground
 	public static RegistryObject<EntityType<SaberSentryEntity>> sabersentry;
 	public static RegistryObject<EntityType<BlasterSentryEntity>> blastersentry;
@@ -48,6 +50,7 @@ public class BPASEntities {
 		//tundra
 		zombieSeal = REG.register("zombie_seal", () -> EntityType.Builder.of(ZombieSealEntity::new, MobCategory.MONSTER).sized(0.6F, 1.99F).clientTrackingRange(8).build(""));
 		//ocean
+		sunkenPirate = REG.register("sunken_pirate", () -> EntityType.Builder.of(SunkenPirateEntity::new, MobCategory.MONSTER).sized(0.6F, 1.99F).clientTrackingRange(8).build(""));
 		//underground
 		sabersentry = REG.register("sabersentry", () -> EntityType.Builder.of(SaberSentryEntity::new, MobCategory.MONSTER).sized(0.9F, 3.3F).clientTrackingRange(8).build(""));
 		blastersentry = REG.register("blastersentry", () -> EntityType.Builder.of(BlasterSentryEntity::new, MobCategory.MONSTER).sized(0.75F, 1.99F).clientTrackingRange(8).build(""));
@@ -71,6 +74,7 @@ public class BPASEntities {
 		event.put(cowbonesPistolero.get(), CowbonesPistoleroEntity.createAttributes().build());
 		event.put(cowbonesBuckaroo.get(), CowbonesBuckarooEntity.createAttributes().build());
 		event.put(zombieSeal.get(), ZombieSealEntity.createAttributes().build());
+		event.put(sunkenPirate.get(), SunkenPirateEntity.createAttributes().build());
 		event.put(sabersentry.get(), SaberSentryEntity.createAttributes().build());
 		event.put(blastersentry.get(), BlasterSentryEntity.createAttributes().build());
 		event.put(gunnubusCrimson.get(), GunnubusCrimsonEntity.createAttributes().build());
