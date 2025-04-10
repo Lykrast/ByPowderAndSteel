@@ -82,6 +82,7 @@ public class BPASEntities {
 	
 	@SubscribeEvent
 	public static void registerSpawnPlacements(final SpawnPlacementRegisterEvent event) {
+		event.register(sunkenPirate.get(), SpawnPlacements.Type.IN_WATER, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, SunkenPirateEntity::spawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
 		event.register(sabersentry.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, SaberSentryEntity::spawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
 		event.register(blastersentry.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, BlasterSentryEntity::spawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
 	}

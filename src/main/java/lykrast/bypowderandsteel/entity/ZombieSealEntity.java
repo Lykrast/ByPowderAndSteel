@@ -148,25 +148,23 @@ public class ZombieSealEntity extends Monster implements GunMob {
 	@Override
 	public void aiStep() {
 		//Zombie burn in sunlight
-		if (this.isAlive()) {
-			boolean flag = this.isSunBurnTick();
-			if (flag) {
-				ItemStack itemstack = this.getItemBySlot(EquipmentSlot.HEAD);
-				if (!itemstack.isEmpty()) {
-					if (itemstack.isDamageableItem()) {
-						itemstack.setDamageValue(itemstack.getDamageValue() + this.random.nextInt(2));
-						if (itemstack.getDamageValue() >= itemstack.getMaxDamage()) {
-							this.broadcastBreakEvent(EquipmentSlot.HEAD);
-							this.setItemSlot(EquipmentSlot.HEAD, ItemStack.EMPTY);
+		if (isAlive()) {
+			boolean shouldBurn = isSunBurnTick();
+			if (shouldBurn) {
+				ItemStack helmet = getItemBySlot(EquipmentSlot.HEAD);
+				if (!helmet.isEmpty()) {
+					if (helmet.isDamageableItem()) {
+						helmet.setDamageValue(helmet.getDamageValue() + random.nextInt(2));
+						if (helmet.getDamageValue() >= helmet.getMaxDamage()) {
+							broadcastBreakEvent(EquipmentSlot.HEAD);
+							setItemSlot(EquipmentSlot.HEAD, ItemStack.EMPTY);
 						}
 					}
 
-					flag = false;
+					shouldBurn = false;
 				}
 
-				if (flag) {
-					this.setSecondsOnFire(8);
-				}
+				if (shouldBurn) setSecondsOnFire(8);
 			}
 		}
 

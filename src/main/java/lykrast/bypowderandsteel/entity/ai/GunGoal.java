@@ -12,7 +12,7 @@ import net.minecraft.world.item.ItemStack;
 
 public class GunGoal<T extends Mob & GunMob> extends Goal {
 	//Based on the RangedBowAttackGoal
-	private final T mob;
+	protected final T mob;
 	private final double speedModifier;
 	private int attackIntervalMin;
 	private final double strafeRadiusSqr, attackRadiusSqr;
@@ -38,7 +38,7 @@ public class GunGoal<T extends Mob & GunMob> extends Goal {
 
 	@Override
 	public boolean canUse() {
-		return mob.getTarget() == null ? false : isHoldingGun();
+		return mob.getTarget() != null && isHoldingGun();
 	}
 
 	protected boolean isHoldingGun() {
