@@ -1,0 +1,8 @@
+{
+	"parent": "minecraft:block/slab_top",
+	"textures": {
+		"bottom": "bypowderandsteel:block/living_herb",
+		"side": "bypowderandsteel:block/living_herb",
+		"top": "bypowderandsteel:block/living_herb"
+	}
+}

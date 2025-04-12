@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"#  ",
+		"## ",
+		"###"
+	],
+	"key": {
+		"#": { "item": "bypowderandsteel:living_herb_block" }
+	},
+	"result": { "item": "bypowderandsteel:living_herb_stairs", "count": 8 }
+}

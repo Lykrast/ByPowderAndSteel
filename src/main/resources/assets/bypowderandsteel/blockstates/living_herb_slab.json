@@ -1,0 +1,7 @@
+{
+	"variants": {
+		"type=bottom": { "model": "bypowderandsteel:block/living_herb_slab" },
+		"type=top": { "model": "bypowderandsteel:block/living_herb_slab_top" },
+		"type=double": { "model": "bypowderandsteel:block/living_herb_block" }
+	}
+}

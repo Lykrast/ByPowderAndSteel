@@ -6,7 +6,7 @@
 		"##"
 	],
 	"key": {
-		"#": { "item": "bypowderandsteel:living_herb" }
+		"#": { "item": "bypowderandsteel:living_herb_stairs" }
 	},
-	"result": { "item": "bypowderandsteel:living_herb_block" }
+	"result": { "item": "bypowderandsteel:living_herb_block", "count": 3 }
 }

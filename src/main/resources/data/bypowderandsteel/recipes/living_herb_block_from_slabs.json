@@ -2,11 +2,11 @@
 	"type": "minecraft:crafting_shaped",
 	"group": "bypowderandsteel_living_herb_block",
 	"pattern": [
-		"##",
-		"##"
+		"#",
+		"#"
 	],
 	"key": {
-		"#": { "item": "bypowderandsteel:living_herb" }
+		"#": { "item": "bypowderandsteel:living_herb_slab" }
 	},
 	"result": { "item": "bypowderandsteel:living_herb_block" }
 }
