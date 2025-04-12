@@ -90,6 +90,12 @@
 	"block.bypowderandsteel.bovony_chiseled": "Chiseled Bovony",
 	"block.bypowderandsteel.bovony_pillar": "Bovony Pillar",
 	"block.bypowderandsteel.bovony_lamp": "Bovony Lamp",
+	"block.bypowderandsteel.bovony_stairs": "Bovony Stairs",
+	"block.bypowderandsteel.bovony_slab": "Bovony Slab",
+	"block.bypowderandsteel.bovony_tiles_stairs": "Bovony Tiles Stairs",
+	"block.bypowderandsteel.bovony_tiles_slab": "Bovony Tiles Slab",
+	"block.bypowderandsteel.bovony_bricks_stairs": "Bovony Bricks Stairs",
+	"block.bypowderandsteel.bovony_bricks_slab": "Bovony Bricks Slab",
 
 	"block.bypowderandsteel.milspec_ice_crate": "Crate of Milspec Ice",
 	"block.bypowderandsteel.milspec_ice_block": "Block of Milspec Ice",
@@ -97,11 +103,17 @@
 	"block.bypowderandsteel.milspec_ice_tiles": "Milspec Ice Tiles",
 	"block.bypowderandsteel.milspec_ice_chiseled": "Chiseled Milspec Ice Bricks",
 	"block.bypowderandsteel.milspec_ice_pillar": "Milspec Ice Pillar",
+	"block.bypowderandsteel.milspec_ice_stairs": "Milspec Ice Stairs",
+	"block.bypowderandsteel.milspec_ice_slab": "Milspec Ice Slab",
+	"block.bypowderandsteel.milspec_ice_tiles_stairs": "Milspec Ice Tiles Stairs",
+	"block.bypowderandsteel.milspec_ice_tiles_slab": "Milspec Ice Tiles Slab",
 
 	"block.bypowderandsteel.sunken_doubloon_crate": "Crate of Sunken Doubloons",
 	"block.bypowderandsteel.doubloon_bricks": "Doubloon Bricks",
 	"block.bypowderandsteel.doubloon_tiles": "Doubloon Tiles",
 	"block.bypowderandsteel.doubloon_chiseled": "Chiseled Doubloon Bricks",
+	"block.bypowderandsteel.doubloon_bricks_stairs": "Doubloon Bricks Stairs",
+	"block.bypowderandsteel.doubloon_bricks_slab": "Doubloon Bricks Slab",
 
 	"block.bypowderandsteel.graviolium_tank": "Graviolium Tank",
 

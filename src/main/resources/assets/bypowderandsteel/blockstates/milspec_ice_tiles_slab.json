@@ -1,0 +1,7 @@
+{
+	"variants": {
+		"type=bottom": { "model": "bypowderandsteel:block/milspec_ice_tiles_slab" },
+		"type=top": { "model": "bypowderandsteel:block/milspec_ice_tiles_slab_top" },
+		"type=double": { "model": "bypowderandsteel:block/milspec_ice_tiles" }
+	}
+}

@@ -1,0 +1,7 @@
+{
+	"variants": {
+		"type=bottom": { "model": "bypowderandsteel:block/bovony_tiles_slab" },
+		"type=top": { "model": "bypowderandsteel:block/bovony_tiles_slab_top" },
+		"type=double": { "model": "bypowderandsteel:block/bovony_tiles" }
+	}
+}

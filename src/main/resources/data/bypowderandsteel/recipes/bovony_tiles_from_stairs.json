@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"group": "bypowderandsteel_bovony_tiles",
+	"pattern": [
+		"##",
+		"##"
+	],
+	"key": {
+		"#": { "item": "bypowderandsteel:bovony_tiles_stairs" }
+	},
+	"result": { "item": "bypowderandsteel:bovony_tiles", "count": 3 }
+}

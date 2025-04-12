@@ -1,0 +1,8 @@
+{
+	"parent": "minecraft:block/slab",
+	"textures": {
+		"bottom": "bypowderandsteel:block/milspec_ice_tiles",
+		"side": "bypowderandsteel:block/milspec_ice_tiles",
+		"top": "bypowderandsteel:block/milspec_ice_tiles"
+	}
+}

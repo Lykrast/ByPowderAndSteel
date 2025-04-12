@@ -1,6 +1,11 @@
 {
 	"values": [
 		"bypowderandsteel:gunsteel_bricks_stairs",
-		"bypowderandsteel:living_herb_stairs"
+		"bypowderandsteel:living_herb_stairs",
+		"bypowderandsteel:bovony_stairs",
+		"bypowderandsteel:bovony_tiles_stairs",
+		"bypowderandsteel:bovony_bricks_stairs",
+		"bypowderandsteel:milspec_ice_tiles_stairs",
+		"bypowderandsteel:doubloon_bricks_stairs"
 	]
 }

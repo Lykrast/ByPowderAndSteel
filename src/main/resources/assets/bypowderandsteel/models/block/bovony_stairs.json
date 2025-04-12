@@ -1,0 +1,8 @@
+{
+	"parent": "minecraft:block/stairs",
+	"textures": {
+		"bottom": "bypowderandsteel:block/bovony",
+		"side": "bypowderandsteel:block/bovony",
+		"top": "bypowderandsteel:block/bovony"
+	}
+}

@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"group": "bypowderandsteel_doubloon_bricks",
+	"pattern": [
+		"##",
+		"##"
+	],
+	"key": {
+		"#": { "item": "bypowderandsteel:doubloon_bricks_stairs" }
+	},
+	"result": { "item": "bypowderandsteel:doubloon_bricks", "count": 3 }
+}

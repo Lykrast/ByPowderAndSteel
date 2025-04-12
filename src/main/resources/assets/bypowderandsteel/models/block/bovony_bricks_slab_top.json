@@ -1,0 +1,8 @@
+{
+	"parent": "minecraft:block/slab_top",
+	"textures": {
+		"bottom": "bypowderandsteel:block/bovony_bricks",
+		"side": "bypowderandsteel:block/bovony_bricks",
+		"top": "bypowderandsteel:block/bovony_bricks"
+	}
+}
