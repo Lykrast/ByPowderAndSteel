@@ -1,0 +1,7 @@
+{
+	"parent": "minecraft:block/cube_column",
+	"textures": {
+		"end": "bypowderandsteel:block/living_herb_pillar_orthogonal_top",
+		"side": "bypowderandsteel:block/living_herb_pillar_orthogonal_side"
+	}
+}

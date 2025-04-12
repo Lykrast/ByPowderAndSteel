@@ -5,9 +5,9 @@
 		"conditions": [{ "condition":"minecraft:survives_explosion" }],
 		"entries": [{
 			"type": "minecraft:item",
-			"name": "bypowderandsteel:living_herb_pillar_cardinal"
+			"name": "bypowderandsteel:living_herb_pillar_orthogonal"
 		}],
 		"rolls": 1
 	}],
-	"random_sequence": "bypowderandsteel:blocks/living_herb_pillar_cardinal"
+	"random_sequence": "bypowderandsteel:blocks/living_herb_pillar_orthogonal"
 }

@@ -31,8 +31,8 @@ public class BPASBlocks {
 	//forest
 	public static RegistryObject<Block> caliberryVine, caliberrySack;
 	public static RegistryObject<Block> livingHerbSack;
-	public static RegistryObject<Block> livingHerb, lhFramed, lhCrossCardinal, lhCrossDiagonal, lhCrossCombined, lhLattice, lhLatticeDouble;
-	public static RegistryObject<Block> lhPillarCardinal, lhPillarDiagonal, lhPillarCombined, lhPillarDiaCar, lhPillarComCar, lhPillarDiaCom;
+	public static RegistryObject<Block> livingHerb, lhFramed, lhCrossOrthogonal, lhCrossDiagonal, lhCrossCombined, lhLattice, lhLatticeDouble;
+	public static RegistryObject<Block> lhPillarOrthogonal, lhPillarDiagonal, lhPillarCombined, lhPillarDiaOrt, lhPillarComOrt, lhPillarDiaCom;
 	//desert
 	public static RegistryObject<Block> cowbonesHornCrate;
 	public static RegistryObject<Block> bovony, bovonyTilesBig, bovonyTiles, bovonyBricks, bovonyChiseled, bovonyPillar, bovonyLamp;
@@ -68,16 +68,16 @@ public class BPASBlocks {
 		livingHerbSack = makeBlock("living_herb_sack", () -> new Block(Block.Properties.copy(Blocks.GREEN_WOOL)));
 		livingHerb = makeBlock("living_herb_block", () -> new Block(Block.Properties.copy(Blocks.MOSS_BLOCK)));
 		lhFramed = makeBlock("living_herb_framed", () -> new Block(Block.Properties.copy(livingHerb.get())));
-		lhCrossCardinal = makeBlock("living_herb_cross_cardinal", () -> new Block(Block.Properties.copy(livingHerb.get())));
+		lhCrossOrthogonal = makeBlock("living_herb_cross_orthogonal", () -> new Block(Block.Properties.copy(livingHerb.get())));
 		lhCrossDiagonal = makeBlock("living_herb_cross_diagonal", () -> new Block(Block.Properties.copy(livingHerb.get())));
 		lhCrossCombined = makeBlock("living_herb_cross_combined", () -> new Block(Block.Properties.copy(livingHerb.get())));
 		lhLattice = makeBlock("living_herb_lattice", () -> new Block(Block.Properties.copy(livingHerb.get())));
 		lhLatticeDouble = makeBlock("living_herb_lattice_double", () -> new Block(Block.Properties.copy(livingHerb.get())));
-		lhPillarCardinal = makeBlock("living_herb_pillar_cardinal", () -> new RotatedPillarBlock(Block.Properties.copy(livingHerb.get())));
+		lhPillarOrthogonal = makeBlock("living_herb_pillar_orthogonal", () -> new RotatedPillarBlock(Block.Properties.copy(livingHerb.get())));
 		lhPillarDiagonal = makeBlock("living_herb_pillar_diagonal", () -> new RotatedPillarBlock(Block.Properties.copy(livingHerb.get())));
 		lhPillarCombined = makeBlock("living_herb_pillar_combined", () -> new RotatedPillarBlock(Block.Properties.copy(livingHerb.get())));
-		lhPillarDiaCar = makeBlock("living_herb_pillar_diagonal_cardinal", () -> new OrientablePillarBlock(Block.Properties.copy(livingHerb.get())));
-		lhPillarComCar = makeBlock("living_herb_pillar_combined_cardinal", () -> new OrientablePillarBlock(Block.Properties.copy(livingHerb.get())));
+		lhPillarDiaOrt = makeBlock("living_herb_pillar_diagonal_orthogonal", () -> new OrientablePillarBlock(Block.Properties.copy(livingHerb.get())));
+		lhPillarComOrt = makeBlock("living_herb_pillar_combined_orthogonal", () -> new OrientablePillarBlock(Block.Properties.copy(livingHerb.get())));
 		lhPillarDiaCom = makeBlock("living_herb_pillar_diagonal_combined", () -> new OrientablePillarBlock(Block.Properties.copy(livingHerb.get())));
 		
 		cowbonesHornCrate = makeBlock("cowbones_horn_crate", () -> new Block(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
