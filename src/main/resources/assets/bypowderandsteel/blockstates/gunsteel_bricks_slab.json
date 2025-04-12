@@ -1,0 +1,7 @@
+{
+	"variants": {
+		"type=bottom": { "model": "bypowderandsteel:block/gunsteel_bricks_slab" },
+		"type=top": { "model": "bypowderandsteel:block/gunsteel_bricks_slab_top" },
+		"type=double": { "model": "bypowderandsteel:block/gunsteel_bricks" }
+	}
+}

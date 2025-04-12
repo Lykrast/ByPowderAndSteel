@@ -6,7 +6,7 @@
 		"##"
 	],
 	"key": {
-		"#": { "tag": "forge:ingots/gunsteel" }
+		"#": { "item": "bypowderandsteel:gunsteel_bricks_stairs" }
 	},
-	"result": { "item": "bypowderandsteel:gunsteel_bricks" }
+	"result": { "item": "bypowderandsteel:gunsteel_bricks", "count": 3 }
 }

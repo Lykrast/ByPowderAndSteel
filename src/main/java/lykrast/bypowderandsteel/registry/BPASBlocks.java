@@ -11,7 +11,9 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
@@ -25,6 +27,7 @@ public class BPASBlocks {
 	public static RegistryObject<Block> gunsmithingTable;
 	public static RegistryObject<Block> gunsteelScrapBlock, gunsteelBlock;
 	public static RegistryObject<Block> gunsteelBricks, gunsteelChiseled, gunsteelPillar, gunsteelLamp;
+	public static RegistryObject<Block> gunsteelBricksStairs, gunsteelBricksSlab;
 	//forest
 	public static RegistryObject<Block> caliberryVine, caliberrySack;
 	public static RegistryObject<Block> livingHerbSack;
@@ -52,6 +55,8 @@ public class BPASBlocks {
 		gunsteelScrapBlock = makeBlock("gunsteel_scrap_block", () -> new Block(Block.Properties.copy(Blocks.RAW_IRON_BLOCK)));
 		gunsteelBlock = makeBlock("gunsteel_block", () -> new Block(Block.Properties.copy(Blocks.IRON_BLOCK)));
 		gunsteelBricks = makeBlock("gunsteel_bricks", () -> new Block(Block.Properties.copy(Blocks.IRON_BLOCK).strength(2, 6))); //same hardness as bricks so easier to mine
+		gunsteelBricksStairs = makeBlock("gunsteel_bricks_stairs", () -> new StairBlock(() -> gunsteelBricks.get().defaultBlockState(), Block.Properties.copy(gunsteelBricks.get())));
+		gunsteelBricksSlab = makeBlock("gunsteel_bricks_slab", () -> new SlabBlock(Block.Properties.copy(gunsteelBricks.get())));
 		gunsteelChiseled = makeBlock("gunsteel_chiseled", () -> new Block(Block.Properties.copy(gunsteelBricks.get())));
 		gunsteelPillar = makeBlock("gunsteel_pillar", () -> new OrientablePillarBlock(Block.Properties.copy(gunsteelBricks.get())));
 		gunsteelLamp = makeBlock("gunsteel_lamp", () -> new Block(Block.Properties.copy(gunsteelBricks.get()).lightLevel((state) -> 15)));
