@@ -41,7 +41,7 @@ public class BPASBlocks {
 	//tundra
 	public static RegistryObject<Block> milspecIceCrate;
 	public static RegistryObject<Block> milspecIceBlock, milspecIceBricks, milspecIceTiles, milspecIceChiseled, milspecIcePillar;
-	public static RegistryObject<Block> milspecIceTilesStairs, milspecIceTilesSlab;
+	public static RegistryObject<Block> milspecIceStairs, milspecIceSlab, milspecIceTilesStairs, milspecIceTilesSlab;
 	//ocean
 	public static RegistryObject<Block> doubloonCrate;
 	public static RegistryObject<Block> doubloonBricks, doubloonTiles, doubloonChiseled;
@@ -103,6 +103,8 @@ public class BPASBlocks {
 		
 		milspecIceCrate = makeBlock("milspec_ice_crate", () -> new Block(Block.Properties.copy(Blocks.DARK_OAK_PLANKS)));
 		milspecIceBlock = makeBlock("milspec_ice_block", () -> new Block(Block.Properties.copy(Blocks.BRICKS).mapColor(MapColor.ICE).sound(SoundType.GLASS).instrument(NoteBlockInstrument.CHIME)));
+		milspecIceStairs = makeBlock("milspec_ice_stairs", () -> new StairBlock(() -> milspecIceBlock.get().defaultBlockState(), Block.Properties.copy(milspecIceBlock.get())));
+		milspecIceSlab = makeBlock("milspec_ice_slab", () -> new SlabBlock(Block.Properties.copy(milspecIceBlock.get())));
 		milspecIceBricks = makeBlock("milspec_ice_bricks", () -> new Block(Block.Properties.copy(milspecIceBlock.get())));
 		milspecIceTiles = makeBlock("milspec_ice_tiles", () -> new Block(Block.Properties.copy(milspecIceBlock.get())));
 		milspecIceTilesStairs = makeBlock("milspec_ice_tiles_stairs", () -> new StairBlock(() -> milspecIceTiles.get().defaultBlockState(), Block.Properties.copy(milspecIceBlock.get())));

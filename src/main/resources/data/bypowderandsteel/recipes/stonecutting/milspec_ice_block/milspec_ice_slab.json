@@ -1,0 +1,6 @@
+{
+	"type": "minecraft:stonecutting",
+	"count": 2,
+	"ingredient": { "tag": "bypowderandsteel:milspec_ice_block" },
+	"result": "bypowderandsteel:milspec_ice_slab"
+}
