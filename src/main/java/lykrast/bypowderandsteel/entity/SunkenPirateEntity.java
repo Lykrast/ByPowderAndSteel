@@ -49,6 +49,7 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.ServerLevelAccessor;
@@ -100,8 +101,8 @@ public class SunkenPirateEntity extends Monster implements GunMob {
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
-		return BPASUtils.baseGunMobAttributes().add(Attributes.MAX_HEALTH, 20).add(Attributes.ARMOR, 2).add(Attributes.ATTACK_DAMAGE, 4).add(Attributes.MOVEMENT_SPEED, 0.23)
-				.add(Attributes.FOLLOW_RANGE, 32).add(GWRAttributes.dmgTotal.get(), 0.5).add(GWRAttributes.fireDelay.get(), 2);
+		return BPASUtils.baseGunMobAttributes().add(Attributes.MAX_HEALTH, 20).add(Attributes.MOVEMENT_SPEED, 0.23).add(Attributes.FOLLOW_RANGE, 32).add(GWRAttributes.dmgTotal.get(), 0.5)
+				.add(GWRAttributes.fireDelay.get(), 2);
 	}
 
 	//Similar spawn rule as drowned
@@ -139,10 +140,19 @@ public class SunkenPirateEntity extends Monster implements GunMob {
 	@Override
 	protected void populateDefaultEquipmentSlots(RandomSource random, DifficultyInstance difficulty) {
 		//no super to not have armor
+		//sword in main hand
+		Item sword = BPASItems.buccaneerCutlass.get();
+		//2/3 of the time have the cutlass, but sometimes have iron or gold sword
+		if (random.nextInt(3) < 1) {
+			if (random.nextFloat() < 0.1) sword = Items.GOLDEN_SWORD;
+			else sword = Items.IRON_SWORD;
+		}
+		setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(sword));
+		//gun in off hand
 		Item gun = BPASItems.buccaneerFlintlock.get();
-		//1/3 of the time have the flintlock with different stats, otherwise have a default gun
-		if (random.nextInt(3) < 2) gun = BPASUtils.randomDefaultGun(random);
-		setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(gun));
+		//2/3 of the time have the flintlock with different stats, otherwise have a default gun
+		if (random.nextInt(3) < 1) gun = BPASUtils.randomDefaultGun(random);
+		setItemSlot(EquipmentSlot.OFFHAND, new ItemStack(gun));
 	}
 
 	@Override

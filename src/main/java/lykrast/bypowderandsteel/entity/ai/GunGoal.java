@@ -119,7 +119,12 @@ public class GunGoal<T extends Mob & GunMob> extends Goal {
 			
 			//shoot
 			if (--attackTime <= 0 && seeTime >= 20 && los && (attackRadiusSqr < 0 || targetDistance <= attackRadiusSqr)) {
+				//TODO shoot from both hands at once
 				ItemStack gun =  mob.getMainHandItem();
+				if (!(gun.getItem() instanceof GunItem)) {
+					gun = mob.getOffhandItem();
+					if (!(gun.getItem() instanceof GunItem)) return; //we shouldn't arrive in this case, but juuust in case that should prevent a crash
+				}
 				GunItem gunItem = (GunItem) gun.getItem();
 				ItemStack bullet = mob.getBulletStack();
 				attackTime = Math.max(gunItem.getFireDelay(gun, mob), attackIntervalMin);
