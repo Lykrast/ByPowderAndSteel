@@ -18,6 +18,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -28,8 +29,12 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.ForgeSpawnEggItem;
+import net.minecraftforge.common.ForgeTier;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegisterEvent;
@@ -37,13 +42,21 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class BPASItems {	
 	public static final DeferredRegister<Item> REG = DeferredRegister.create(ForgeRegistries.ITEMS, ByPowderAndSteel.MODID);
+	//guns
 	public static RegistryObject<GunItem> gunsteelGun, peashooter, cornGatling, desertRevolver, desertShotgun, arcticPistol, arcticSniper, buccaneerFlintlock, buccaneerCannon, raygun;
+	//bullets
 	public static RegistryObject<BulletItem> gunsteelBullet, caliberry, caliberryLarge, phaseBullet;
+	//swords
+	public static RegistryObject<SwordItem> buccaneerCutlass;
+	//armor
 	public static ArmorMaterial marauder, sentry;
 	public static RegistryObject<ArmorItem> marauderHelmet, marauderChestplate, marauderLeggings, marauderBoots;
 	public static RegistryObject<ArmorItem> sentryHelmet, sentryChestplate, sentryLeggings, sentryBoots;
+	//spawn eggs
 	public static RegistryObject<Item> gunomeEgg, shrubhulkEgg, shrubsnapperEgg, cowbonesPistoleroEgg, cowbonesBuckarooEgg,
 		zombieSealEgg, sunkenPirateEgg, sabersentryEgg, blastersentryEgg, gunnubusCrimsonEgg;
+	//materials and food
+	//global
 	public static RegistryObject<Item> gunsteelScrap, gunsteelIngot, gunsteelNugget, assemblyBasic, assemblyDiamond;
 	//forest
 	public static RegistryObject<Item> caliberryGrilled, caliberrySlice, caliberrySliceGrilled, caliberryHoney, caliberryIce;
@@ -84,7 +97,6 @@ public class BPASItems {
 		desertShotgun = initItem(() -> new GunItem(defP().durability(753), 0, 0.5, 18, 6, 14).projectiles(3).fireSound(GWRSounds.shotgun).repair(() -> Ingredient.of(cowbonesHorn.get())), "desert_shotgun");
 		arcticPistol = initItem(() -> new GunItem(defP().durability(630), 1, 1, 18, 1, 8).repair(() -> Ingredient.of(milspecIce.get())), "arctic_pistol");
 		arcticSniper = initItem(() -> new GunItem(defP().durability(630), 2, 1, 24, 0, 8).headshotMult(1.5).fireSound(GWRSounds.sniper).repair(() -> Ingredient.of(milspecIce.get())), "arctic_sniper");
-		//TODO finish up the pirate side
 		buccaneerFlintlock = initItem(() -> new GunItem(defP().durability(687), 2, 1.25, 25, 4, 12).repair(() -> Ingredient.of(cowbonesHorn.get())), "buccaneer_flintlock");
 		buccaneerCannon = initItem(() -> new GunItem(defP().durability(687), 2, 2, 35, 6, 12).fireSound(GWRSounds.shotgun).repair(() -> Ingredient.of(cowbonesHorn.get())), "buccaneer_cannon");
 		raygun = initItem(() -> new RaygunItem(defP().durability(1053), 2, 1, 20, 0.75, 10).repair(() -> Ingredient.of(damagedDevice.get())), "raygun");
@@ -94,6 +106,11 @@ public class BPASItems {
 		caliberry = initItem(() -> new KnockbackBulletItem(defP().food(food(1, 0.6)), 4, 1), "caliberry");
 		caliberryLarge = initItem(() -> new KnockbackBulletItem(defP().food(food(4, 0.6)), 6, 2), "caliberry_large");
 		phaseBullet = initItem(() -> new SlowBulletItem(defP(), 8), "phase_bullet");
+		
+		//Swords
+		//iron but more durable
+		Tier cutlass = new ForgeTier(2, 687, 6, 2, 14, BlockTags.NEEDS_IRON_TOOL, () -> Ingredient.of(Tags.Items.INGOTS_IRON));
+		buccaneerCutlass = initItem(() -> new SwordItem(cutlass, 3, -2.4F, defP()), "buccaneer_cutlass");
 		
 		//Armor
 		//TODO sounds

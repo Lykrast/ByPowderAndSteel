@@ -1,0 +1,14 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		" I",
+		"DI",
+		"DS"
+	],
+	"key": {
+		"I": { "tag": "forge:ingots/iron" },
+		"D": { "item": "bypowderandsteel:sunken_doubloon" },
+		"S": { "tag": "forge:rods/wooden" }
+	},
+	"result": { "item": "bypowderandsteel:buccaneer_cutlass" }
+}
