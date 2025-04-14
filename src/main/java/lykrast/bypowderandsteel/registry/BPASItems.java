@@ -44,7 +44,7 @@ public class BPASItems {
 	public static final DeferredRegister<Item> REG = DeferredRegister.create(ForgeRegistries.ITEMS, ByPowderAndSteel.MODID);
 	//guns
 	public static RegistryObject<GunItem> gunsteelGun, peashooter, cornGatling, desertRevolver, desertShotgun, arcticPistol, arcticSniper, buccaneerFlintlock, buccaneerCannon, raygun;
-	public static RegistryObject<GunItem> cornGatlingDiamond, desertShotgunDiamond, arcticSniperDiamond;
+	public static RegistryObject<GunItem> cornGatlingDiamond, desertShotgunDiamond, arcticSniperDiamond, buccaneerCannonDiamond;
 	//bullets
 	public static RegistryObject<BulletItem> gunsteelBullet, caliberry, caliberryLarge, phaseBullet;
 	//swords
@@ -103,6 +103,7 @@ public class BPASItems {
 		arcticSniperDiamond = initItem(() -> new GunItem(defP().durability(2549), 3, 1, 20, 0, 8).headshotMult(1.5).fireSound(GWRSounds.sniper).repair(() -> Ingredient.of(Tags.Items.GEMS_DIAMOND)), "arctic_sniper_diamond");
 		buccaneerFlintlock = initItem(() -> new GunItem(defP().durability(687), 2, 1.25, 25, 4, 12).repair(() -> Ingredient.of(cowbonesHorn.get())), "buccaneer_flintlock");
 		buccaneerCannon = initItem(() -> new GunItem(defP().durability(687), 2, 2, 35, 6, 12).fireSound(GWRSounds.shotgun).repair(() -> Ingredient.of(cowbonesHorn.get())), "buccaneer_cannon");
+		buccaneerCannonDiamond = initItem(() -> new GunItem(defP().durability(2780), 2, 3, 35, 6, 12).fireSound(GWRSounds.shotgun).repair(() -> Ingredient.of(Tags.Items.GEMS_DIAMOND)), "buccaneer_cannon_diamond");
 		raygun = initItem(() -> new RaygunItem(defP().durability(1053), 2, 1, 20, 0.75, 10).repair(() -> Ingredient.of(damagedDevice.get())), "raygun");
 		
 		//Bullets
