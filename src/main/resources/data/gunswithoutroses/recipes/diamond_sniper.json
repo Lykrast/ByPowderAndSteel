@@ -1,0 +1,15 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"GGF",
+		"IAI",
+		"  I"
+	],
+	"key": {
+		"A": { "item": "bypowderandsteel:assembly_diamond" },
+		"F": { "item": "minecraft:flint" },
+		"I": { "tag": "forge:ingots/iron" },
+		"G": { "tag": "forge:glass" }
+	},
+	"result": { "item": "gunswithoutroses:diamond_sniper" }
+}

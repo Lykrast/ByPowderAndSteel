@@ -1,0 +1,14 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"IIF",
+		"IAI",
+		"  I"
+	],
+	"key": {
+		"A": { "item": "bypowderandsteel:assembly_diamond" },
+		"F": { "item": "minecraft:flint" },
+		"I": { "tag": "forge:ingots/iron" }
+	},
+	"result": { "item": "gunswithoutroses:diamond_gatling" }
+}
