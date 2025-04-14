@@ -58,7 +58,7 @@ public class BPASItems {
 		zombieSealEgg, sunkenPirateEgg, sabersentryEgg, blastersentryEgg, gunnubusCrimsonEgg;
 	//materials and food
 	//global
-	public static RegistryObject<Item> gunsteelScrap, gunsteelIngot, gunsteelNugget, assemblyBasic, assemblyDiamond;
+	public static RegistryObject<Item> gunsteelScrap, gunsteelIngot, gunsteelNugget, assemblyBasic, assemblyDiamond, gunsmithingTemplate;
 	//forest
 	public static RegistryObject<Item> caliberryGrilled, caliberrySlice, caliberrySliceGrilled, caliberryHoney, caliberryIce;
 	public static RegistryObject<Item> livingHerb;
@@ -174,6 +174,7 @@ public class BPASItems {
 		gunsteelNugget = initItem(() -> new Item(defP()), "gunsteel_nugget");
 		assemblyBasic = initItem(() -> new Item(defP()), "assembly_basic");
 		assemblyDiamond = initItem(() -> new Item(defP()), "assembly_diamond");
+		gunsmithingTemplate = initItem(() -> new Item(defP()), "gunsmithing_template");
 
 		caliberryGrilled = initItem(() -> new Item(defP().food(food(2, 0.6))), "caliberry_grilled");
 		caliberrySlice = initItem(() -> new Item(defP().food(food(1, 0.6))), "caliberry_large_slice");

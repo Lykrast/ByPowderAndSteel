@@ -3,11 +3,12 @@
 	"pattern": [
 		"DDD",
 		"GGG",
-		"  G"
+		"##G"
 	],
 	"key": {
 		"D": { "tag": "forge:gems/diamond" },
-		"G": { "tag": "forge:ingots/gunsteel" }
+		"G": { "tag": "forge:ingots/gunsteel" },
+		"#": { "item": "bypowderandsteel:damaged_device" }
 	},
 	"result": { "item": "bypowderandsteel:assembly_diamond" }
 }

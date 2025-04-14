@@ -1,0 +1,7 @@
+{
+	"type": "minecraft:smithing_transform",
+	"base": { "item": "bypowderandsteel:desert_shotgun" },
+	"template": { "item": "bypowderandsteel:gunsmithing_template" },
+	"addition": { "item": "bypowderandsteel:assembly_diamond" },
+	"result": { "item": "bypowderandsteel:desert_shotgun_diamond" }
+}

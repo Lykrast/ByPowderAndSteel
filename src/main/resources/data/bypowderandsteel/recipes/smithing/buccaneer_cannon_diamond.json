@@ -1,0 +1,7 @@
+{
+	"type": "minecraft:smithing_transform",
+	"base": { "item": "bypowderandsteel:buccaneer_cannon" },
+	"template": { "item": "bypowderandsteel:gunsmithing_template" },
+	"addition": { "item": "bypowderandsteel:assembly_diamond" },
+	"result": { "item": "bypowderandsteel:buccaneer_cannon_diamond" }
+}

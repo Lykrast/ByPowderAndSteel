@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"MMF",
+		"GAH",
+		"M H"
+	],
+	"key": {
+		"A": { "item": "bypowderandsteel:assembly_diamond" },
+		"F": { "item": "minecraft:flint" },
+		"G": { "tag": "forge:ingots/gunsteel" },
+		"M": { "item": "bypowderandsteel:milspec_ice" },
+		"H": { "tag": "minecraft:coals" }
+	},
+	"result": { "item": "bypowderandsteel:arctic_sniper_diamond" }
+}

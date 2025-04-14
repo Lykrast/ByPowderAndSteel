@@ -1,0 +1,13 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"G",
+		"D",
+		"G"
+	],
+	"key": {
+		"G": { "tag": "forge:ingots/gunsteel" },
+		"D": { "item": "bypowderandsteel:damaged_device" }
+	},
+	"result": { "item": "bypowderandsteel:gunsmithing_template" }
+}

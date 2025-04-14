@@ -1,0 +1,7 @@
+{
+	"type": "minecraft:smithing_transform",
+	"base": { "item": "bypowderandsteel:arctic_sniper" },
+	"template": { "item": "bypowderandsteel:gunsmithing_template" },
+	"addition": { "item": "bypowderandsteel:assembly_diamond" },
+	"result": { "item": "bypowderandsteel:arctic_sniper_diamond" }
+}
