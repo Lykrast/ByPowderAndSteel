@@ -69,7 +69,7 @@ public class BPASItems {
 	//ocean
 	public static RegistryObject<Item> sunkenDoubloon;
 	//underground
-	public static RegistryObject<Item> damagedDevice, batterySoda, bilkshake;
+	public static RegistryObject<Item> damagedDevice, sentryPlating, batterySoda, bilkshake;
 	//nether
 	public static RegistryObject<Item> heptacle;
 	//end
@@ -137,12 +137,12 @@ public class BPASItems {
 		marauderBoots = initItem(() -> new AttributeArmorItem(marauder, ArmorItem.Type.BOOTS, defP())
 				.attribute(GWRAttributes.dmgBase, new AttributeModifier(BPASUtils.armorUUID(ArmorItem.Type.BOOTS), "gundmg", 0.5, AttributeModifier.Operation.ADDITION))
 				.done(), "marauder_boots");
-		//similar to iron TODO material
+		//similar to iron
 		sentry = new CustomArmorMaterial("sentry", 17, Map.of(
 				ArmorItem.Type.HELMET, 2,
 				ArmorItem.Type.CHESTPLATE, 6,
 				ArmorItem.Type.LEGGINGS, 5,
-				ArmorItem.Type.BOOTS, 2), 7, () -> SoundEvents.ARMOR_EQUIP_IRON, () -> damagedDevice.get(), 0, 0);
+				ArmorItem.Type.BOOTS, 2), 7, () -> SoundEvents.ARMOR_EQUIP_IRON, () -> sentryPlating.get(), 0, 0);
 		sentryHelmet = initItem(() -> new AttributeArmorItem(sentry, ArmorItem.Type.HELMET, defP())
 				.attribute(GWRAttributes.spread, new AttributeModifier(BPASUtils.armorUUID(ArmorItem.Type.HELMET), "gunspread", -0.2, AttributeModifier.Operation.MULTIPLY_TOTAL))
 				.done(), "sentry_helmet");
@@ -193,6 +193,7 @@ public class BPASItems {
 		sunkenDoubloon = initItem(() -> new Item(defP()), "sunken_doubloon");
 
 		damagedDevice = initItem(() -> new Item(defP()), "damaged_device");
+		sentryPlating = initItem(() -> new Item(defP()), "sentry_fiber_plating");
 		batterySoda = initItem(() -> new DrinkItem(defP().food(food(4, 0.4))), "battery_soda");
 		bilkshake = initItem(() -> new BilkshakeItem(defP().food((new FoodProperties.Builder()).nutrition(6).saturationMod(0.4f).alwaysEat().build())), "bilkshake");
 		

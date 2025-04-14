@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"# #",
+		"###",
+		"###"
+	],
+	"key": {
+		"#": { "item": "bypowderandsteel:sentry_fiber_plating" }
+	},
+	"result": { "item": "bypowderandsteel:sentry_chestplate" }
+}
