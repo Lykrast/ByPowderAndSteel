@@ -1,0 +1,6 @@
+{
+	"parent": "gunswithoutroses:item/base_gun",
+	"textures": {
+		"layer0": "bypowderandsteel:item/arctic_sniper_diamond"
+	}
+}

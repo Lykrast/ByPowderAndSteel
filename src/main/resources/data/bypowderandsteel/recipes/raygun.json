@@ -7,7 +7,7 @@
 	],
 	"key": {
 		"A": { "item": "bypowderandsteel:assembly_basic" },
-		"F": { "item": "minecraft:flint" },
+		"F": { "tag": "forge:storage_blocks/redstone" },
 		"M": { "item": "bypowderandsteel:damaged_device" },
 		"H": { "tag": "forge:ingots/iron" }
 	},
