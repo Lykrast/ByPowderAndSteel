@@ -185,7 +185,7 @@ public class BPASItems {
 		livingHerb = initItem(() -> new Item(defP()), "living_herb");
 		
 		cowbonesHorn = initItem(() -> new Item(defP()), "cowbones_horn");
-		marauderPatch = initItem(() -> new Item(defP()), "marauder_patch");
+		marauderPatch = initItem(() -> new Item(defP()), "marauder_leather_patch");
 		
 		milspecIce = initItem(() -> new Item(defP()), "milspec_ice");
 		milspecIceGrilled = initItem(() -> new Item(defP().food(food(4, 0.4))), "milspec_ice_grilled");
