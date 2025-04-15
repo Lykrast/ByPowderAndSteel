@@ -19,9 +19,11 @@
 	"item.bypowderandsteel.caliberry": "Caliberry",
 	"item.bypowderandsteel.caliberry_large": "Large Caliberry",
 	"item.bypowderandsteel.phase_bullet": "Phase Bullet",
+	"item.bypowderandsteel.gravitic_bullet": "Gravitic Bullet",
 
 	"tooltip.bypowderandsteel.bullet.knockback": "+%1$s knockback",
 	"tooltip.bypowderandsteel.bullet.slow": "Speed greatly limited",
+	"tooltip.bypowderandsteel.gravitic_bullet": "Levitates targets",
 
 	"item.bypowderandsteel.buccaneer_cutlass": "Buccaneer Cutlass",
 
@@ -58,6 +60,7 @@
 	"item.bypowderandsteel.bilkshake": "Bilkshake",
 	"item.bypowderandsteel.heptacle": "Heptacle",
 	"item.bypowderandsteel.graviolium_cell": "Graviolium Cell",
+	"item.bypowderandsteel.gravitic_engine": "Gravitic Engine",
 
 	"block.bypowderandsteel.gunsmithing_table": "Gunsmithing Table",
 	"block.bypowderandsteel.gunsmithing_table.desc": "Only for Villagers",

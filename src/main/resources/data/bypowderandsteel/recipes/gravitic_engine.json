@@ -1,0 +1,14 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"GGG",
+		"#D#",
+		"GGG"
+	],
+	"key": {
+		"D": { "tag": "forge:gems/diamond" },
+		"G": { "item": "bypowderandsteel:graviolium_cell" },
+		"#": { "item": "bypowderandsteel:damaged_device" }
+	},
+	"result": { "item": "bypowderandsteel:gravitic_engine" }
+}

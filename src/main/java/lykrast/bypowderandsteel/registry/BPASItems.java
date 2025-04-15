@@ -46,7 +46,7 @@ public class BPASItems {
 	public static RegistryObject<GunItem> gunsteelGun, peashooter, cornGatling, desertRevolver, desertShotgun, arcticPistol, arcticSniper, buccaneerFlintlock, buccaneerCannon, raygun;
 	public static RegistryObject<GunItem> cornGatlingDiamond, desertShotgunDiamond, arcticSniperDiamond, buccaneerCannonDiamond;
 	//bullets
-	public static RegistryObject<BulletItem> gunsteelBullet, caliberry, caliberryLarge, phaseBullet;
+	public static RegistryObject<BulletItem> gunsteelBullet, caliberry, caliberryLarge, phaseBullet, graviticBullet;
 	//swords
 	public static RegistryObject<SwordItem> buccaneerCutlass;
 	//armor
@@ -73,7 +73,7 @@ public class BPASItems {
 	//nether
 	public static RegistryObject<Item> heptacle;
 	//end
-	public static RegistryObject<Item> gravioliumCell;
+	public static RegistryObject<Item> gravioliumCell, graviticEngine;
 	
 	private static List<RegistryObject<? extends Item>> orderedItemsCreative = new ArrayList<>();
 	
@@ -111,6 +111,7 @@ public class BPASItems {
 		caliberry = initItem(() -> new KnockbackBulletItem(defP().food(food(1, 0.6)), 4, 1), "caliberry");
 		caliberryLarge = initItem(() -> new KnockbackBulletItem(defP().food(food(4, 0.6)), 6, 2), "caliberry_large");
 		phaseBullet = initItem(() -> new SlowBulletItem(defP(), 8), "phase_bullet");
+		graviticBullet = initItem(() -> new GraviticBulletItem(defP(), 8), "gravitic_bullet");
 		
 		//Swords
 		//iron but more durable
@@ -200,6 +201,7 @@ public class BPASItems {
 		heptacle = initItem(() -> new Item(defP()), "heptacle");
 		
 		gravioliumCell = initItem(() -> new Item(defP()), "graviolium_cell");
+		graviticEngine = initItem(() -> new Item(defP()), "gravitic_engine");
 	}
 
 	public static Item.Properties defP() {

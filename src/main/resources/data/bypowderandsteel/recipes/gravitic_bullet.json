@@ -1,0 +1,15 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{ "item": "bypowderandsteel:phase_bullet" },
+		{ "item": "bypowderandsteel:phase_bullet" },
+		{ "item": "bypowderandsteel:phase_bullet" },
+		{ "item": "bypowderandsteel:phase_bullet" },
+		{ "item": "bypowderandsteel:phase_bullet" },
+		{ "item": "bypowderandsteel:phase_bullet" },
+		{ "item": "bypowderandsteel:phase_bullet" },
+		{ "item": "bypowderandsteel:phase_bullet" },
+		{ "item": "bypowderandsteel:graviolium_cell" }
+	],
+	"result": { "item": "bypowderandsteel:gravitic_bullet", "count": 8 }
+}
