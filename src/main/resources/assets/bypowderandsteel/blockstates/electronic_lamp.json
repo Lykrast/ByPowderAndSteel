@@ -1,0 +1,30 @@
+{
+	"variants": {
+		"face=floor": {
+			"model": "bypowderandsteel:block/electronic_lamp"
+		},
+		"face=ceiling": {
+			"model": "bypowderandsteel:block/electronic_lamp",
+			"x": 180
+		},
+		"face=wall,facing=east": {
+			"model": "bypowderandsteel:block/electronic_lamp",
+			"x": 90,
+			"y": 90
+		},
+		"face=wall,facing=north": {
+			"model": "bypowderandsteel:block/electronic_lamp",
+			"x": 90
+		},
+		"face=wall,facing=south": {
+			"model": "bypowderandsteel:block/electronic_lamp",
+			"x": 90,
+			"y": 180
+		},
+		"face=wall,facing=west": {
+			"model": "bypowderandsteel:block/electronic_lamp",
+			"x": 90,
+			"y": 270
+		}
+	}
+}
