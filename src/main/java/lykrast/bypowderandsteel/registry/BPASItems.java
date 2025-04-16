@@ -48,7 +48,7 @@ public class BPASItems {
 	//bullets
 	public static RegistryObject<BulletItem> gunsteelBullet, caliberry, caliberryLarge, phaseBullet, graviticBullet;
 	//swords
-	public static RegistryObject<SwordItem> buccaneerCutlass;
+	public static RegistryObject<SwordItem> buccaneerCutlass, phasesaber, phasesaberGravitic;
 	//armor
 	public static ArmorMaterial marauder, sentry;
 	public static RegistryObject<ArmorItem> marauderHelmet, marauderChestplate, marauderLeggings, marauderBoots;
@@ -117,6 +117,10 @@ public class BPASItems {
 		//iron but more durable
 		Tier cutlass = new ForgeTier(2, 687, 6, 2, 14, BlockTags.NEEDS_IRON_TOOL, () -> Ingredient.of(Tags.Items.INGOTS_IRON));
 		buccaneerCutlass = initItem(() -> new SwordItem(cutlass, 3, -2.4F, defP()), "buccaneer_cutlass");
+		//TODO find how to stat them
+		Tier phase = new ForgeTier(3, 1561, 8, 3, 10, BlockTags.NEEDS_DIAMOND_TOOL, () -> Ingredient.of(Tags.Items.GEMS_DIAMOND));
+		phasesaber = initItem(() -> new SwordItem(phase, 3, -2.4F, defP()), "phasesaber");
+		phasesaberGravitic = initItem(() -> new GraviticSwordItem(phase, 3, -2.4F, defP()), "phasesaber_gravitic");
 		
 		//Armor
 		//TODO sounds
