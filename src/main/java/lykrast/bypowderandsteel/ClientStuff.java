@@ -55,7 +55,7 @@ public class ClientStuff {
     	event.registerLayerDefinition(CowbonesPistoleroRenderer.INNER_ARMOR, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.INNER_ARMOR_DEFORMATION), 64, 32));
     	event.registerLayerDefinition(CowbonesPistoleroRenderer.OUTER_ARMOR, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 32));
 		event.registerLayerDefinition(CowbonesBuckarooRenderer.MODEL, () -> CowbonesModel.createBodyLayer());
-    	event.registerLayerDefinition(CowbonesBuckarooRenderer.OVERLAY, () -> LayerDefinition.create(HumanoidModel.createMesh(new CubeDeformation(0.25f), 0), 64, 32));
+    	event.registerLayerDefinition(CowbonesBuckarooRenderer.OVERLAY, () -> CowbonesBuckarooRenderer.createOverlayLayer(new CubeDeformation(0.25f)));
     	event.registerLayerDefinition(CowbonesBuckarooRenderer.INNER_ARMOR, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.INNER_ARMOR_DEFORMATION), 64, 32));
     	event.registerLayerDefinition(CowbonesBuckarooRenderer.OUTER_ARMOR, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 32));
     	//tundra
