@@ -1,0 +1,13 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"group": "bypowderandsteel_living_herb_pillar_diagonal_combined",
+	"pattern": [
+		"A",
+		"B"
+	],
+	"key": {
+		"A": { "item": "bypowderandsteel:living_herb_cross_combined" },
+		"B": { "item": "bypowderandsteel:living_herb_cross_diagonal" }
+	},
+	"result": { "item": "bypowderandsteel:living_herb_pillar_diagonal_combined", "count": 2 }
+}

@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"AB",
+		"BA"
+	],
+	"key": {
+		"A": { "item": "bypowderandsteel:living_herb_lattice" },
+		"B": { "item": "bypowderandsteel:living_herb_cross_diagonal" }
+	},
+	"result": { "item": "bypowderandsteel:living_herb_lattice_double", "count": 4 }
+}
