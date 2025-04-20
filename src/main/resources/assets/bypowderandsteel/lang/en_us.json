@@ -159,6 +159,27 @@
 	"item.bypowderandsteel.gunnubus_crimson_spawn_egg": "Crimson Gunnubus Spawn Egg",
 
 	"entity.minecraft.villager.bypowderandsteel.gunsmith": "Gunsmith",
+	
+	"advancements.bypowderandsteel.root.title": "By Powder and Steel",
+	"advancements.bypowderandsteel.root.description": "Dangerous mobs await",
+	"advancements.bypowderandsteel.gunsteel.title": "Gunsteel, for Gun Purposes",
+	"advancements.bypowderandsteel.gunsteel.description": "Smelt Gunsteel Scrap from a gun-wielding mob",
+	"advancements.bypowderandsteel.damaged_device.title": "Turbo Encabulator",
+	"advancements.bypowderandsteel.damaged_device.description": "Acquire a Damaged Device from mobs underground",
+	"advancements.bypowderandsteel.diamond_gun.title": "This is Real Firepower",
+	"advancements.bypowderandsteel.diamond_gun.description": "Craft a Diamond Gun Assembly, essential for stronger guns",
+	"advancements.bypowderandsteel.living_herb.title": "Green, Green Grass of Home",
+	"advancements.bypowderandsteel.living_herb.description": "Acquire Living Herb from mobs in a forest",
+	"advancements.bypowderandsteel.cowbones_horn.title": "There is no Cow Level",
+	"advancements.bypowderandsteel.cowbones_horn.description": "Acquire a Cowbones Horn from mobs in a desert or savannah",
+	"advancements.bypowderandsteel.milspec_ice.title": "No More",
+	"advancements.bypowderandsteel.milspec_ice.description": "Acquire Milspec Ice from mobs in a cold biome",
+	"advancements.bypowderandsteel.sunken_doubloon.title": "Affecting the Trout Population",
+	"advancements.bypowderandsteel.sunken_doubloon.description": "Acquire a Sunken Doubloon from mobs in an ocean",
+	"advancements.bypowderandsteel.heptacle.title": "Schläfli Symbol {7/3}",
+	"advancements.bypowderandsteel.heptacle.description": "Acquire an Heptacle from mobs in a Crimson Forest",
+	"advancements.bypowderandsteel.graviolium_cell.title": "The Mavity of the Situation",
+	"advancements.bypowderandsteel.graviolium_cell.description": "Acquire a Graviolium Cell from mobs in the outer End",
 
 	"itemGroup.bypowderandsteel": "By Powder and Steel"
 }

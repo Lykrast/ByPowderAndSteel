@@ -1,0 +1,19 @@
+{
+	"parent": "bypowderandsteel:main/diamond_gun",
+	"display": {
+		"icon": { "item": "bypowderandsteel:heptacle" },
+		"title": { "translate": "advancements.bypowderandsteel.heptacle.title" },
+		"description": { "translate": "advancements.bypowderandsteel.heptacle.description" },
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": false
+	},
+	"criteria": {
+		"get_item": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": { "items": [{ "items": ["bypowderandsteel:heptacle"] }] }
+		}
+	},
+	"requirements": [["get_item"]]
+}

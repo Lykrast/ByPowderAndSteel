@@ -1,0 +1,19 @@
+{
+	"parent": "bypowderandsteel:main/gunsteel",
+	"display": {
+		"icon": { "item": "bypowderandsteel:damaged_device" },
+		"title": { "translate": "advancements.bypowderandsteel.damaged_device.title" },
+		"description": { "translate": "advancements.bypowderandsteel.damaged_device.description" },
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": false
+	},
+	"criteria": {
+		"get_item": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": { "items": [{ "items": ["bypowderandsteel:damaged_device"] }] }
+		}
+	},
+	"requirements": [["get_item"]]
+}

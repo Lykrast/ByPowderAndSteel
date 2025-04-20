@@ -1,0 +1,28 @@
+{
+	"display": {
+		"icon": { "item": "bypowderandsteel:desert_shotgun" },
+		"title": { "translate": "advancements.bypowderandsteel.root.title" },
+		"description": { "translate": "advancements.bypowderandsteel.root.description" },
+		"frame": "task",
+		"show_toast": false,
+		"announce_to_chat": false,
+		"hidden": false,
+		"background": "bypowderandsteel:textures/block/gunsteel_bricks.png"
+	},
+	"criteria": {
+		"killed_something": {
+			"trigger": "minecraft:player_killed_entity",
+			"conditions": {}
+		},
+		"killed_by_something": {
+			"trigger": "minecraft:entity_killed_player",
+			"conditions": {}
+		}
+	},
+	"requirements": [
+		[
+			"killed_something",
+			"killed_by_something"
+		]
+	]
+}

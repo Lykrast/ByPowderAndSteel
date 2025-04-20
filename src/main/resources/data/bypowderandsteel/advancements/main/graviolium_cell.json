@@ -1,0 +1,19 @@
+{
+	"parent": "bypowderandsteel:main/diamond_gun",
+	"display": {
+		"icon": { "item": "bypowderandsteel:graviolium_cell" },
+		"title": { "translate": "advancements.bypowderandsteel.graviolium_cell.title" },
+		"description": { "translate": "advancements.bypowderandsteel.graviolium_cell.description" },
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": false
+	},
+	"criteria": {
+		"get_item": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": { "items": [{ "items": ["bypowderandsteel:graviolium_cell"] }] }
+		}
+	},
+	"requirements": [["get_item"]]
+}

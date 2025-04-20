@@ -1,0 +1,19 @@
+{
+	"parent": "bypowderandsteel:main/damaged_device",
+	"display": {
+		"icon": { "item": "bypowderandsteel:desert_shotgun_diamond" },
+		"title": { "translate": "advancements.bypowderandsteel.diamond_gun.title" },
+		"description": { "translate": "advancements.bypowderandsteel.diamond_gun.description" },
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": false
+	},
+	"criteria": {
+		"get_item": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": { "items": [{ "items": ["bypowderandsteel:assembly_diamond"] }] }
+		}
+	},
+	"requirements": [["get_item"]]
+}

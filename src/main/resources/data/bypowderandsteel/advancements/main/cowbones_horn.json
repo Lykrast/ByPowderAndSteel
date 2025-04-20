@@ -1,0 +1,19 @@
+{
+	"parent": "bypowderandsteel:main/gunsteel",
+	"display": {
+		"icon": { "item": "bypowderandsteel:cowbones_horn" },
+		"title": { "translate": "advancements.bypowderandsteel.cowbones_horn.title" },
+		"description": { "translate": "advancements.bypowderandsteel.cowbones_horn.description" },
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": false
+	},
+	"criteria": {
+		"get_item": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": { "items": [{ "items": ["bypowderandsteel:cowbones_horn"] }] }
+		}
+	},
+	"requirements": [["get_item"]]
+}

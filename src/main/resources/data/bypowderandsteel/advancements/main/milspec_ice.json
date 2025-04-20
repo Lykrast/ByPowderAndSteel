@@ -1,0 +1,19 @@
+{
+	"parent": "bypowderandsteel:main/gunsteel",
+	"display": {
+		"icon": { "item": "bypowderandsteel:milspec_ice" },
+		"title": { "translate": "advancements.bypowderandsteel.milspec_ice.title" },
+		"description": { "translate": "advancements.bypowderandsteel.milspec_ice.description" },
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": false
+	},
+	"criteria": {
+		"get_item": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": { "items": [{ "items": ["bypowderandsteel:milspec_ice"] }] }
+		}
+	},
+	"requirements": [["get_item"]]
+}

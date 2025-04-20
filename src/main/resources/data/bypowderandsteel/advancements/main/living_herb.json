@@ -1,0 +1,19 @@
+{
+	"parent": "bypowderandsteel:main/gunsteel",
+	"display": {
+		"icon": { "item": "bypowderandsteel:living_herb" },
+		"title": { "translate": "advancements.bypowderandsteel.living_herb.title" },
+		"description": { "translate": "advancements.bypowderandsteel.living_herb.description" },
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": false
+	},
+	"criteria": {
+		"get_item": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": { "items": [{ "items": ["bypowderandsteel:living_herb"] }] }
+		}
+	},
+	"requirements": [["get_item"]]
+}

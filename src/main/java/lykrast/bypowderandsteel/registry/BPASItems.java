@@ -80,7 +80,7 @@ public class BPASItems {
 	public static void makeCreativeTab(RegisterEvent event) {
 		event.register(Registries.CREATIVE_MODE_TAB, helper -> {
 			helper.register(ResourceKey.create(Registries.CREATIVE_MODE_TAB, ByPowderAndSteel.rl("bypowderandsteel")),
-					CreativeModeTab.builder().title(Component.translatable("itemGroup.bypowderandsteel")).icon(() -> new ItemStack(gunsteelGun.get()))
+					CreativeModeTab.builder().title(Component.translatable("itemGroup.bypowderandsteel")).icon(() -> new ItemStack(desertShotgun.get()))
 							.displayItems((parameters, output) -> {
 								orderedItemsCreative.forEach(i -> output.accept(i.get()));
 								BPASBlocks.orderedBlockItems.forEach(i -> output.accept(i.get()));

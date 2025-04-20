@@ -1,0 +1,19 @@
+{
+	"parent": "bypowderandsteel:main/root",
+	"display": {
+		"icon": { "item": "bypowderandsteel:gunsteel_ingot" },
+		"title": { "translate": "advancements.bypowderandsteel.gunsteel.title" },
+		"description": { "translate": "advancements.bypowderandsteel.gunsteel.description" },
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": false
+	},
+	"criteria": {
+		"get_item": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": { "items": [{ "items": ["bypowderandsteel:gunsteel_ingot"] }] }
+		}
+	},
+	"requirements": [["get_item"]]
+}

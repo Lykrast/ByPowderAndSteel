@@ -1,0 +1,19 @@
+{
+	"parent": "bypowderandsteel:main/gunsteel",
+	"display": {
+		"icon": { "item": "bypowderandsteel:sunken_doubloon" },
+		"title": { "translate": "advancements.bypowderandsteel.sunken_doubloon.title" },
+		"description": { "translate": "advancements.bypowderandsteel.sunken_doubloon.description" },
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": false
+	},
+	"criteria": {
+		"get_item": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": { "items": [{ "items": ["bypowderandsteel:sunken_doubloon"] }] }
+		}
+	},
+	"requirements": [["get_item"]]
+}
