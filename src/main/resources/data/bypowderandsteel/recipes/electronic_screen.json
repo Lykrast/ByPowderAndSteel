@@ -1,0 +1,11 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"##",
+		"##"
+	],
+	"key": {
+		"#": { "item": "bypowderandsteel:electronic_casing" }
+	},
+	"result": { "item": "bypowderandsteel:electronic_screen", "count": 4 }
+}

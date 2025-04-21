@@ -1,0 +1,11 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"##",
+		"##"
+	],
+	"key": {
+		"#": { "item": "bypowderandsteel:electronic_oscilloscope" }
+	},
+	"result": { "item": "bypowderandsteel:electronic_radar", "count": 4 }
+}

@@ -129,6 +129,10 @@
 	"block.bypowderandsteel.doubloon_bricks_stairs": "Doubloon Bricks Stairs",
 	"block.bypowderandsteel.doubloon_bricks_slab": "Doubloon Bricks Slab",
 
+	"block.bypowderandsteel.electronic_casing": "Electronic Casing",
+	"block.bypowderandsteel.electronic_screen": "Screen",
+	"block.bypowderandsteel.electronic_oscilloscope": "Oscilloscope",
+	"block.bypowderandsteel.electronic_radar": "Radar",
 	"block.bypowderandsteel.electronic_lamp": "Electronic Lamp",
 
 	"block.bypowderandsteel.graviolium_tank": "Graviolium Tank",

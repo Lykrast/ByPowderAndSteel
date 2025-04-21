@@ -47,7 +47,7 @@ public class BPASBlocks {
 	public static RegistryObject<Block> doubloonBricks, doubloonTiles, doubloonChiseled;
 	public static RegistryObject<Block> doubloonBricksStairs, doubloonBricksSlab;
 	//underground
-	public static RegistryObject<Block> electronicLamp;
+	public static RegistryObject<Block> electronicCasing, electronicScreen, electronicOscilloscope, electronicRadar, electronicLamp;
 	//nether
 	//end
 	public static RegistryObject<Block> gravioliumTank;
@@ -119,7 +119,11 @@ public class BPASBlocks {
 		doubloonBricksSlab = makeBlock("doubloon_bricks_slab", () -> new SlabBlock(Block.Properties.copy(doubloonBricks.get())));
 		doubloonTiles = makeBlock("doubloon_tiles", () -> new Block(Block.Properties.copy(doubloonBricks.get())));
 		doubloonChiseled = makeBlock("doubloon_chiseled", () -> new Block(Block.Properties.copy(doubloonBricks.get())));
-		
+
+		electronicCasing = makeBlock("electronic_casing", () -> new Block(Block.Properties.copy(Blocks.IRON_BLOCK)));
+		electronicScreen = makeBlock("electronic_screen", () -> new HorizontalFacingBlock(Block.Properties.copy(electronicCasing.get())));
+		electronicOscilloscope = makeBlock("electronic_oscilloscope", () -> new HorizontalFacingBlock(Block.Properties.copy(electronicCasing.get())));
+		electronicRadar = makeBlock("electronic_radar", () -> new HorizontalFacingBlock(Block.Properties.copy(electronicCasing.get())));
 		electronicLamp = makeBlock("electronic_lamp", () -> new ElectronicLampBlock(Block.Properties.copy(Blocks.LANTERN)));
 		
 		gravioliumTank = makeBlock("graviolium_tank", () -> new RotatedPillarBlock(Block.Properties.copy(Blocks.IRON_BLOCK)));

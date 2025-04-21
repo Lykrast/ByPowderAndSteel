@@ -1,0 +1,19 @@
+{
+	"variants": {
+		"facing=east": {
+			"model": "bypowderandsteel:block/electronic_radar",
+			"y": 90
+		},
+		"facing=north": {
+			"model": "bypowderandsteel:block/electronic_radar"
+		},
+		"facing=south": {
+			"model": "bypowderandsteel:block/electronic_radar",
+			"y": 180
+		},
+		"facing=west": {
+			"model": "bypowderandsteel:block/electronic_radar",
+			"y": 270
+		}
+	}
+}

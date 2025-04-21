@@ -1,0 +1,19 @@
+{
+	"variants": {
+		"facing=east": {
+			"model": "bypowderandsteel:block/electronic_oscilloscope",
+			"y": 90
+		},
+		"facing=north": {
+			"model": "bypowderandsteel:block/electronic_oscilloscope"
+		},
+		"facing=south": {
+			"model": "bypowderandsteel:block/electronic_oscilloscope",
+			"y": 180
+		},
+		"facing=west": {
+			"model": "bypowderandsteel:block/electronic_oscilloscope",
+			"y": 270
+		}
+	}
+}

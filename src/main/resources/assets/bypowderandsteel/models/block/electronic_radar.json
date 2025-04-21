@@ -1,0 +1,8 @@
+{
+	"parent": "minecraft:block/orientable",
+	"textures": {
+		"front": "bypowderandsteel:block/electronic_radar",
+		"side": "bypowderandsteel:block/electronic_side",
+		"top": "bypowderandsteel:block/electronic_side"
+	}
+}
