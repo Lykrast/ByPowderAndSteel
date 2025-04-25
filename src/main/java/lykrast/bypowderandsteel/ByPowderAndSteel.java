@@ -7,6 +7,7 @@ import lykrast.bypowderandsteel.registry.BPASBlocks;
 import lykrast.bypowderandsteel.registry.BPASEntities;
 import lykrast.bypowderandsteel.registry.BPASItems;
 import lykrast.bypowderandsteel.registry.BPASVillagers;
+import lykrast.bypowderandsteel.world.BPASCaveRegion;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -27,6 +28,7 @@ public class ByPowderAndSteel {
 		BPASEntities.REG.register(bus);
 		BPASVillagers.POI.register(bus);
 		BPASVillagers.PROFESSION.register(bus);
+		bus.addListener(BPASCaveRegion::register);
 		
 		//TODO hero of the village stuff
 	}

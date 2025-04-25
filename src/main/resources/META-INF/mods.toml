@@ -15,20 +15,26 @@ Mob addon for Guns Without Roses.
 '''
 
 [[dependencies.bypowderandsteel]]
-    modId="forge"
-    mandatory=true
-    versionRange="[47,)"
-    ordering="NONE"
-    side="BOTH"
+	modId="forge"
+	mandatory=true
+	versionRange="[47,)"
+	ordering="NONE"
+	side="BOTH"
 [[dependencies.bypowderandsteel]]
-    modId="minecraft"
-    mandatory=true
-    versionRange="[1.20.1,]"
-    ordering="NONE"
-    side="BOTH"
+	modId="minecraft"
+	mandatory=true
+	versionRange="[1.20.1,]"
+	ordering="NONE"
+	side="BOTH"
 [[dependencies.bypowderandsteel]]
-    modId="gunswithoutroses"
-    mandatory=true
-    versionRange="[1.20.1-2.3.0,)"
-    ordering="AFTER"
-    side="BOTH"
+	modId="gunswithoutroses"
+	mandatory=true
+	versionRange="[1.20.1-2.3.0,)"
+	ordering="AFTER"
+	side="BOTH"
+[[dependencies.bypowderandsteel]]
+	modId="terrablender"
+	mandatory=true
+	versionRange="[3.0.1.10,)"
+	ordering="AFTER"
+	side="BOTH"
