@@ -1,0 +1,7 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{ "item": "bypowderandsteel:damaged_device_crate" }
+	],
+	"result": { "item": "bypowderandsteel:damaged_device", "count": 9 }
+}

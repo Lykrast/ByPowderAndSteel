@@ -7,6 +7,7 @@ import java.util.function.Supplier;
 import lykrast.bypowderandsteel.ByPowderAndSteel;
 import lykrast.bypowderandsteel.block.*;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -47,6 +48,7 @@ public class BPASBlocks {
 	public static RegistryObject<Block> doubloonBricks, doubloonTiles, doubloonChiseled;
 	public static RegistryObject<Block> doubloonBricksStairs, doubloonBricksSlab;
 	//underground
+	public static RegistryObject<Block> damagedDeviceCrate;
 	public static RegistryObject<Block> electronicCasing, electronicScreen, electronicOscilloscope, electronicRadar, electronicLamp;
 	//nether
 	//end
@@ -120,6 +122,7 @@ public class BPASBlocks {
 		doubloonTiles = makeBlock("doubloon_tiles", () -> new Block(Block.Properties.copy(doubloonBricks.get())));
 		doubloonChiseled = makeBlock("doubloon_chiseled", () -> new Block(Block.Properties.copy(doubloonBricks.get())));
 
+		damagedDeviceCrate = makeBlock("damaged_device_crate", () -> new Block(Block.Properties.of().mapColor(DyeColor.LIGHT_BLUE).instrument(NoteBlockInstrument.BASEDRUM).strength(2,0.3f)));
 		electronicCasing = makeBlock("electronic_casing", () -> new Block(Block.Properties.copy(Blocks.IRON_BLOCK)));
 		electronicScreen = makeBlock("electronic_screen", () -> new HorizontalFacingBlock(Block.Properties.copy(electronicCasing.get())));
 		electronicOscilloscope = makeBlock("electronic_oscilloscope", () -> new HorizontalFacingBlock(Block.Properties.copy(electronicCasing.get())));

@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"###",
+		"###",
+		"###"
+	],
+	"key": {
+		"#": { "item": "bypowderandsteel:damaged_device" }
+	},
+	"result": { "item": "bypowderandsteel:damaged_device_crate" }
+}

@@ -1,0 +1,8 @@
+{
+	"parent": "minecraft:block/cube_bottom_top",
+	"textures": {
+		"bottom": "bypowderandsteel:block/damaged_device_crate_bottom",
+		"side": "bypowderandsteel:block/damaged_device_crate_side",
+		"top": "bypowderandsteel:block/damaged_device_crate_top"
+	}
+}
