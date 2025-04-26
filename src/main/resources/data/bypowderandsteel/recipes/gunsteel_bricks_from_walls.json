@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"group": "bypowderandsteel_gunsteel_bricks",
+	"ingredients": [
+		{ "item": "bypowderandsteel:gunsteel_bricks_wall" }
+	],
+	"result": { "item": "bypowderandsteel:gunsteel_bricks" }
+}
