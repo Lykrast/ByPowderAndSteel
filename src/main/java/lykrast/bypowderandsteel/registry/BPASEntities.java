@@ -34,6 +34,7 @@ public class BPASEntities {
 	//nether
 	public static RegistryObject<EntityType<GunnubusCrimsonEntity>> gunnubusCrimson;
 	//end
+	public static RegistryObject<EntityType<SkybenderEntity>> skybender;
 	//mob projectiles
 	public static RegistryObject<EntityType<ShrubsnapperFangEntity>> shrubsnapperFang;
 	//custom bullets
@@ -57,6 +58,7 @@ public class BPASEntities {
 		//nether
 		gunnubusCrimson = REG.register("gunnubus_crimson", () -> EntityType.Builder.of(GunnubusCrimsonEntity::new, MobCategory.MONSTER).sized(1.2F, 3.99F).clientTrackingRange(8).build(""));
 		//end
+		skybender = REG.register("skybender", () -> EntityType.Builder.of(SkybenderEntity::new, MobCategory.MONSTER).sized(0.9F, 1.125F).clientTrackingRange(8).build(""));
 		
 		//mob projectiles
 		//I dunno why this one bein dum dum with the types
@@ -78,6 +80,7 @@ public class BPASEntities {
 		event.put(sabersentry.get(), SaberSentryEntity.createAttributes().build());
 		event.put(blastersentry.get(), BlasterSentryEntity.createAttributes().build());
 		event.put(gunnubusCrimson.get(), GunnubusCrimsonEntity.createAttributes().build());
+		event.put(skybender.get(), SkybenderEntity.createAttributes().build());
 	}
 	
 	@SubscribeEvent

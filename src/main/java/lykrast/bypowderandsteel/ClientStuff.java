@@ -37,6 +37,7 @@ public class ClientStuff {
 		//nether
 		event.registerEntityRenderer(BPASEntities.gunnubusCrimson.get(), (context) -> new GunnubusCrimsonRenderer(context));
 		//end
+		event.registerEntityRenderer(BPASEntities.skybender.get(), (context) -> new SkybenderRenderer(context));
 		//mob projectiles
 		event.registerEntityRenderer(BPASEntities.shrubsnapperFang.get(), (context) -> new ShrubsnapperFangRenderer(context));
 		//custom bullets
@@ -74,6 +75,7 @@ public class ClientStuff {
     	event.registerLayerDefinition(GunnubusCrimsonRenderer.INNER_ARMOR, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.INNER_ARMOR_DEFORMATION), 64, 32));
     	event.registerLayerDefinition(GunnubusCrimsonRenderer.OUTER_ARMOR, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 32));
 		//end
+		event.registerLayerDefinition(SkybenderModel.MODEL, () -> SkybenderModel.createBodyLayer());
     	//projectiles
 		event.registerLayerDefinition(ShrubsnapperFangRenderer.MODEL, () -> EvokerFangsModel.createBodyLayer());
 	}
