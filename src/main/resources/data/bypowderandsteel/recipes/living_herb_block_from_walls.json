@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"group": "bypowderandsteel_living_herb_block",
+	"ingredients": [
+		{ "item": "bypowderandsteel:living_herb_wall" }
+	],
+	"result": { "item": "bypowderandsteel:living_herb_block" }
+}

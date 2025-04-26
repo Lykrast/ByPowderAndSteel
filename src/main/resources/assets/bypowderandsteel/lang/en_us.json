@@ -84,6 +84,7 @@
 	"block.bypowderandsteel.living_herb_block": "Living Herb Block",
 	"block.bypowderandsteel.living_herb_stairs": "Living Herb Stairs",
 	"block.bypowderandsteel.living_herb_slab": "Living Herb Slab",
+	"block.bypowderandsteel.living_herb_wall": "Living Herb Wall",
 	"block.bypowderandsteel.living_herb_framed": "Framed Living Herb",
 	"block.bypowderandsteel.living_herb_cross_orthogonal": "Orthogonal Crossed Living Herb",
 	"block.bypowderandsteel.living_herb_cross_diagonal": "Diagonal Crossed Living Herb",
@@ -107,10 +108,12 @@
 	"block.bypowderandsteel.bovony_lamp": "Bovony Lamp",
 	"block.bypowderandsteel.bovony_stairs": "Bovony Stairs",
 	"block.bypowderandsteel.bovony_slab": "Bovony Slab",
+	"block.bypowderandsteel.bovony_wall": "Bovony Wall",
 	"block.bypowderandsteel.bovony_tiles_stairs": "Bovony Tiles Stairs",
 	"block.bypowderandsteel.bovony_tiles_slab": "Bovony Tiles Slab",
 	"block.bypowderandsteel.bovony_bricks_stairs": "Bovony Bricks Stairs",
 	"block.bypowderandsteel.bovony_bricks_slab": "Bovony Bricks Slab",
+	"block.bypowderandsteel.bovony_bricks_wall": "Bovony Bricks Wall",
 
 	"block.bypowderandsteel.milspec_ice_crate": "Crate of Milspec Ice",
 	"block.bypowderandsteel.milspec_ice_block": "Block of Milspec Ice",
@@ -120,6 +123,7 @@
 	"block.bypowderandsteel.milspec_ice_pillar": "Milspec Ice Pillar",
 	"block.bypowderandsteel.milspec_ice_stairs": "Milspec Ice Stairs",
 	"block.bypowderandsteel.milspec_ice_slab": "Milspec Ice Slab",
+	"block.bypowderandsteel.milspec_ice_bricks_wall": "Milspec Ice Bricks Wall",
 	"block.bypowderandsteel.milspec_ice_tiles_stairs": "Milspec Ice Tiles Stairs",
 	"block.bypowderandsteel.milspec_ice_tiles_slab": "Milspec Ice Tiles Slab",
 
@@ -129,6 +133,7 @@
 	"block.bypowderandsteel.doubloon_chiseled": "Chiseled Doubloon Bricks",
 	"block.bypowderandsteel.doubloon_bricks_stairs": "Doubloon Bricks Stairs",
 	"block.bypowderandsteel.doubloon_bricks_slab": "Doubloon Bricks Slab",
+	"block.bypowderandsteel.doubloon_bricks_wall": "Doubloon Bricks Wall",
 
 	"block.bypowderandsteel.damaged_device_crate": "Crate of Damaged Devices",
 	"block.bypowderandsteel.electronic_casing": "Electronic Casing",

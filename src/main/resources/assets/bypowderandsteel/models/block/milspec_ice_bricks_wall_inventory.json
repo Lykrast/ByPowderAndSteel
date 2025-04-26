@@ -1,0 +1,6 @@
+{
+	"parent": "minecraft:block/wall_inventory",
+	"textures": {
+		"wall": "bypowderandsteel:block/milspec_ice_bricks"
+	}
+}

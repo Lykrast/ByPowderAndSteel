@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"group": "bypowderandsteel_doubloon_bricks",
+	"ingredients": [
+		{ "item": "bypowderandsteel:doubloon_bricks_wall" }
+	],
+	"result": { "item": "bypowderandsteel:doubloon_bricks" }
+}

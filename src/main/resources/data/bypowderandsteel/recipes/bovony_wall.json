@@ -1,0 +1,11 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"###",
+		"###"
+	],
+	"key": {
+		"#": { "item": "bypowderandsteel:bovony" }
+	},
+	"result": { "item": "bypowderandsteel:bovony_wall", "count": 6 }
+}

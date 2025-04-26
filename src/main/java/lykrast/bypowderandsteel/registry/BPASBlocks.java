@@ -35,19 +35,19 @@ public class BPASBlocks {
 	public static RegistryObject<Block> livingHerbSack;
 	public static RegistryObject<Block> livingHerb, lhFramed, lhCrossOrthogonal, lhCrossDiagonal, lhCrossCombined, lhLattice, lhLatticeDouble;
 	public static RegistryObject<Block> lhPillarOrthogonal, lhPillarDiagonal, lhPillarCombined, lhPillarDiaOrt, lhPillarComOrt, lhPillarDiaCom;
-	public static RegistryObject<Block> livingHerbStairs, livingHerbSlab;
+	public static RegistryObject<Block> livingHerbStairs, livingHerbSlab, livingHerbWall;
 	//desert
 	public static RegistryObject<Block> cowbonesHornCrate;
 	public static RegistryObject<Block> bovony, bovonyTilesBig, bovonyTiles, bovonyBricks, bovonyChiseled, bovonyPillar, bovonyLamp;
-	public static RegistryObject<Block> bovonyStairs, bovonySlab, bovonyTilesStairs, bovonyTilesSlab, bovonyBricksStairs, bovonyBricksSlab;
+	public static RegistryObject<Block> bovonyStairs, bovonySlab, bovonyWall, bovonyTilesStairs, bovonyTilesSlab, bovonyBricksStairs, bovonyBricksSlab, bovonyBricksWall;
 	//tundra
 	public static RegistryObject<Block> milspecIceCrate;
 	public static RegistryObject<Block> milspecIceBlock, milspecIceBricks, milspecIceTiles, milspecIceChiseled, milspecIcePillar;
-	public static RegistryObject<Block> milspecIceStairs, milspecIceSlab, milspecIceTilesStairs, milspecIceTilesSlab;
+	public static RegistryObject<Block> milspecIceStairs, milspecIceSlab, milspecIceBricksWall, milspecIceTilesStairs, milspecIceTilesSlab;
 	//ocean
 	public static RegistryObject<Block> doubloonCrate;
 	public static RegistryObject<Block> doubloonBricks, doubloonTiles, doubloonChiseled;
-	public static RegistryObject<Block> doubloonBricksStairs, doubloonBricksSlab;
+	public static RegistryObject<Block> doubloonBricksStairs, doubloonBricksSlab, doubloonBricksWall;
 	//underground
 	public static RegistryObject<Block> damagedDeviceCrate;
 	public static RegistryObject<Block> electronicCasing, electronicScreen, electronicOscilloscope, electronicRadar, electronicLamp;
@@ -78,6 +78,7 @@ public class BPASBlocks {
 		livingHerb = makeBlock("living_herb_block", () -> new Block(Block.Properties.copy(Blocks.MOSS_BLOCK)));
 		livingHerbStairs = makeBlock("living_herb_stairs", () -> new StairBlock(() -> livingHerb.get().defaultBlockState(), Block.Properties.copy(livingHerb.get())));
 		livingHerbSlab = makeBlock("living_herb_slab", () -> new SlabBlock(Block.Properties.copy(livingHerb.get())));
+		livingHerbWall = makeBlock("living_herb_wall", () -> new WallBlock(Block.Properties.copy(livingHerb.get()).forceSolidOn()));
 		lhFramed = makeBlock("living_herb_framed", () -> new Block(Block.Properties.copy(livingHerb.get())));
 		lhCrossOrthogonal = makeBlock("living_herb_cross_orthogonal", () -> new Block(Block.Properties.copy(livingHerb.get())));
 		lhCrossDiagonal = makeBlock("living_herb_cross_diagonal", () -> new Block(Block.Properties.copy(livingHerb.get())));
@@ -95,6 +96,7 @@ public class BPASBlocks {
 		bovony = makeBlock("bovony", () -> new Block(Block.Properties.copy(Blocks.TUFF).mapColor(MapColor.TERRACOTTA_BLACK)));
 		bovonyStairs = makeBlock("bovony_stairs", () -> new StairBlock(() -> bovony.get().defaultBlockState(), Block.Properties.copy(bovony.get())));
 		bovonySlab = makeBlock("bovony_slab", () -> new SlabBlock(Block.Properties.copy(bovony.get())));
+		bovonyWall = makeBlock("bovony_wall", () -> new WallBlock(Block.Properties.copy(bovony.get()).forceSolidOn()));
 		bovonyTilesBig = makeBlock("bovony_tiles_big", () -> new Block(Block.Properties.copy(bovony.get())));
 		bovonyTiles = makeBlock("bovony_tiles", () -> new Block(Block.Properties.copy(bovony.get())));
 		bovonyTilesStairs = makeBlock("bovony_tiles_stairs", () -> new StairBlock(() -> bovonyTiles.get().defaultBlockState(), Block.Properties.copy(bovony.get())));
@@ -102,6 +104,7 @@ public class BPASBlocks {
 		bovonyBricks = makeBlock("bovony_bricks", () -> new Block(Block.Properties.copy(bovony.get())));
 		bovonyBricksStairs = makeBlock("bovony_bricks_stairs", () -> new StairBlock(() -> bovonyBricks.get().defaultBlockState(), Block.Properties.copy(bovony.get())));
 		bovonyBricksSlab = makeBlock("bovony_bricks_slab", () -> new SlabBlock(Block.Properties.copy(bovony.get())));
+		bovonyBricksWall = makeBlock("bovony_bricks_wall", () -> new WallBlock(Block.Properties.copy(bovony.get()).forceSolidOn()));
 		bovonyChiseled = makeBlock("bovony_chiseled", () -> new Block(Block.Properties.copy(bovony.get())));
 		bovonyPillar = makeBlock("bovony_pillar", () -> new RotatedPillarBlock(Block.Properties.copy(bovony.get())));
 		bovonyLamp = makeBlock("bovony_lamp", () -> new RotatedPillarBlock(Block.Properties.copy(bovony.get()).lightLevel((state) -> 15)));
@@ -111,6 +114,7 @@ public class BPASBlocks {
 		milspecIceStairs = makeBlock("milspec_ice_stairs", () -> new StairBlock(() -> milspecIceBlock.get().defaultBlockState(), Block.Properties.copy(milspecIceBlock.get())));
 		milspecIceSlab = makeBlock("milspec_ice_slab", () -> new SlabBlock(Block.Properties.copy(milspecIceBlock.get())));
 		milspecIceBricks = makeBlock("milspec_ice_bricks", () -> new Block(Block.Properties.copy(milspecIceBlock.get())));
+		milspecIceBricksWall = makeBlock("milspec_ice_bricks_wall", () -> new WallBlock(Block.Properties.copy(milspecIceBlock.get()).forceSolidOn()));
 		milspecIceTiles = makeBlock("milspec_ice_tiles", () -> new Block(Block.Properties.copy(milspecIceBlock.get())));
 		milspecIceTilesStairs = makeBlock("milspec_ice_tiles_stairs", () -> new StairBlock(() -> milspecIceTiles.get().defaultBlockState(), Block.Properties.copy(milspecIceBlock.get())));
 		milspecIceTilesSlab = makeBlock("milspec_ice_tiles_slab", () -> new SlabBlock(Block.Properties.copy(milspecIceBlock.get())));
@@ -121,6 +125,7 @@ public class BPASBlocks {
 		doubloonBricks = makeBlock("doubloon_bricks", () -> new Block(Block.Properties.copy(Blocks.GOLD_BLOCK)));
 		doubloonBricksStairs = makeBlock("doubloon_bricks_stairs", () -> new StairBlock(() -> doubloonBricks.get().defaultBlockState(), Block.Properties.copy(doubloonBricks.get())));
 		doubloonBricksSlab = makeBlock("doubloon_bricks_slab", () -> new SlabBlock(Block.Properties.copy(doubloonBricks.get())));
+		doubloonBricksWall = makeBlock("doubloon_bricks_wall", () -> new WallBlock(Block.Properties.copy(doubloonBricks.get()).forceSolidOn()));
 		doubloonTiles = makeBlock("doubloon_tiles", () -> new Block(Block.Properties.copy(doubloonBricks.get())));
 		doubloonChiseled = makeBlock("doubloon_chiseled", () -> new Block(Block.Properties.copy(doubloonBricks.get())));
 

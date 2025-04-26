@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"group": "bypowderandsteel_milspec_ice_bricks",
+	"ingredients": [
+		{ "item": "bypowderandsteel:milspec_ice_bricks_wall" }
+	],
+	"result": { "item": "bypowderandsteel:milspec_ice_bricks" }
+}

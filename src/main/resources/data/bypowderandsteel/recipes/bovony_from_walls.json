@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"group": "bypowderandsteel_bovony",
+	"ingredients": [
+		{ "item": "bypowderandsteel:bovony_wall" }
+	],
+	"result": { "item": "bypowderandsteel:bovony" }
+}
