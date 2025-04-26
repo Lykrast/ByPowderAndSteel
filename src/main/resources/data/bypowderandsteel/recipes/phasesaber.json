@@ -1,0 +1,14 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		" D ",
+		"EDE",
+		"EIE"
+	],
+	"key": {
+		"I": { "tag": "forge:ingots/iron" },
+		"D": { "tag": "forge:gems/diamond" },
+		"E": { "item": "bypowderandsteel:damaged_device" }
+	},
+	"result": { "item": "bypowderandsteel:phasesaber" }
+}

@@ -1,0 +1,13 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		" # ",
+		"#T#",
+		" # "
+	],
+	"key": {
+		"#": { "item": "bypowderandsteel:damaged_device" },
+		"T": { "item": "minecraft:torch" }
+	},
+	"result": { "item": "bypowderandsteel:electronic_lamp", "count": 4 }
+}
