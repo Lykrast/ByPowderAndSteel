@@ -69,7 +69,7 @@ public class BPASItems {
 	//ocean
 	public static RegistryObject<Item> sunkenDoubloon;
 	//underground
-	public static RegistryObject<Item> damagedDevice, sentryPlating, batterySoda, bilkshake;
+	public static RegistryObject<Item> damagedDevice, sentryPlating, phasesaberTemplate, batterySoda, bilkshake;
 	//nether
 	public static RegistryObject<Item> heptacle;
 	//end
@@ -200,6 +200,7 @@ public class BPASItems {
 
 		damagedDevice = initItem(() -> new Item(defP()), "damaged_device");
 		sentryPlating = initItem(() -> new Item(defP()), "sentry_fiber_plating");
+		phasesaberTemplate = initItem(() -> new Item(defP()), "phasesaber_template");
 		batterySoda = initItem(() -> new DrinkItem(defP().food(food(4, 0.4))), "battery_soda");
 		bilkshake = initItem(() -> new BilkshakeItem(defP().food((new FoodProperties.Builder()).nutrition(6).saturationMod(0.4f).alwaysEat().build())), "bilkshake");
 		
