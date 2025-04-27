@@ -32,6 +32,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.common.ForgeTier;
 import net.minecraftforge.common.Tags;
@@ -48,7 +49,7 @@ public class BPASItems {
 	//bullets
 	public static RegistryObject<BulletItem> gunsteelBullet, caliberry, caliberryLarge, phaseBullet, graviticBullet;
 	//swords
-	public static RegistryObject<SwordItem> buccaneerCutlass, phasesaber, phasesaberGravitic;
+	public static RegistryObject<SwordItem> buccaneerCutlass, phasesaber, phasesaberCaliberry, phasesaberDesert, phasesaberArctic, phasesaberGravitic;
 	//armor
 	public static ArmorMaterial marauder, sentry;
 	public static RegistryObject<ArmorItem> marauderHelmet, marauderChestplate, marauderLeggings, marauderBoots;
@@ -120,6 +121,13 @@ public class BPASItems {
 		//diamond but a lil more durable (will have different upgrades than netherite), and also star wars came out in 1977, neat uh?
 		Tier phase = new ForgeTier(3, 1977, 8, 3, 10, BlockTags.NEEDS_DIAMOND_TOOL, () -> Ingredient.of(Tags.Items.GEMS_DIAMOND));
 		phasesaber = initItem(() -> new SwordItem(phase, 3, -2.4F, defP()), "phasesaber");
+		phasesaberCaliberry = initItem(() -> new AttributeSwordItem(phase, 3, -2.4F, defP())
+				.attribute(Attributes.ATTACK_KNOCKBACK, new AttributeModifier(AttributeSwordItem.UUID1, "Weapon modifier", 1.2, AttributeModifier.Operation.ADDITION))
+				.done(), "phasesaber_caliberry");
+		phasesaberDesert = initItem(() -> new SwordItem(phase, 3, -1.8F, defP()), "phasesaber_desert");
+		phasesaberArctic = initItem(() -> new AttributeSwordItem(phase, 3, -2.4F, defP())
+				.attribute(ForgeMod.ENTITY_REACH, new AttributeModifier(AttributeSwordItem.UUID1, "Weapon modifier", 0.8, AttributeModifier.Operation.ADDITION))
+				.done(), "phasesaber_arctic");
 		phasesaberGravitic = initItem(() -> new GraviticSwordItem(phase, 3, -2.4F, defP()), "phasesaber_gravitic");
 		
 		//Armor

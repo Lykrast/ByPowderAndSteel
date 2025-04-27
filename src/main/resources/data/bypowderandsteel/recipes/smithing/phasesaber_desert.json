@@ -1,0 +1,7 @@
+{
+	"type": "minecraft:smithing_transform",
+	"base": { "item": "bypowderandsteel:phasesaber" },
+	"template": { "item": "bypowderandsteel:phasesaber_template" },
+	"addition": { "item": "bypowderandsteel:cowbones_horn" },
+	"result": { "item": "bypowderandsteel:phasesaber_desert" }
+}

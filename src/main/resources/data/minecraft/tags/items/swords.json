@@ -1,5 +1,10 @@
 {
 	"values": [
-		"bypowderandsteel:buccaneer_cutlass"
+		"bypowderandsteel:buccaneer_cutlass",
+		"bypowderandsteel:phasesaber",
+		"bypowderandsteel:phasesaber_caliberry",
+		"bypowderandsteel:phasesaber_desert",
+		"bypowderandsteel:phasesaber_arctic",
+		"bypowderandsteel:phasesaber_gravitic"
 	]
 }
