@@ -1,0 +1,24 @@
+{
+	"parent": "bypowderandsteel:main/damaged_device",
+	"display": {
+		"icon": { "item": "bypowderandsteel:phasesaber_desert" },
+		"title": { "translate": "advancements.bypowderandsteel.upgrade_phasesaber.title" },
+		"description": { "translate": "advancements.bypowderandsteel.upgrade_phasesaber.description" },
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": false
+	},
+	"criteria": {
+		"get_item": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": { "items": [{ "items": [
+				"bypowderandsteel:phasesaber_caliberry",
+				"bypowderandsteel:phasesaber_desert",
+				"bypowderandsteel:phasesaber_arctic",
+				"bypowderandsteel:phasesaber_gravitic"
+			]}]}
+		}
+	},
+	"requirements": [["get_item"]]
+}

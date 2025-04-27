@@ -1,0 +1,19 @@
+{
+	"parent": "bypowderandsteel:main/living_herb",
+	"display": {
+		"icon": { "item": "bypowderandsteel:caliberry_vine" },
+		"title": { "translate": "advancements.bypowderandsteel.caliberry_vine.title" },
+		"description": { "translate": "advancements.bypowderandsteel.caliberry_vine.description" },
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": false
+	},
+	"criteria": {
+		"get_item": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": { "items": [{ "items": ["bypowderandsteel:caliberry_vine"] }] }
+		}
+	},
+	"requirements": [["get_item"]]
+}
