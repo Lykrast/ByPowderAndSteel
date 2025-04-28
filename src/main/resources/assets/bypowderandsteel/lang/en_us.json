@@ -14,6 +14,8 @@
 	"item.bypowderandsteel.buccaneer_cannon_diamond": "Diamond Buccaneer Cannon",
 	"item.bypowderandsteel.raygun": "Raygun",
 	"tooltip.bypowderandsteel.raygun": "Projectiles are slower",
+	"item.bypowderandsteel.bloodfueled_revolver": "Blood-Fueled Revolver",
+	"tooltip.bypowderandsteel.bloodfueled": "Take %1$d damage per shot",
 
 	"item.bypowderandsteel.gunsteel_bullet": "Gunsteel Bullet",
 	"item.bypowderandsteel.caliberry": "Caliberry",
@@ -176,6 +178,9 @@
 	"item.bypowderandsteel.skybender_spawn_egg": "Skybender Spawn Egg",
 
 	"entity.minecraft.villager.bypowderandsteel.gunsmith": "Gunsmith",
+
+	"death.attack.bypowderandsteel.bloodfueled": "%1$s ran out of blood",
+	"death.attack.bypowderandsteel.bloodfueled.player": "%1$s ran out of blood whilst fighting %2$s",
 	
 	"advancements.bypowderandsteel.root.title": "By Powder and Steel",
 	"advancements.bypowderandsteel.root.description": "Dangerous mobs await",
@@ -186,7 +191,7 @@
 	"advancements.bypowderandsteel.diamond_gun.title": "This is Real Firepower",
 	"advancements.bypowderandsteel.diamond_gun.description": "Craft a Diamond Gun Assembly, essential for stronger guns",
 	"advancements.bypowderandsteel.upgrade_phasesaber.title": "A Fine Addition to my Collection",
-	"advancements.bypowderandsteel.upgrade_phasesaber.description": "Craft a Phasesaber then upgrade it",
+	"advancements.bypowderandsteel.upgrade_phasesaber.description": "Craft an upgraded Phasesaber",
 	"advancements.bypowderandsteel.living_herb.title": "Green, Green Grass of Home",
 	"advancements.bypowderandsteel.living_herb.description": "Acquire Living Herb from mobs in a forest",
 	"advancements.bypowderandsteel.caliberry_vine.title": "Berry Get!",
@@ -197,7 +202,7 @@
 	"advancements.bypowderandsteel.milspec_ice.description": "Acquire Milspec Ice from mobs in a cold biome",
 	"advancements.bypowderandsteel.sunken_doubloon.title": "Affecting the Trout Population",
 	"advancements.bypowderandsteel.sunken_doubloon.description": "Acquire a Sunken Doubloon from mobs in an ocean",
-	"advancements.bypowderandsteel.heptacle.title": "Schläfli Symbol {7/3}",
+	"advancements.bypowderandsteel.heptacle.title": "Hell is Full",
 	"advancements.bypowderandsteel.heptacle.description": "Acquire an Heptacle from mobs in a Crimson Forest",
 	"advancements.bypowderandsteel.graviolium_cell.title": "The Mavity of the Situation",
 	"advancements.bypowderandsteel.graviolium_cell.description": "Acquire a Graviolium Cell from mobs in the outer End",

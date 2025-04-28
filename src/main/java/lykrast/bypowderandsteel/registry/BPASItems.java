@@ -45,7 +45,7 @@ public class BPASItems {
 	public static final DeferredRegister<Item> REG = DeferredRegister.create(ForgeRegistries.ITEMS, ByPowderAndSteel.MODID);
 	//guns
 	public static RegistryObject<GunItem> gunsteelGun, peashooter, cornGatling, desertRevolver, desertShotgun, arcticPistol, arcticSniper, buccaneerFlintlock, buccaneerCannon, raygun;
-	public static RegistryObject<GunItem> cornGatlingDiamond, desertShotgunDiamond, arcticSniperDiamond, buccaneerCannonDiamond;
+	public static RegistryObject<GunItem> cornGatlingDiamond, desertShotgunDiamond, arcticSniperDiamond, buccaneerCannonDiamond, bloodfueledRevolver;
 	//bullets
 	public static RegistryObject<BulletItem> gunsteelBullet, caliberry, caliberryLarge, phaseBullet, graviticBullet;
 	//swords
@@ -106,6 +106,7 @@ public class BPASItems {
 		buccaneerCannon = initItem(() -> new GunItem(defP().durability(687), 2, 2, 35, 6, 12).fireSound(GWRSounds.shotgun).repair(() -> Ingredient.of(cowbonesHorn.get())), "buccaneer_cannon");
 		buccaneerCannonDiamond = initItem(() -> new GunItem(defP().durability(2780), 2, 3, 35, 6, 12).fireSound(GWRSounds.shotgun).repair(() -> Ingredient.of(Tags.Items.GEMS_DIAMOND)), "buccaneer_cannon_diamond");
 		raygun = initItem(() -> new RaygunItem(defP().durability(1053), 2, 1, 20, 0.75, 10).repair(() -> Ingredient.of(damagedDevice.get())), "raygun");
+		bloodfueledRevolver = initItem(() -> new BloodfueledGunItem(defP().durability(2666), 2, 1.5, 15, 3, 15, 3).repair(() -> Ingredient.of(heptacle.get())), "bloodfueled_revolver");
 		
 		//Bullets
 		gunsteelBullet = initItem(() -> new BulletItem(defP(), 6), "gunsteel_bullet");

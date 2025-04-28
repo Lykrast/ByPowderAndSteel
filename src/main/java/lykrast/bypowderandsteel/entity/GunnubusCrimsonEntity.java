@@ -5,6 +5,7 @@ import javax.annotation.Nullable;
 import lykrast.bypowderandsteel.ByPowderAndSteel;
 import lykrast.bypowderandsteel.entity.ai.GunGoal;
 import lykrast.bypowderandsteel.misc.BPASUtils;
+import lykrast.bypowderandsteel.registry.BPASItems;
 import lykrast.gunswithoutroses.item.BulletItem;
 import lykrast.gunswithoutroses.registry.GWRAttributes;
 import lykrast.gunswithoutroses.registry.GWRItems;
@@ -30,15 +31,19 @@ import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.level.pathfinder.BlockPathTypes;
 
 public class GunnubusCrimsonEntity extends Monster implements GunMob {
 	//TODO give them an actual behavior
 
 	public GunnubusCrimsonEntity(EntityType<? extends GunnubusCrimsonEntity> type, Level world) {
 		super(type, world);
+		setPathfindingMalus(BlockPathTypes.DANGER_FIRE, 16);
+		setPathfindingMalus(BlockPathTypes.DAMAGE_FIRE, -1);
 	}
 
 	@Override
@@ -84,7 +89,10 @@ public class GunnubusCrimsonEntity extends Monster implements GunMob {
 
 	@Override
 	protected void populateDefaultEquipmentSlots(RandomSource random, DifficultyInstance difficulty) {
-		setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(BPASUtils.randomDefaultGun(random)));
+		Item gun = BPASItems.bloodfueledRevolver.get();
+		//1/3 of the time have the revolver, otherwise have a default gun
+		if (random.nextInt(3) < 2) gun = BPASUtils.randomDefaultGun(random);
+		setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(gun));
 	}
 	
 	@Override

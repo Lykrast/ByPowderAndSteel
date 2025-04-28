@@ -56,7 +56,7 @@ public class BPASEntities {
 		sabersentry = REG.register("sabersentry", () -> EntityType.Builder.of(SaberSentryEntity::new, MobCategory.MONSTER).sized(0.9F, 3.3F).clientTrackingRange(8).build(""));
 		blastersentry = REG.register("blastersentry", () -> EntityType.Builder.of(BlasterSentryEntity::new, MobCategory.MONSTER).sized(0.75F, 1.99F).clientTrackingRange(8).build(""));
 		//nether
-		gunnubusCrimson = REG.register("gunnubus_crimson", () -> EntityType.Builder.of(GunnubusCrimsonEntity::new, MobCategory.MONSTER).sized(1.2F, 3.99F).clientTrackingRange(8).build(""));
+		gunnubusCrimson = REG.register("gunnubus_crimson", () -> EntityType.Builder.of(GunnubusCrimsonEntity::new, MobCategory.MONSTER).sized(1.2F, 3.99F).fireImmune().clientTrackingRange(8).build(""));
 		//end
 		skybender = REG.register("skybender", () -> EntityType.Builder.of(SkybenderEntity::new, MobCategory.MONSTER).sized(0.9F, 1.125F).clientTrackingRange(8).build(""));
 		
