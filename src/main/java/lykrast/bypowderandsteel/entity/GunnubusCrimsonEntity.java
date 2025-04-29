@@ -89,9 +89,10 @@ public class GunnubusCrimsonEntity extends Monster implements GunMob {
 
 	@Override
 	protected void populateDefaultEquipmentSlots(RandomSource random, DifficultyInstance difficulty) {
-		Item gun = BPASItems.bloodfueledRevolver.get();
-		//1/3 of the time have the revolver, otherwise have a default gun
-		if (random.nextInt(3) < 2) gun = BPASUtils.randomDefaultGun(random);
+		//2/3 of the time it's iron gun, rest it's either bloodfueled or blazing
+		//want to keep the high damage ones rarer
+		Item gun = GWRItems.ironGun.get();
+		if (random.nextInt(3) == 0) gun = (random.nextBoolean() ? GWRItems.blazeGun : BPASItems.bloodfueledRevolver).get();
 		setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(gun));
 	}
 	
