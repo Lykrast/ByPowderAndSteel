@@ -46,6 +46,9 @@
 		"bypowderandsteel:electronic_oscilloscope",
 		"bypowderandsteel:electronic_radar",
 		"bypowderandsteel:electronic_lamp",
+		"bypowderandsteel:infernal_bricks",
+		"bypowderandsteel:infernal_tiles",
+		"bypowderandsteel:infernal_pillar",
 		"bypowderandsteel:graviolium_tank"
 	]
 }

@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"group": "bypowderandsteel_infernal_bricks",
+	"pattern": [
+		"##",
+		"##"
+	],
+	"key": {
+		"#": { "item": "bypowderandsteel:heptacle" }
+	},
+	"result": { "item": "bypowderandsteel:infernal_bricks" }
+}

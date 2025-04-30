@@ -1,0 +1,16 @@
+{
+	"variants": {
+		"axis=y": {
+			"model": "bypowderandsteel:block/infernal_pillar"
+		},
+		"axis=z": {
+			"model": "bypowderandsteel:block/infernal_pillar",
+			"x": 90
+		},
+		"axis=x": {
+			"model": "bypowderandsteel:block/infernal_pillar",
+			"x": 90,
+			"y": 90
+		}
+	}
+}

@@ -1,0 +1,6 @@
+{
+	"type": "minecraft:stonecutting",
+	"count": 1,
+	"ingredient": { "tag": "bypowderandsteel:infernal_bricks" },
+	"result": "bypowderandsteel:infernal_bricks"
+}

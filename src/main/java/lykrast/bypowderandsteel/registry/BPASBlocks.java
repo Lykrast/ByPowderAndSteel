@@ -52,6 +52,7 @@ public class BPASBlocks {
 	public static RegistryObject<Block> damagedDeviceCrate;
 	public static RegistryObject<Block> electronicCasing, electronicScreen, electronicOscilloscope, electronicRadar, electronicLamp;
 	//nether
+	public static RegistryObject<Block> infernalBricks, infernalTiles, infernalPillar;
 	//end
 	public static RegistryObject<Block> gravioliumTank;
 
@@ -135,6 +136,10 @@ public class BPASBlocks {
 		electronicOscilloscope = makeBlock("electronic_oscilloscope", () -> new HorizontalFacingBlock(Block.Properties.copy(electronicCasing.get())));
 		electronicRadar = makeBlock("electronic_radar", () -> new HorizontalFacingBlock(Block.Properties.copy(electronicCasing.get())));
 		electronicLamp = makeBlock("electronic_lamp", () -> new ElectronicLampBlock(Block.Properties.copy(Blocks.LANTERN)));
+		
+		infernalBricks = makeBlock("infernal_bricks", () -> new Block(Block.Properties.copy(Blocks.BRICKS).mapColor(MapColor.COLOR_ORANGE).sound(SoundType.NETHER_BRICKS).instrument(NoteBlockInstrument.BASEDRUM)));
+		infernalTiles = makeBlock("infernal_tiles", () -> new Block(Block.Properties.copy(infernalBricks.get())));
+		infernalPillar = makeBlock("infernal_pillar", () -> new RotatedPillarBlock(Block.Properties.copy(infernalBricks.get())));
 		
 		gravioliumTank = makeBlock("graviolium_tank", () -> new RotatedPillarBlock(Block.Properties.copy(Blocks.IRON_BLOCK)));
 	}

@@ -148,6 +148,10 @@
 	"block.bypowderandsteel.electronic_radar": "Radar",
 	"block.bypowderandsteel.electronic_lamp": "Electronic Lamp",
 
+	"block.bypowderandsteel.infernal_bricks": "Infernal Bricks",
+	"block.bypowderandsteel.infernal_tiles": "Infernal Tiles",
+	"block.bypowderandsteel.infernal_pillar": "Infernal Pillar",
+
 	"block.bypowderandsteel.graviolium_tank": "Graviolium Tank",
 
 	"entity.bypowderandsteel.gunome": "Gunome",

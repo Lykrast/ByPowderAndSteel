@@ -1,0 +1,7 @@
+{
+	"parent": "minecraft:block/cube_column",
+	"textures": {
+		"end": "bypowderandsteel:block/infernal_pillar_top",
+		"side": "bypowderandsteel:block/infernal_pillar_side"
+	}
+}
