@@ -17,7 +17,7 @@
 			"model": "bypowderandsteel:block/milspec_ice_stairs_outer"
 		},
 		"facing=east,half=bottom,shape=straight": {
-			"model": "bypowderandsteel:block/milspec_ice_stairs"
+			"model": "bypowderandsteel:block/milspec_ice_stairs_we"
 		},
 		"facing=east,half=top,shape=inner_left": {
 			"model": "bypowderandsteel:block/milspec_ice_stairs_inner",
@@ -42,7 +42,7 @@
 			"y": 90
 		},
 		"facing=east,half=top,shape=straight": {
-			"model": "bypowderandsteel:block/milspec_ice_stairs",
+			"model": "bypowderandsteel:block/milspec_ice_stairs_we",
 			"uvlock": true,
 			"x": 180
 		},
@@ -171,7 +171,7 @@
 			"y": 180
 		},
 		"facing=west,half=bottom,shape=straight": {
-			"model": "bypowderandsteel:block/milspec_ice_stairs",
+			"model": "bypowderandsteel:block/milspec_ice_stairs_we",
 			"uvlock": true,
 			"y": 180
 		},
@@ -200,7 +200,7 @@
 			"y": 270
 		},
 		"facing=west,half=top,shape=straight": {
-			"model": "bypowderandsteel:block/milspec_ice_stairs",
+			"model": "bypowderandsteel:block/milspec_ice_stairs_we",
 			"uvlock": true,
 			"x": 180,
 			"y": 180

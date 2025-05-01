@@ -3,7 +3,7 @@
 		"particle": "#side_bot",
 		"bottom": "bypowderandsteel:block/milspec_ice",
 		"side_bot": "bypowderandsteel:block/milspec_ice_slab",
-		"top_bot": "bypowderandsteel:block/milspec_ice",
+		"top_bot": "bypowderandsteel:block/milspec_ice_tiles",
 		"side_top": "bypowderandsteel:block/milspec_ice_tiles",
 		"top_top": "bypowderandsteel:block/milspec_ice_tiles"
 	},

@@ -21,10 +21,10 @@
 		"particle": "#side_bot",
 		"bottom": "bypowderandsteel:block/milspec_ice",
 		"side_bot": "bypowderandsteel:block/milspec_ice_slab",
-		"top_bot": "bypowderandsteel:block/milspec_ice_slab",
+		"top_bot": "bypowderandsteel:block/milspec_ice_slab_vertical",
 		"side_top_front": "bypowderandsteel:block/milspec_ice_slab",
 		"side_top_side": "bypowderandsteel:block/milspec_ice_tiles",
-		"top_top": "bypowderandsteel:block/milspec_ice_slab"
+		"top_top": "bypowderandsteel:block/milspec_ice_slab_vertical"
 	},
 	"elements": [
 		{   "from": [ 0, 0, 0 ],
