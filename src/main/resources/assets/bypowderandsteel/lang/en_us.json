@@ -158,6 +158,11 @@
 	"block.bypowderandsteel.infernal_tiles_slab": "Infernal Tiles Slab",
 
 	"block.bypowderandsteel.graviolium_tank": "Graviolium Tank",
+	"block.bypowderandsteel.gravitic_propulsion_pad": "Gravitic Propulsion Pad",
+	"block.bypowderandsteel.gravitic_propulsion_pad.desc": "Propels upwards with fixed speed",
+	"block.bypowderandsteel.gravitic_propulsion_pad_orthogonal": "Orthogonal Gravitic Propulsion Pad",
+	"block.bypowderandsteel.gravitic_propulsion_pad_diagonal": "Diagonal Gravitic Propulsion Pad",
+	"block.bypowderandsteel.gravitic_propulsion_pad.oriented.desc": "Propels in the pointed direction with fixed speed",
 
 	"entity.bypowderandsteel.gunome": "Gunome",
 	"entity.bypowderandsteel.shrubhulk": "Shrubhulk",

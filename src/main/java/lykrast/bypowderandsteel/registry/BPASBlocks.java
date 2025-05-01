@@ -56,6 +56,7 @@ public class BPASBlocks {
 	public static RegistryObject<Block> infernalBricksStairs, infernalBricksSlab, infernalBricksWall, infernalTilesStairs, infernalTilesSlab;
 	//end
 	public static RegistryObject<Block> gravioliumTank;
+	public static RegistryObject<Block> proppad, proppadOrthogonal, proppadDiagonal;
 
 	public static List<RegistryObject<? extends Item>> orderedBlockItems = new ArrayList<>();
 	
@@ -148,6 +149,9 @@ public class BPASBlocks {
 		infernalPillar = makeBlock("infernal_pillar", () -> new RotatedPillarBlock(Block.Properties.copy(infernalBricks.get())));
 		
 		gravioliumTank = makeBlock("graviolium_tank", () -> new RotatedPillarBlock(Block.Properties.copy(Blocks.IRON_BLOCK)));
+		proppad = makeBlock("gravitic_propulsion_pad", () -> new PropulsionPadBlock(Block.Properties.copy(gravioliumTank.get()), 1));
+		proppadOrthogonal = makeBlock("gravitic_propulsion_pad_orthogonal", () -> new PropulsionPadDirectionalBlock(Block.Properties.copy(gravioliumTank.get()), 1.2, 0.6, false));
+		proppadDiagonal = makeBlock("gravitic_propulsion_pad_diagonal", () -> new PropulsionPadDirectionalBlock(Block.Properties.copy(gravioliumTank.get()), 1.2, 0.6, true));
 	}
 	
 	private static RegistryObject<Block> makeBlock(String name, Supplier<Block> block) {

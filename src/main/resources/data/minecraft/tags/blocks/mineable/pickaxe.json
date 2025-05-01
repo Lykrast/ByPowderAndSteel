@@ -54,6 +54,9 @@
 		"bypowderandsteel:infernal_bricks_wall",
 		"bypowderandsteel:infernal_tiles_stairs",
 		"bypowderandsteel:infernal_tiles_slab",
-		"bypowderandsteel:graviolium_tank"
+		"bypowderandsteel:graviolium_tank",
+		"bypowderandsteel:gravitic_propulsion_pad",
+		"bypowderandsteel:gravitic_propulsion_pad_orthogonal",
+		"bypowderandsteel:gravitic_propulsion_pad_diagonal"
 	]
 }

@@ -1,0 +1,13 @@
+{
+	"type":"minecraft:block",
+	"pools":[{
+		"bonus_rolls": 0,
+		"conditions": [{ "condition":"minecraft:survives_explosion" }],
+		"entries": [{
+			"type": "minecraft:item",
+			"name": "bypowderandsteel:gravitic_propulsion_pad_orthogonal"
+		}],
+		"rolls": 1
+	}],
+	"random_sequence": "bypowderandsteel:blocks/gravitic_propulsion_pad_orthogonal"
+}

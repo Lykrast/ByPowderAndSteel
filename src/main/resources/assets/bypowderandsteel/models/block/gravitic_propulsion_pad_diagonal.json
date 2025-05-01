@@ -1,0 +1,8 @@
+{
+	"parent": "minecraft:block/cube_bottom_top",
+	"textures": {
+		"top": "bypowderandsteel:block/gravitic_propulsion_pad_diagonal",
+		"side": "bypowderandsteel:block/graviolium_tank_side",
+		"bottom": "bypowderandsteel:block/graviolium_tank_top"
+	}
+}
