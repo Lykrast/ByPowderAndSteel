@@ -49,6 +49,11 @@
 		"bypowderandsteel:infernal_bricks",
 		"bypowderandsteel:infernal_tiles",
 		"bypowderandsteel:infernal_pillar",
+		"bypowderandsteel:infernal_bricks_stairs",
+		"bypowderandsteel:infernal_bricks_slab",
+		"bypowderandsteel:infernal_bricks_wall",
+		"bypowderandsteel:infernal_tiles_stairs",
+		"bypowderandsteel:infernal_tiles_slab",
 		"bypowderandsteel:graviolium_tank"
 	]
 }

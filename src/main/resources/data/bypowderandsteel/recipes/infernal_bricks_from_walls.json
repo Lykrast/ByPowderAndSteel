@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"group": "bypowderandsteel_infernal_bricks",
+	"ingredients": [
+		{ "item": "bypowderandsteel:infernal_bricks_wall" }
+	],
+	"result": { "item": "bypowderandsteel:infernal_bricks" }
+}

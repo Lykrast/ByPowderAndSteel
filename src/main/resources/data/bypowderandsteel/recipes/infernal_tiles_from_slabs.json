@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"group": "bypowderandsteel_infernal_tiles",
+	"pattern": [
+		"#",
+		"#"
+	],
+	"key": {
+		"#": { "item": "bypowderandsteel:infernal_tiles_slab" }
+	},
+	"result": { "item": "bypowderandsteel:infernal_tiles" }
+}

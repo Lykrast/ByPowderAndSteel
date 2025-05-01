@@ -1,0 +1,8 @@
+{
+	"parent": "minecraft:block/slab_top",
+	"textures": {
+		"bottom": "bypowderandsteel:block/infernal_bricks",
+		"side": "bypowderandsteel:block/infernal_bricks",
+		"top": "bypowderandsteel:block/infernal_bricks"
+	}
+}

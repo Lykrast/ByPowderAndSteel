@@ -151,6 +151,11 @@
 	"block.bypowderandsteel.infernal_bricks": "Infernal Bricks",
 	"block.bypowderandsteel.infernal_tiles": "Infernal Tiles",
 	"block.bypowderandsteel.infernal_pillar": "Infernal Pillar",
+	"block.bypowderandsteel.infernal_bricks_stairs": "Infernal Bricks Stairs",
+	"block.bypowderandsteel.infernal_bricks_slab": "Infernal Bricks Slab",
+	"block.bypowderandsteel.infernal_bricks_wall": "Infernal Bricks Wall",
+	"block.bypowderandsteel.infernal_tiles_stairs": "Infernal Tiles Stairs",
+	"block.bypowderandsteel.infernal_tiles_slab": "Infernal Tiles Slab",
 
 	"block.bypowderandsteel.graviolium_tank": "Graviolium Tank",
 
