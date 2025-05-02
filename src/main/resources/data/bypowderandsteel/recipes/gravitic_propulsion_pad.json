@@ -1,0 +1,13 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"group": "bypowderandsteel_gravitic_propulsion_pad",
+	"pattern": [
+		"GG",
+		"DD"
+	],
+	"key": {
+		"G": { "item": "bypowderandsteel:graviolium_cell" },
+		"D": { "item": "bypowderandsteel:damaged_device" }
+	},
+	"result": { "item": "bypowderandsteel:gravitic_propulsion_pad" }
+}

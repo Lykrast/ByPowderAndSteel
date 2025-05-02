@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"group": "bypowderandsteel_gravitic_propulsion_pad",
+	"ingredients": [
+		{ "item": "bypowderandsteel:gravitic_propulsion_pad_diagonal" }
+	],
+	"result": { "item": "bypowderandsteel:gravitic_propulsion_pad" }
+}
