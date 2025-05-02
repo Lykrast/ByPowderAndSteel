@@ -31,7 +31,6 @@ public class PropulsionPadDirectionalBlock extends HorizontalFacingBlock {
 
 	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
-		//TODO diagonal
 		Vec3 clicked = context.getClickLocation();
 		BlockPos pos = context.getClickedPos();
 		//0 is center of block face

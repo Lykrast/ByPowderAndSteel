@@ -49,7 +49,11 @@ public class PropulsionPadBlock extends Block {
 	}
 	
 	public static void centerEntity(Entity entity, BlockPos pos) {
-		entity.setPos(pos.getX() + 0.5, pos.getY() + 1.25, pos.getZ() + 0.5);
+		//this is fucking pissing me off
+		//moveTo or any variation makes going on a pad vs jumping on one have different bounces
+		//this gives a consistent bounce but also makes a small noticeable pause
+		//AAAAAAAAAAAAAAAAAAAAAAA
+		entity.teleportTo(pos.getX() + 0.5, pos.getY() + 1, pos.getZ() + 0.5);
 	}
 	
 	@Override
