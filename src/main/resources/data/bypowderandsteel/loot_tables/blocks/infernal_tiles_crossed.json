@@ -1,0 +1,13 @@
+{
+	"type":"minecraft:block",
+	"pools":[{
+		"bonus_rolls": 0,
+		"conditions": [{ "condition":"minecraft:survives_explosion" }],
+		"entries": [{
+			"type": "minecraft:item",
+			"name": "bypowderandsteel:infernal_tiles_crossed"
+		}],
+		"rolls": 1
+	}],
+	"random_sequence": "bypowderandsteel:blocks/infernal_tiles_crossed"
+}

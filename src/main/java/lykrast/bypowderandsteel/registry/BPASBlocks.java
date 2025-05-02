@@ -52,7 +52,7 @@ public class BPASBlocks {
 	public static RegistryObject<Block> damagedDeviceCrate;
 	public static RegistryObject<Block> electronicCasing, electronicScreen, electronicOscilloscope, electronicRadar, electronicLamp;
 	//nether
-	public static RegistryObject<Block> infernalBricks, infernalTiles, infernalPillar;
+	public static RegistryObject<Block> infernalBricks, infernalTiles, infernalTilesCrossed, infernalPillar;
 	public static RegistryObject<Block> infernalBricksStairs, infernalBricksSlab, infernalBricksWall, infernalTilesStairs, infernalTilesSlab;
 	//end
 	public static RegistryObject<Block> gravioliumTank;
@@ -146,6 +146,7 @@ public class BPASBlocks {
 		infernalTiles = makeBlock("infernal_tiles", () -> new Block(Block.Properties.copy(infernalBricks.get())));
 		infernalTilesStairs = makeBlock("infernal_tiles_stairs", () -> new StairBlock(() -> infernalTiles.get().defaultBlockState(), Block.Properties.copy(infernalBricks.get())));
 		infernalTilesSlab = makeBlock("infernal_tiles_slab", () -> new SlabBlock(Block.Properties.copy(infernalBricks.get())));
+		infernalTilesCrossed = makeBlock("infernal_tiles_crossed", () -> new Block(Block.Properties.copy(infernalBricks.get())));
 		infernalPillar = makeBlock("infernal_pillar", () -> new RotatedPillarBlock(Block.Properties.copy(infernalBricks.get())));
 		
 		gravioliumTank = makeBlock("graviolium_tank", () -> new RotatedPillarBlock(Block.Properties.copy(Blocks.IRON_BLOCK)));

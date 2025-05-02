@@ -106,7 +106,7 @@
 
 	"block.bypowderandsteel.cowbones_horn_crate": "Crate of Cowbones Horns",
 	"block.bypowderandsteel.bovony": "Bovony",
-	"block.bypowderandsteel.bovony_tiles_big": "Big Bovony tiles",
+	"block.bypowderandsteel.bovony_tiles_big": "Big Bovony Tiles",
 	"block.bypowderandsteel.bovony_tiles": "Bovony Tiles",
 	"block.bypowderandsteel.bovony_bricks": "Bovony Bricks",
 	"block.bypowderandsteel.bovony_chiseled": "Chiseled Bovony",
@@ -150,6 +150,7 @@
 
 	"block.bypowderandsteel.infernal_bricks": "Infernal Bricks",
 	"block.bypowderandsteel.infernal_tiles": "Infernal Tiles",
+	"block.bypowderandsteel.infernal_tiles_crossed": "Crossed Infernal Tiles",
 	"block.bypowderandsteel.infernal_pillar": "Infernal Pillar",
 	"block.bypowderandsteel.infernal_bricks_stairs": "Infernal Bricks Stairs",
 	"block.bypowderandsteel.infernal_bricks_slab": "Infernal Bricks Slab",
