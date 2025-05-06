@@ -1,0 +1,32 @@
+{
+	"item.desert_revolver.shoot": {
+		"category": "players",
+		"subtitle": "subtitles.bypowderandsteel.item.revolver.shoot",
+		"sounds": [ { "name": "bypowderandsteel:desert_revolver", "volume": 0.4 } ]
+	},
+	"item.desert_shotgun.shoot": {
+		"category": "players",
+		"subtitle": "subtitles.gunswithoutroses.item.shotgun.shoot",
+		"sounds": [ { "name": "bypowderandsteel:desert_shotgun", "volume": 0.3 } ]
+	},
+	"item.arctic_pistol.shoot": {
+		"category": "players",
+		"subtitle": "subtitles.bypowderandsteel.item.pistol.shoot",
+		"sounds": [ { "name": "bypowderandsteel:arctic_pistol", "volume": 0.5 } ]
+	},
+	"item.arctic_sniper.shoot": {
+		"category": "players",
+		"subtitle": "subtitles.gunswithoutroses.item.sniper.shoot",
+		"sounds": [ { "name": "bypowderandsteel:arctic_sniper", "volume": 0.15 } ]
+	},
+	"item.buccaneer_flintlock.shoot": {
+		"category": "players",
+		"subtitle": "subtitles.bypowderandsteel.item.buccaneer_flintlock.shoot",
+		"sounds": [ { "name": "bypowderandsteel:buccaneer_flintlock", "volume": 0.4 } ]
+	},
+	"item.bloodfueled_revolver.shoot": {
+		"category": "players",
+		"subtitle": "subtitles.bypowderandsteel.item.revolver.shoot",
+		"sounds": [ { "name": "bypowderandsteel:bloodfueled_revolver", "volume": 0.5 } ]
+	}
+}

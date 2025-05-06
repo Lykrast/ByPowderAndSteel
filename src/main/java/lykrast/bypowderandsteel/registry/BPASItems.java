@@ -96,17 +96,17 @@ public class BPASItems {
 		peashooter = initItem(() -> new GunItem(defP().durability(924), 0, 1, 16, 2, 20).chanceFreeShot(0.25).repair(() -> Ingredient.of(livingHerb.get())), "peashooter");
 		cornGatling = initItem(() -> new GatlingItem(defP().durability(924), 0, 0.5, 5, 5, 20).chanceFreeShot(0.5).repair(() -> Ingredient.of(livingHerb.get())), "corn_gatling");
 		cornGatlingDiamond = initItem(() -> new GatlingItem(defP().durability(3739), 0, 0.5, 3.5, 5, 20).chanceFreeShot(0.5).repair(() -> Ingredient.of(Tags.Items.GEMS_DIAMOND)), "corn_gatling_diamond");
-		desertRevolver = initItem(() -> new GunItem(defP().durability(753), 0, 1, 13, 4, 14).repair(() -> Ingredient.of(cowbonesHorn.get())), "desert_revolver");
-		desertShotgun = initItem(() -> new GunItem(defP().durability(753), 0, 0.5, 18, 6, 14).projectiles(3).fireSound(GWRSounds.shotgun).repair(() -> Ingredient.of(cowbonesHorn.get())), "desert_shotgun");
-		desertShotgunDiamond = initItem(() -> new GunItem(defP().durability(3047), 0, 0.6, 16, 6, 14).projectiles(3).fireSound(GWRSounds.shotgun).repair(() -> Ingredient.of(Tags.Items.GEMS_DIAMOND)), "desert_shotgun_diamond");
-		arcticPistol = initItem(() -> new GunItem(defP().durability(630), 1, 1, 18, 1, 8).repair(() -> Ingredient.of(milspecIce.get())), "arctic_pistol");
-		arcticSniper = initItem(() -> new GunItem(defP().durability(630), 2, 1, 24, 0, 8).headshotMult(1.5).fireSound(GWRSounds.sniper).repair(() -> Ingredient.of(milspecIce.get())), "arctic_sniper");
-		arcticSniperDiamond = initItem(() -> new GunItem(defP().durability(2549), 3, 1, 20, 0, 8).headshotMult(1.5).fireSound(GWRSounds.sniper).repair(() -> Ingredient.of(Tags.Items.GEMS_DIAMOND)), "arctic_sniper_diamond");
-		buccaneerFlintlock = initItem(() -> new GunItem(defP().durability(687), 2, 1.25, 25, 4, 12).repair(() -> Ingredient.of(cowbonesHorn.get())), "buccaneer_flintlock");
-		buccaneerCannon = initItem(() -> new GunItem(defP().durability(687), 2, 2, 35, 6, 12).fireSound(GWRSounds.shotgun).repair(() -> Ingredient.of(cowbonesHorn.get())), "buccaneer_cannon");
+		desertRevolver = initItem(() -> new GunItem(defP().durability(753), 0, 1, 13, 4, 14).fireSound(BPASSounds.desertRevolver).repair(() -> Ingredient.of(cowbonesHorn.get())), "desert_revolver");
+		desertShotgun = initItem(() -> new GunItem(defP().durability(753), 0, 0.5, 18, 6, 14).projectiles(3).fireSound(BPASSounds.desertShotgun).repair(() -> Ingredient.of(cowbonesHorn.get())), "desert_shotgun");
+		desertShotgunDiamond = initItem(() -> new GunItem(defP().durability(3047), 0, 0.6, 16, 6, 14).projectiles(3).fireSound(BPASSounds.desertShotgun).repair(() -> Ingredient.of(Tags.Items.GEMS_DIAMOND)), "desert_shotgun_diamond");
+		arcticPistol = initItem(() -> new GunItem(defP().durability(630), 1, 1, 18, 1, 8).fireSound(BPASSounds.arcticPistol).repair(() -> Ingredient.of(milspecIce.get())), "arctic_pistol");
+		arcticSniper = initItem(() -> new GunItem(defP().durability(630), 2, 1, 24, 0, 8).headshotMult(1.5).fireSound(BPASSounds.arcticSniper).repair(() -> Ingredient.of(milspecIce.get())), "arctic_sniper");
+		arcticSniperDiamond = initItem(() -> new GunItem(defP().durability(2549), 3, 1, 20, 0, 8).headshotMult(1.5).fireSound(BPASSounds.arcticSniper).repair(() -> Ingredient.of(Tags.Items.GEMS_DIAMOND)), "arctic_sniper_diamond");
+		buccaneerFlintlock = initItem(() -> new GunItem(defP().durability(687), 2, 1.25, 25, 4, 12).fireSound(BPASSounds.buccaneerFlintlock).repair(() -> Ingredient.of(sunkenDoubloon.get())), "buccaneer_flintlock");
+		buccaneerCannon = initItem(() -> new GunItem(defP().durability(687), 2, 2, 35, 6, 12).fireSound(GWRSounds.shotgun).repair(() -> Ingredient.of(sunkenDoubloon.get())), "buccaneer_cannon");
 		buccaneerCannonDiamond = initItem(() -> new GunItem(defP().durability(2780), 2, 3, 35, 6, 12).fireSound(GWRSounds.shotgun).repair(() -> Ingredient.of(Tags.Items.GEMS_DIAMOND)), "buccaneer_cannon_diamond");
 		raygun = initItem(() -> new RaygunItem(defP().durability(1053), 2, 1, 20, 0.75, 10).repair(() -> Ingredient.of(damagedDevice.get())), "raygun");
-		bloodfueledRevolver = initItem(() -> new BloodfueledGunItem(defP().durability(2666), 2, 1.5, 15, 3, 15, 3).repair(() -> Ingredient.of(heptacle.get())), "bloodfueled_revolver");
+		bloodfueledRevolver = initItem(() -> new BloodfueledGunItem(defP().durability(2666), 2, 1.5, 15, 3, 15, 3).fireSound(BPASSounds.bloodfueledRevolver).repair(() -> Ingredient.of(heptacle.get())), "bloodfueled_revolver");
 		
 		//Bullets
 		gunsteelBullet = initItem(() -> new BulletItem(defP(), 6), "gunsteel_bullet");
