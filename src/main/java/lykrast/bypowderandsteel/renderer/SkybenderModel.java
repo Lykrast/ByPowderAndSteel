@@ -81,6 +81,16 @@ public class SkybenderModel extends EntityModel<SkybenderEntity> implements Arme
 			armRight.xRot += (-Mth.PI / 5F);
 			armLeft.xRot += (-Mth.PI / 5F);
 		}
+		
+		//TODO temp holding gun animation
+		if (entity.isAggressive()) {
+			float f = Mth.sin(this.attackTime * (float) Math.PI);
+			float f1 = Mth.sin((1.0F - (1.0F - this.attackTime) * (1.0F - this.attackTime)) * (float) Math.PI);
+			armRight.zRot = 0.0F;
+			armRight.yRot = -(0.1F - f * 0.6F);
+			armRight.xRot = (-(float) Math.PI / 2F);
+			armRight.xRot -= f * 1.2F - f1 * 0.4F;
+		}
 	}
 
 	@Override
