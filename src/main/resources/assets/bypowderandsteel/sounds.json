@@ -1,4 +1,14 @@
 {
+	"item.peashooter.shoot": {
+		"category": "players",
+		"subtitle": "subtitles.bypowderandsteel.item.peashooter.shoot",
+		"sounds": [ { "name": "bypowderandsteel:peashooter", "volume": 0.6 } ]
+	},
+	"item.corn_gatling.shoot": {
+		"category": "players",
+		"subtitle": "subtitles.bypowderandsteel.item.corn_gatling.shoot",
+		"sounds": [ { "name": "bypowderandsteel:corn_gatling", "volume": 0.4 } ]
+	},
 	"item.desert_revolver.shoot": {
 		"category": "players",
 		"subtitle": "subtitles.bypowderandsteel.item.revolver.shoot",

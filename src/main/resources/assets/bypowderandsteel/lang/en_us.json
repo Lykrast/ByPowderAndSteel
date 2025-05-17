@@ -222,6 +222,8 @@
 	"advancements.bypowderandsteel.graviolium_cell.title": "The Mavity of the Situation",
 	"advancements.bypowderandsteel.graviolium_cell.description": "Acquire a Graviolium Cell from mobs in the outer End",
 
+	"subtitles.bypowderandsteel.item.peashooter.shoot": "Peashooter fired",
+	"subtitles.bypowderandsteel.item.corn_gatling.shoot": "Corn gatling fired",
 	"subtitles.bypowderandsteel.item.revolver.shoot": "Revolver fired",
 	"subtitles.bypowderandsteel.item.pistol.shoot": "Pistol fired",
 	"subtitles.bypowderandsteel.item.buccaneer_flintlock.shoot": "Flintlock fired",

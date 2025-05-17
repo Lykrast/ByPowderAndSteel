@@ -9,7 +9,7 @@ import net.minecraftforge.registries.RegistryObject;
 public class BPASSounds {
 	//Guns
 	public static final DeferredRegister<SoundEvent> REG = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, ByPowderAndSteel.MODID);
-	//public static RegistryObject<SoundEvent> peashooter = initSound("item.peashooter.shoot"), cornGatling = initSound("item.corn_gatling.shoot");
+	public static RegistryObject<SoundEvent> peashooter = initSound("item.peashooter.shoot"), cornGatling = initSound("item.corn_gatling.shoot");
 	public static RegistryObject<SoundEvent> desertRevolver = initSound("item.desert_revolver.shoot"), desertShotgun = initSound("item.desert_shotgun.shoot");
 	public static RegistryObject<SoundEvent> arcticPistol = initSound("item.arctic_pistol.shoot"), arcticSniper = initSound("item.arctic_sniper.shoot");
 	public static RegistryObject<SoundEvent> buccaneerFlintlock = initSound("item.buccaneer_flintlock.shoot");// buccaneerCannon = initSound("item.buccaneer_cannon.shoot");
