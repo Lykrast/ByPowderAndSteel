@@ -4,7 +4,7 @@ import java.util.EnumSet;
 
 import lykrast.bypowderandsteel.ByPowderAndSteel;
 import lykrast.bypowderandsteel.entity.ai.ApproachTargetGoal;
-import net.minecraft.core.BlockPos;
+import lykrast.bypowderandsteel.registry.BPASSounds;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
@@ -25,7 +25,6 @@ import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.state.BlockState;
 
 public class ShrubhulkEntity extends AnimatedMonster {
 	//animations
@@ -74,25 +73,19 @@ public class ShrubhulkEntity extends AnimatedMonster {
 		}
 	}
 
-	//TODO sounds
 	@Override
 	protected SoundEvent getAmbientSound() {
-		return SoundEvents.ZOMBIE_AMBIENT;
+		return BPASSounds.shrubIdle.get();
 	}
 
 	@Override
 	protected SoundEvent getHurtSound(DamageSource source) {
-		return SoundEvents.ZOMBIE_HURT;
+		return BPASSounds.shrubHurt.get();
 	}
 
 	@Override
 	protected SoundEvent getDeathSound() {
-		return SoundEvents.ZOMBIE_DEATH;
-	}
-
-	@Override
-	protected void playStepSound(BlockPos pos, BlockState state) {
-		this.playSound(SoundEvents.ZOMBIE_STEP, 0.15F, 1);
+		return BPASSounds.shrubDeath.get();
 	}
 
 	private static class SlamAttack extends Goal {

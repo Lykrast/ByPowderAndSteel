@@ -4,12 +4,12 @@ import java.util.EnumSet;
 
 import lykrast.bypowderandsteel.ByPowderAndSteel;
 import lykrast.bypowderandsteel.entity.ai.CircleTargetGoal;
+import lykrast.bypowderandsteel.registry.BPASSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityDimensions;
@@ -94,25 +94,19 @@ public class ShrubsnapperEntity extends AnimatedMonster {
 		return dimensions.height * 0.75F;
 	}
 
-	//TODO sounds
 	@Override
 	protected SoundEvent getAmbientSound() {
-		return SoundEvents.ZOMBIE_AMBIENT;
+		return BPASSounds.shrubIdle.get();
 	}
 
 	@Override
 	protected SoundEvent getHurtSound(DamageSource source) {
-		return SoundEvents.ZOMBIE_HURT;
+		return BPASSounds.shrubHurt.get();
 	}
 
 	@Override
 	protected SoundEvent getDeathSound() {
-		return SoundEvents.ZOMBIE_DEATH;
-	}
-
-	@Override
-	protected void playStepSound(BlockPos pos, BlockState state) {
-		this.playSound(SoundEvents.ZOMBIE_STEP, 0.15F, 1);
+		return BPASSounds.shrubDeath.get();
 	}
 
 	private static class FangAttack extends Goal {

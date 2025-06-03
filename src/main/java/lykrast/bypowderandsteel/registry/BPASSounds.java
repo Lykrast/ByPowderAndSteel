@@ -7,6 +7,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class BPASSounds {
+	//TODO missing sounds
 	//Guns
 	public static final DeferredRegister<SoundEvent> REG = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, ByPowderAndSteel.MODID);
 	public static RegistryObject<SoundEvent> peashooter = initSound("item.peashooter.shoot"), cornGatling = initSound("item.corn_gatling.shoot");
@@ -16,6 +17,22 @@ public class BPASSounds {
 	//public static RegistryObject<SoundEvent> raygun = initSound("item.raygun.shoot");
 	public static RegistryObject<SoundEvent> bloodfueledRevolver = initSound("item.bloodfueled_revolver.shoot");
 	//Mobs
+	//forest
+	//public static RegistryObject<SoundEvent> gunomeIdle = initSound("entity.gunome.idle"), gunomeHurt = initSound("entity.gunome.hurt"), gunomeDeath = initSound("entity.gunome.death");
+	public static RegistryObject<SoundEvent> shrubIdle = initSound("entity.shrub.idle"), shrubHurt = initSound("entity.shrub.hurt"), shrubDeath = initSound("entity.shrub.death");
+	//desert
+	//public static RegistryObject<SoundEvent> cowbonesIdle = initSound("entity.cowbones.idle"), cowbonesHurt = initSound("entity.cowbones.hurt"), cowbonesDeath = initSound("entity.cowbones.death");
+	//tundra
+	//public static RegistryObject<SoundEvent> sealIdle = initSound("entity.zombie_seal.idle"), sealHurt = initSound("entity.zombie_seal.hurt"), sealDeath = initSound("entity.zombie_seal.death");
+	//ocean
+	//public static RegistryObject<SoundEvent> pirateIdle = initSound("entity.sunken_pirate.idle"), pirateHurt = initSound("entity.sunken_pirate.hurt"), pirateDeath = initSound("entity.sunken_pirate.death");
+	//undeground
+	//public static RegistryObject<SoundEvent> sabersentryIdle = initSound("entity.sabersentry.idle"), sabersentryHurt = initSound("entity.sabersentry.hurt"), sabersentryDeath = initSound("entity.sabersentry.death");
+	//public static RegistryObject<SoundEvent> blastersentryIdle = initSound("entity.blastersentry.idle"), blastersentryHurt = initSound("entity.blastersentry.hurt"), blastersentryDeath = initSound("entity.blastersentry.death");
+	//nether
+	//public static RegistryObject<SoundEvent> gunnubusIdle = initSound("entity.gunnubus.idle"), gunnubusHurt = initSound("entity.gunnubus.hurt"), gunnubusDeath = initSound("entity.gunnubus.death");
+	//end
+	//public static RegistryObject<SoundEvent> skybenderIdle = initSound("entity.skybender.idle"), skybenderHurt = initSound("entity.skybender.hurt"), skybenderDeath = initSound("entity.skybender.death");
 
 	public static RegistryObject<SoundEvent> initSound(String name) {
 		return REG.register(name, () -> SoundEvent.createVariableRangeEvent(ByPowderAndSteel.rl(name)));
