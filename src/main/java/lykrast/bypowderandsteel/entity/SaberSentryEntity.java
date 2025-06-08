@@ -1,6 +1,7 @@
 package lykrast.bypowderandsteel.entity;
 
 import lykrast.bypowderandsteel.ByPowderAndSteel;
+import lykrast.bypowderandsteel.registry.BPASSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
@@ -169,12 +170,12 @@ public class SaberSentryEntity extends AnimatedMonster {
 
 	@Override
 	protected SoundEvent getHurtSound(DamageSource source) {
-		return SoundEvents.BLAZE_HURT;
+		return BPASSounds.sentryHurt.get();
 	}
 
 	@Override
 	protected SoundEvent getDeathSound() {
-		return SoundEvents.BLAZE_DEATH;
+		return BPASSounds.sentryDeath.get();
 	}
 
 	@Override

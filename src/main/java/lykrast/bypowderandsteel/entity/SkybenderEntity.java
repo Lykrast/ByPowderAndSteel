@@ -8,6 +8,7 @@ import lykrast.bypowderandsteel.ByPowderAndSteel;
 import lykrast.bypowderandsteel.entity.ai.GunGoal;
 import lykrast.bypowderandsteel.misc.BPASUtils;
 import lykrast.bypowderandsteel.registry.BPASItems;
+import lykrast.bypowderandsteel.registry.BPASSounds;
 import lykrast.gunswithoutroses.item.BulletItem;
 import lykrast.gunswithoutroses.registry.GWRAttributes;
 import net.minecraft.core.BlockPos;
@@ -156,12 +157,12 @@ public class SkybenderEntity extends Monster implements GunMob {
 
 	@Override
 	protected SoundEvent getHurtSound(DamageSource source) {
-		return SoundEvents.BLAZE_HURT;
+		return BPASSounds.sentryHurt.get();
 	}
 
 	@Override
 	protected SoundEvent getDeathSound() {
-		return SoundEvents.BLAZE_DEATH;
+		return BPASSounds.sentryDeath.get();
 	}
 
 	private static class WanderGoal extends Goal {

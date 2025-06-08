@@ -243,18 +243,14 @@
 	"subtitles.bypowderandsteel.entity.sunken_pirate.idle": "Sunken Pirate TODO",
 	"subtitles.bypowderandsteel.entity.sunken_pirate.hurt": "Sunken Pirate hurt",
 	"subtitles.bypowderandsteel.entity.sunken_pirate.death": "Sunken Pirate dies",
+	"subtitles.bypowderandsteel.entity.sentry.hurt": "Robot hurt",
+	"subtitles.bypowderandsteel.entity.sentry.death": "Robot dies",
 	"subtitles.bypowderandsteel.entity.sabersentry.idle": "Saber Sentry TODO",
-	"subtitles.bypowderandsteel.entity.sabersentry.hurt": "Saber Sentry hurt",
-	"subtitles.bypowderandsteel.entity.sabersentry.death": "Saber Sentry dies",
 	"subtitles.bypowderandsteel.entity.blastersentry.idle": "Blaster Sentry TODO",
-	"subtitles.bypowderandsteel.entity.blastersentry.hurt": "Blaster Sentry hurt",
-	"subtitles.bypowderandsteel.entity.blastersentry.death": "Blaster Sentry dies",
 	"subtitles.bypowderandsteel.entity.gunnubus.idle": "Gunnubus TODO",
 	"subtitles.bypowderandsteel.entity.gunnubus.hurt": "Gunnubus hurt",
 	"subtitles.bypowderandsteel.entity.gunnubus.death": "Gunnubus dies",
 	"subtitles.bypowderandsteel.entity.skybender.idle": "Skybender TODO",
-	"subtitles.bypowderandsteel.entity.skybender.hurt": "Skybender hurt",
-	"subtitles.bypowderandsteel.entity.skybender.death": "Skybender dies",
 
 	"itemGroup.bypowderandsteel": "By Powder and Steel"
 }

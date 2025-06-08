@@ -63,5 +63,23 @@
 	"entity.shrub.death": {
 		"subtitle": "subtitles.bypowderandsteel.entity.shrub.death",
 		"sounds": [ "bypowderandsteel:shrub/death" ]
+	},
+	"entity.sentry.hurt": {
+		"subtitle": "subtitles.bypowderandsteel.entity.sentry.hurt",
+		"sounds": [
+			"bypowderandsteel:sentry/hurt1",
+			"bypowderandsteel:sentry/hurt2",
+			"bypowderandsteel:sentry/hurt3",
+			"bypowderandsteel:sentry/hurt4"
+		]
+	},
+	"entity.sentry.death": {
+		"subtitle": "subtitles.bypowderandsteel.entity.sentry.death",
+		"sounds": [
+			{ "name": "bypowderandsteel:sentry/death1", "volume": 0.4 },
+			{ "name": "bypowderandsteel:sentry/death2", "volume": 0.5 },
+			{ "name": "bypowderandsteel:sentry/death3", "volume": 0.5 },
+			{ "name": "bypowderandsteel:sentry/death4", "volume": 0.5 }
+		]
 	}
 }
