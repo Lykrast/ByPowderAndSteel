@@ -191,6 +191,7 @@ public class SaberSentryEntity extends AnimatedMonster {
         for(LivingEntity entity : level().getEntitiesOfClass(LivingEntity.class, hitbox)) {
         	if (!(entity instanceof SaberSentryEntity) && entity.isAlive()) doHurtTarget(entity);
         }
+        playSound(BPASSounds.saberSwing.get(), 1, 1);
 	}
 
 	private static class ChaseAndSwing extends MeleeAttackGoal {
@@ -241,6 +242,7 @@ public class SaberSentryEntity extends AnimatedMonster {
 					if (distanceSqr < 9) {
 						//raise arms to prepare attack, with a minimum time
 						sentry.setAnimation(ANIM_WINDUP);
+						sentry.playSound(BPASSounds.saberSwing.get(), 1, 1);
 						phase = 1;
 						time = 8;
 					}

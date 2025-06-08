@@ -81,5 +81,14 @@
 			{ "name": "bypowderandsteel:sentry/death3", "volume": 0.5 },
 			{ "name": "bypowderandsteel:sentry/death4", "volume": 0.5 }
 		]
+	},
+	"entity.sabersentry.swing": {
+		"subtitle": "subtitles.bypowderandsteel.entity.sabersentry.swing",
+		"sounds": [
+			"bypowderandsteel:sentry/saber_swing1",
+			"bypowderandsteel:sentry/saber_swing2",
+			"bypowderandsteel:sentry/saber_swing3",
+			"bypowderandsteel:sentry/saber_swing4"
+		]
 	}
 }
