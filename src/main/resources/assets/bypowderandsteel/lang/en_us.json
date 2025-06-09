@@ -227,6 +227,8 @@
 	"subtitles.bypowderandsteel.item.revolver.shoot": "Revolver fired",
 	"subtitles.bypowderandsteel.item.pistol.shoot": "Pistol fired",
 	"subtitles.bypowderandsteel.item.buccaneer_flintlock.shoot": "Flintlock fired",
+	"subtitles.bypowderandsteel.item.buccaneer_cannon.shoot": "Cannon fired",
+	"subtitles.bypowderandsteel.item.raygun.shoot": "Raygun fired",
 
 	"subtitles.bypowderandsteel.entity.gunome.idle": "Gunome TODO",
 	"subtitles.bypowderandsteel.entity.gunome.hurt": "Gunome hurt",

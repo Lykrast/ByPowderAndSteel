@@ -34,6 +34,11 @@
 		"subtitle": "subtitles.bypowderandsteel.item.buccaneer_flintlock.shoot",
 		"sounds": [ { "name": "bypowderandsteel:gun/buccaneer_flintlock", "volume": 0.4 } ]
 	},
+	"item.buccaneer_cannon.shoot": {
+		"category": "players",
+		"subtitle": "subtitles.bypowderandsteel.item.buccaneer_cannon.shoot",
+		"sounds": [ { "name": "bypowderandsteel:gun/buccaneer_cannon", "volume": 0.6 } ]
+	},
 	"item.bloodfueled_revolver.shoot": {
 		"category": "players",
 		"subtitle": "subtitles.bypowderandsteel.item.revolver.shoot",

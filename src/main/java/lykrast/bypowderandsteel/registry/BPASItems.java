@@ -12,7 +12,6 @@ import lykrast.gunswithoutroses.item.BulletItem;
 import lykrast.gunswithoutroses.item.GatlingItem;
 import lykrast.gunswithoutroses.item.GunItem;
 import lykrast.gunswithoutroses.registry.GWRAttributes;
-import lykrast.gunswithoutroses.registry.GWRSounds;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
@@ -103,8 +102,8 @@ public class BPASItems {
 		arcticSniper = initItem(() -> new GunItem(defP().durability(630), 2, 1, 24, 0, 8).headshotMult(1.5).fireSound(BPASSounds.arcticSniper).repair(() -> Ingredient.of(milspecIce.get())), "arctic_sniper");
 		arcticSniperDiamond = initItem(() -> new GunItem(defP().durability(2549), 3, 1, 20, 0, 8).headshotMult(1.5).fireSound(BPASSounds.arcticSniper).repair(() -> Ingredient.of(Tags.Items.GEMS_DIAMOND)), "arctic_sniper_diamond");
 		buccaneerFlintlock = initItem(() -> new GunItem(defP().durability(687), 2, 1.25, 25, 4, 12).fireSound(BPASSounds.buccaneerFlintlock).repair(() -> Ingredient.of(sunkenDoubloon.get())), "buccaneer_flintlock");
-		buccaneerCannon = initItem(() -> new GunItem(defP().durability(687), 2, 2, 35, 6, 12).fireSound(GWRSounds.shotgun).repair(() -> Ingredient.of(sunkenDoubloon.get())), "buccaneer_cannon");
-		buccaneerCannonDiamond = initItem(() -> new GunItem(defP().durability(2780), 2, 3, 35, 6, 12).fireSound(GWRSounds.shotgun).repair(() -> Ingredient.of(Tags.Items.GEMS_DIAMOND)), "buccaneer_cannon_diamond");
+		buccaneerCannon = initItem(() -> new GunItem(defP().durability(687), 2, 2, 35, 6, 12).fireSound(BPASSounds.buccaneerCannon).repair(() -> Ingredient.of(sunkenDoubloon.get())), "buccaneer_cannon");
+		buccaneerCannonDiamond = initItem(() -> new GunItem(defP().durability(2780), 2, 3, 35, 6, 12).fireSound(BPASSounds.buccaneerCannon).repair(() -> Ingredient.of(Tags.Items.GEMS_DIAMOND)), "buccaneer_cannon_diamond");
 		raygun = initItem(() -> new RaygunItem(defP().durability(1053), 2, 1, 20, 0.75, 10).repair(() -> Ingredient.of(damagedDevice.get())), "raygun");
 		bloodfueledRevolver = initItem(() -> new BloodfueledGunItem(defP().durability(2666), 2, 1.5, 15, 3, 15, 3).fireSound(BPASSounds.bloodfueledRevolver).repair(() -> Ingredient.of(heptacle.get())), "bloodfueled_revolver");
 		
