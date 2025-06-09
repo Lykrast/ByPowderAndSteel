@@ -39,6 +39,11 @@
 		"subtitle": "subtitles.bypowderandsteel.item.buccaneer_cannon.shoot",
 		"sounds": [ { "name": "bypowderandsteel:gun/buccaneer_cannon", "volume": 0.6 } ]
 	},
+	"item.raygun.shoot": {
+		"category": "players",
+		"subtitle": "subtitles.bypowderandsteel.item.raygun.shoot",
+		"sounds": [ { "name": "bypowderandsteel:gun/raygun", "volume": 0.9 } ]
+	},
 	"item.bloodfueled_revolver.shoot": {
 		"category": "players",
 		"subtitle": "subtitles.bypowderandsteel.item.revolver.shoot",
