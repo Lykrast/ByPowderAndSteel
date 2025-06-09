@@ -95,7 +95,7 @@ public class BPASItems {
 		gunsteelGun = initItem(() -> new GunItem(defP().durability(502), 0, 1, 16, 2, 16).repair(() -> Ingredient.of(ItemTags.create(new ResourceLocation("forge", "ingots/gunsteel")))), "gunsteel_gun");
 		peashooter = initItem(() -> new GunItem(defP().durability(924), 0, 1, 16, 2, 20).chanceFreeShot(0.25).fireSound(BPASSounds.peashooter).repair(() -> Ingredient.of(livingHerb.get())), "peashooter");
 		cornGatling = initItem(() -> new GatlingItem(defP().durability(924), 0, 0.5, 5, 5, 20).chanceFreeShot(0.5).fireSound(BPASSounds.cornGatling).repair(() -> Ingredient.of(livingHerb.get())), "corn_gatling");
-		cornGatlingDiamond = initItem(() -> new GatlingItem(defP().durability(3739), 0, 0.5, 3.5, 5, 20).chanceFreeShot(0.5).repair(() -> Ingredient.of(Tags.Items.GEMS_DIAMOND)), "corn_gatling_diamond");
+		cornGatlingDiamond = initItem(() -> new GatlingItem(defP().durability(3739), 0, 0.5, 3.5, 5, 20).chanceFreeShot(0.5).fireSound(BPASSounds.cornGatling).repair(() -> Ingredient.of(Tags.Items.GEMS_DIAMOND)), "corn_gatling_diamond");
 		desertRevolver = initItem(() -> new GunItem(defP().durability(753), 0, 1, 13, 4, 14).fireSound(BPASSounds.desertRevolver).repair(() -> Ingredient.of(cowbonesHorn.get())), "desert_revolver");
 		desertShotgun = initItem(() -> new GunItem(defP().durability(753), 0, 0.5, 18, 6, 14).projectiles(3).fireSound(BPASSounds.desertShotgun).repair(() -> Ingredient.of(cowbonesHorn.get())), "desert_shotgun");
 		desertShotgunDiamond = initItem(() -> new GunItem(defP().durability(3047), 0, 0.6, 16, 6, 14).projectiles(3).fireSound(BPASSounds.desertShotgun).repair(() -> Ingredient.of(Tags.Items.GEMS_DIAMOND)), "desert_shotgun_diamond");
