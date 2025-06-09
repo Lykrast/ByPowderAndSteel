@@ -74,6 +74,30 @@
 		"subtitle": "subtitles.bypowderandsteel.entity.shrub.death",
 		"sounds": [ "bypowderandsteel:shrub/death" ]
 	},
+	"entity.zombie_seal.idle": {
+		"subtitle": "subtitles.bypowderandsteel.entity.zombie_seal.idle",
+		"sounds": [
+			{ "name": "bypowderandsteel:seal/idle1", "volume": 0.4 },
+			{ "name": "bypowderandsteel:seal/idle2", "volume": 0.4 },
+			{ "name": "bypowderandsteel:seal/idle3", "volume": 0.4 },
+			{ "name": "bypowderandsteel:seal/idle4", "volume": 0.4 },
+			{ "name": "bypowderandsteel:seal/idle5", "volume": 0.4 }
+		]
+	},
+	"entity.zombie_seal.hurt": {
+		"subtitle": "subtitles.bypowderandsteel.entity.zombie_seal.hurt",
+		"sounds": [
+			{ "name": "bypowderandsteel:seal/hurt1", "volume": 0.4 },
+			{ "name": "bypowderandsteel:seal/hurt2", "volume": 0.4 },
+			{ "name": "bypowderandsteel:seal/hurt3", "volume": 0.4 },
+			{ "name": "bypowderandsteel:seal/hurt4", "volume": 0.4 },
+			{ "name": "bypowderandsteel:seal/hurt5", "volume": 0.4 }
+		]
+	},
+	"entity.zombie_seal.death": {
+		"subtitle": "subtitles.bypowderandsteel.entity.zombie_seal.death",
+		"sounds": [ { "name": "bypowderandsteel:seal/death", "volume": 0.5 } ]
+	},
 	"entity.sentry.hurt": {
 		"subtitle": "subtitles.bypowderandsteel.entity.sentry.hurt",
 		"sounds": [

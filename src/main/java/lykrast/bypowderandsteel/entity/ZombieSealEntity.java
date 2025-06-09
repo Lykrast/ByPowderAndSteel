@@ -9,6 +9,7 @@ import lykrast.bypowderandsteel.entity.ai.ApproachTargetGoal;
 import lykrast.bypowderandsteel.entity.ai.AvoidTargetGoal;
 import lykrast.bypowderandsteel.misc.BPASUtils;
 import lykrast.bypowderandsteel.registry.BPASItems;
+import lykrast.bypowderandsteel.registry.BPASSounds;
 import lykrast.gunswithoutroses.item.BulletItem;
 import lykrast.gunswithoutroses.item.GunItem;
 import lykrast.gunswithoutroses.registry.GWRAttributes;
@@ -204,20 +205,19 @@ public class ZombieSealEntity extends Monster implements GunMob {
 
 	}
 
-	//TODO sounds
 	@Override
 	protected SoundEvent getAmbientSound() {
-		return SoundEvents.ZOMBIE_AMBIENT;
+		return BPASSounds.sealIdle.get();
 	}
 
 	@Override
 	protected SoundEvent getHurtSound(DamageSource source) {
-		return SoundEvents.ZOMBIE_HURT;
+		return BPASSounds.sealHurt.get();
 	}
 
 	@Override
 	protected SoundEvent getDeathSound() {
-		return SoundEvents.ZOMBIE_DEATH;
+		return BPASSounds.sealDeath.get();
 	}
 
 	@Override
