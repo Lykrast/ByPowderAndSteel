@@ -90,7 +90,6 @@ public class BPASItems {
 	
 	static {
 		//Guns
-		//TODO sounds
 		gunsteelGun = initItem(() -> new GunItem(defP().durability(502), 0, 1, 16, 2, 16).repair(() -> Ingredient.of(ItemTags.create(new ResourceLocation("forge", "ingots/gunsteel")))), "gunsteel_gun");
 		peashooter = initItem(() -> new GunItem(defP().durability(924), 0, 1, 16, 2, 20).chanceFreeShot(0.25).fireSound(BPASSounds.peashooter).repair(() -> Ingredient.of(livingHerb.get())), "peashooter");
 		cornGatling = initItem(() -> new GatlingItem(defP().durability(924), 0, 0.5, 5, 5, 20).chanceFreeShot(0.5).fireSound(BPASSounds.cornGatling).repair(() -> Ingredient.of(livingHerb.get())), "corn_gatling");
