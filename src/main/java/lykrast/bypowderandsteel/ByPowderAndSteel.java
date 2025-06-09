@@ -30,7 +30,9 @@ public class ByPowderAndSteel {
 		BPASVillagers.POI.register(bus);
 		BPASVillagers.PROFESSION.register(bus);
 		
-		//TODO hero of the village stuff
+		//TODO hero of the village loot table
+		//The map is private, and while I see neoforge eventually makes it acessible, I don't think it does it yet in 1.20.1
+		//and IE uses a mixin so bleh
 	}
 	
 	public static ResourceLocation rl(String name) {
