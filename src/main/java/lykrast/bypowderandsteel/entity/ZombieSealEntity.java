@@ -259,7 +259,8 @@ public class ZombieSealEntity extends Monster implements GunMob {
 				seal.getLookControl().setLookAt(target, 90, 90);
 				seal.setActiveAttackTarget(target.getId());
 				seal.setAggressive(true);
-				//TODO targeting sound
+				//volume 4 should be heard 64 blocks away (headshot sound is 5)
+				seal.playSound(BPASSounds.sealSpot.get(), 4, 1);
 			}
 		}
 
@@ -283,6 +284,8 @@ public class ZombieSealEntity extends Monster implements GunMob {
 				seal.setActiveAttackTarget(target.getId());
 				if (!seal.hasLineOfSight(target)) {
 					seeTime -= 2;
+					//volume 4 should be heard 64 blocks away (headshot sound is 5)
+					if (seeTime <= -20) seal.playSound(BPASSounds.sealUnspot.get(), 4, 1);
 				}
 				else {
 					if (seeTime < 0) seeTime = 0;

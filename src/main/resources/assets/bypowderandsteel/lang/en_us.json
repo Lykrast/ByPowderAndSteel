@@ -242,6 +242,8 @@
 	"subtitles.bypowderandsteel.entity.zombie_seal.idle": "Zombie Seal barks",
 	"subtitles.bypowderandsteel.entity.zombie_seal.hurt": "Zombie Seal hurt",
 	"subtitles.bypowderandsteel.entity.zombie_seal.death": "Zombie Seal dies",
+	"subtitles.bypowderandsteel.entity.zombie_seal.spot": "Sniper spots target",
+	"subtitles.bypowderandsteel.entity.zombie_seal.unspot": "Sniper lost target",
 	"subtitles.bypowderandsteel.entity.sunken_pirate.idle": "Sunken Pirate TODO",
 	"subtitles.bypowderandsteel.entity.sunken_pirate.hurt": "Sunken Pirate hurt",
 	"subtitles.bypowderandsteel.entity.sunken_pirate.death": "Sunken Pirate dies",

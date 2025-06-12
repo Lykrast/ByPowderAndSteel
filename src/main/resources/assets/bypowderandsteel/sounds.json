@@ -98,6 +98,14 @@
 		"subtitle": "subtitles.bypowderandsteel.entity.zombie_seal.death",
 		"sounds": [ { "name": "bypowderandsteel:seal/death", "volume": 0.5 } ]
 	},
+	"entity.zombie_seal.spot": {
+		"subtitle": "subtitles.bypowderandsteel.entity.zombie_seal.spot",
+		"sounds": [ { "name": "bypowderandsteel:seal/spot", "volume": 1.0 } ]
+	},
+	"entity.zombie_seal.unspot": {
+		"subtitle": "subtitles.bypowderandsteel.entity.zombie_seal.unspot",
+		"sounds": [ { "name": "bypowderandsteel:seal/unspot", "volume": 1.0 } ]
+	},
 	"entity.sentry.hurt": {
 		"subtitle": "subtitles.bypowderandsteel.entity.sentry.hurt",
 		"sounds": [

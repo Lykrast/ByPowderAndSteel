@@ -23,7 +23,8 @@ public class BPASSounds {
 	//desert
 	//public static RegistryObject<SoundEvent> cowbonesIdle = initSound("entity.cowbones.idle"), cowbonesHurt = initSound("entity.cowbones.hurt"), cowbonesDeath = initSound("entity.cowbones.death");
 	//tundra
-	public static RegistryObject<SoundEvent> sealIdle = initSound("entity.zombie_seal.idle"), sealHurt = initSound("entity.zombie_seal.hurt"), sealDeath = initSound("entity.zombie_seal.death");
+	public static RegistryObject<SoundEvent> sealIdle = initSound("entity.zombie_seal.idle"), sealHurt = initSound("entity.zombie_seal.hurt"), sealDeath = initSound("entity.zombie_seal.death"),
+			sealSpot = initSound("entity.zombie_seal.spot"), sealUnspot = initSound("entity.zombie_seal.unspot");
 	//ocean
 	//public static RegistryObject<SoundEvent> pirateIdle = initSound("entity.sunken_pirate.idle"), pirateHurt = initSound("entity.sunken_pirate.hurt"), pirateDeath = initSound("entity.sunken_pirate.death");
 	//undeground
