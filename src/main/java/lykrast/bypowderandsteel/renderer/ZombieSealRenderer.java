@@ -22,12 +22,13 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.phys.Vec3;
 
 public class ZombieSealRenderer extends HumanoidMobRenderer<ZombieSealEntity, ZombieSealModel> {
-	private static final ResourceLocation TEXTURE = ByPowderAndSteel.rl("textures/entity/zombie_seal.png");
+	private static final ResourceLocation TEXTURE = ByPowderAndSteel.rl("textures/entity/zombie_seal.png"), GLOW = ByPowderAndSteel.rl("textures/entity/zombie_seal_glow.png");
 	private static final ResourceLocation BEAM_TEXTURE = ByPowderAndSteel.rl("textures/entity/zombie_seal_laser.png");
 	private static final RenderType BEAM_RENDER_TYPE = RenderType.entityCutoutNoCull(BEAM_TEXTURE);
 
 	public ZombieSealRenderer(EntityRendererProvider.Context context) {
 		super(context, new ZombieSealModel(context.bakeLayer(ZombieSealModel.MODEL)), 0.5f);
+		addLayer(new GenericGlowLayer<>(this, GLOW));
 		addLayer(new HumanoidArmorLayer<>(this, new HumanoidModel<>(context.bakeLayer(ZombieSealModel.INNER_ARMOR)), new HumanoidModel<>(context.bakeLayer(ZombieSealModel.OUTER_ARMOR)),
 				context.getModelManager()));
 	}
@@ -48,7 +49,7 @@ public class ZombieSealRenderer extends HumanoidMobRenderer<ZombieSealEntity, Zo
 			float sealEyeOffset = entity.getEyeHeight();
 			poseStack.pushPose();
 			poseStack.translate(0.0F, sealEyeOffset, 0.0F);
-			Vec3 vec3 = getPosition(target, target.getBbHeight()/2.0, partialTicks);
+			Vec3 vec3 = getPosition(target, (target.getBbHeight()/2.0 + target.getEyeHeight())/2.0, partialTicks);
 			Vec3 vec31 = getPosition(entity, sealEyeOffset, partialTicks);
 			Vec3 vec32 = vec3.subtract(vec31);
 			float f4 = (float) (vec32.length() + 1.0D);
