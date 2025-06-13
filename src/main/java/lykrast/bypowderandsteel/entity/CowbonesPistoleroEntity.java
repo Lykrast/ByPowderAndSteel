@@ -120,7 +120,7 @@ public class CowbonesPistoleroEntity extends AbstractSkeleton implements GunMob 
 
 	public static AttributeSupplier.Builder createAttributes() {
 		//armor mimics having a leather chest and boots
-		return BPASUtils.baseGunMobAttributes().add(Attributes.MOVEMENT_SPEED, 0.25).add(Attributes.ARMOR, 4).add(GWRAttributes.dmgBase.get(), -3).add(GWRAttributes.fireDelay.get(), 4);
+		return BPASUtils.baseGunMobAttributes().add(Attributes.MOVEMENT_SPEED, 0.25).add(Attributes.ARMOR, 4).add(GWRAttributes.dmgBase.get(), -4).add(GWRAttributes.fireDelay.get(), 4);
 	}
 
 	@Override
