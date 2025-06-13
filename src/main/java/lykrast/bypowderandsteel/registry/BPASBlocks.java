@@ -26,6 +26,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class BPASBlocks {
 	public static final DeferredRegister<Block> REG = DeferredRegister.create(ForgeRegistries.BLOCKS, ByPowderAndSteel.MODID);
+	//general
 	public static RegistryObject<Block> gunsmithingTable;
 	public static RegistryObject<Block> gunsteelScrapBlock, gunsteelBlock;
 	public static RegistryObject<Block> gunsteelBricks, gunsteelChiseled, gunsteelPillar, gunsteelLamp;
@@ -52,6 +53,7 @@ public class BPASBlocks {
 	public static RegistryObject<Block> damagedDeviceCrate;
 	public static RegistryObject<Block> electronicCasing, electronicScreen, electronicOscilloscope, electronicRadar, electronicLamp;
 	//nether
+	public static RegistryObject<Block> heptacleSack;
 	public static RegistryObject<Block> infernalBricks, infernalTiles, infernalTilesCrossed, infernalPillar;
 	public static RegistryObject<Block> infernalBricksStairs, infernalBricksSlab, infernalBricksWall, infernalTilesStairs, infernalTilesSlab;
 	//end
@@ -61,6 +63,7 @@ public class BPASBlocks {
 	public static List<RegistryObject<? extends Item>> orderedBlockItems = new ArrayList<>();
 	
 	static {
+		//general
 		gunsmithingTable = makeBlock("gunsmithing_table", () -> new GunsmithingTableBlock(Block.Properties.copy(Blocks.CRAFTING_TABLE)));
 		
 		gunsteelScrapBlock = makeBlock("gunsteel_scrap_block", () -> new Block(Block.Properties.copy(Blocks.RAW_IRON_BLOCK)));
@@ -73,6 +76,7 @@ public class BPASBlocks {
 		gunsteelPillar = makeBlock("gunsteel_pillar", () -> new OrientablePillarBlock(Block.Properties.copy(gunsteelBricks.get())));
 		gunsteelLamp = makeBlock("gunsteel_lamp", () -> new Block(Block.Properties.copy(gunsteelBricks.get()).lightLevel((state) -> 15)));
 
+		//forest
 		//like vines but not replaceable
 		caliberryVine = makeBlock("caliberry_vine", () -> new CaliberryVineBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().randomTicks().strength(0.2f).sound(SoundType.VINE).ignitedByLava().pushReaction(PushReaction.DESTROY)));
 		caliberrySack = makeBlock("caliberry_sack", () -> new Block(Block.Properties.copy(Blocks.YELLOW_WOOL)));
@@ -95,6 +99,7 @@ public class BPASBlocks {
 		lhPillarComOrt = makeBlock("living_herb_pillar_combined_orthogonal", () -> new OrientablePillarBlock(Block.Properties.copy(livingHerb.get())));
 		lhPillarDiaCom = makeBlock("living_herb_pillar_diagonal_combined", () -> new OrientablePillarBlock(Block.Properties.copy(livingHerb.get())));
 		
+		//desert
 		cowbonesHornCrate = makeBlock("cowbones_horn_crate", () -> new Block(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
 		bovony = makeBlock("bovony", () -> new Block(Block.Properties.copy(Blocks.TUFF).mapColor(MapColor.TERRACOTTA_BLACK)));
 		bovonyStairs = makeBlock("bovony_stairs", () -> new StairBlock(() -> bovony.get().defaultBlockState(), Block.Properties.copy(bovony.get())));
@@ -112,6 +117,7 @@ public class BPASBlocks {
 		bovonyPillar = makeBlock("bovony_pillar", () -> new RotatedPillarBlock(Block.Properties.copy(bovony.get())));
 		bovonyLamp = makeBlock("bovony_lamp", () -> new RotatedPillarBlock(Block.Properties.copy(bovony.get()).lightLevel((state) -> 15)));
 		
+		//tundra
 		milspecIceCrate = makeBlock("milspec_ice_crate", () -> new Block(Block.Properties.copy(Blocks.DARK_OAK_PLANKS)));
 		milspecIceBlock = makeBlock("milspec_ice_block", () -> new Block(Block.Properties.copy(Blocks.BRICKS).mapColor(MapColor.ICE).sound(SoundType.GLASS).instrument(NoteBlockInstrument.CHIME)));
 		milspecIceStairs = makeBlock("milspec_ice_stairs", () -> new StairBlock(() -> milspecIceBlock.get().defaultBlockState(), Block.Properties.copy(milspecIceBlock.get())));
@@ -124,6 +130,7 @@ public class BPASBlocks {
 		milspecIceChiseled = makeBlock("milspec_ice_chiseled", () -> new Block(Block.Properties.copy(milspecIceBlock.get())));
 		milspecIcePillar = makeBlock("milspec_ice_pillar", () -> new RotatedPillarBlock(Block.Properties.copy(milspecIceBlock.get())));
 		
+		//ocean
 		doubloonCrate = makeBlock("sunken_doubloon_crate", () -> new Block(Block.Properties.copy(Blocks.BIRCH_PLANKS)));
 		doubloonBricks = makeBlock("doubloon_bricks", () -> new Block(Block.Properties.copy(Blocks.GOLD_BLOCK)));
 		doubloonBricksStairs = makeBlock("doubloon_bricks_stairs", () -> new StairBlock(() -> doubloonBricks.get().defaultBlockState(), Block.Properties.copy(doubloonBricks.get())));
@@ -132,6 +139,7 @@ public class BPASBlocks {
 		doubloonTiles = makeBlock("doubloon_tiles", () -> new Block(Block.Properties.copy(doubloonBricks.get())));
 		doubloonChiseled = makeBlock("doubloon_chiseled", () -> new Block(Block.Properties.copy(doubloonBricks.get())));
 
+		//underground
 		damagedDeviceCrate = makeBlock("damaged_device_crate", () -> new Block(Block.Properties.of().mapColor(DyeColor.LIGHT_BLUE).instrument(NoteBlockInstrument.BASEDRUM).strength(2,0.3f)));
 		electronicCasing = makeBlock("electronic_casing", () -> new Block(Block.Properties.copy(Blocks.IRON_BLOCK)));
 		electronicScreen = makeBlock("electronic_screen", () -> new HorizontalFacingBlock(Block.Properties.copy(electronicCasing.get())));
@@ -139,6 +147,8 @@ public class BPASBlocks {
 		electronicRadar = makeBlock("electronic_radar", () -> new HorizontalFacingBlock(Block.Properties.copy(electronicCasing.get())));
 		electronicLamp = makeBlock("electronic_lamp", () -> new ElectronicLampBlock(Block.Properties.copy(Blocks.LANTERN)));
 		
+		//nether
+		heptacleSack = makeBlock("heptacle_sack", () -> new Block(Block.Properties.copy(Blocks.ORANGE_WOOL)));
 		infernalBricks = makeBlock("infernal_bricks", () -> new Block(Block.Properties.copy(Blocks.BRICKS).mapColor(MapColor.COLOR_ORANGE).sound(SoundType.NETHER_BRICKS).instrument(NoteBlockInstrument.BASEDRUM)));
 		infernalBricksStairs = makeBlock("infernal_bricks_stairs", () -> new StairBlock(() -> infernalBricks.get().defaultBlockState(), Block.Properties.copy(infernalBricks.get())));
 		infernalBricksSlab = makeBlock("infernal_bricks_slab", () -> new SlabBlock(Block.Properties.copy(infernalBricks.get())));
@@ -149,6 +159,7 @@ public class BPASBlocks {
 		infernalTilesCrossed = makeBlock("infernal_tiles_crossed", () -> new Block(Block.Properties.copy(infernalBricks.get())));
 		infernalPillar = makeBlock("infernal_pillar", () -> new RotatedPillarBlock(Block.Properties.copy(infernalBricks.get())));
 		
+		//end
 		gravioliumTank = makeBlock("graviolium_tank", () -> new RotatedPillarBlock(Block.Properties.copy(Blocks.IRON_BLOCK)));
 		proppad = makeBlock("gravitic_propulsion_pad", () -> new PropulsionPadBlock(Block.Properties.copy(gravioliumTank.get()), 1));
 		proppadOrthogonal = makeBlock("gravitic_propulsion_pad_orthogonal", () -> new PropulsionPadDirectionalBlock(Block.Properties.copy(gravioliumTank.get()), 1.2, 0.6, false));

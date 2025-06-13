@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"###",
+		"###",
+		"###"
+	],
+	"key": {
+		"#": { "item": "bypowderandsteel:heptacle" }
+	},
+	"result": { "item": "bypowderandsteel:heptacle_sack" }
+}

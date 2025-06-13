@@ -1,0 +1,8 @@
+{
+	"parent": "minecraft:block/cube_bottom_top",
+	"textures": {
+		"bottom": "bypowderandsteel:block/heptacle_sack_bottom",
+		"side": "bypowderandsteel:block/heptacle_sack_side",
+		"top": "bypowderandsteel:block/heptacle_sack_top"
+	}
+}

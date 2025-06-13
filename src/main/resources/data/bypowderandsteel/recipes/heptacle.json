@@ -1,0 +1,7 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{ "item": "bypowderandsteel:heptacle_sack" }
+	],
+	"result": { "item": "bypowderandsteel:heptacle", "count": 9 }
+}
