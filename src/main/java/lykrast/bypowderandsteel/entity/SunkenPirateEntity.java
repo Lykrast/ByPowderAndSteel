@@ -50,7 +50,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.ServerLevelAccessor;
@@ -160,11 +159,7 @@ public class SunkenPirateEntity extends Monster implements GunMob {
 	protected void populateDefaultEquipmentEnchantments(RandomSource random, DifficultyInstance difficulty) {
 		super.populateDefaultEquipmentEnchantments(random, difficulty);
 		float f = difficulty.getSpecialMultiplier();
-		//enchantSpawnedWeapon only does main hand, so copied that to do the offhand gun
-		if (!getOffhandItem().isEmpty() && random.nextFloat() < 0.25F * f) {
-			setItemSlot(EquipmentSlot.OFFHAND, EnchantmentHelper.enchantItem(random, getOffhandItem(), (int) (5 + f * random.nextInt(18)), false));
-		}
-
+		BPASUtils.enchantOffhand(this, random, f);
 	}
 
 	@Override

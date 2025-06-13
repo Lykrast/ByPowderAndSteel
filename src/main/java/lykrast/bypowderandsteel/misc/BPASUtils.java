@@ -10,9 +10,12 @@ import lykrast.gunswithoutroses.registry.GWRItems;
 import net.minecraft.Util;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 
 public class BPASUtils {
 	public static AttributeSupplier.Builder baseGunMobAttributes() {
@@ -69,5 +72,12 @@ public class BPASUtils {
 
 	public static UUID armorUUID(ArmorItem.Type slot) {
 		return ARMOR_MODIFIER_UUID_PER_TYPE.get(slot);
+	}
+
+	public static void enchantOffhand(Mob mob, RandomSource random, float difficultyMult) {
+		//mob's enchantSpawnedWeapon only does main hand but I got a few mobs with weapons in both hands, so this does offhand
+		if (!mob.getOffhandItem().isEmpty() && random.nextFloat() < 0.25F * difficultyMult) {
+			mob.setItemSlot(EquipmentSlot.OFFHAND, EnchantmentHelper.enchantItem(random, mob.getOffhandItem(), (int) (5 + difficultyMult * random.nextInt(18)), false));
+		}
 	}
 }

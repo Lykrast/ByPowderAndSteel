@@ -16,6 +16,9 @@ public class CowbonesModel<T extends Mob & RangedAttackMob> extends SkeletonMode
 	public CowbonesModel(ModelPart modelpart) {
 		super(modelpart);
 	}
+	
+	//TODO well technically there is nothing here beside that one static method
+	//but will need to animate the arms later, might probably split that for the buckaroo
 
 	public static LayerDefinition createBodyLayer() {
 		//fuck it's tangled gotta copy paste the skeleton model to get the model definition
@@ -41,7 +44,5 @@ public class CowbonesModel<T extends Mob & RangedAttackMob> extends SkeletonMode
 
 		return LayerDefinition.create(meshdefinition, 64, 32);
 	}
-	
-	//TODO arm pose
 
 }
