@@ -1,19 +1,30 @@
 package lykrast.bypowderandsteel.entity;
 
+import java.time.LocalDateTime;
+import java.time.Month;
+
+import javax.annotation.Nullable;
+
 import lykrast.bypowderandsteel.ByPowderAndSteel;
 import lykrast.bypowderandsteel.registry.BPASSounds;
 import net.minecraft.core.BlockPos;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.Pose;
+import net.minecraft.world.entity.SpawnGroupData;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
@@ -33,6 +44,9 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 
 public class SaberSentryEntity extends AnimatedMonster {
+	//127 or something should be enough
+	private static final EntityDataAccessor<Byte> DATA_COSMETIC = SynchedEntityData.defineId(SaberSentryEntity.class, EntityDataSerializers.BYTE);
+	public static final int COSMETICS = 18; //well 19 with 0 being the default, but that's the cap for array index
 	//animations
 	public static final int ANIM_NEUTRAL = 0, ANIM_RUN = 1, ANIM_WINDUP = 2, ANIM_SLASH = 3, ANIM_SPIN_START = 4, ANIM_SPINNING = 5, ANIM_SPIN_STOP = 6;
 	public int spinTime;
@@ -58,11 +72,38 @@ public class SaberSentryEntity extends AnimatedMonster {
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
-		return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 30).add(Attributes.ARMOR, 12).add(Attributes.ATTACK_DAMAGE, 8).add(Attributes.MOVEMENT_SPEED, 0.26).add(Attributes.KNOCKBACK_RESISTANCE, 1);
+		return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 30).add(Attributes.ARMOR, 12).add(Attributes.ATTACK_DAMAGE, 8).add(Attributes.MOVEMENT_SPEED, 0.26)
+				.add(Attributes.KNOCKBACK_RESISTANCE, 1);
 	}
-	
+
 	public static boolean spawnRules(EntityType<? extends Monster> entity, ServerLevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
 		return pos.getY() < 8 && Monster.checkMonsterSpawnRules(entity, level, spawnType, pos, random);
+	}
+
+	@Override
+	protected void defineSynchedData() {
+		super.defineSynchedData();
+		this.entityData.define(DATA_COSMETIC, (byte) 0);
+	}
+
+	private void setCosmetic(int value) {
+		entityData.set(DATA_COSMETIC, (byte) Math.min(value, COSMETICS));
+	}
+
+	public int getCosmetic() {
+		return entityData.get(DATA_COSMETIC);
+	}
+
+	@Override
+	public void addAdditionalSaveData(CompoundTag tag) {
+		super.addAdditionalSaveData(tag);
+		tag.putInt("Cosmetic", getCosmetic());
+	}
+
+	@Override
+	public void readAdditionalSaveData(CompoundTag tag) {
+		super.readAdditionalSaveData(tag);
+		setCosmetic(tag.getInt("Cosmetic"));
 	}
 
 	@Override
@@ -104,31 +145,31 @@ public class SaberSentryEntity extends AnimatedMonster {
 		}
 	}
 
-//	@SuppressWarnings("resource")
-//	@Override
-//	public void aiStep() {
-//		//Blaze particles for debug
-//		if (level().isClientSide) {
-//			AABB hitbox = getHitbox();
-//			level().addParticle(ParticleTypes.CRIT, hitbox.minX, hitbox.minY, hitbox.minZ, 0, 0, 0);
-//			level().addParticle(ParticleTypes.CRIT, hitbox.minX, hitbox.minY, hitbox.maxZ, 0, 0, 0);
-//			level().addParticle(ParticleTypes.CRIT, hitbox.minX, hitbox.maxY, hitbox.minZ, 0, 0, 0);
-//			level().addParticle(ParticleTypes.CRIT, hitbox.minX, hitbox.maxY, hitbox.maxZ, 0, 0, 0);
-//			level().addParticle(ParticleTypes.CRIT, hitbox.maxX, hitbox.minY, hitbox.minZ, 0, 0, 0);
-//			level().addParticle(ParticleTypes.CRIT, hitbox.maxX, hitbox.minY, hitbox.maxZ, 0, 0, 0);
-//			level().addParticle(ParticleTypes.CRIT, hitbox.maxX, hitbox.maxY, hitbox.minZ, 0, 0, 0);
-//			level().addParticle(ParticleTypes.CRIT, hitbox.maxX, hitbox.maxY, hitbox.maxZ, 0, 0, 0);
-//		}
-//
-//		super.aiStep();
-//	}
-	
+	//	@SuppressWarnings("resource")
+	//	@Override
+	//	public void aiStep() {
+	//		//Blaze particles for debug
+	//		if (level().isClientSide) {
+	//			AABB hitbox = getHitbox();
+	//			level().addParticle(ParticleTypes.CRIT, hitbox.minX, hitbox.minY, hitbox.minZ, 0, 0, 0);
+	//			level().addParticle(ParticleTypes.CRIT, hitbox.minX, hitbox.minY, hitbox.maxZ, 0, 0, 0);
+	//			level().addParticle(ParticleTypes.CRIT, hitbox.minX, hitbox.maxY, hitbox.minZ, 0, 0, 0);
+	//			level().addParticle(ParticleTypes.CRIT, hitbox.minX, hitbox.maxY, hitbox.maxZ, 0, 0, 0);
+	//			level().addParticle(ParticleTypes.CRIT, hitbox.maxX, hitbox.minY, hitbox.minZ, 0, 0, 0);
+	//			level().addParticle(ParticleTypes.CRIT, hitbox.maxX, hitbox.minY, hitbox.maxZ, 0, 0, 0);
+	//			level().addParticle(ParticleTypes.CRIT, hitbox.maxX, hitbox.maxY, hitbox.minZ, 0, 0, 0);
+	//			level().addParticle(ParticleTypes.CRIT, hitbox.maxX, hitbox.maxY, hitbox.maxZ, 0, 0, 0);
+	//		}
+	//
+	//		super.aiStep();
+	//	}
+
 	private float getEasedSpin(float progress) {
 		//0.9x^2 means we spin a full 360° after 10 ticks
 		//and derivative at x = 10 is 36, matching the constant speed rate when stable
-		return 0.9f*progress*progress;
+		return 0.9f * progress * progress;
 	}
-	
+
 	public float getSpinAngle(float partial) {
 		if (clientAnim == ANIM_SPINNING) {
 			//spinning up
@@ -141,9 +182,23 @@ public class SaberSentryEntity extends AnimatedMonster {
 			//finishing the turn
 			if (spinAngle > 0) return Mth.rotLerp(partial, spinPrev, spinAngle);
 			//actual spin down
-			else if (spinTime > 0) return 360-getEasedSpin(spinTime - partial);
+			else if (spinTime > 0) return 360 - getEasedSpin(spinTime - partial);
 			else return 0;
 		}
+	}
+
+	@SuppressWarnings("deprecation")
+	@Override
+	@Nullable
+	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType spawnType, @Nullable SpawnGroupData groupData, @Nullable CompoundTag nbt) {
+		RandomSource random = world.getRandom();
+		//1% chance for a flag blade
+		//25% during pride month
+		if (random.nextDouble() < (LocalDateTime.now().getMonth() == Month.JUNE ? 0.25 : 0.01)) {
+			setCosmetic(random.nextIntBetweenInclusive(1, COSMETICS));
+		}
+		//super is fine for an override
+		return super.finalizeSpawn(world, difficulty, spawnType, groupData, nbt);
 	}
 
 	@Override
@@ -182,16 +237,16 @@ public class SaberSentryEntity extends AnimatedMonster {
 	protected void playStepSound(BlockPos pos, BlockState state) {
 		this.playSound(SoundEvents.IRON_GOLEM_STEP, 0.15F, 1);
 	}
-	
+
 	public void swing() {
 		//on the model it's like reaching 1 block in front and to either side, so move 1 block in front and extend by 0.5
 		//and since the model is scaled by 1.5, 0.75 on either side
 		//but it's mostly eyeballed here
 		AABB hitbox = getBoundingBox().inflate(0.75, 0, 0.75).move(Vec3.directionFromRotation(0, getYRot()));
-        for(LivingEntity entity : level().getEntitiesOfClass(LivingEntity.class, hitbox)) {
-        	if (!(entity instanceof SaberSentryEntity) && entity.isAlive()) doHurtTarget(entity);
-        }
-        playSound(BPASSounds.saberSwing.get(), 1, 1);
+		for (LivingEntity entity : level().getEntitiesOfClass(LivingEntity.class, hitbox)) {
+			if (!(entity instanceof SaberSentryEntity) && entity.isAlive()) doHurtTarget(entity);
+		}
+		playSound(BPASSounds.saberSwing.get(), 1, 1);
 	}
 
 	private static class ChaseAndSwing extends MeleeAttackGoal {
