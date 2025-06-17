@@ -49,6 +49,30 @@
 		"subtitle": "subtitles.bypowderandsteel.item.revolver.shoot",
 		"sounds": [ { "name": "bypowderandsteel:gun/bloodfueled_revolver", "volume": 0.5 } ]
 	},
+	"entity.gunome.idle": {
+		"subtitle": "subtitles.bypowderandsteel.entity.gunome.idle",
+		"sounds": [
+			{ "name": "minecraft:mob/pillager/idle1", "pitch": 1.8 },
+			{ "name": "minecraft:mob/pillager/idle2", "pitch": 1.8 },
+			{ "name": "minecraft:mob/pillager/idle3", "pitch": 1.8 },
+			{ "name": "minecraft:mob/pillager/idle4", "pitch": 1.8 }
+		]
+	},
+	"entity.gunome.hurt": {
+		"subtitle": "subtitles.bypowderandsteel.entity.gunome.hurt",
+		"sounds": [
+			{ "name": "minecraft:mob/pillager/hurt1", "pitch": 1.8 },
+			{ "name": "minecraft:mob/pillager/hurt2", "pitch": 1.8 },
+			{ "name": "minecraft:mob/pillager/hurt3", "pitch": 1.8 }
+		]
+	},
+	"entity.gunome.death": {
+		"subtitle": "subtitles.bypowderandsteel.entity.gunome.death",
+		"sounds": [
+			{ "name": "minecraft:mob/pillager/death1", "pitch": 1.8 },
+			{ "name": "minecraft:mob/pillager/death2", "pitch": 1.8 }
+		]
+	},
 	"entity.shrub.idle": {
 		"subtitle": "subtitles.bypowderandsteel.entity.shrub.idle",
 		"sounds": [

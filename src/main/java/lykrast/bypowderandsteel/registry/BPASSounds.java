@@ -18,7 +18,7 @@ public class BPASSounds {
 	public static RegistryObject<SoundEvent> bloodfueledRevolver = initSound("item.bloodfueled_revolver.shoot");
 	//Mobs
 	//forest
-	//public static RegistryObject<SoundEvent> gunomeIdle = initSound("entity.gunome.idle"), gunomeHurt = initSound("entity.gunome.hurt"), gunomeDeath = initSound("entity.gunome.death");
+	public static RegistryObject<SoundEvent> gunomeIdle = initSound("entity.gunome.idle"), gunomeHurt = initSound("entity.gunome.hurt"), gunomeDeath = initSound("entity.gunome.death");
 	public static RegistryObject<SoundEvent> shrubIdle = initSound("entity.shrub.idle"), shrubHurt = initSound("entity.shrub.hurt"), shrubDeath = initSound("entity.shrub.death");
 	//desert
 	//public static RegistryObject<SoundEvent> cowbonesIdle = initSound("entity.cowbones.idle"), cowbonesHurt = initSound("entity.cowbones.hurt"), cowbonesDeath = initSound("entity.cowbones.death");

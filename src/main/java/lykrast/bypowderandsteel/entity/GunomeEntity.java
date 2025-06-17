@@ -8,13 +8,12 @@ import lykrast.bypowderandsteel.entity.ai.GunGoal;
 import lykrast.bypowderandsteel.misc.BPASUtils;
 import lykrast.bypowderandsteel.registry.BPASEntities;
 import lykrast.bypowderandsteel.registry.BPASItems;
+import lykrast.bypowderandsteel.registry.BPASSounds;
 import lykrast.gunswithoutroses.item.BulletItem;
 import lykrast.gunswithoutroses.registry.GWRAttributes;
-import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageSource;
@@ -38,7 +37,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
-import net.minecraft.world.level.block.state.BlockState;
 
 public class GunomeEntity extends Monster implements GunMob {
 
@@ -115,25 +113,19 @@ public class GunomeEntity extends Monster implements GunMob {
 		return controlling instanceof GunomeEntity ? null : controlling;
 	}
 
-	//TODO sounds
 	@Override
 	protected SoundEvent getAmbientSound() {
-		return SoundEvents.ZOMBIE_AMBIENT;
+		return BPASSounds.gunomeIdle.get();
 	}
 
 	@Override
 	protected SoundEvent getHurtSound(DamageSource source) {
-		return SoundEvents.ZOMBIE_HURT;
+		return BPASSounds.gunomeHurt.get();
 	}
 
 	@Override
 	protected SoundEvent getDeathSound() {
-		return SoundEvents.ZOMBIE_DEATH;
-	}
-
-	@Override
-	protected void playStepSound(BlockPos pos, BlockState state) {
-		this.playSound(SoundEvents.ZOMBIE_STEP, 0.15F, 1);
+		return BPASSounds.gunomeDeath.get();
 	}
 
 }
