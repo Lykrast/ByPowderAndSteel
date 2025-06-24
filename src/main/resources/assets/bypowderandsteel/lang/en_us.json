@@ -242,15 +242,13 @@
 	"subtitles.bypowderandsteel.entity.zombie_seal.death": "Zombie Seal dies",
 	"subtitles.bypowderandsteel.entity.zombie_seal.spot": "Sniper spots target",
 	"subtitles.bypowderandsteel.entity.zombie_seal.unspot": "Sniper lost target",
+	"subtitles.bypowderandsteel.entity.sentry.idle": "Robot buzzes",
 	"subtitles.bypowderandsteel.entity.sentry.hurt": "Robot hurt",
 	"subtitles.bypowderandsteel.entity.sentry.death": "Robot dies",
-	"subtitles.bypowderandsteel.entity.sabersentry.idle": "Saber Sentry TODO",
 	"subtitles.bypowderandsteel.entity.sabersentry.swing": "Phasesaber swing",
-	"subtitles.bypowderandsteel.entity.blastersentry.idle": "Blaster Sentry TODO",
 	"subtitles.bypowderandsteel.entity.gunnubus.idle": "Gunnubus TODO",
 	"subtitles.bypowderandsteel.entity.gunnubus.hurt": "Gunnubus hurt",
 	"subtitles.bypowderandsteel.entity.gunnubus.death": "Gunnubus dies",
-	"subtitles.bypowderandsteel.entity.skybender.idle": "Skybender TODO",
 
 	"itemGroup.bypowderandsteel": "By Powder and Steel"
 }

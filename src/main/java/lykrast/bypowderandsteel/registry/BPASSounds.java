@@ -27,8 +27,8 @@ public class BPASSounds {
 			sealSpot = initSound("entity.zombie_seal.spot"), sealUnspot = initSound("entity.zombie_seal.unspot");
 	//ocean
 	//public static RegistryObject<SoundEvent> pirateIdle = initSound("entity.sunken_pirate.idle"), pirateHurt = initSound("entity.sunken_pirate.hurt"), pirateDeath = initSound("entity.sunken_pirate.death");
-	//undeground
-	public static RegistryObject<SoundEvent> sentryHurt = initSound("entity.sentry.hurt"), sentryDeath = initSound("entity.sentry.death");
+	//underground
+	public static RegistryObject<SoundEvent> sentryIdle = initSound("entity.sentry.idle"), sentryHurt = initSound("entity.sentry.hurt"), sentryDeath = initSound("entity.sentry.death");
 	public static RegistryObject<SoundEvent> saberSwing = initSound("entity.sabersentry.swing"); //sabersentryIdle = initSound("entity.sabersentry.idle"), blastersentryIdle = initSound("entity.blastersentry.idle");
 	//nether
 	//public static RegistryObject<SoundEvent> gunnubusIdle = initSound("entity.gunnubus.idle"), gunnubusHurt = initSound("entity.gunnubus.hurt"), gunnubusDeath = initSound("entity.gunnubus.death");

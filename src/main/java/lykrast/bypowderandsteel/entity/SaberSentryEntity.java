@@ -217,10 +217,10 @@ public class SaberSentryEntity extends AnimatedMonster {
 		return dimensions.height * 0.9F;
 	}
 
-	//TODO sounds
+	//TODO proper sound, want an ena voice distorted like the glub slender fortress buzz
 	@Override
 	protected SoundEvent getAmbientSound() {
-		return SoundEvents.BLAZE_AMBIENT;
+		return BPASSounds.sentryIdle.get();
 	}
 
 	@Override

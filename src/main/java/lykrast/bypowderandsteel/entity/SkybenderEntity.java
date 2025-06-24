@@ -15,7 +15,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
@@ -149,10 +148,10 @@ public class SkybenderEntity extends Monster implements GunMob {
 	protected void playStepSound(BlockPos pos, BlockState state) {
 	}
 
-	//TODO sounds
+	//TODO proper sounds, want a skibidi toilet
 	@Override
 	protected SoundEvent getAmbientSound() {
-		return SoundEvents.BLAZE_AMBIENT;
+		return BPASSounds.sentryIdle.get();
 	}
 
 	@Override

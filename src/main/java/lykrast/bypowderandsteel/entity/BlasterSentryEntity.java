@@ -110,10 +110,10 @@ public class BlasterSentryEntity extends Monster implements GunMob {
 		return dimensions.height * 0.9375F;
 	}
 
-	//TODO sounds
+	//TODO proper sounds, want a dalek voice
 	@Override
 	protected SoundEvent getAmbientSound() {
-		return SoundEvents.BLAZE_AMBIENT;
+		return BPASSounds.sentryIdle.get();
 	}
 
 	@Override

@@ -130,6 +130,17 @@
 		"subtitle": "subtitles.bypowderandsteel.entity.zombie_seal.unspot",
 		"sounds": [ { "name": "bypowderandsteel:seal/unspot", "volume": 1.0 } ]
 	},
+	"entity.sentry.idle": {
+		"subtitle": "subtitles.bypowderandsteel.entity.sentry.idle",
+		"sounds": [
+			{ "name": "bypowderandsteel:sentry/idle1", "volume": 0.8 },
+			{ "name": "bypowderandsteel:sentry/idle2", "volume": 0.8 },
+			{ "name": "bypowderandsteel:sentry/idle3", "volume": 0.8 },
+			{ "name": "bypowderandsteel:sentry/idle4", "volume": 0.8 },
+			{ "name": "bypowderandsteel:sentry/idle5", "volume": 0.8 },
+			{ "name": "bypowderandsteel:sentry/idle6", "volume": 0.8 }
+		]
+	},
 	"entity.sentry.hurt": {
 		"subtitle": "subtitles.bypowderandsteel.entity.sentry.hurt",
 		"sounds": [
