@@ -173,7 +173,7 @@ public class BPASItems {
 		shrubhulkEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.shrubhulk, 0x67A124, 0x4A381E, defP()), "shrubhulk_spawn_egg");
 		shrubsnapperEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.shrubsnapper, 0x528919, 0x3F311D, defP()), "shrubsnapper_spawn_egg");
 		cowbonesPistoleroEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.cowbonesPistolero, 0xEED9B3, 0x994141, defP()), "cowbones_pistolero_spawn_egg");
-		cowbonesBuckarooEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.cowbonesBuckaroo, 0xEED9B3, 0xD7AB4D, defP()), "cowbones_buckaroo_spawn_egg");
+		cowbonesBuckarooEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.cowbonesBuckaroo, 0xF7994C, 0x994141, defP()), "cowbones_buckaroo_spawn_egg");
 		zombieSealEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.zombieSeal, 0x3E475B, 0x698E45, defP()), "zombie_seal_spawn_egg");
 		sunkenPirateEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.sunkenPirate, 0x56847E, 0x65E0DD, defP()), "sunken_pirate_spawn_egg");
 		sabersentryEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.sabersentry, 0xF4F4E1, 0x383635, defP()), "sabersentry_spawn_egg");
