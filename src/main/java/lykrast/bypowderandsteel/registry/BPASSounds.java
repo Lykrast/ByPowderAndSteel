@@ -31,7 +31,7 @@ public class BPASSounds {
 	public static RegistryObject<SoundEvent> sentryIdle = initSound("entity.sentry.idle"), sentryHurt = initSound("entity.sentry.hurt"), sentryDeath = initSound("entity.sentry.death");
 	public static RegistryObject<SoundEvent> saberSwing = initSound("entity.sabersentry.swing"); //sabersentryIdle = initSound("entity.sabersentry.idle"), blastersentryIdle = initSound("entity.blastersentry.idle");
 	//nether
-	//public static RegistryObject<SoundEvent> gunnubusIdle = initSound("entity.gunnubus.idle"), gunnubusHurt = initSound("entity.gunnubus.hurt"), gunnubusDeath = initSound("entity.gunnubus.death");
+	public static RegistryObject<SoundEvent> gunnubusIdle = initSound("entity.gunnubus.idle"), gunnubusHurt = initSound("entity.gunnubus.hurt"), gunnubusDeath = initSound("entity.gunnubus.death");
 	//end
 	//public static RegistryObject<SoundEvent> skybenderIdle = initSound("entity.skybender.idle"), skybenderHurt = initSound("entity.skybender.hurt"), skybenderDeath = initSound("entity.skybender.death");
 
