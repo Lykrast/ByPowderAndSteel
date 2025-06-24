@@ -106,7 +106,7 @@ public class BlasterSentryEntity extends Monster implements GunMob {
 
 	@Override
 	protected float getStandingEyeHeight(Pose pose, EntityDimensions dimensions) {
-		//model is 34px, eye at 32px, but hitbox is only 2 blocks high so it can fit, so eye level is put lower
+		//model is 32px, eye at 30px
 		return dimensions.height * 0.9375F;
 	}
 
