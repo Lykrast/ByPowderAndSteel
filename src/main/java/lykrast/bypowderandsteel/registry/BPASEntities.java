@@ -5,6 +5,7 @@ import lykrast.bypowderandsteel.entity.*;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.SpawnPlacements;
+import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.entity.SpawnPlacementRegisterEvent;
@@ -85,9 +86,20 @@ public class BPASEntities {
 	
 	@SubscribeEvent
 	public static void registerSpawnPlacements(final SpawnPlacementRegisterEvent event) {
+		//only these 3 have some actual custom rules
 		event.register(sunkenPirate.get(), SpawnPlacements.Type.IN_WATER, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, SunkenPirateEntity::spawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
 		event.register(sabersentry.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, SaberSentryEntity::spawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
 		event.register(blastersentry.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, BlasterSentryEntity::spawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+		//the rest it's just vanilla stuff, but still putting so they don't spawn on leaves or under the end islands (for skybenders)
+		//cause default seems to be no restriction
+		event.register(gunome.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+		event.register(shrubhulk.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+		event.register(shrubsnapper.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+		event.register(cowbonesPistolero.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+		event.register(cowbonesBuckaroo.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+		event.register(zombieSeal.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+		event.register(gunnubusCrimson.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+		event.register(skybender.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
 	}
 
 }
