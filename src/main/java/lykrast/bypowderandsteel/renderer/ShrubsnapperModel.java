@@ -4,7 +4,6 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 
 import lykrast.bypowderandsteel.ByPowderAndSteel;
-import lykrast.bypowderandsteel.entity.ShrubhulkEntity;
 import lykrast.bypowderandsteel.entity.ShrubsnapperEntity;
 import lykrast.bypowderandsteel.misc.BPASUtils;
 import net.minecraft.client.model.AnimationUtils;
@@ -170,38 +169,36 @@ public class ShrubsnapperModel extends EntityModel<ShrubsnapperEntity> {
 			leftTrunk.y = Mth.lerp(animProgress, 5, 8);
 		}
 		else if (entity.clientAnim == ShrubsnapperEntity.ANIM_WINDDOWN) {
-			//TODO don't like this animation
-			body.xRot = Mth.lerp(animProgress, 60*Mth.DEG_TO_RAD, 5*Mth.DEG_TO_RAD);
+			body.xRot = Mth.lerp(animProgress, 60*Mth.DEG_TO_RAD, 40*Mth.DEG_TO_RAD);
 			head.xRot = HEAD_BASE_X_ROT;
 			head.yRot = 0;
-			rightArm.xRot = -60*Mth.DEG_TO_RAD;
-			rightArm.yRot = Mth.lerp(animProgress, 10*Mth.DEG_TO_RAD, 20*Mth.DEG_TO_RAD);
-			rightArm.zRot = 0;
-			leftArm.xRot = -60*Mth.DEG_TO_RAD;
-			leftArm.yRot = Mth.lerp(animProgress, -10*Mth.DEG_TO_RAD, -20*Mth.DEG_TO_RAD);
-			leftArm.zRot = 0;
-			rightForearm.xRot = -5*Mth.DEG_TO_RAD*(1-animProgress);
-			rightForearm.zRot = Mth.lerp(animProgress, -10*Mth.DEG_TO_RAD, -25*Mth.DEG_TO_RAD);
-			leftForearm.xRot = -5*Mth.DEG_TO_RAD*(1-animProgress);
-			leftForearm.zRot = Mth.lerp(animProgress, 10*Mth.DEG_TO_RAD, 25*Mth.DEG_TO_RAD);
+			rightArm.xRot = -60*Mth.DEG_TO_RAD*(1-animProgress);
+			rightArm.yRot = Mth.lerp(animProgress, 10*Mth.DEG_TO_RAD, -30*Mth.DEG_TO_RAD);
+			rightArm.zRot = 70*Mth.DEG_TO_RAD*animProgress;
+			leftArm.xRot = -60*Mth.DEG_TO_RAD*(1-animProgress);
+			leftArm.yRot = Mth.lerp(animProgress, -10*Mth.DEG_TO_RAD, 30*Mth.DEG_TO_RAD);
+			leftArm.zRot = -70*Mth.DEG_TO_RAD*animProgress;
+			rightForearm.xRot = Mth.lerp(animProgress, -5*Mth.DEG_TO_RAD, -110*Mth.DEG_TO_RAD);
+			rightForearm.zRot = -10*Mth.DEG_TO_RAD;
+			leftForearm.xRot = Mth.lerp(animProgress, -5*Mth.DEG_TO_RAD, -110*Mth.DEG_TO_RAD);
+			leftForearm.zRot = 10*Mth.DEG_TO_RAD;
 			rightTrunk.y = 8;
 			leftTrunk.y = 8;
 		}
-		else if (entity.clientAnim == ShrubhulkEntity.ANIM_NEUTRAL && animProgress < 0.99) {
-			//TODO same animation as above
-			body.xRot = Mth.lerp(animProgress, 5*Mth.DEG_TO_RAD, body.xRot);
+		else if (entity.clientAnim == ShrubsnapperEntity.ANIM_NEUTRAL && animProgress < 0.99) {
+			body.xRot = Mth.lerp(animProgress, 40*Mth.DEG_TO_RAD, body.xRot);
 			head.xRot = Mth.lerp(animProgress, HEAD_BASE_X_ROT, head.xRot);
 			head.yRot = head.yRot*animProgress;
-			rightArm.xRot = Mth.lerp(animProgress, -60*Mth.DEG_TO_RAD, rightArm.xRot);
-			rightArm.yRot = Mth.lerp(animProgress, 20*Mth.DEG_TO_RAD, rightArm.yRot);
-			rightArm.zRot = rightArm.zRot*animProgress;
-			leftArm.xRot = Mth.lerp(animProgress, -60*Mth.DEG_TO_RAD, leftArm.xRot);
-			leftArm.yRot = Mth.lerp(animProgress, -20*Mth.DEG_TO_RAD, leftArm.yRot);
-			leftArm.zRot = leftArm.zRot*animProgress;
-			rightForearm.xRot = Mth.lerp(animProgress, -5*Mth.DEG_TO_RAD, rightForearm.xRot);
-			rightForearm.zRot = Mth.lerp(animProgress, -25*Mth.DEG_TO_RAD, rightForearm.zRot);
-			leftForearm.xRot = Mth.lerp(animProgress, -5*Mth.DEG_TO_RAD, leftForearm.xRot);
-			leftForearm.zRot = Mth.lerp(animProgress, 25*Mth.DEG_TO_RAD, leftForearm.zRot);
+			rightArm.xRot = rightArm.xRot*animProgress;
+			rightArm.yRot = Mth.lerp(animProgress, -30*Mth.DEG_TO_RAD, rightArm.yRot);
+			rightArm.zRot = Mth.lerp(animProgress, 70*Mth.DEG_TO_RAD, rightArm.zRot);
+			leftArm.xRot = leftArm.xRot*animProgress;
+			leftArm.yRot = Mth.lerp(animProgress, 30*Mth.DEG_TO_RAD, leftArm.yRot);
+			leftArm.zRot = Mth.lerp(animProgress, -70*Mth.DEG_TO_RAD, leftArm.zRot);
+			rightForearm.xRot = Mth.lerp(animProgress, -110*Mth.DEG_TO_RAD, rightForearm.xRot);
+			rightForearm.zRot = Mth.lerp(animProgress, -10*Mth.DEG_TO_RAD, rightForearm.zRot);
+			leftForearm.xRot = Mth.lerp(animProgress, -110*Mth.DEG_TO_RAD, leftForearm.xRot);
+			leftForearm.zRot = Mth.lerp(animProgress, 10*Mth.DEG_TO_RAD, leftForearm.zRot);
 			rightTrunk.y = Mth.lerp(animProgress, 8, rightTrunk.y);
 			leftTrunk.y = Mth.lerp(animProgress, 8, leftTrunk.y);
 		}
