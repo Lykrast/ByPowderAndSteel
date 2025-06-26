@@ -12,6 +12,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.TraceableEntity;
 import net.minecraft.world.level.Level;
 
@@ -119,17 +120,19 @@ public class ShrubsnapperFangEntity extends Entity implements TraceableEntity {
 	}
 
 	//THIS ONE RIGHT HERE that's all I needed to really change but it's private in evoker fangs
-	protected void dealDamageTo(LivingEntity p_36945_) {
-		LivingEntity livingentity = this.getOwner();
-		if (p_36945_.isAlive() && !p_36945_.isInvulnerable() && p_36945_ != livingentity) {
-			if (livingentity == null) {
+	protected void dealDamageTo(LivingEntity target) {
+		LivingEntity owner = this.getOwner();
+		if (target.isAlive() && !target.isInvulnerable() && target != owner) {
+			if (owner == null) {
 				//don't really want to end up in that fallback cause I don't want to ignore armor
 				//I guess cactus is a fine why not
-				p_36945_.hurt(this.damageSources().cactus(), 6.0F);
+				target.hurt(this.damageSources().cactus(), 6.0F);
 			}
 			else {
-				if (livingentity.isAlliedTo(p_36945_)) { return; }
-				livingentity.doHurtTarget(p_36945_);
+				if (owner.isAlliedTo(target)) return;
+				//shrub monsters don't friendly fire unless explicitely targeting eachother
+				if ((target instanceof ShrubhulkEntity || target instanceof ShrubsnapperEntity) && !(owner instanceof Mob && target == ((Mob)owner).getTarget())) return;
+				owner.doHurtTarget(target);
 			}
 
 		}

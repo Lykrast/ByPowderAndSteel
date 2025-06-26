@@ -133,8 +133,8 @@ public class ShrubhulkEntity extends AnimatedMonster {
 				//to match the explosion visuals it needs to be 6x6x6 (so 3 on each side from center)
 				//shrubhulk's base is 0.99x2.4x0.99 so +2.5 on each side for x/z and 1.8 for y
 				for (LivingEntity target : hulk.level().getEntitiesOfClass(LivingEntity.class, hulk.getBoundingBox().inflate(2.5, 1.8, 2.5))) {
-					//TODO reduce friendly fire between forest monsters
-					if (target.isAlive() && !target.isInvulnerable() && target != hulk && !hulk.isAlliedTo(target)) {
+					//shrub monsters don't friendly fire unless explicitely targeting eachother
+					if (target.isAlive() && !target.isInvulnerable() && target != hulk && !hulk.isAlliedTo(target) && (target == hulk.getTarget() || !(target instanceof ShrubhulkEntity || target instanceof ShrubsnapperEntity))) {
 						if (hulk.doHurtTarget(target)) {
 							double mult = Math.max(0, 1 - target.getAttributeValue(Attributes.KNOCKBACK_RESISTANCE));
 							target.setDeltaMovement(target.getDeltaMovement().add(0, 0.3 * mult, 0));
