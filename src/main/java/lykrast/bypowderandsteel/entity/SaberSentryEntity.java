@@ -244,7 +244,7 @@ public class SaberSentryEntity extends AnimatedMonster {
 		//but it's mostly eyeballed here
 		AABB hitbox = getBoundingBox().inflate(0.75, 0, 0.75).move(Vec3.directionFromRotation(0, getYRot()));
 		for (LivingEntity entity : level().getEntitiesOfClass(LivingEntity.class, hitbox)) {
-			if (!(entity instanceof SaberSentryEntity) && entity.isAlive()) doHurtTarget(entity);
+			if (entity != this && (entity == getTarget() || !(entity instanceof SaberSentryEntity)) && entity.isAlive()) doHurtTarget(entity);
 		}
 		playSound(BPASSounds.saberSwing.get(), 1, 1);
 	}

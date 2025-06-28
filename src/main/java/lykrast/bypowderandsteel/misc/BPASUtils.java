@@ -47,6 +47,17 @@ public class BPASUtils {
 		float sq = progress * progress;
 		return sq / (2 * (sq - progress) + 1);
 	}
+	
+	public static float easeInQuart(float progress) {
+		progress *= progress;
+		return progress * progress;
+	}
+
+	public static float easeOutQuart(float progress) {
+		progress = 1 - progress;
+		progress *= progress;
+		return 1 - (progress * progress);
+	}
 
 	//this is protected in humanoidmodel
 	public static float rotlerpRad(float progress, float start, float end) {
