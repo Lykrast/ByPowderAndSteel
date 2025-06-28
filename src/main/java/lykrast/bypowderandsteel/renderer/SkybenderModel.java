@@ -83,7 +83,6 @@ public class SkybenderModel extends EntityModel<SkybenderEntity> implements Arme
 	@Override
 	public void setupAnim(SkybenderEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 		//Mostly adapted from HumanoidModel
-		//TODO animations
 		boolean falling = entity.getFallFlyingTicks() > 4;
 		head.yRot = netHeadYaw * Mth.DEG_TO_RAD;
 		if (falling) head.xRot = -Mth.PI / 4;
@@ -141,22 +140,46 @@ public class SkybenderModel extends EntityModel<SkybenderEntity> implements Arme
 				leftForearm = {0,0,0},
 				rightArm = {0,0,0},
 				rightForearm = {0,0,0};
-		public boolean sword = false, shield = false;
+		public boolean sword = false, shield = false, neutralArms = true;
 		
 		public void interpolate(SkybenderModel model, Pose prev, float progress, float scaleEaseIn, float scaleEaseOut) {
 			if (progress > 0.99) {
-				apply(model.armLeft, leftArm);
-				apply(model.forearmLeft, leftForearm);
-				apply(model.armRight, rightArm);
-				apply(model.forearmRight, rightForearm);
+				if (!neutralArms) {
+					apply(model.armLeft, leftArm);
+					apply(model.forearmLeft, leftForearm);
+					apply(model.armRight, rightArm);
+					apply(model.forearmRight, rightForearm);
+				}
 				scaleWeapon(model.blade, sword);
 				scaleWeapon(model.shield, shield);
 			}
 			else {
-				interpolateRot(model.armLeft, leftArm, prev.leftArm, progress);
-				interpolateRot(model.forearmLeft, leftForearm, prev.leftForearm, progress);
-				interpolateRot(model.armRight, rightArm, prev.rightArm, progress);
-				interpolateRot(model.forearmRight, rightForearm, prev.rightForearm, progress);
+				if (neutralArms) {
+					if (!prev.neutralArms) {
+						//previous anim had posed arms, we don't
+						interpolateToNeutral(model.armLeft, prev.leftArm, progress);
+						interpolateToNeutral(model.forearmLeft, prev.leftForearm, progress);
+						interpolateToNeutral(model.armRight, prev.rightArm, progress);
+						interpolateToNeutral(model.forearmRight, prev.rightForearm, progress);
+					}
+					//neither anim posed arms so do nothing
+				}
+				else {
+					if (prev.neutralArms) {
+						//previous anim did not pose but we do
+						interpolateFromNeutral(model.armLeft, leftArm, progress);
+						interpolateFromNeutral(model.forearmLeft, leftForearm, progress);
+						interpolateFromNeutral(model.armRight, rightArm, progress);
+						interpolateFromNeutral(model.forearmRight, rightForearm, progress);
+					}
+					else {
+						//pose to pose
+						interpolateRot(model.armLeft, leftArm, prev.leftArm, progress);
+						interpolateRot(model.forearmLeft, leftForearm, prev.leftForearm, progress);
+						interpolateRot(model.armRight, rightArm, prev.rightArm, progress);
+						interpolateRot(model.forearmRight, rightForearm, prev.rightForearm, progress);
+					}
+				}
 				if (sword != prev.sword) {
 					//y scale comes faster
 					if (sword) {
@@ -201,6 +224,18 @@ public class SkybenderModel extends EntityModel<SkybenderEntity> implements Arme
 			part.zRot = BPASUtils.rotlerpRad(progress, prev[2], self[2]);
 		}
 		
+		private static void interpolateFromNeutral(ModelPart part, float[] pose, float progress) {
+			part.xRot = BPASUtils.rotlerpRad(progress, part.xRot, pose[0]);
+			part.yRot = BPASUtils.rotlerpRad(progress, part.yRot, pose[1]);
+			part.zRot = BPASUtils.rotlerpRad(progress, part.zRot, pose[2]);
+		}
+		
+		private static void interpolateToNeutral(ModelPart part, float[] pose, float progress) {
+			part.xRot = BPASUtils.rotlerpRad(progress, pose[0], part.xRot);
+			part.yRot = BPASUtils.rotlerpRad(progress, pose[1], part.yRot);
+			part.zRot = BPASUtils.rotlerpRad(progress, pose[2], part.zRot);
+		}
+		
 		private static void apply(ModelPart part, float[] self) {
 			part.xRot = self[0];
 			part.yRot = self[1];
@@ -212,24 +247,28 @@ public class SkybenderModel extends EntityModel<SkybenderEntity> implements Arme
 			leftArm[0] = x * -Mth.DEG_TO_RAD;
 			leftArm[1] = y * -Mth.DEG_TO_RAD;
 			leftArm[2] = z * Mth.DEG_TO_RAD;
+			neutralArms = false;
 			return this;
 		}
 		public Pose leftForearm(float x, float y, float z) {
 			leftForearm[0] = x * -Mth.DEG_TO_RAD;
 			leftForearm[1] = y * -Mth.DEG_TO_RAD;
 			leftForearm[2] = z * Mth.DEG_TO_RAD;
+			neutralArms = false;
 			return this;
 		}
 		public Pose rightArm(float x, float y, float z) {
 			rightArm[0] = x * -Mth.DEG_TO_RAD;
 			rightArm[1] = y * -Mth.DEG_TO_RAD;
 			rightArm[2] = z * Mth.DEG_TO_RAD;
+			neutralArms = false;
 			return this;
 		}
 		public Pose rightForearm(float x, float y, float z) {
 			rightForearm[0] = x * -Mth.DEG_TO_RAD;
 			rightForearm[1] = y * -Mth.DEG_TO_RAD;
 			rightForearm[2] = z * Mth.DEG_TO_RAD;
+			neutralArms = false;
 			return this;
 		}
 		public Pose sword() {
