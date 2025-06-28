@@ -7,12 +7,15 @@ import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
 
 public class SkybenderRenderer extends MobRenderer<SkybenderEntity, SkybenderModel> {
-	private static final ResourceLocation TEXTURE = ByPowderAndSteel.rl("textures/entity/skybender.png"), GLOW = ByPowderAndSteel.rl("textures/entity/skybender_glow.png");
+	private static final ResourceLocation TEXTURE = ByPowderAndSteel.rl("textures/entity/skybender.png"),
+			GLOW = ByPowderAndSteel.rl("textures/entity/skybender_glow.png"),
+			WEAPONS = ByPowderAndSteel.rl("textures/entity/skybender_weapons.png");
 
 	public SkybenderRenderer(EntityRendererProvider.Context context) {
 		//TODO transparent glowing shield
 		super(context, new SkybenderModel(context.bakeLayer(SkybenderModel.MODEL)), 0.5f);
 		addLayer(new GenericGlowLayer<>(this, GLOW));
+		addLayer(new GenericEyesLayer<>(this, WEAPONS));
 		//addLayer(new ItemInHandLayer<>(this, context.getItemInHandRenderer()));
 	}
 
