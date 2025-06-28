@@ -251,7 +251,7 @@ public class SkybenderEntity extends AnimatedMonster {
 			switch (phase) {
 				case 0:
 					//running at target
-					if (distanceSqr < 7) {
+					if (distanceSqr < 6) {
 						//raise arms to prepare attack, with a minimum time
 						sentry.setAnimation(ANIM_WINDUP);
 						sentry.playSound(BPASSounds.saberSwing.get(), 1, 1);
@@ -266,7 +266,7 @@ public class SkybenderEntity extends AnimatedMonster {
 						sentry.setAnimation(ANIM_SHIELD);
 						phase = 0;
 					}
-					else if (time <= 0 && distanceSqr <= 4) {
+					else if (time <= 0 && distanceSqr <= 3) {
 						//swing!
 						//sentry.setAnimation(ANIM_SLASH);
 						time = 20;
@@ -277,7 +277,7 @@ public class SkybenderEntity extends AnimatedMonster {
 					//swinging
 					if (time <= 0) {
 						//recovery animation done, prepare another attack if close, or get shields back
-						if (distanceSqr < 7) {
+						if (distanceSqr < 6) {
 							sentry.setAnimation(ANIM_WINDUP);
 							phase = 1;
 							time = 8;
