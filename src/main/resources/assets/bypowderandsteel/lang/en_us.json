@@ -249,6 +249,7 @@
 	"subtitles.bypowderandsteel.entity.gunnubus.idle": "Gunnubus mumbles",
 	"subtitles.bypowderandsteel.entity.gunnubus.hurt": "Gunnubus hurt",
 	"subtitles.bypowderandsteel.entity.gunnubus.death": "Gunnubus dies",
+	"subtitles.bypowderandsteel.entity.skybender.shield": "Damage blocked",
 
 	"itemGroup.bypowderandsteel": "By Powder and Steel"
 }

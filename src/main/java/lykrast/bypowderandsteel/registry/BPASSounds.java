@@ -33,6 +33,7 @@ public class BPASSounds {
 	//nether
 	public static RegistryObject<SoundEvent> gunnubusIdle = initSound("entity.gunnubus.idle"), gunnubusHurt = initSound("entity.gunnubus.hurt"), gunnubusDeath = initSound("entity.gunnubus.death");
 	//end
+	public static RegistryObject<SoundEvent> skybenderShield = initSound("entity.skybender.shield");
 	//public static RegistryObject<SoundEvent> skybenderIdle = initSound("entity.skybender.idle"), skybenderHurt = initSound("entity.skybender.hurt"), skybenderDeath = initSound("entity.skybender.death");
 
 	public static RegistryObject<SoundEvent> initSound(String name) {
