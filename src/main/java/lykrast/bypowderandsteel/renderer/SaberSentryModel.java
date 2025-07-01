@@ -21,7 +21,7 @@ public class SaberSentryModel extends EntityModel<SaberSentryEntity> {
 	// Made with Blockbench 4.1.5 then adjusted later for animations and shit
 	public static final ModelLayerLocation MODEL = new ModelLayerLocation(ByPowderAndSteel.rl("sabersentry"), "main");
 	private final ModelPart lowerBody, upperBody, rightLeg, leftLeg, head, leftArm, leftForearm, rightArm, rightForearm, leftLowerLeg, rightLowerLeg;
-	private float animProgress, spinAmount;
+	private float animProgress, spinAmount, bop;
 	private Pose anim, prevAnim;
 	//ANIM_NEUTRAL = 0, ANIM_RUN = 1, ANIM_WINDUP = 2, ANIM_SLASH = 3, ANIM_SPIN_START = 4, ANIM_SPINNING = 5, ANIM_SPIN_STOP = 6
 	public static final Pose[] POSES = {new Pose(),
@@ -90,6 +90,11 @@ public class SaberSentryModel extends EntityModel<SaberSentryEntity> {
 		prevAnim = POSES[entity.prevAnim];
 		if (entity.clientAnim == SaberSentryEntity.ANIM_SLASH) animProgress = BPASUtils.easeOutQuad(animProgress);
 		else animProgress = BPASUtils.easeInQuad(animProgress);
+		//for rift of necrodancer easter egg
+		//wanted to bop head at 130 bpm (like on ravevenge hard (favorite track (and it has best girl suzu <3))) but 133 makes it land on ticks
+		bop = (entity.tickCount % 9) + partialTick;
+		if (bop >= 4.5f) bop = 0;
+		else bop = BPASUtils.easeInQuad(1-(bop/4.5f)); //starts at 1 and goes to 0, so use the opposite easing that I'd use
 	}
 
 	@Override
@@ -141,6 +146,11 @@ public class SaberSentryModel extends EntityModel<SaberSentryEntity> {
 		anim.interpolate(this, prevAnim, animProgress);
 		//Upper body y rotation reserved for spinnin
 		upperBody.yRot = spinAmount * Mth.DEG_TO_RAD;
+		
+		//rift of the necrodancer easter egg
+		if (entity.getCosmetic() == 19) {
+			head.xRot += bop * 15*Mth.DEG_TO_RAD;
+		}
 	}
 
 	@Override

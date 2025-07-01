@@ -37,6 +37,8 @@ public class SaberSentryGlowLayer extends RenderLayer<SaberSentryEntity, SaberSe
 		renders[16] = rl(cosmeticPrefix, "progresspride");
 		renders[17] = rl(cosmeticPrefix, "transgender"); //I hardly knew her
 		renders[18] = rl(cosmeticPrefix, "brazil");
+		renders[19] = rl(cosmeticPrefix, "riftnecrodancer"); //it's the stripey thing in the ui
+		//no agender because it's 7 stripes and I only have 6 pixels :(
 	}
 	
 	private RenderType rl(String prefix, String add) {
