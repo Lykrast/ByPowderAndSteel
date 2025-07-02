@@ -65,7 +65,7 @@ public class BPASItems {
 	//desert
 	public static RegistryObject<Item> cowbonesHorn, marauderPatch;
 	//tundra
-	public static RegistryObject<Item> milspecIce, milspecIceGrilled;
+	public static RegistryObject<Item> milspecIce, milspecIceGrilled, milspecIceBerry;
 	//ocean
 	public static RegistryObject<Item> sunkenDoubloon;
 	//underground
@@ -202,6 +202,7 @@ public class BPASItems {
 		
 		milspecIce = initItem(() -> new Item(defP()), "milspec_ice");
 		milspecIceGrilled = initItem(() -> new Item(defP().food(food(4, 0.4))), "milspec_ice_grilled");
+		milspecIceBerry = initItem(() -> new Item(defP().food(food(8, 0.4))), "milspec_ice_sweet_berry");
 		
 		sunkenDoubloon = initItem(() -> new Item(defP()), "sunken_doubloon");
 
