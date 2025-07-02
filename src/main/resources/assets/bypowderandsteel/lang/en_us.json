@@ -35,13 +35,17 @@
 	"item.bypowderandsteel.phasesaber_gravitic": "Gravitic Phasesaber",
 
 	"item.bypowderandsteel.marauder_helmet": "Marauder Cap",
-	"item.bypowderandsteel.marauder_chestplate": "Marauder Tunic",
+	"item.bypowderandsteel.marauder_chestplate": "Marauder Vest",
 	"item.bypowderandsteel.marauder_leggings": "Marauder Pants",
 	"item.bypowderandsteel.marauder_boots": "Marauder Boots",
 	"item.bypowderandsteel.sentry_helmet": "Sentry Visor",
 	"item.bypowderandsteel.sentry_chestplate": "Sentry Chestplate",
 	"item.bypowderandsteel.sentry_leggings": "Sentry Leggings",
 	"item.bypowderandsteel.sentry_boots": "Sentry Boots",
+	"item.bypowderandsteel.infernal_enforcer_helmet": "Infernal Enforcer Cap",
+	"item.bypowderandsteel.infernal_enforcer_chestplate": "Infernal Enforcer Vest",
+	"item.bypowderandsteel.infernal_enforcer_leggings": "Infernal Enforcer Pants",
+	"item.bypowderandsteel.infernal_enforcer_boots": "Infernal Enforcer Boots",
 
 	"item.bypowderandsteel.gunsteel_scrap": "Gunsteel Scrap",
 	"item.bypowderandsteel.gunsteel_ingot": "Gunsteel Ingot",
@@ -68,6 +72,7 @@
 	"item.bypowderandsteel.battery_soda": "Battery Soda",
 	"item.bypowderandsteel.bilkshake": "Bilkshake",
 	"item.bypowderandsteel.heptacle": "Heptacle",
+	"item.bypowderandsteel.infernal_enforcer_leather_patch": "Infernal Enforcer Leather Patch",
 	"item.bypowderandsteel.graviolium_cell": "Graviolium Cell",
 	"item.bypowderandsteel.gravitic_engine": "Gravitic Engine",
 

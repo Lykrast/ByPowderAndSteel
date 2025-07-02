@@ -74,6 +74,7 @@ public class BPASUtils {
 	}
 
 	//ripped from ArmorItem cause it's static there
+	//it's used for all stats (armor, toughness, knockback resistance) so should be good to use for my custom stats
 	private static final EnumMap<ArmorItem.Type, UUID> ARMOR_MODIFIER_UUID_PER_TYPE = Util.make(new EnumMap<>(ArmorItem.Type.class), (p_266744_) -> {
 		p_266744_.put(ArmorItem.Type.BOOTS, UUID.fromString("845DB27C-C624-495F-8C9F-6020A9A58B6B"));
 		p_266744_.put(ArmorItem.Type.LEGGINGS, UUID.fromString("D8499B04-0E66-4726-AB29-64469D734E0D"));

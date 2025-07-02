@@ -35,13 +35,17 @@
 	"item.bypowderandsteel.phasesaber_gravitic": "Sabre phasique gravitique",
 
 	"item.bypowderandsteel.marauder_helmet": "Chapeau de maraudeur",
-	"item.bypowderandsteel.marauder_chestplate": "Tunique de maraudeur",
+	"item.bypowderandsteel.marauder_chestplate": "Veste de maraudeur",
 	"item.bypowderandsteel.marauder_leggings": "Pantalon de maraudeur",
 	"item.bypowderandsteel.marauder_boots": "Bottes de maraudeur",
 	"item.bypowderandsteel.sentry_helmet": "Visière de sentinelle",
 	"item.bypowderandsteel.sentry_chestplate": "Plastron de sentinelle",
 	"item.bypowderandsteel.sentry_leggings": "Jambières de sentinelle",
 	"item.bypowderandsteel.sentry_boots": "Bottes de sentinelle",
+	"item.bypowderandsteel.infernal_enforcer_helmet": "Chapeau de bourreau infernal",
+	"item.bypowderandsteel.infernal_enforcer_chestplate": "Veste de bourreau infernal",
+	"item.bypowderandsteel.infernal_enforcer_leggings": "Pantalon de bourreau infernal",
+	"item.bypowderandsteel.infernal_enforcer_boots": "Bottes de bourreau infernal",
 
 	"item.bypowderandsteel.gunsteel_scrap": "Ferraille de fusilacier",
 	"item.bypowderandsteel.gunsteel_ingot": "Lingot de fusilacier",
@@ -68,6 +72,7 @@
 	"item.bypowderandsteel.battery_soda": "Soda de batterie",
 	"item.bypowderandsteel.bilkshake": "Bilkshake",
 	"item.bypowderandsteel.heptacle": "Heptacle",
+	"item.bypowderandsteel.infernal_enforcer_leather_patch": "Patch en cuir de bourreau infernal",
 	"item.bypowderandsteel.graviolium_cell": "Cellule de graviolium",
 	"item.bypowderandsteel.gravitic_engine": "Moteur gravitique",
 

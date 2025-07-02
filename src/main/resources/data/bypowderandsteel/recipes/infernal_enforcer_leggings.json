@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"###",
+		"# #",
+		"# #"
+	],
+	"key": {
+		"#": { "item": "bypowderandsteel:infernal_enforcer_leather_patch" }
+	},
+	"result": { "item": "bypowderandsteel:infernal_enforcer_leggings" }
+}

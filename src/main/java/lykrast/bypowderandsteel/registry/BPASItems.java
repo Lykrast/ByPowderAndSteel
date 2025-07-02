@@ -50,9 +50,10 @@ public class BPASItems {
 	//swords
 	public static RegistryObject<SwordItem> buccaneerCutlass, phasesaber, phasesaberCaliberry, phasesaberDesert, phasesaberArctic, phasesaberGravitic;
 	//armor
-	public static ArmorMaterial marauder, sentry;
+	public static ArmorMaterial marauder, sentry, infernal;
 	public static RegistryObject<ArmorItem> marauderHelmet, marauderChestplate, marauderLeggings, marauderBoots;
 	public static RegistryObject<ArmorItem> sentryHelmet, sentryChestplate, sentryLeggings, sentryBoots;
+	public static RegistryObject<ArmorItem> infernalHelmet, infernalChestplate, infernalLeggings, infernalBoots;
 	//spawn eggs
 	public static RegistryObject<Item> gunomeEgg, shrubhulkEgg, shrubsnapperEgg, cowbonesPistoleroEgg, cowbonesBuckarooEgg,
 		zombieSealEgg, sunkenPirateEgg, sabersentryEgg, blastersentryEgg, gunnubusCrimsonEgg, skybenderEgg;
@@ -71,7 +72,7 @@ public class BPASItems {
 	//underground
 	public static RegistryObject<Item> damagedDevice, sentryPlating, phasesaberTemplate, batterySoda, bilkshake;
 	//nether
-	public static RegistryObject<Item> heptacle;
+	public static RegistryObject<Item> heptacle, infernalPatch;
 	//end
 	public static RegistryObject<Item> gravioliumCell, graviticEngine;
 	
@@ -167,6 +168,28 @@ public class BPASItems {
 		sentryBoots = initItem(() -> new AttributeArmorItem(sentry, ArmorItem.Type.BOOTS, defP())
 				.attribute(Attributes.KNOCKBACK_RESISTANCE, new AttributeModifier(BPASUtils.armorUUID(ArmorItem.Type.BOOTS), "Armor knockback resistance", 0.3, AttributeModifier.Operation.ADDITION))
 				.done(), "sentry_boots");
+		//stats like maurauder with more damage and durability (and not a single more armor, we just scribbling flames)
+		infernal = new CustomArmorMaterial("infernal_enforcer", 20, Map.of(
+				ArmorItem.Type.HELMET, 1,
+				ArmorItem.Type.CHESTPLATE, 3,
+				ArmorItem.Type.LEGGINGS, 2,
+				ArmorItem.Type.BOOTS, 1), 25, () -> SoundEvents.ARMOR_EQUIP_LEATHER, () -> infernalPatch.get(), 0, 0);
+		infernalHelmet = initItem(() -> new AttributeArmorItem(infernal, ArmorItem.Type.HELMET, defP())
+				.attribute(GWRAttributes.dmgBase, new AttributeModifier(BPASUtils.armorUUID(ArmorItem.Type.HELMET), "gundmg", 0.5, AttributeModifier.Operation.ADDITION))
+				.attribute(GWRAttributes.dmgTotal, new AttributeModifier(BPASUtils.armorUUID(ArmorItem.Type.HELMET), "gundmgpct", 0.04, AttributeModifier.Operation.MULTIPLY_BASE))
+				.done(), "infernal_enforcer_helmet");
+		infernalChestplate = initItem(() -> new AttributeArmorItem(infernal, ArmorItem.Type.CHESTPLATE, defP())
+				.attribute(GWRAttributes.dmgBase, new AttributeModifier(BPASUtils.armorUUID(ArmorItem.Type.CHESTPLATE), "gundmg", 1, AttributeModifier.Operation.ADDITION))
+				.attribute(GWRAttributes.dmgTotal, new AttributeModifier(BPASUtils.armorUUID(ArmorItem.Type.CHESTPLATE), "gundmgpct", 0.1, AttributeModifier.Operation.MULTIPLY_BASE))
+				.done(), "infernal_enforcer_chestplate");
+		infernalLeggings = initItem(() -> new AttributeArmorItem(infernal, ArmorItem.Type.LEGGINGS, defP())
+				.attribute(GWRAttributes.dmgBase, new AttributeModifier(BPASUtils.armorUUID(ArmorItem.Type.LEGGINGS), "gundmg", 1, AttributeModifier.Operation.ADDITION))
+				.attribute(GWRAttributes.dmgTotal, new AttributeModifier(BPASUtils.armorUUID(ArmorItem.Type.LEGGINGS), "gundmgpct", 0.07, AttributeModifier.Operation.MULTIPLY_BASE))
+				.done(), "infernal_enforcer_leggings");
+		infernalBoots = initItem(() -> new AttributeArmorItem(infernal, ArmorItem.Type.BOOTS, defP())
+				.attribute(GWRAttributes.dmgBase, new AttributeModifier(BPASUtils.armorUUID(ArmorItem.Type.BOOTS), "gundmg", 0.5, AttributeModifier.Operation.ADDITION))
+				.attribute(GWRAttributes.dmgTotal, new AttributeModifier(BPASUtils.armorUUID(ArmorItem.Type.BOOTS), "gundmgpct", 0.04, AttributeModifier.Operation.MULTIPLY_BASE))
+				.done(), "infernal_enforcer_boots");
 		
 		//Spawn Eggs
 		gunomeEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.gunome, 0x1F6878, 0xDB2F4C, defP()), "gunome_spawn_egg");
@@ -213,6 +236,7 @@ public class BPASItems {
 		bilkshake = initItem(() -> new BilkshakeItem(defP().food((new FoodProperties.Builder()).nutrition(6).saturationMod(0.4f).alwaysEat().build())), "bilkshake");
 		
 		heptacle = initItem(() -> new Item(defP()), "heptacle");
+		infernalPatch = initItem(() -> new Item(defP()), "infernal_enforcer_leather_patch");
 		
 		gravioliumCell = initItem(() -> new Item(defP()), "graviolium_cell");
 		graviticEngine = initItem(() -> new Item(defP()), "gravitic_engine");
