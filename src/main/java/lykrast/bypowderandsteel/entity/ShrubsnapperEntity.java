@@ -136,9 +136,8 @@ public class ShrubsnapperEntity extends AnimatedMonster {
 			windup = true;
 			timer = 15;
 			snapper.setAnimation(ANIM_WINDUP);
+			snapper.getMoveControl().strafe(0, 0);
 			snapper.getNavigation().stop();
-			//I'm trying to stop the strafing but no it still sliding aaaaa
-			snapper.getMoveControl().setWantedPosition(snapper.getX(), snapper.getY(), snapper.getZ(), 0);
 			snapper.getLookControl().setLookAt(snapper.getTarget(), 30, 30);
 		}
 
