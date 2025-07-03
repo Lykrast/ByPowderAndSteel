@@ -35,24 +35,45 @@ public class CowbonesPistoleroModel extends HumanoidModel<CowbonesPistoleroEntit
 	@Override
 	public void setupAnim(CowbonesPistoleroEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 		super.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
-		if (animProgressL > 0.99) leftArm.xRot = getTargetXRot(entity.clientAnimL, leftArm.xRot);
-		else leftArm.xRot = Mth.lerp(animProgressL, getTargetXRot(entity.prevAnimL, leftArm.xRot), getTargetXRot(entity.clientAnimL, leftArm.xRot));
-		if (animProgressR > 0.99) rightArm.xRot = getTargetXRot(entity.clientAnimR, rightArm.xRot);
-		else rightArm.xRot = Mth.lerp(animProgressR, getTargetXRot(entity.prevAnimR, rightArm.xRot), getTargetXRot(entity.clientAnimR, rightArm.xRot));
+		if (animProgressL > 0.99) {
+			leftArm.xRot = getTargetXRot(entity.clientAnimL, leftArm.xRot, headPitch);
+			leftArm.yRot = getTargetYRot(entity.clientAnimL, leftArm.yRot, netHeadYaw);
+		}
+		else {
+			leftArm.xRot = Mth.lerp(animProgressL, getTargetXRot(entity.prevAnimL, leftArm.xRot, headPitch), getTargetXRot(entity.clientAnimL, leftArm.xRot, headPitch));
+			leftArm.yRot = Mth.lerp(animProgressL, getTargetYRot(entity.prevAnimL, leftArm.yRot, netHeadYaw), getTargetYRot(entity.clientAnimL, leftArm.yRot, netHeadYaw));
+		}
+		if (animProgressR > 0.99) {
+			rightArm.xRot = getTargetXRot(entity.clientAnimR, rightArm.xRot, headPitch);
+			rightArm.yRot = getTargetYRot(entity.clientAnimR, rightArm.yRot, netHeadYaw);
+		}
+		else {
+			rightArm.xRot = Mth.lerp(animProgressR, getTargetXRot(entity.prevAnimR, rightArm.xRot, headPitch), getTargetXRot(entity.clientAnimR, rightArm.xRot, headPitch));
+			rightArm.yRot = Mth.lerp(animProgressR, getTargetYRot(entity.prevAnimR, rightArm.yRot, netHeadYaw), getTargetYRot(entity.clientAnimR, rightArm.yRot, netHeadYaw));
+		}
 	}
 	
-	private float getTargetXRot(int anim, float neutral) {
-		//take the arm because idle is what the humanoid tries to set
+	private float getTargetXRot(int anim, float neutral, float headPitch) {
+		//take the neutral because idle is what the humanoid tries to set
 		switch (anim) {
 			default:
 			case CowbonesPistoleroEntity.ANIM_IDLE:
 				return neutral;
 			case CowbonesPistoleroEntity.ANIM_AIMING:
-				return -Mth.HALF_PI;
+				return -Mth.HALF_PI + headPitch*Mth.DEG_TO_RAD;
 			case CowbonesPistoleroEntity.ANIM_FIRED:
 				return -150*Mth.DEG_TO_RAD;
 			case CowbonesPistoleroEntity.ANIM_TWIRLING:
 				return -40*Mth.DEG_TO_RAD;
+		}
+	}
+	
+	private float getTargetYRot(int anim, float neutral, float headYaw) {
+		switch (anim) {
+			default:
+				return neutral;
+			case CowbonesPistoleroEntity.ANIM_AIMING:
+				return headYaw*Mth.DEG_TO_RAD;
 		}
 	}
 

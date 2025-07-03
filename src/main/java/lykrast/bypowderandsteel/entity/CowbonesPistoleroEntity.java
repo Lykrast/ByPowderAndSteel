@@ -120,7 +120,7 @@ public class CowbonesPistoleroEntity extends AbstractSkeleton implements GunMob 
 
 	public static AttributeSupplier.Builder createAttributes() {
 		//armor mimics having a leather chest and boots
-		return BPASUtils.baseGunMobAttributes().add(Attributes.MOVEMENT_SPEED, 0.25).add(Attributes.ARMOR, 4).add(GWRAttributes.dmgBase.get(), -4).add(GWRAttributes.fireDelay.get(), 4);
+		return BPASUtils.baseGunMobAttributes().add(Attributes.MOVEMENT_SPEED, 0.25).add(Attributes.ARMOR, 4).add(GWRAttributes.dmgBase.get(), -4).add(GWRAttributes.fireDelay.get(), 5);
 	}
 
 	@Override
@@ -318,12 +318,27 @@ public class CowbonesPistoleroEntity extends AbstractSkeleton implements GunMob 
 					if (mob.getRandom().nextFloat() < 0.3) strafingBackwards = !strafingBackwards;
 					strafingTime = 0;
 				}
+				
+				//gun animations (will stop strafing)
+				reloadL--;
+				//TODO sound when aiming anim
+				if (reloadL == 20) {
+					mob.setAnimationLeft(ANIM_AIMING);
+					mob.getMoveControl().strafe(0, 0);
+				}
+				else if (reloadL == twirlTimeL) mob.setAnimationLeft(ANIM_TWIRLING);
+				reloadR--;
+				if (reloadR == 20) {
+					mob.setAnimationRight(ANIM_AIMING);
+					mob.getMoveControl().strafe(0, 0);
+				}
+				else if (reloadR == twirlTimeR) mob.setAnimationRight(ANIM_TWIRLING);
 
-				if (strafingTime > -1) {
+				if (strafingTime > -1 && reloadL > 20 && reloadR > 20) {
 					if (targetDistance > strafeRadiusSqr * 0.75) strafingBackwards = false;
 					else if (targetDistance < strafeRadiusSqr * 0.25) strafingBackwards = true;
 
-					mob.getMoveControl().strafe(strafingBackwards ? -0.5F : 0.5F, strafingClockwise ? 0.5F : -0.5F);
+					mob.getMoveControl().strafe(strafingBackwards ? -0.5F : 0.5F, strafingClockwise ? 0.75F : -0.75F);
 					Entity vehicle = mob.getControlledVehicle();
 					if (vehicle instanceof Mob) {
 						Mob mob = (Mob) vehicle;
@@ -336,15 +351,7 @@ public class CowbonesPistoleroEntity extends AbstractSkeleton implements GunMob 
 					mob.getLookControl().setLookAt(target, 30, 30);
 				}
 
-				//shoot
-				reloadL--;
-				//TODO sound when aiming anim
-				if (reloadL == 20) mob.setAnimationLeft(ANIM_AIMING);
-				else if (reloadL == twirlTimeL) mob.setAnimationLeft(ANIM_TWIRLING);
-				reloadR--;
-				if (reloadR == 20) mob.setAnimationRight(ANIM_AIMING);
-				else if (reloadR == twirlTimeR) mob.setAnimationRight(ANIM_TWIRLING);
-				
+				//shoot				
 				if (--attackTime <= 0 && seeTime >= 20 && (reloadL <= 0 || reloadR <= 0) && los && targetDistance <= attackRadiusSqr) {
 					ItemStack gun = mob.getMainHandItem();
 					boolean left = false;
