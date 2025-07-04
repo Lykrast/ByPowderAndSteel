@@ -2,7 +2,6 @@ package lykrast.bypowderandsteel.renderer;
 
 import lykrast.bypowderandsteel.ByPowderAndSteel;
 import lykrast.bypowderandsteel.entity.ZombieSealEntity;
-import net.minecraft.client.model.AnimationUtils;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
@@ -12,7 +11,7 @@ import net.minecraft.client.model.geom.builders.CubeListBuilder;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
-import net.minecraft.util.Mth;
+import net.minecraft.world.entity.HumanoidArm;
 
 public class ZombieSealModel extends HumanoidModel<ZombieSealEntity> {
 	public static final ModelLayerLocation MODEL = new ModelLayerLocation(ByPowderAndSteel.rl("zombie_seal"), "main");
@@ -35,23 +34,16 @@ public class ZombieSealModel extends HumanoidModel<ZombieSealEntity> {
 	}
 
 	@Override
-	public void setupAnim(ZombieSealEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-		super.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
-		//This part from skeleton
-		//TODO better pose
-		if (entity.isAggressive()) {
-			float f = Mth.sin(this.attackTime * (float) Math.PI);
-			float f1 = Mth.sin((1.0F - (1.0F - this.attackTime) * (1.0F - this.attackTime)) * (float) Math.PI);
-			this.rightArm.zRot = 0.0F;
-			this.leftArm.zRot = 0.0F;
-			this.rightArm.yRot = -(0.1F - f * 0.6F);
-			this.leftArm.yRot = 0.1F - f * 0.6F;
-			this.rightArm.xRot = (-(float) Math.PI / 2F);
-			this.leftArm.xRot = (-(float) Math.PI / 2F);
-			this.rightArm.xRot -= f * 1.2F - f1 * 0.4F;
-			this.leftArm.xRot -= f * 1.2F - f1 * 0.4F;
-			AnimationUtils.bobArms(this.rightArm, this.leftArm, ageInTicks);
+	public void prepareMobModel(ZombieSealEntity entity, float limbSwing, float limbSwingAmount, float partialTick) {
+		//bow and arrow pose already aims like the head, so we just use it as a 2 hand carry
+		rightArmPose = HumanoidModel.ArmPose.EMPTY;
+		leftArmPose = HumanoidModel.ArmPose.EMPTY;
+		if (!entity.getMainHandItem().isEmpty() && entity.isAggressive()) {
+			if (entity.getMainArm() == HumanoidArm.RIGHT) rightArmPose = HumanoidModel.ArmPose.BOW_AND_ARROW;
+			else leftArmPose = HumanoidModel.ArmPose.BOW_AND_ARROW;
 		}
+
+		super.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTick);
 	}
 
 }

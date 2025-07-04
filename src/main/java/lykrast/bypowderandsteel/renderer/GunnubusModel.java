@@ -10,6 +10,7 @@ import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.util.Mth;
+import net.minecraft.world.entity.HumanoidArm;
 import net.minecraft.world.entity.Mob;
 
 public class GunnubusModel<T extends Mob> extends HumanoidModel<T> {
@@ -31,20 +32,34 @@ public class GunnubusModel<T extends Mob> extends HumanoidModel<T> {
 	@Override
 	public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 		super.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
-		//This part from skeleton
-		//TODO better pose
+
 		if (entity.isAggressive()) {
-			float f = Mth.sin(this.attackTime * (float) Math.PI);
-			float f1 = Mth.sin((1.0F - (1.0F - this.attackTime) * (1.0F - this.attackTime)) * (float) Math.PI);
-			this.rightArm.zRot = 0.0F;
-			this.leftArm.zRot = 0.0F;
-			this.rightArm.yRot = -(0.1F - f * 0.6F);
-			this.leftArm.yRot = 0.1F - f * 0.6F;
-			this.rightArm.xRot = (-(float) Math.PI / 2F);
-			this.leftArm.xRot = (-(float) Math.PI / 2F);
-			this.rightArm.xRot -= f * 1.2F - f1 * 0.4F;
-			this.leftArm.xRot -= f * 1.2F - f1 * 0.4F;
-			AnimationUtils.bobArms(this.rightArm, this.leftArm, ageInTicks);
+			//really wish there was a "get item in left hand" function
+			//I mean they're not even supposed to dual wield but y'knoooow just in case
+			if (!entity.getMainHandItem().isEmpty()) {
+				if (entity.getMainArm() == HumanoidArm.LEFT) {
+					leftArm.xRot = headPitch * Mth.DEG_TO_RAD - Mth.HALF_PI;
+					leftArm.yRot = netHeadYaw * Mth.DEG_TO_RAD;		
+					AnimationUtils.bobModelPart(leftArm, ageInTicks, -1);
+				}
+				else {
+					rightArm.xRot = headPitch * Mth.DEG_TO_RAD - Mth.HALF_PI;
+					rightArm.yRot = netHeadYaw * Mth.DEG_TO_RAD;
+					AnimationUtils.bobModelPart(rightArm, ageInTicks, 1);
+				}
+			}
+			if (!entity.getOffhandItem().isEmpty()) {
+				if (entity.getMainArm() == HumanoidArm.RIGHT) {
+					leftArm.xRot = headPitch * Mth.DEG_TO_RAD - Mth.HALF_PI;
+					leftArm.yRot = netHeadYaw * Mth.DEG_TO_RAD;
+					AnimationUtils.bobModelPart(leftArm, ageInTicks, -1);
+				}
+				else {
+					rightArm.xRot = headPitch * Mth.DEG_TO_RAD - Mth.HALF_PI;
+					rightArm.yRot = netHeadYaw * Mth.DEG_TO_RAD;
+					AnimationUtils.bobModelPart(rightArm, ageInTicks, 1);
+				}
+			}
 		}
 	}
 

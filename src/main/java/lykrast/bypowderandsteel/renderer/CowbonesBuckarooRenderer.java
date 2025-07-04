@@ -43,7 +43,7 @@ public class CowbonesBuckarooRenderer extends HumanoidMobRenderer<CowbonesBuckar
 
 	public CowbonesBuckarooRenderer(EntityRendererProvider.Context context) {
 		super(context, new CowbonesModel<>(context.bakeLayer(MODEL)), 0.5f);
-		addLayer(new CowbonesOverlayLayer<>(this, new SkeletonModel<CowbonesBuckarooEntity>(context.getModelSet().bakeLayer(OVERLAY)), TEXTURE_OVERLAY));
+		addLayer(new CowbonesOverlayLayer<>(this, new CowbonesModel<CowbonesBuckarooEntity>(context.getModelSet().bakeLayer(OVERLAY)), TEXTURE_OVERLAY));
 		addLayer(new HumanoidArmorLayer<>(this, new SkeletonModel<>(context.bakeLayer(INNER_ARMOR)), new SkeletonModel<>(context.bakeLayer(OUTER_ARMOR)), context.getModelManager()));
 	}
 
