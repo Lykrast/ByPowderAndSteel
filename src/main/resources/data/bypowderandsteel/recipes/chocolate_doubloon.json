@@ -1,0 +1,9 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{ "item": "bypowderandsteel:sunken_doubloon" },
+		{ "item": "minecraft:cocoa_beans" },
+		{ "item": "minecraft:sugar" }
+	],
+	"result": { "item": "bypowderandsteel:chocolate_doubloon", "count": 1 }
+}

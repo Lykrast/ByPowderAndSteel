@@ -68,7 +68,7 @@ public class BPASItems {
 	//tundra
 	public static RegistryObject<Item> milspecIce, milspecIceGrilled, milspecIceBerry;
 	//ocean
-	public static RegistryObject<Item> sunkenDoubloon;
+	public static RegistryObject<Item> sunkenDoubloon, chocolateDoubloon;
 	//underground
 	public static RegistryObject<Item> damagedDevice, sentryPlating, phasesaberTemplate, batterySoda, bilkshake;
 	//nether
@@ -228,6 +228,7 @@ public class BPASItems {
 		milspecIceBerry = initItem(() -> new Item(defP().food(food(8, 0.4))), "milspec_ice_sweet_berry");
 		
 		sunkenDoubloon = initItem(() -> new Item(defP()), "sunken_doubloon");
+		chocolateDoubloon = initItem(() -> new Item(defP().food(food(4, 0.3))), "chocolate_doubloon");
 
 		damagedDevice = initItem(() -> new Item(defP()), "damaged_device");
 		sentryPlating = initItem(() -> new Item(defP()), "sentry_fiber_plating");
