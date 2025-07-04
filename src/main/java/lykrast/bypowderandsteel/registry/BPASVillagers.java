@@ -58,12 +58,18 @@ public class BPASVillagers {
 			trades.get(2).add(new VillagerTradeBuilder(12, 10, 0.05).buyManyForOne(Items.IRON_INGOT, 3, 5).build());
 			trades.get(2).add(new VillagerTradeBuilder(12, 5, 0.05).sell(BPASItems.gunsteelGun, 1, 1).emeraldPrice(2, 4).build());
 			trades.get(2).add(new EnchantedItemTrade(GWRItems.goldGun, 1, 5, 19, 3, 5, 0.05));
-			
-			trades.get(3).add(new VillagerTradeBuilder(16, 20, 0.05).buyManyForOne(BPASItems.livingHerb, 8, 12).build());
-			trades.get(3).add(new VillagerTradeBuilder(16, 20, 0.05).buyManyForOne(BPASItems.cowbonesHorn, 8, 12).build());
-			trades.get(3).add(new VillagerTradeBuilder(16, 20, 0.05).buyManyForOne(BPASItems.milspecIce, 8, 12).build());
+
+			trades.get(3).add(new VillagerTradeBuilder(12, 10, 0.05).sell(GWRItems.amethystBullet, 8, 12).emeraldPrice(1, 1).build());
+			trades.get(3).add(new VillagerTradeBuilder(12, 10, 0.05).sell(GWRItems.explosiveBullet, 8, 12).emeraldPrice(1, 1).build());
+			trades.get(3).add(new VillagerTradeBuilder(12, 10, 0.05).sell(GWRItems.prismarineBullet, 8, 12).emeraldPrice(1, 1).build());
+			trades.get(3).add(new VillagerTradeBuilder(12, 10, 0.05).sell(BPASItems.caliberry, 8, 12).emeraldPrice(1, 1).build());
 			
 			trades.get(4).add(new VillagerTradeBuilder(12, 30, 0.05).buyManyForOne(Items.DIAMOND, 1, 1).build());
+			trades.get(4).add(new VillagerTradeBuilder(12, 30, 0.05).buyManyForOne(BPASItems.damagedDevice, 8, 12).build());
+
+			trades.get(5).add(new EnchantedItemTrade(GWRItems.diamondShotgun, 20, 5, 19, 3, 30, 0.2));
+			trades.get(5).add(new EnchantedItemTrade(GWRItems.diamondSniper, 20, 5, 19, 3, 30, 0.2));
+			trades.get(5).add(new EnchantedItemTrade(GWRItems.diamondGatling, 20, 5, 19, 3, 30, 0.2));
 		}
 	}
 
