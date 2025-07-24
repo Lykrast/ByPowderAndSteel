@@ -40,16 +40,16 @@ public class CowbonesPistoleroModel extends HumanoidModel<CowbonesPistoleroEntit
 			leftArm.yRot = getTargetYRot(entity.clientAnimL, leftArm.yRot, netHeadYaw);
 		}
 		else {
-			leftArm.xRot = Mth.lerp(animProgressL, getTargetXRot(entity.prevAnimL, leftArm.xRot, headPitch), getTargetXRot(entity.clientAnimL, leftArm.xRot, headPitch));
-			leftArm.yRot = Mth.lerp(animProgressL, getTargetYRot(entity.prevAnimL, leftArm.yRot, netHeadYaw), getTargetYRot(entity.clientAnimL, leftArm.yRot, netHeadYaw));
+			leftArm.xRot = BPASUtils.rotlerpRad(animProgressL, getTargetXRot(entity.prevAnimL, leftArm.xRot, headPitch), getTargetXRot(entity.clientAnimL, leftArm.xRot, headPitch));
+			leftArm.yRot = BPASUtils.rotlerpRad(animProgressL, getTargetYRot(entity.prevAnimL, leftArm.yRot, netHeadYaw), getTargetYRot(entity.clientAnimL, leftArm.yRot, netHeadYaw));
 		}
 		if (animProgressR > 0.99) {
 			rightArm.xRot = getTargetXRot(entity.clientAnimR, rightArm.xRot, headPitch);
 			rightArm.yRot = getTargetYRot(entity.clientAnimR, rightArm.yRot, netHeadYaw);
 		}
 		else {
-			rightArm.xRot = Mth.lerp(animProgressR, getTargetXRot(entity.prevAnimR, rightArm.xRot, headPitch), getTargetXRot(entity.clientAnimR, rightArm.xRot, headPitch));
-			rightArm.yRot = Mth.lerp(animProgressR, getTargetYRot(entity.prevAnimR, rightArm.yRot, netHeadYaw), getTargetYRot(entity.clientAnimR, rightArm.yRot, netHeadYaw));
+			rightArm.xRot = BPASUtils.rotlerpRad(animProgressR, getTargetXRot(entity.prevAnimR, rightArm.xRot, headPitch), getTargetXRot(entity.clientAnimR, rightArm.xRot, headPitch));
+			rightArm.yRot = BPASUtils.rotlerpRad(animProgressR, getTargetYRot(entity.prevAnimR, rightArm.yRot, netHeadYaw), getTargetYRot(entity.clientAnimR, rightArm.yRot, netHeadYaw));
 		}
 	}
 	

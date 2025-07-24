@@ -1,17 +1,15 @@
 package lykrast.bypowderandsteel.entity;
 
-import java.util.EnumSet;
-
 import javax.annotation.Nullable;
 
 import lykrast.bypowderandsteel.ByPowderAndSteel;
 import lykrast.bypowderandsteel.entity.ai.ApproachTargetGoal;
 import lykrast.bypowderandsteel.entity.ai.AvoidTargetGoal;
+import lykrast.bypowderandsteel.entity.ai.SnipeGoal;
 import lykrast.bypowderandsteel.misc.BPASUtils;
 import lykrast.bypowderandsteel.registry.BPASItems;
 import lykrast.bypowderandsteel.registry.BPASSounds;
 import lykrast.gunswithoutroses.item.BulletItem;
-import lykrast.gunswithoutroses.item.GunItem;
 import lykrast.gunswithoutroses.registry.GWRAttributes;
 import lykrast.gunswithoutroses.registry.GWRItems;
 import net.minecraft.core.BlockPos;
@@ -36,7 +34,6 @@ import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.FleeSunGoal;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
-import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.RestrictSunGoal;
@@ -51,7 +48,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class ZombieSealEntity extends Monster implements GunMob {
+public class ZombieSealEntity extends Monster implements SniperMob {
 	//from guardian for the beam
 	private static final EntityDataAccessor<Integer> DATA_ID_ATTACK_TARGET = SynchedEntityData.defineId(ZombieSealEntity.class, EntityDataSerializers.INT);
 	@Nullable
@@ -67,7 +64,7 @@ public class ZombieSealEntity extends Monster implements GunMob {
 		goalSelector.addGoal(1, new FloatGoal(this));
 		goalSelector.addGoal(2, new RestrictSunGoal(this));
 		goalSelector.addGoal(3, new FleeSunGoal(this, 1));
-		goalSelector.addGoal(4, new SnipeGoal(this));
+		goalSelector.addGoal(4, new SnipeGoal<>(this, true));
 		goalSelector.addGoal(5, new AvoidTargetGoal(this, 4, 8, 1.2));
 		goalSelector.addGoal(6, new ApproachTargetGoal(this, 1, false, false));
 		goalSelector.addGoal(7, new WaterAvoidingRandomStrollGoal(this, 1));
@@ -104,6 +101,16 @@ public class ZombieSealEntity extends Monster implements GunMob {
 	public void customServerAiStep() {
 		if (attackCooldown > 0) attackCooldown--;
 		super.customServerAiStep();
+	}
+
+	@Override
+	public int getAttackCooldown() {
+		return attackCooldown;
+	}
+
+	@Override
+	public void setAttackCooldown(int amount) {
+		attackCooldown = amount;
 	}
 
 	@Override
@@ -173,7 +180,8 @@ public class ZombieSealEntity extends Monster implements GunMob {
 	}
 
 	//target from guardian, for rendering the beeem
-	protected void setActiveAttackTarget(int id) {
+	@Override
+	public void setActiveAttackTarget(int id) {
 		entityData.set(DATA_ID_ATTACK_TARGET, id);
 	}
 
@@ -202,7 +210,6 @@ public class ZombieSealEntity extends Monster implements GunMob {
 	public void onSyncedDataUpdated(EntityDataAccessor<?> accessor) {
 		super.onSyncedDataUpdated(accessor);
 		if (DATA_ID_ATTACK_TARGET.equals(accessor)) clientSideCachedAttackTarget = null;
-
 	}
 
 	@Override
@@ -223,84 +230,5 @@ public class ZombieSealEntity extends Monster implements GunMob {
 	@Override
 	protected void playStepSound(BlockPos pos, BlockState state) {
 		this.playSound(SoundEvents.ZOMBIE_STEP, 0.15F, 1);
-	}
-
-	private static class SnipeGoal extends Goal {
-		//Based on the guardian one a bit
-		private ZombieSealEntity seal;
-		private LivingEntity target;
-		private int seeTime;
-
-		public SnipeGoal(ZombieSealEntity seal) {
-			this.seal = seal;
-			setFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.LOOK));
-		}
-
-		protected boolean isHoldingGun() {
-			return seal.isHolding(is -> is.getItem() instanceof GunItem);
-		}
-
-		@Override
-		public boolean canUse() {
-			return seal.attackCooldown <= 0 && seal.getTarget() != null && isHoldingGun() && seal.hasLineOfSight(seal.getTarget());
-		}
-
-		@Override
-		public boolean canContinueToUse() {
-			return seal.attackCooldown <= 0 && target != null && target.isAlive() && seeTime > -20 && isHoldingGun();
-		}
-
-		@Override
-		public void start() {
-			seal.getNavigation().stop();
-			seeTime = 0;
-			target = seal.getTarget();
-			if (target != null) {
-				seal.getLookControl().setLookAt(target, 90, 90);
-				seal.setActiveAttackTarget(target.getId());
-				seal.setAggressive(true);
-				//volume 4 should be heard 64 blocks away (headshot sound is 5)
-				seal.playSound(BPASSounds.sealSpot.get(), 4, 1);
-			}
-		}
-
-		@Override
-		public void stop() {
-			seal.setActiveAttackTarget(0);
-			seal.setAggressive(false);
-			if (seal.attackCooldown <= 0) seal.attackCooldown = 5;
-		}
-
-		@Override
-		public boolean requiresUpdateEveryTick() {
-			return true;
-		}
-
-		@Override
-		public void tick() {
-			if (target != null) {
-				seal.getNavigation().stop();
-				seal.getLookControl().setLookAt(target, 90, 90);
-				seal.setActiveAttackTarget(target.getId());
-				if (!seal.hasLineOfSight(target)) {
-					seeTime -= 2;
-					//volume 4 should be heard 64 blocks away (headshot sound is 5)
-					if (seeTime <= -20) seal.playSound(BPASSounds.sealUnspot.get(), 4, 1);
-				}
-				else {
-					if (seeTime < 0) seeTime = 0;
-					seeTime++;
-					if (seeTime >= 50) {
-						ItemStack gun =  seal.getMainHandItem();
-						GunItem gunItem = (GunItem) gun.getItem();
-						ItemStack bullet = seal.getBulletStack();
-						seal.attackCooldown = gunItem.getFireDelay(gun, seal);
-						gunItem.shootAt(seal, target, gun, bullet, seal.getBullet(), seal.getAddedSpread(), true);
-						//volume 4 should be heard 64 blocks away (headshot sound is 5)
-						seal.playSound(gunItem.getFireSound(), 4, 1.0F / (seal.getRandom().nextFloat() * 0.4F + 0.8F));
-					}
-				}
-			}
-		}
 	}
 }
