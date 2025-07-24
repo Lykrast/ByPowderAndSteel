@@ -115,8 +115,8 @@ public class BPASItems {
 		graviticBullet = initItem(() -> new GraviticBulletItem(defP(), 8), "gravitic_bullet");
 		
 		//Swords
-		//iron but more durable
-		Tier cutlass = new ForgeTier(2, 687, 6, 2, 14, BlockTags.NEEDS_IRON_TOOL, () -> Ingredient.of(Tags.Items.INGOTS_IRON));
+		//iron but more durable and +0.5 damage
+		Tier cutlass = new ForgeTier(2, 687, 6, 2.5f, 14, BlockTags.NEEDS_IRON_TOOL, () -> Ingredient.of(Tags.Items.INGOTS_IRON));
 		buccaneerCutlass = initItem(() -> new SwordItem(cutlass, 3, -2.4F, defP()), "buccaneer_cutlass");
 		//diamond but a lil more durable (will have different upgrades than netherite), and also star wars came out in 1977, neat uh?
 		Tier phase = new ForgeTier(3, 1977, 8, 3, 10, BlockTags.NEEDS_DIAMOND_TOOL, () -> Ingredient.of(Tags.Items.GEMS_DIAMOND));
