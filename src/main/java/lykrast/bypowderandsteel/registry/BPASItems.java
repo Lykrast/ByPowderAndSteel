@@ -108,7 +108,7 @@ public class BPASItems {
 		bloodfueledRevolver = initItem(() -> new BloodfueledGunItem(defP().durability(2666), 2, 1.5, 15, 3, 15, 3).fireSound(BPASSounds.bloodfueledRevolver).repair(() -> Ingredient.of(heptacle.get())), "bloodfueled_revolver");
 		
 		//Bullets
-		gunsteelBullet = initItem(() -> new BulletItem(defP(), 6), "gunsteel_bullet");
+		gunsteelBullet = initItem(() -> new GunsteelBulletItem(defP(), 6), "gunsteel_bullet");
 		caliberry = initItem(() -> new KnockbackBulletItem(defP().food(food(1, 0.6)), 4, 1), "caliberry");
 		caliberryLarge = initItem(() -> new KnockbackBulletItem(defP().food(food(4, 0.6)), 6, 2), "caliberry_large");
 		phaseBullet = initItem(() -> new SlowBulletItem(defP(), 8), "phase_bullet");

@@ -23,6 +23,7 @@
 	"item.bypowderandsteel.phase_bullet": "Balle phasique",
 	"item.bypowderandsteel.gravitic_bullet": "Balle gravitique",
 
+	"tooltip.bypowderandsteel.bullet.base": "Compte comme balle en fer",
 	"tooltip.bypowderandsteel.bullet.knockback": "+%1$s recul",
 	"tooltip.bypowderandsteel.bullet.slow": "Vitesse grandement limitée",
 	"tooltip.bypowderandsteel.gravitic_bullet": "Fait léviter les entités",
