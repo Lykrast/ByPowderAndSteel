@@ -72,7 +72,7 @@ public class BPASItems {
 	//underground
 	public static RegistryObject<Item> damagedDevice, sentryPlating, phasesaberTemplate, batterySoda, bilkshake;
 	//nether
-	public static RegistryObject<Item> heptacle, infernalPatch;
+	public static RegistryObject<Item> heptacle, infernalPatch, infernalIce;
 	//end
 	public static RegistryObject<Item> gravioliumCell, graviticEngine;
 	
@@ -238,6 +238,7 @@ public class BPASItems {
 		
 		heptacle = initItem(() -> new Item(defP()), "heptacle");
 		infernalPatch = initItem(() -> new Item(defP()), "infernal_enforcer_leather_patch");
+		infernalIce = initItem(() -> new ContainerFoodItem(defP().food(food(8, 0.4)).craftRemainder(Items.BOWL)), "infernal_ice_cream");
 		
 		gravioliumCell = initItem(() -> new Item(defP()), "graviolium_cell");
 		graviticEngine = initItem(() -> new Item(defP()), "gravitic_engine");
