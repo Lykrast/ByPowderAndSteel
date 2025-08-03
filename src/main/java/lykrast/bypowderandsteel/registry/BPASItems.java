@@ -100,8 +100,8 @@ public class BPASItems {
 		desertShotgun = initItem(() -> new GunItem(defP().durability(753), 0, 0.5, 18, 6, 14).projectiles(3).fireSound(BPASSounds.desertShotgun).repair(() -> Ingredient.of(cowbonesHorn.get())), "desert_shotgun");
 		desertShotgunDiamond = initItem(() -> new GunItem(defP().durability(3047), 0, 0.6, 16, 6, 14).projectiles(3).fireSound(BPASSounds.desertShotgun).repair(() -> Ingredient.of(Tags.Items.GEMS_DIAMOND)), "desert_shotgun_diamond");
 		arcticPistol = initItem(() -> new GunItem(defP().durability(630), 1, 1, 18, 1, 8).fireSound(BPASSounds.arcticPistol).repair(() -> Ingredient.of(milspecIce.get())), "arctic_pistol");
-		arcticSniper = initItem(() -> new GunItem(defP().durability(630), 2, 1, 24, 0, 8).headshotMult(1.5).fireSound(BPASSounds.arcticSniper).repair(() -> Ingredient.of(milspecIce.get())), "arctic_sniper");
-		arcticSniperDiamond = initItem(() -> new GunItem(defP().durability(2549), 3, 1, 20, 0, 8).headshotMult(1.5).fireSound(BPASSounds.arcticSniper).repair(() -> Ingredient.of(Tags.Items.GEMS_DIAMOND)), "arctic_sniper_diamond");
+		arcticSniper = initItem(() -> new GunItem(defP().durability(630), 2, 1, 24, 0, 8).headshotMult(1.5).projectileSpeed(4).fireSound(BPASSounds.arcticSniper).repair(() -> Ingredient.of(milspecIce.get())), "arctic_sniper");
+		arcticSniperDiamond = initItem(() -> new GunItem(defP().durability(2549), 3, 1, 20, 0, 8).headshotMult(1.5).projectileSpeed(4).fireSound(BPASSounds.arcticSniper).repair(() -> Ingredient.of(Tags.Items.GEMS_DIAMOND)), "arctic_sniper_diamond");
 		buccaneerFlintlock = initItem(() -> new GunItem(defP().durability(687), 2, 1.25, 25, 4, 12).fireSound(BPASSounds.buccaneerFlintlock).repair(() -> Ingredient.of(sunkenDoubloon.get())), "buccaneer_flintlock");
 		buccaneerCannon = initItem(() -> new GunItem(defP().durability(687), 2, 2, 35, 6, 12).fireSound(BPASSounds.buccaneerCannon).repair(() -> Ingredient.of(sunkenDoubloon.get())), "buccaneer_cannon");
 		buccaneerCannonDiamond = initItem(() -> new GunItem(defP().durability(2780), 2, 3, 35, 6, 12).fireSound(BPASSounds.buccaneerCannon).repair(() -> Ingredient.of(Tags.Items.GEMS_DIAMOND)), "buccaneer_cannon_diamond");
