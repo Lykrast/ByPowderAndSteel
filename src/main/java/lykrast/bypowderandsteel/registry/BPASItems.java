@@ -108,7 +108,7 @@ public class BPASItems {
 		raygun = initItem(() -> new RaygunItem(defP().durability(1053), 2, 1, 20, 0.75, 10).fireSound(BPASSounds.raygun).repair(() -> Ingredient.of(damagedDevice.get())), "raygun");
 		bloodfueledRevolver = initItem(() -> new BloodfueledGunItem(defP().durability(2666), 2, 1.5, 15, 3, 15, 3).fireSound(BPASSounds.bloodfueledRevolver).repair(() -> Ingredient.of(heptacle.get())), "bloodfueled_revolver");
 		//TODO sound
-		graviticRailgun = initItem(() -> new ChargeGunItem(defP().durability(3123), 0, 4, 30, 0.5, 10, 25).projectileSpeed(4).fireSound(BPASSounds.arcticSniper).repair(() -> Ingredient.of(Tags.Items.GEMS_DIAMOND)), "gravitic_railgun");
+		graviticRailgun = initItem(() -> new RailgunItem(defP().durability(3123), 0, 4, 30, 0.5, 10, 25).projectileSpeed(4).fireSound(BPASSounds.arcticSniper).repair(() -> Ingredient.of(Tags.Items.GEMS_DIAMOND)), "gravitic_railgun");
 		
 		//Bullets
 		gunsteelBullet = initItem(() -> new GunsteelBulletItem(defP(), 6), "gunsteel_bullet");
