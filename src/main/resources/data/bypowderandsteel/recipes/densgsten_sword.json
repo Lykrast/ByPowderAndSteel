@@ -1,0 +1,14 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"DID",
+		"DID",
+		" S "
+	],
+	"key": {
+		"I": { "tag": "forge:ingots/iron" },
+		"D": { "item": "bypowderandsteel:densgsten_cube" },
+		"S": { "tag": "forge:rods/wooden" }
+	},
+	"result": { "item": "bypowderandsteel:densgsten_sword" }
+}

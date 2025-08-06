@@ -49,7 +49,7 @@ public class BPASItems {
 	//bullets
 	public static RegistryObject<BulletItem> gunsteelBullet, caliberry, caliberryLarge, densgstenBullet, phaseBullet, graviticBullet;
 	//swords
-	public static RegistryObject<SwordItem> buccaneerCutlass, phasesaber, phasesaberCaliberry, phasesaberDesert, phasesaberArctic, phasesaberGravitic;
+	public static RegistryObject<SwordItem> buccaneerCutlass, densgstenSword, phasesaber, phasesaberCaliberry, phasesaberDesert, phasesaberArctic, phasesaberGravitic;
 	//armor
 	public static ArmorMaterial marauder, sentry, infernal;
 	public static RegistryObject<ArmorItem> marauderHelmet, marauderChestplate, marauderLeggings, marauderBoots;
@@ -71,7 +71,7 @@ public class BPASItems {
 	//ocean
 	public static RegistryObject<Item> sunkenDoubloon, chocolateDoubloon;
 	//mountain
-	public static RegistryObject<Item> densgsten;
+	public static RegistryObject<Item> densgstenCube;
 	//underground
 	public static RegistryObject<Item> damagedDevice, sentryPlating, phasesaberTemplate, batterySoda, bilkshake;
 	//nether
@@ -124,6 +124,9 @@ public class BPASItems {
 		//iron but more durable and +0.5 damage
 		Tier cutlass = new ForgeTier(2, 687, 6, 2.5f, 14, BlockTags.NEEDS_IRON_TOOL, () -> Ingredient.of(Tags.Items.INGOTS_IRON));
 		buccaneerCutlass = initItem(() -> new SwordItem(cutlass, 3, -2.4F, defP()), "buccaneer_cutlass");
+		//same attack speed as the mace with higher damage than a sword
+		Tier densgsten = new ForgeTier(2, 519, 6, 2, 10, BlockTags.NEEDS_IRON_TOOL, () -> Ingredient.of(densgstenCube.get()));
+		densgstenSword = initItem(() -> new SwordItem(densgsten, 9, -3.4F, defP()), "densgsten_sword");
 		//diamond but a lil more durable (will have different upgrades than netherite), and also star wars came out in 1977, neat uh?
 		Tier phase = new ForgeTier(3, 1977, 8, 3, 10, BlockTags.NEEDS_DIAMOND_TOOL, () -> Ingredient.of(Tags.Items.GEMS_DIAMOND));
 		phasesaber = initItem(() -> new SwordItem(phase, 3, -2.4F, defP()), "phasesaber");
@@ -236,7 +239,7 @@ public class BPASItems {
 		sunkenDoubloon = initItem(() -> new Item(defP()), "sunken_doubloon");
 		chocolateDoubloon = initItem(() -> new Item(defP().food(food(4, 0.3))), "chocolate_doubloon");
 		
-		densgsten = initItem(() -> new Item(defP()), "densgsten_cube");
+		densgstenCube = initItem(() -> new Item(defP()), "densgsten_cube");
 
 		damagedDevice = initItem(() -> new Item(defP()), "damaged_device");
 		sentryPlating = initItem(() -> new Item(defP()), "sentry_fiber_plating");
