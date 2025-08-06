@@ -21,11 +21,13 @@
 	"item.bypowderandsteel.gunsteel_bullet": "Balle en fusilacier",
 	"item.bypowderandsteel.caliberry": "Calibaie",
 	"item.bypowderandsteel.caliberry_large": "Grosse calibaie",
+	"item.bypowderandsteel.densgsten_bullet": "Balle en densgstène",
 	"item.bypowderandsteel.phase_bullet": "Balle phasique",
 	"item.bypowderandsteel.gravitic_bullet": "Balle gravitique",
 
 	"tooltip.bypowderandsteel.bullet.base": "Compte comme balle en fer",
 	"tooltip.bypowderandsteel.bullet.knockback": "+%1$s recul",
+	"tooltip.bypowderandsteel.bullet.gravity": "Lourde et affectée par la gravité",
 	"tooltip.bypowderandsteel.bullet.slow": "Vitesse grandement limitée",
 	"tooltip.bypowderandsteel.gravitic_bullet": "Fait léviter les entités",
 
@@ -69,6 +71,7 @@
 	"item.bypowderandsteel.milspec_ice_sweet_berry": "Glace grilée à la crème de baies sucrées",
 	"item.bypowderandsteel.sunken_doubloon": "Doublon submergé",
 	"item.bypowderandsteel.chocolate_doubloon": "Doublon en chocolat",
+	"item.bypowderandsteel.densgsten_cube": "Cube de densgstène",
 	"item.bypowderandsteel.damaged_device": "Engin endommagé",
 	"item.bypowderandsteel.sentry_fiber_plating": "Plaques de fibres de sentinelle",
 	"item.bypowderandsteel.phasesaber_template": "Modèle de forge de sabre phasique",

@@ -47,7 +47,7 @@ public class BPASItems {
 	public static RegistryObject<GunItem> gunsteelGun, peashooter, cornGatling, desertRevolver, desertShotgun, arcticPistol, arcticSniper, buccaneerFlintlock, buccaneerCannon, raygun;
 	public static RegistryObject<GunItem> cornGatlingDiamond, desertShotgunDiamond, arcticSniperDiamond, buccaneerCannonDiamond, bloodfueledRevolver, graviticRailgun;
 	//bullets
-	public static RegistryObject<BulletItem> gunsteelBullet, caliberry, caliberryLarge, phaseBullet, graviticBullet;
+	public static RegistryObject<BulletItem> gunsteelBullet, caliberry, caliberryLarge, densgstenBullet, phaseBullet, graviticBullet;
 	//swords
 	public static RegistryObject<SwordItem> buccaneerCutlass, phasesaber, phasesaberCaliberry, phasesaberDesert, phasesaberArctic, phasesaberGravitic;
 	//armor
@@ -70,6 +70,8 @@ public class BPASItems {
 	public static RegistryObject<Item> milspecIce, milspecIceGrilled, milspecIceBerry;
 	//ocean
 	public static RegistryObject<Item> sunkenDoubloon, chocolateDoubloon;
+	//mountain
+	public static RegistryObject<Item> densgsten;
 	//underground
 	public static RegistryObject<Item> damagedDevice, sentryPlating, phasesaberTemplate, batterySoda, bilkshake;
 	//nether
@@ -114,6 +116,7 @@ public class BPASItems {
 		gunsteelBullet = initItem(() -> new GunsteelBulletItem(defP(), 6), "gunsteel_bullet");
 		caliberry = initItem(() -> new KnockbackBulletItem(defP().food(food(1, 0.6)), 4, 1), "caliberry");
 		caliberryLarge = initItem(() -> new KnockbackBulletItem(defP().food(food(4, 0.6)), 6, 2), "caliberry_large");
+		densgstenBullet = initItem(() -> new GravityBulletItem(defP(), 8), "densgsten_bullet");
 		phaseBullet = initItem(() -> new SlowBulletItem(defP(), 8), "phase_bullet");
 		graviticBullet = initItem(() -> new GraviticBulletItem(defP(), 8), "gravitic_bullet");
 		
@@ -232,6 +235,8 @@ public class BPASItems {
 		
 		sunkenDoubloon = initItem(() -> new Item(defP()), "sunken_doubloon");
 		chocolateDoubloon = initItem(() -> new Item(defP().food(food(4, 0.3))), "chocolate_doubloon");
+		
+		densgsten = initItem(() -> new Item(defP()), "densgsten_cube");
 
 		damagedDevice = initItem(() -> new Item(defP()), "damaged_device");
 		sentryPlating = initItem(() -> new Item(defP()), "sentry_fiber_plating");

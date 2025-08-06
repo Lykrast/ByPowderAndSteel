@@ -1,0 +1,11 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{ "item": "bypowderandsteel:densgsten_cube" },
+		{ "item": "bypowderandsteel:densgsten_cube" },
+		{ "item": "bypowderandsteel:densgsten_cube" },
+		{ "item": "bypowderandsteel:densgsten_cube" },
+		{ "tag": "forge:gunpowder" }
+	],
+	"result": { "item": "bypowderandsteel:densgsten_bullet", "count": 32 }
+}

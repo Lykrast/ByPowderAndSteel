@@ -1,6 +1,5 @@
 package lykrast.bypowderandsteel;
 
-import lykrast.bypowderandsteel.entity.SlowBulletEntity;
 import lykrast.bypowderandsteel.registry.BPASEntities;
 import lykrast.bypowderandsteel.renderer.*;
 import net.minecraft.client.model.EvokerFangsModel;
@@ -41,7 +40,8 @@ public class ClientStuff {
 		//mob projectiles
 		event.registerEntityRenderer(BPASEntities.shrubsnapperFang.get(), (context) -> new ShrubsnapperFangRenderer(context));
 		//custom bullets
-		event.registerEntityRenderer(BPASEntities.slowBullet.get(), (context) -> new ThrownItemRenderer<SlowBulletEntity>(context));
+		event.registerEntityRenderer(BPASEntities.slowBullet.get(), (context) -> new ThrownItemRenderer<>(context));
+		event.registerEntityRenderer(BPASEntities.gravityBullet.get(), (context) -> new ThrownItemRenderer<>(context));
 	}
 
 	@SubscribeEvent

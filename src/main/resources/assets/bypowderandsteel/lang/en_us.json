@@ -21,11 +21,13 @@
 	"item.bypowderandsteel.gunsteel_bullet": "Gunsteel Bullet",
 	"item.bypowderandsteel.caliberry": "Caliberry",
 	"item.bypowderandsteel.caliberry_large": "Large Caliberry",
+	"item.bypowderandsteel.densgsten_bullet": "Densgsten Bullet",
 	"item.bypowderandsteel.phase_bullet": "Phase Bullet",
 	"item.bypowderandsteel.gravitic_bullet": "Gravitic Bullet",
 
 	"tooltip.bypowderandsteel.bullet.base": "Counts as Iron Bullet",
 	"tooltip.bypowderandsteel.bullet.knockback": "+%1$s knockback",
+	"tooltip.bypowderandsteel.bullet.gravity": "Heavy and affected by gravity",
 	"tooltip.bypowderandsteel.bullet.slow": "Speed greatly limited",
 	"tooltip.bypowderandsteel.gravitic_bullet": "Levitates targets",
 
@@ -69,6 +71,7 @@
 	"item.bypowderandsteel.milspec_ice_sweet_berry": "Grilled Ice with Sweet Berry Cream",
 	"item.bypowderandsteel.sunken_doubloon": "Sunken Doubloon",
 	"item.bypowderandsteel.chocolate_doubloon": "Chocolate Doubloon",
+	"item.bypowderandsteel.densgsten_cube": "Densgsten Cube",
 	"item.bypowderandsteel.damaged_device": "Damaged Device",
 	"item.bypowderandsteel.sentry_fiber_plating": "Sentry Fiber Plating",
 	"item.bypowderandsteel.phasesaber_template": "Phasesabersmithing Template",
