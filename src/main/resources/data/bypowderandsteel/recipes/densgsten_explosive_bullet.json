@@ -1,0 +1,15 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{ "item": "bypowderandsteel:densgsten_bullet" },
+		{ "item": "bypowderandsteel:densgsten_bullet" },
+		{ "item": "bypowderandsteel:densgsten_bullet" },
+		{ "item": "bypowderandsteel:densgsten_bullet" },
+		{ "item": "bypowderandsteel:densgsten_bullet" },
+		{ "item": "bypowderandsteel:densgsten_bullet" },
+		{ "item": "bypowderandsteel:densgsten_bullet" },
+		{ "item": "bypowderandsteel:densgsten_bullet" },
+		{ "item": "minecraft:tnt" }
+	],
+	"result": { "item": "bypowderandsteel:densgsten_explosive_bullet", "count": 8 }
+}

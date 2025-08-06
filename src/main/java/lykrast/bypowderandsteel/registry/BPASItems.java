@@ -47,7 +47,7 @@ public class BPASItems {
 	public static RegistryObject<GunItem> gunsteelGun, peashooter, cornGatling, desertRevolver, desertShotgun, arcticPistol, arcticSniper, buccaneerFlintlock, buccaneerCannon, raygun;
 	public static RegistryObject<GunItem> cornGatlingDiamond, desertShotgunDiamond, arcticSniperDiamond, buccaneerCannonDiamond, bloodfueledRevolver, graviticRailgun;
 	//bullets
-	public static RegistryObject<BulletItem> gunsteelBullet, caliberry, caliberryLarge, densgstenBullet, phaseBullet, graviticBullet;
+	public static RegistryObject<BulletItem> gunsteelBullet, caliberry, caliberryLarge, densgstenBullet, densgstenExplosiveBullet, phaseBullet, graviticBullet;
 	//swords
 	public static RegistryObject<SwordItem> buccaneerCutlass, densgstenSword, phasesaber, phasesaberCaliberry, phasesaberDesert, phasesaberArctic, phasesaberGravitic;
 	//armor
@@ -117,6 +117,7 @@ public class BPASItems {
 		caliberry = initItem(() -> new KnockbackBulletItem(defP().food(food(1, 0.6)), 4, 1), "caliberry");
 		caliberryLarge = initItem(() -> new KnockbackBulletItem(defP().food(food(4, 0.6)), 6, 2), "caliberry_large");
 		densgstenBullet = initItem(() -> new GravityBulletItem(defP(), 8), "densgsten_bullet");
+		densgstenExplosiveBullet = initItem(() -> new GravityExplosiveBulletItem(defP(), 8), "densgsten_explosive_bullet");
 		phaseBullet = initItem(() -> new SlowBulletItem(defP(), 8), "phase_bullet");
 		graviticBullet = initItem(() -> new GraviticBulletItem(defP(), 8), "gravitic_bullet");
 		
