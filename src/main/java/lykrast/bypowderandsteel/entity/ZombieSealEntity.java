@@ -88,7 +88,7 @@ public class ZombieSealEntity extends Monster implements SniperMob {
 
 	public static AttributeSupplier.Builder createAttributes() {
 		return BPASUtils.baseGunMobAttributes().add(Attributes.MAX_HEALTH, 20).add(Attributes.ARMOR, 4).add(Attributes.MOVEMENT_SPEED, 0.23).add(Attributes.FOLLOW_RANGE, 32)
-				.add(GWRAttributes.dmgBase.get(), -4).add(GWRAttributes.fireDelay.get(), 3);
+				.add(GWRAttributes.dmgTotal.get(), 0.5).add(GWRAttributes.fireDelay.get(), 3);
 	}
 
 	@Override

@@ -71,7 +71,7 @@ public class BlasterSentryEntity extends Monster implements GunMob {
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
-		return BPASUtils.baseGunMobAttributes().add(Attributes.MAX_HEALTH, 20).add(Attributes.ARMOR, 15).add(Attributes.MOVEMENT_SPEED, 0.19).add(Attributes.KNOCKBACK_RESISTANCE, 1).add(GWRAttributes.dmgBase.get(), -2).add(GWRAttributes.fireDelay.get(), 2.5);
+		return BPASUtils.baseGunMobAttributes().add(Attributes.MAX_HEALTH, 20).add(Attributes.ARMOR, 15).add(Attributes.MOVEMENT_SPEED, 0.19).add(Attributes.KNOCKBACK_RESISTANCE, 1).add(GWRAttributes.dmgTotal.get(), 0.75).add(GWRAttributes.fireDelay.get(), 2.5);
 	}
 	
 	public static boolean spawnRules(EntityType<? extends Monster> entity, ServerLevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource random) {

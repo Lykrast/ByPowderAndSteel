@@ -76,7 +76,7 @@ public class CowbonesBuckarooEntity extends AbstractSkeleton implements GunMob {
 
 	public static AttributeSupplier.Builder createAttributes() {
 		//armor mimics having a leather chest and boots
-		return BPASUtils.baseGunMobAttributes().add(Attributes.MOVEMENT_SPEED, 0.28).add(Attributes.ARMOR, 4).add(GWRAttributes.dmgBase.get(), -3).add(GWRAttributes.fireDelay.get(), 2);
+		return BPASUtils.baseGunMobAttributes().add(Attributes.MOVEMENT_SPEED, 0.28).add(Attributes.ARMOR, 4).add(GWRAttributes.dmgTotal.get(), 0.5).add(GWRAttributes.fireDelay.get(), 2);
 	}
 
 	//TODO sounds
