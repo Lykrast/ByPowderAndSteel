@@ -44,7 +44,7 @@ public class PatrollerEntity extends Monster {
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
-		return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 10).add(Attributes.ARMOR, 20).add(Attributes.ATTACK_DAMAGE, 6).add(Attributes.MOVEMENT_SPEED, 0.25)
+		return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 8).add(Attributes.ARMOR, 20).add(Attributes.ATTACK_DAMAGE, 6).add(Attributes.MOVEMENT_SPEED, 0.25)
 				.add(Attributes.KNOCKBACK_RESISTANCE, 0.5);
 	}
 
@@ -59,19 +59,18 @@ public class PatrollerEntity extends Monster {
 		return dimensions.height * 0.68F;
 	}
 
-	//TODO sounds
 	@Override
 	protected SoundEvent getAmbientSound() {
-		return BPASSounds.shrubIdle.get();
+		return BPASSounds.patrollerIdle.get();
 	}
 
 	@Override
 	protected SoundEvent getHurtSound(DamageSource source) {
-		return BPASSounds.shrubHurt.get();
+		return BPASSounds.sentryHurt.get();
 	}
 
 	@Override
 	protected SoundEvent getDeathSound() {
-		return BPASSounds.shrubDeath.get();
+		return BPASSounds.sentryDeath.get();
 	}
 }

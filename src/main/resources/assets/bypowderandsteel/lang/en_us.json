@@ -270,6 +270,7 @@
 	"subtitles.bypowderandsteel.entity.zombie_seal.death": "Zombie Seal dies",
 	"subtitles.bypowderandsteel.entity.zombie_seal.spot": "Sniper spots target",
 	"subtitles.bypowderandsteel.entity.zombie_seal.unspot": "Sniper lost target",
+	"subtitles.bypowderandsteel.entity.patroller.idle": "Patroller beeps",
 	"subtitles.bypowderandsteel.entity.sentry.idle": "Robot buzzes",
 	"subtitles.bypowderandsteel.entity.sentry.hurt": "Robot hurt",
 	"subtitles.bypowderandsteel.entity.sentry.death": "Robot dies",

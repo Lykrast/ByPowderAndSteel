@@ -270,6 +270,7 @@
 	"subtitles.bypowderandsteel.entity.zombie_seal.death": "Phoque zombie meurt",
 	"subtitles.bypowderandsteel.entity.zombie_seal.spot": "Sniper repére une cible",
 	"subtitles.bypowderandsteel.entity.zombie_seal.unspot": "Sniper a perdu sa cible",
+	"subtitles.bypowderandsteel.entity.patroller.idle": "Patrouilleur bipe",
 	"subtitles.bypowderandsteel.entity.sentry.idle": "Robot bourdonne",
 	"subtitles.bypowderandsteel.entity.sentry.hurt": "Robot blessé",
 	"subtitles.bypowderandsteel.entity.sentry.death": "Robot meurt",
