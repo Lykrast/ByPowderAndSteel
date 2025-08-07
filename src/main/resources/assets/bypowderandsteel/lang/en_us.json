@@ -156,6 +156,14 @@
 	"block.bypowderandsteel.doubloon_bricks_slab": "Doubloon Bricks Slab",
 	"block.bypowderandsteel.doubloon_bricks_wall": "Doubloon Bricks Wall",
 
+	"block.bypowderandsteel.densgsten_cube_crate": "Crate of Densgsten Cubes",
+	"block.bypowderandsteel.densgsten_block": "Block of Densgsten",
+	"block.bypowderandsteel.densgsten_tiles": "Densgsten Tiles",
+	"block.bypowderandsteel.densgsten_chiseled": "Chiseled Densgsten",
+	"block.bypowderandsteel.densgsten_lamp": "Densgsten Lamp",
+	"block.bypowderandsteel.densgsten_tiles_stairs": "Densgsten Tiles Stairs",
+	"block.bypowderandsteel.densgsten_tiles_slab": "Densgsten Tiles Slab",
+
 	"block.bypowderandsteel.damaged_device_crate": "Crate of Damaged Devices",
 	"block.bypowderandsteel.electronic_casing": "Electronic Casing",
 	"block.bypowderandsteel.electronic_screen": "Screen",

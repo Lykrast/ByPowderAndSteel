@@ -1,0 +1,11 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"##",
+		"##"
+	],
+	"key": {
+		"#": { "item": "bypowderandsteel:densgsten_tiles" }
+	},
+	"result": { "item": "bypowderandsteel:densgsten_chiseled", "count": 4 }
+}

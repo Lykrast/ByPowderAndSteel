@@ -1,0 +1,13 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		" # ",
+		"#T#",
+		" # "
+	],
+	"key": {
+		"#": { "item": "bypowderandsteel:densgsten_cube" },
+		"T": { "item": "minecraft:torch" }
+	},
+	"result": { "item": "bypowderandsteel:densgsten_lamp" }
+}

@@ -1,0 +1,7 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{ "item": "bypowderandsteel:densgsten_cube_crate" }
+	],
+	"result": { "item": "bypowderandsteel:densgsten_cube", "count": 9 }
+}

@@ -1,0 +1,6 @@
+{
+	"type": "minecraft:stonecutting",
+	"count": 1,
+	"ingredient": { "tag": "bypowderandsteel:densgsten_block" },
+	"result": "bypowderandsteel:densgsten_block"
+}

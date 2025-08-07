@@ -1,0 +1,8 @@
+{
+	"parent": "minecraft:block/slab_top",
+	"textures": {
+		"bottom": "bypowderandsteel:block/densgsten_tiles",
+		"side": "bypowderandsteel:block/densgsten_tiles",
+		"top": "bypowderandsteel:block/densgsten_tiles"
+	}
+}

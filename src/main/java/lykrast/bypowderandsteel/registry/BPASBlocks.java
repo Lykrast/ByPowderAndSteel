@@ -49,6 +49,10 @@ public class BPASBlocks {
 	public static RegistryObject<Block> doubloonCrate;
 	public static RegistryObject<Block> doubloonBricks, doubloonTiles, doubloonChiseled;
 	public static RegistryObject<Block> doubloonBricksStairs, doubloonBricksSlab, doubloonBricksWall;
+	//mountain
+	public static RegistryObject<Block> densgstenCrate;
+	public static RegistryObject<Block> densgstenBlock, densgstenTiles, densgstenChiseled, densgstenLamp;
+	public static RegistryObject<Block> densgstenTilesStairs, densgstenTilesSlab;
 	//underground
 	public static RegistryObject<Block> damagedDeviceCrate;
 	public static RegistryObject<Block> electronicCasing, electronicScreen, electronicOscilloscope, electronicRadar, electronicLamp;
@@ -138,6 +142,15 @@ public class BPASBlocks {
 		doubloonBricksWall = makeBlock("doubloon_bricks_wall", () -> new WallBlock(Block.Properties.copy(doubloonBricks.get()).forceSolidOn()));
 		doubloonTiles = makeBlock("doubloon_tiles", () -> new Block(Block.Properties.copy(doubloonBricks.get())));
 		doubloonChiseled = makeBlock("doubloon_chiseled", () -> new Block(Block.Properties.copy(doubloonBricks.get())));
+		
+		//mountain
+		densgstenCrate = makeBlock("densgsten_cube_crate", () -> new Block(Block.Properties.copy(Blocks.SPRUCE_PLANKS)));
+		densgstenBlock = makeBlock("densgsten_block", () -> new Block(Block.Properties.copy(Blocks.IRON_BLOCK).mapColor(MapColor.TERRACOTTA_BLUE)));
+		densgstenTiles = makeBlock("densgsten_tiles", () -> new Block(Block.Properties.copy(densgstenBlock.get())));
+		densgstenTilesStairs = makeBlock("densgsten_tiles_stairs", () -> new StairBlock(() -> densgstenTiles.get().defaultBlockState(), Block.Properties.copy(densgstenTiles.get())));
+		densgstenTilesSlab = makeBlock("densgsten_tiles_slab", () -> new SlabBlock(Block.Properties.copy(densgstenTiles.get())));
+		densgstenChiseled = makeBlock("densgsten_chiseled", () -> new Block(Block.Properties.copy(densgstenBlock.get())));
+		densgstenLamp = makeBlock("densgsten_lamp", () -> new Block(Block.Properties.copy(densgstenBlock.get()).lightLevel((state) -> 15)));
 
 		//underground
 		damagedDeviceCrate = makeBlock("damaged_device_crate", () -> new Block(Block.Properties.of().mapColor(DyeColor.LIGHT_BLUE).instrument(NoteBlockInstrument.BASEDRUM).strength(2,0.3f)));
