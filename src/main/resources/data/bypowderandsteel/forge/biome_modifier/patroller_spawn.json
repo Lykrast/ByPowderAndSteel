@@ -1,0 +1,10 @@
+{
+	"type": "forge:add_spawns",
+	"biomes": "#bypowderandsteel:has_patroller",
+	"spawners": {
+		"type": "bypowderandsteel:patroller",
+		"weight": 50,
+		"minCount": 3,
+		"maxCount": 4
+	}
+}

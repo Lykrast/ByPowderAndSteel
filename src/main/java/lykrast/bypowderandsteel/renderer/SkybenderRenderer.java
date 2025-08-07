@@ -12,7 +12,6 @@ public class SkybenderRenderer extends MobRenderer<SkybenderEntity, SkybenderMod
 			WEAPONS = ByPowderAndSteel.rl("textures/entity/skybender_weapons.png");
 
 	public SkybenderRenderer(EntityRendererProvider.Context context) {
-		//TODO transparent glowing shield
 		super(context, new SkybenderModel(context.bakeLayer(SkybenderModel.MODEL)), 0.5f);
 		addLayer(new GenericGlowLayer<>(this, GLOW));
 		addLayer(new GenericEyesLayer<>(this, WEAPONS));

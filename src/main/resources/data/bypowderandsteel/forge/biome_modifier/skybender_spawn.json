@@ -1,6 +1,6 @@
 {
 	"type": "forge:add_spawns",
-	"biomes": "#bypowderandsteel:has_skybenders",
+	"biomes": "#bypowderandsteel:has_skybender",
 	"spawners": {
 		"type": "bypowderandsteel:skybender",
 		"weight": 1,

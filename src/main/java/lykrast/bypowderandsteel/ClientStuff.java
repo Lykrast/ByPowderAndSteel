@@ -30,6 +30,8 @@ public class ClientStuff {
 		event.registerEntityRenderer(BPASEntities.zombieSeal.get(), (context) -> new ZombieSealRenderer(context));
 		//ocean
 		event.registerEntityRenderer(BPASEntities.sunkenPirate.get(), (context) -> new SunkenPirateRenderer(context));
+		//mountain
+		event.registerEntityRenderer(BPASEntities.patroller.get(), (context) -> new PatrollerRenderer(context));
 		//underground
 		event.registerEntityRenderer(BPASEntities.sabersentry.get(), (context) -> new SaberSentryRenderer(context));
 		event.registerEntityRenderer(BPASEntities.blastersentry.get(), (context) -> new BlasterSentryRenderer(context));
@@ -67,6 +69,8 @@ public class ClientStuff {
 		event.registerLayerDefinition(SunkenPirateRenderer.MODEL, () -> GunnubusModel.createBodyLayer());
     	event.registerLayerDefinition(SunkenPirateRenderer.INNER_ARMOR, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.INNER_ARMOR_DEFORMATION), 64, 32));
     	event.registerLayerDefinition(SunkenPirateRenderer.OUTER_ARMOR, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 32));
+    	//mountain
+		event.registerLayerDefinition(PatrollerModel.MODEL, () -> PatrollerModel.createBodyLayer());
     	//underground
 		event.registerLayerDefinition(SaberSentryModel.MODEL, () -> SaberSentryModel.createBodyLayer());
 		event.registerLayerDefinition(BlasterSentryModel.MODEL, () -> BlasterSentryModel.createBodyLayer());

@@ -57,6 +57,7 @@ public class SaberSentryEntity extends AnimatedMonster {
 		spinTime = 0;
 		spinAngle = 0;
 		spinPrev = 0;
+		setMaxUpStep(1.25F);
 	}
 
 	@Override
@@ -199,11 +200,6 @@ public class SaberSentryEntity extends AnimatedMonster {
 		}
 		//super is fine for an override
 		return super.finalizeSpawn(world, difficulty, spawnType, groupData, nbt);
-	}
-
-	@Override
-	public float maxUpStep() {
-		return 1.25f;
 	}
 
 	@Override
