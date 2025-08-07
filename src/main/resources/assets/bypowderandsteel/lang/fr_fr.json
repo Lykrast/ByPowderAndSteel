@@ -202,7 +202,8 @@
 	"entity.bypowderandsteel.gunnubus_crimson": "Gunnube carmine",
 	"entity.bypowderandsteel.skybender": "Skybender",
 
-	"entity.bypowderandsteel.slow_bullet": "Balle lente",
+	"entity.bypowderandsteel.bullet_slow": "Balle lente",
+	"entity.bypowderandsteel.bullet_gravity": "Balle lourde",
 
 	"item.bypowderandsteel.gunome_spawn_egg": "Oeuf d'apparition de gunome",
 	"item.bypowderandsteel.shrubhulk_spawn_egg": "Oeuf d'apparition de buisson écraseur",

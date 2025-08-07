@@ -202,7 +202,8 @@
 	"entity.bypowderandsteel.gunnubus_crimson": "Crimson Gunnubus",
 	"entity.bypowderandsteel.skybender": "Skybender",
 
-	"entity.bypowderandsteel.slow_bullet": "Slow Bullet",
+	"entity.bypowderandsteel.bullet_slow": "Slow Bullet",
+	"entity.bypowderandsteel.bullet_gravity": "Heavy Bullet",
 
 	"item.bypowderandsteel.gunome_spawn_egg": "Gunome Spawn Egg",
 	"item.bypowderandsteel.shrubhulk_spawn_egg": "Shrubhulk Spawn Egg",
