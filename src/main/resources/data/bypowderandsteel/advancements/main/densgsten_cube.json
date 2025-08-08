@@ -1,0 +1,19 @@
+{
+	"parent": "bypowderandsteel:main/gunsteel",
+	"display": {
+		"icon": { "item": "bypowderandsteel:densgsten_cube" },
+		"title": { "translate": "advancements.bypowderandsteel.densgsten_cube.title" },
+		"description": { "translate": "advancements.bypowderandsteel.densgsten_cube.description" },
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": false
+	},
+	"criteria": {
+		"get_item": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": { "items": [{ "items": ["bypowderandsteel:densgsten_cube"] }] }
+		}
+	},
+	"requirements": [["get_item"]]
+}
