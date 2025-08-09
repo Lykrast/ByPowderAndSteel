@@ -1,6 +1,6 @@
 {
 	"type": "minecraft:stonecutting",
 	"count": 1,
-	"ingredient": { "tag": "bypowderandsteel:electronic_machinery" },
+	"ingredient": { "tag": "bypowderandsteel:stonecutting/electronic_machinery" },
 	"result": "bypowderandsteel:electronic_screen"
 }

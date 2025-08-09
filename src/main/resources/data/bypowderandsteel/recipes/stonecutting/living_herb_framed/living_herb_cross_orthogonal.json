@@ -1,6 +1,6 @@
 {
 	"type": "minecraft:stonecutting",
 	"count": 1,
-	"ingredient": { "tag": "bypowderandsteel:living_herb_framed" },
+	"ingredient": { "tag": "bypowderandsteel:stonecutting/living_herb_framed" },
 	"result": "bypowderandsteel:living_herb_cross_orthogonal"
 }

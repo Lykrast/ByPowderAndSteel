@@ -1,6 +1,6 @@
 {
 	"type": "minecraft:stonecutting",
 	"count": 2,
-	"ingredient": { "tag": "bypowderandsteel:densgsten_block" },
+	"ingredient": { "tag": "bypowderandsteel:stonecutting/densgsten_block" },
 	"result": "bypowderandsteel:densgsten_tiles_slab"
 }

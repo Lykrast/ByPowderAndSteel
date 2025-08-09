@@ -1,6 +1,6 @@
 {
 	"type": "minecraft:stonecutting",
 	"count": 1,
-	"ingredient": { "tag": "bypowderandsteel:bovony" },
+	"ingredient": { "tag": "bypowderandsteel:stonecutting/bovony" },
 	"result": "bypowderandsteel:bovony"
 }

@@ -1,0 +1,7 @@
+{
+	"parent": "emi:item/half_item",
+	"textures": {
+		"first": "gunswithoutroses:item/iron_bullet",
+		"second": "bypowderandsteel:item/gunsteel_bullet"
+	}
+}

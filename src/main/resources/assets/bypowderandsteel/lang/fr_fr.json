@@ -284,5 +284,22 @@
 	"subtitles.bypowderandsteel.entity.gunnubus.death": "Gunnube meurt",
 	"subtitles.bypowderandsteel.entity.skybender.shield": "Dégâts bloqués",
 
+	"tag.c.raw_materials.gunsteel": "Fusilacier brut",
+	"tag.c.ingots.gunsteel": "Lingots de fusilacier",
+	"tag.c.nuggets.gunsteel": "Pépites de fusilacier",
+	"tag.c.storage_blocks.raw_gunsteel": "Blocs de fusilacier brut (stockage)",
+	"tag.c.storage_blocks.gunsteel": "Blocs de fusilacier (stockage)",
+
+	"tag.bypowderandsteel.raw_caliberry": "Calibaie crue",
+
+	"tag.bypowderandsteel.stonecutting.gunsteel_bricks": "Briques de fusilacier taillables",
+	"tag.bypowderandsteel.stonecutting.living_herb_framed": "Herbe vivante encadrée taillable",
+	"tag.bypowderandsteel.stonecutting.bovony": "Bovoire taillable",
+	"tag.bypowderandsteel.stonecutting.milspec_ice_block": "Blocs de glace militaire taillables",
+	"tag.bypowderandsteel.stonecutting.doubloon_bricks": "Briques de doublons taillables",
+	"tag.bypowderandsteel.stonecutting.densgsten_block": "Blocs de densgstène taillables",
+	"tag.bypowderandsteel.stonecutting.electronic_machinery": "Machines électroniques taillables",
+	"tag.bypowderandsteel.stonecutting.infernal_bricks": "Briques infernales taillables",
+
 	"itemGroup.bypowderandsteel": "By Powder and Steel"
 }

@@ -1,6 +1,6 @@
 {
 	"type": "minecraft:stonecutting",
 	"count": 1,
-	"ingredient": { "tag": "bypowderandsteel:doubloon_bricks" },
+	"ingredient": { "tag": "bypowderandsteel:stonecutting/doubloon_bricks" },
 	"result": "bypowderandsteel:doubloon_chiseled"
 }

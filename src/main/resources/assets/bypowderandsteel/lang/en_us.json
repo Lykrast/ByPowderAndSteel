@@ -284,5 +284,22 @@
 	"subtitles.bypowderandsteel.entity.gunnubus.death": "Gunnubus dies",
 	"subtitles.bypowderandsteel.entity.skybender.shield": "Damage blocked",
 
+	"tag.c.raw_materials.gunsteel": "Raw Gunsteel",
+	"tag.c.ingots.gunsteel": "Gunsteel Ingots",
+	"tag.c.nuggets.gunsteel": "Gunsteel Nuggets",
+	"tag.c.storage_blocks.raw_gunsteel": "Raw Gunsteel Storage Blocks",
+	"tag.c.storage_blocks.gunsteel": "Gunsteel Storage Blocks",
+
+	"tag.bypowderandsteel.raw_caliberry": "Raw Caliberry",
+
+	"tag.bypowderandsteel.stonecutting.gunsteel_bricks": "Stonecuttable Gunsteel Bricks",
+	"tag.bypowderandsteel.stonecutting.living_herb_framed": "Stonecuttable Framed Living Herb",
+	"tag.bypowderandsteel.stonecutting.bovony": "Stonecuttable Bovony",
+	"tag.bypowderandsteel.stonecutting.milspec_ice_block": "Stonecuttable Block of Milspec Ice",
+	"tag.bypowderandsteel.stonecutting.doubloon_bricks": "Stonecuttable Doubloon Bricks",
+	"tag.bypowderandsteel.stonecutting.densgsten_block": "Stonecuttable Block of Densgsten",
+	"tag.bypowderandsteel.stonecutting.electronic_machinery": "Stonecuttable Electronic Machinery",
+	"tag.bypowderandsteel.stonecutting.infernal_bricks": "Stonecuttable Infernal Bricks",
+
 	"itemGroup.bypowderandsteel": "By Powder and Steel"
 }
