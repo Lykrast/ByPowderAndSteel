@@ -49,6 +49,16 @@
 		"subtitle": "subtitles.bypowderandsteel.item.revolver.shoot",
 		"sounds": [ { "name": "bypowderandsteel:gun/bloodfueled_revolver", "volume": 0.5 } ]
 	},
+	"item.railgun.charge": {
+		"category": "players",
+		"subtitle": "subtitles.bypowderandsteel.item.railgun.charge",
+		"sounds": [ { "name": "bypowderandsteel:gun/railgun_charge", "volume": 0.25 } ]
+	},
+	"item.railgun.shoot": {
+		"category": "players",
+		"subtitle": "subtitles.bypowderandsteel.item.railgun.shoot",
+		"sounds": [ { "name": "bypowderandsteel:gun/railgun", "volume": 0.25 } ]
+	},
 	"entity.gunome.idle": {
 		"subtitle": "subtitles.bypowderandsteel.entity.gunome.idle",
 		"sounds": [
@@ -144,12 +154,12 @@
 	"entity.sentry.idle": {
 		"subtitle": "subtitles.bypowderandsteel.entity.sentry.idle",
 		"sounds": [
-			{ "name": "bypowderandsteel:sentry/idle1", "volume": 0.8 },
-			{ "name": "bypowderandsteel:sentry/idle2", "volume": 0.8 },
-			{ "name": "bypowderandsteel:sentry/idle3", "volume": 0.8 },
-			{ "name": "bypowderandsteel:sentry/idle4", "volume": 0.8 },
-			{ "name": "bypowderandsteel:sentry/idle5", "volume": 0.8 },
-			{ "name": "bypowderandsteel:sentry/idle6", "volume": 0.8 }
+			{ "name": "bypowderandsteel:sentry/idle1", "volume": 0.7 },
+			{ "name": "bypowderandsteel:sentry/idle2", "volume": 0.7 },
+			{ "name": "bypowderandsteel:sentry/idle3", "volume": 0.7 },
+			{ "name": "bypowderandsteel:sentry/idle4", "volume": 0.7 },
+			{ "name": "bypowderandsteel:sentry/idle5", "volume": 0.7 },
+			{ "name": "bypowderandsteel:sentry/idle6", "volume": 0.7 }
 		]
 	},
 	"entity.sentry.hurt": {

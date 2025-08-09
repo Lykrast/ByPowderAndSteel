@@ -260,6 +260,8 @@
 	"subtitles.bypowderandsteel.item.buccaneer_flintlock.shoot": "Tir de fusil à silex",
 	"subtitles.bypowderandsteel.item.buccaneer_cannon.shoot": "Tir de canon",
 	"subtitles.bypowderandsteel.item.raygun.shoot": "Tir de fusil-laser",
+	"subtitles.bypowderandsteel.item.railgun.charge": "Canon électrique charge",
+	"subtitles.bypowderandsteel.item.railgun.shoot": "Tir de canon électrique",
 
 	"subtitles.bypowderandsteel.entity.gunome.idle": "Gunome marmonne",
 	"subtitles.bypowderandsteel.entity.gunome.hurt": "Gunome blessé",

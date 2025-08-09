@@ -260,6 +260,8 @@
 	"subtitles.bypowderandsteel.item.buccaneer_flintlock.shoot": "Flintlock fired",
 	"subtitles.bypowderandsteel.item.buccaneer_cannon.shoot": "Cannon fired",
 	"subtitles.bypowderandsteel.item.raygun.shoot": "Raygun fired",
+	"subtitles.bypowderandsteel.item.railgun.charge": "Railgun charging",
+	"subtitles.bypowderandsteel.item.railgun.shoot": "Railgun fired",
 
 	"subtitles.bypowderandsteel.entity.gunome.idle": "Gunome mumbles",
 	"subtitles.bypowderandsteel.entity.gunome.hurt": "Gunome hurt",
