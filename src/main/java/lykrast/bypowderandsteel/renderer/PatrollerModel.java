@@ -76,14 +76,23 @@ public class PatrollerModel extends EntityModel<PatrollerEntity> {
 
 	@Override
 	public void setupAnim(PatrollerEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-		//My attempt to get the eye position depending on head pitch
+		//My attempt to get the eye position depending on head angle
 		//center of body, center of eye, intersection of view vector and body border = right triangle
 		//so eye offset = tan(yaw)*(to body border = 8px)
 		//and of course so Mth.tan so sin/cos it is (with cos = 0 for 90° so putting a generous cap here)
-		float cappedYaw = Mth.clamp(Mth.abs(netHeadYaw), 0, 70) * Mth.DEG_TO_RAD;
-		float offset = 6*Mth.sin(cappedYaw)/Mth.cos(cappedYaw);
+		float cappedAngle = Mth.clamp(Mth.abs(netHeadYaw), 0, 70) * Mth.DEG_TO_RAD;
+		float offset = 6*Mth.sin(cappedAngle)/Mth.cos(cappedAngle);
 		if (offset > 2) offset = 2;
         eye.x = offset * -(float)Math.signum(netHeadYaw);
+        //and for vertical, can just go 1 unit to the bottom
+        //negative angle = looking up, and base eye.y is 3
+        if (headPitch <= 0) eye.y = 3;
+        else {
+    		cappedAngle = Mth.clamp(Mth.abs(headPitch), 0, 70) * Mth.DEG_TO_RAD;
+    		offset = 6*Mth.sin(cappedAngle)/Mth.cos(cappedAngle);
+    		if (offset > 1) offset = 1;
+            eye.y = 3 + offset;
+        }
         
         //Legs, based on the humanoid ones
 		boolean falling = entity.getFallFlyingTicks() > 4;
@@ -108,6 +117,22 @@ public class PatrollerModel extends EntityModel<PatrollerEntity> {
 		footFL.xRot = swing2 + LEG_ANGLE;
 		footBR.xRot = swing3 + LEG_ANGLE;
 		footBL.xRot = swing4 + LEG_ANGLE;
+        
+        //body moving up and down
+        //body.y base is 18
+        offset = (Mth.sin(ageInTicks * 0.067F) + 1)/2f;
+        body.y = 18-offset;
+        //this should roughly make the feet stay at the same place when lowering
+        float angle = 5*Mth.DEG_TO_RAD*offset;
+        legFR.xRot += angle;
+        legFL.xRot += angle;
+        legBR.xRot += angle;
+        legBL.xRot += angle;
+        angle /= 2;
+        footFR.xRot -= angle;
+        footFL.xRot -= angle;
+        footBR.xRot -= angle;
+        footBL.xRot -= angle;
 	}
 
 	@Override
