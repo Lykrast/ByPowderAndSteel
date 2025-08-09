@@ -1,0 +1,10 @@
+{
+	"type": "thermal:insolator",
+	"conditions": [{ "type": "forge:mod_loaded", "modid": "thermal_expansion" }],
+	"ingredient": { "item": "bypowderandsteel:caliberry_vine" },
+	"result": [
+		{ "item": "bypowderandsteel:caliberry", "chance": 2.0 },
+		{ "item": "bypowderandsteel:caliberry_large", "chance": 0.2 },
+		{ "item": "bypowderandsteel:caliberry_vine", "chance": 1.1 }
+	]
+}
