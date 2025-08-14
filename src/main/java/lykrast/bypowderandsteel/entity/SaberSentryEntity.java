@@ -318,6 +318,7 @@ public class SaberSentryEntity extends AnimatedMonster {
 						//recovery animation done, spin if near, run if far
 						if (distanceSqr < 16) {
 							sentry.setAnimation(ANIM_SPIN_START);
+							sentry.playSound(BPASSounds.saberSwing.get(), 1, 1);
 							phase = 3;
 							time = 7;
 							sentry.getNavigation().stop();
