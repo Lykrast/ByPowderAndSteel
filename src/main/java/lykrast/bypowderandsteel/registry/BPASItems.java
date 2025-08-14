@@ -71,7 +71,7 @@ public class BPASItems {
 	//ocean
 	public static RegistryObject<Item> sunkenDoubloon, chocolateDoubloon;
 	//mountain
-	public static RegistryObject<Item> densgstenCube;
+	public static RegistryObject<Item> densgstenCube, densgstenCocktrail;
 	//underground
 	public static RegistryObject<Item> damagedDevice, sentryPlating, phasesaberTemplate, batterySoda, bilkshake;
 	//nether
@@ -241,6 +241,7 @@ public class BPASItems {
 		chocolateDoubloon = initItem(() -> new Item(defP().food(food(4, 0.3))), "chocolate_doubloon");
 		
 		densgstenCube = initItem(() -> new Item(defP()), "densgsten_cube");
+		densgstenCocktrail = initItem(() -> new DrinkItem(defP().food(food(2, 0.1))), "densgsten_cocktail");
 
 		damagedDevice = initItem(() -> new Item(defP()), "damaged_device");
 		sentryPlating = initItem(() -> new Item(defP()), "sentry_fiber_plating");
