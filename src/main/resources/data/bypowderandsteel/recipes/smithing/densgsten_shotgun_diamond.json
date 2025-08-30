@@ -1,0 +1,7 @@
+{
+	"type": "minecraft:smithing_transform",
+	"base": { "item": "bypowderandsteel:densgsten_shotgun" },
+	"template": { "item": "bypowderandsteel:gunsmithing_template" },
+	"addition": { "item": "bypowderandsteel:assembly_diamond" },
+	"result": { "item": "bypowderandsteel:densgsten_shotgun_diamond" }
+}
