@@ -17,7 +17,7 @@
 	"item.desert_shotgun.shoot": {
 		"category": "players",
 		"subtitle": "subtitles.gunswithoutroses.item.shotgun.shoot",
-		"sounds": [ { "name": "bypowderandsteel:gun/desert_shotgun", "volume": 0.3 } ]
+		"sounds": [ { "name": "bypowderandsteel:gun/desert_shotgun", "volume": 0.25 } ]
 	},
 	"item.arctic_pistol.shoot": {
 		"category": "players",
@@ -38,6 +38,16 @@
 		"category": "players",
 		"subtitle": "subtitles.bypowderandsteel.item.buccaneer_cannon.shoot",
 		"sounds": [ { "name": "bypowderandsteel:gun/buccaneer_cannon", "volume": 0.6 } ]
+	},
+	"item.densgsten_revolver.shoot": {
+		"category": "players",
+		"subtitle": "subtitles.bypowderandsteel.item.revolver.shoot",
+		"sounds": [ { "name": "bypowderandsteel:gun/densgsten_revolver", "volume": 0.25 } ]
+	},
+	"item.densgsten_shotgun.shoot": {
+		"category": "players",
+		"subtitle": "subtitles.gunswithoutroses.item.shotgun.shoot",
+		"sounds": [ { "name": "bypowderandsteel:gun/densgsten_shotgun", "volume": 0.4 } ]
 	},
 	"item.raygun.shoot": {
 		"category": "players",
