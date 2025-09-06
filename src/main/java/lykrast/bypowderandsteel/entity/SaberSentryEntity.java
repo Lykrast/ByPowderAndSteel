@@ -6,6 +6,7 @@ import java.time.Month;
 import javax.annotation.Nullable;
 
 import lykrast.bypowderandsteel.ByPowderAndSteel;
+import lykrast.bypowderandsteel.config.BPASConfigValues;
 import lykrast.bypowderandsteel.registry.BPASSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
@@ -78,7 +79,7 @@ public class SaberSentryEntity extends AnimatedMonster {
 	}
 
 	public static boolean spawnRules(EntityType<? extends Monster> entity, ServerLevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
-		return pos.getY() < 8 && Monster.checkMonsterSpawnRules(entity, level, spawnType, pos, random);
+		return pos.getY() <= BPASConfigValues.SABER_SENTRY_MAX_HEIGHT && Monster.checkMonsterSpawnRules(entity, level, spawnType, pos, random);
 	}
 
 	@Override

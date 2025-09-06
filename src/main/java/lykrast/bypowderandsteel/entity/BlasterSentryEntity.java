@@ -3,6 +3,7 @@ package lykrast.bypowderandsteel.entity;
 import javax.annotation.Nullable;
 
 import lykrast.bypowderandsteel.ByPowderAndSteel;
+import lykrast.bypowderandsteel.config.BPASConfigValues;
 import lykrast.bypowderandsteel.entity.ai.GunGoal;
 import lykrast.bypowderandsteel.misc.BPASUtils;
 import lykrast.bypowderandsteel.registry.BPASItems;
@@ -75,7 +76,7 @@ public class BlasterSentryEntity extends Monster implements GunMob {
 	}
 	
 	public static boolean spawnRules(EntityType<? extends Monster> entity, ServerLevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
-		return pos.getY() < 8 && Monster.checkMonsterSpawnRules(entity, level, spawnType, pos, random);
+		return pos.getY() <= BPASConfigValues.BLASTER_SENTRY_MAX_HEIGHT && Monster.checkMonsterSpawnRules(entity, level, spawnType, pos, random);
 	}
 
 	@SuppressWarnings("deprecation")
