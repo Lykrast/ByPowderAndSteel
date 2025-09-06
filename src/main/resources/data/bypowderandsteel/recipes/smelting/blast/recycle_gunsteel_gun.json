@@ -1,0 +1,7 @@
+{
+	"type": "minecraft:blasting",
+	"cookingtime": 100,
+	"experience": 0.1,
+	"ingredient": { "item": "bypowderandsteel:gunsteel_gun" },
+	"result": "bypowderandsteel:gunsteel_nugget"
+}
