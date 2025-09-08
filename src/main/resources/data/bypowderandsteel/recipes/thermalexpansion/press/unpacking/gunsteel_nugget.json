@@ -1,0 +1,10 @@
+{
+	"type": "thermal:press",
+	"conditions": [{ "type": "forge:mod_loaded", "modid": "thermal_expansion" }],
+	"ingredients": [
+		{ "tag": "forge:ingots/gunsteel" },
+		{ "item": "thermal:press_unpacking_die" }
+	],
+	"result": [{ "item": "bypowderandsteel:gunsteel_nugget", "count": 9 }],
+	"energy": 400
+}

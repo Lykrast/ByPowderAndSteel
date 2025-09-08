@@ -1,0 +1,10 @@
+{
+	"type": "thermal:press",
+	"conditions": [{ "type": "forge:mod_loaded", "modid": "thermal_expansion" }],
+	"ingredients": [
+		{ "item": "bypowderandsteel:damaged_device_crate" },
+		{ "item": "thermal:press_unpacking_die" }
+	],
+	"result": [{ "item": "bypowderandsteel:damaged_device", "count": 9 }],
+	"energy": 400
+}

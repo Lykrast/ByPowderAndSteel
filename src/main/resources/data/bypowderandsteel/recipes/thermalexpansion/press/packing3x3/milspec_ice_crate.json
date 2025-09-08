@@ -1,0 +1,10 @@
+{
+	"type": "thermal:press",
+	"conditions": [{ "type": "forge:mod_loaded", "modid": "thermal_expansion" }],
+	"ingredients": [
+		{ "item": "bypowderandsteel:milspec_ice", "count": 9 },
+		{ "item": "thermal:press_packing_3x3_die" }
+	],
+	"result": [{ "item": "bypowderandsteel:milspec_ice_crate" }],
+	"energy": 400
+}

@@ -1,0 +1,10 @@
+{
+	"type": "thermal:press",
+	"conditions": [{ "type": "forge:mod_loaded", "modid": "thermal_expansion" }],
+	"ingredients": [
+		{ "item": "bypowderandsteel:living_herb_sack" },
+		{ "item": "thermal:press_unpacking_die" }
+	],
+	"result": [{ "item": "bypowderandsteel:living_herb", "count": 9 }],
+	"energy": 400
+}

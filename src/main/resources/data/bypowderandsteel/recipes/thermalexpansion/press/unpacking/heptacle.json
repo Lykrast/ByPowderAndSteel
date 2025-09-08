@@ -1,0 +1,10 @@
+{
+	"type": "thermal:press",
+	"conditions": [{ "type": "forge:mod_loaded", "modid": "thermal_expansion" }],
+	"ingredients": [
+		{ "item": "bypowderandsteel:heptacle_sack" },
+		{ "item": "thermal:press_unpacking_die" }
+	],
+	"result": [{ "item": "bypowderandsteel:heptacle", "count": 9 }],
+	"energy": 400
+}

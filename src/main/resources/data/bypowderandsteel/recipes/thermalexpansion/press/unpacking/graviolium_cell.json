@@ -1,0 +1,10 @@
+{
+	"type": "thermal:press",
+	"conditions": [{ "type": "forge:mod_loaded", "modid": "thermal_expansion" }],
+	"ingredients": [
+		{ "item": "bypowderandsteel:graviolium_tank" },
+		{ "item": "thermal:press_unpacking_die" }
+	],
+	"result": [{ "item": "bypowderandsteel:graviolium_cell", "count": 9 }],
+	"energy": 400
+}
