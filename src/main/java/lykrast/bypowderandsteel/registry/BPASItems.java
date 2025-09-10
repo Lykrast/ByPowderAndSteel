@@ -98,7 +98,7 @@ public class BPASItems {
 		gunsteelGun = initItem(() -> new GunItem(defP().durability(502), 0, 1, 16, 2, 16).repair(() -> Ingredient.of(ItemTags.create(new ResourceLocation("forge", "ingots/gunsteel")))), "gunsteel_gun");
 		peashooter = initItem(() -> new GunItem(defP().durability(924), 0, 1, 16, 2, 20).chanceFreeShot(0.25).fireSound(BPASSounds.peashooter).repair(() -> Ingredient.of(livingHerb.get())), "peashooter");
 		cornGatling = initItem(() -> new GatlingItem(defP().durability(924), 0, 0.4, 5, 5, 20).chanceFreeShot(0.5).fireSound(BPASSounds.cornGatling).repair(() -> Ingredient.of(livingHerb.get())), "corn_gatling");
-		cornGatlingDiamond = initItem(() -> new GatlingItem(defP().durability(3739), 0, 0.4, 3.5, 5, 20).chanceFreeShot(0.5).fireSound(BPASSounds.cornGatling).repair(() -> Ingredient.of(Tags.Items.GEMS_DIAMOND)), "corn_gatling_diamond");
+		cornGatlingDiamond = initItem(() -> new GatlingItem(defP().durability(3739), 0, 0.4, 3, 5, 20).chanceFreeShot(0.5).fireSound(BPASSounds.cornGatling).repair(() -> Ingredient.of(Tags.Items.GEMS_DIAMOND)), "corn_gatling_diamond");
 		desertRevolver = initItem(() -> new GunItem(defP().durability(753), 0, 1, 13, 4, 14).fireSound(BPASSounds.desertRevolver).repair(() -> Ingredient.of(cowbonesHorn.get())), "desert_revolver");
 		desertShotgun = initItem(() -> new GunItem(defP().durability(753), 0, 0.5, 18, 5, 14).projectiles(3).fireSound(BPASSounds.desertShotgun).repair(() -> Ingredient.of(cowbonesHorn.get())), "desert_shotgun");
 		desertShotgunDiamond = initItem(() -> new GunItem(defP().durability(3047), 0, 0.6, 16, 5, 14).projectiles(3).fireSound(BPASSounds.desertShotgun).repair(() -> Ingredient.of(Tags.Items.GEMS_DIAMOND)), "desert_shotgun_diamond");
@@ -111,7 +111,7 @@ public class BPASItems {
 		densgstenRevolver = initItem(() -> new GunItem(defP().durability(619), 0, 0.6, 18, 3, 10).projectiles(2).fireSound(BPASSounds.densgstenRevolver).repair(() -> Ingredient.of(densgstenCube.get())), "densgsten_revolver");
 		densgstenShotgun = initItem(() -> new GunItem(defP().durability(619), 0, 0.4, 24, 8, 10).projectiles(5).fireSound(BPASSounds.densgstenShotgun).repair(() -> Ingredient.of(densgstenCube.get())), "densgsten_shotgun");
 		densgstenShotgunDiamond = initItem(() -> new GunItem(defP().durability(2504), 1, 0.5, 24, 8, 10).projectiles(5).fireSound(BPASSounds.densgstenShotgun).repair(() -> Ingredient.of(Tags.Items.GEMS_DIAMOND)), "densgsten_shotgun_diamond");
-		raygun = initItem(() -> new RaygunItem(defP().durability(1053), 2, 1, 20, 0.75, 10).fireSound(BPASSounds.raygun).repair(() -> Ingredient.of(damagedDevice.get())), "raygun");
+		raygun = initItem(() -> new RaygunItem(defP().durability(1053), 3, 1, 20, 0.75, 10).fireSound(BPASSounds.raygun).repair(() -> Ingredient.of(damagedDevice.get())), "raygun");
 		bloodfueledRevolver = initItem(() -> new BloodfueledGunItem(defP().durability(2666), 2, 1.5, 16, 3, 15, 3).fireSound(BPASSounds.bloodfueledRevolver).repair(() -> Ingredient.of(heptacle.get())), "bloodfueled_revolver");
 		graviticRailgun = initItem(() -> new RailgunItem(defP().durability(3123), 0, 4, 30, 1, 10, 25).projectileSpeed(4).fireSound(BPASSounds.railgun).repair(() -> Ingredient.of(Tags.Items.GEMS_DIAMOND)), "gravitic_railgun");
 		
