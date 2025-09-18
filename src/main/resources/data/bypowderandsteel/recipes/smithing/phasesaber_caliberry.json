@@ -1,7 +1,0 @@
-{
-	"type": "minecraft:smithing_transform",
-	"base": { "item": "bypowderandsteel:phasesaber" },
-	"template": { "item": "bypowderandsteel:phasesaber_template" },
-	"addition": { "item": "bypowderandsteel:caliberry" },
-	"result": { "item": "bypowderandsteel:phasesaber_caliberry" }
-}

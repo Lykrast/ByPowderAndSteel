@@ -38,9 +38,6 @@
 	"item.bypowderandsteel.buccaneer_cutlass": "Sabre de boucanier",
 	"item.bypowderandsteel.densgsten_sword": "Épée en densgstène",
 	"item.bypowderandsteel.phasesaber": "Sabre phasique",
-	"item.bypowderandsteel.phasesaber_caliberry": "Sabre phasique caliberreux",
-	"item.bypowderandsteel.phasesaber_desert": "Sabre phasique du désert",
-	"item.bypowderandsteel.phasesaber_arctic": "Sabre phasique arctique",
 	"item.bypowderandsteel.phasesaber_gravitic": "Sabre phasique gravitique",
 
 	"item.bypowderandsteel.marauder_helmet": "Chapeau de maraudeur",
@@ -236,8 +233,6 @@
 	"advancements.bypowderandsteel.damaged_device.description": "Obtenez un engin endommagé d'un monstre sous terre",
 	"advancements.bypowderandsteel.diamond_gun.title": "Ça c'est un fusil",
 	"advancements.bypowderandsteel.diamond_gun.description": "Fabriquez un kit de fusil en diamant, essentiel pour des armes plus fortes",
-	"advancements.bypowderandsteel.upgrade_phasesaber.title": "Il ira enrichir ma collection",
-	"advancements.bypowderandsteel.upgrade_phasesaber.description": "Fabriquez un sabre phasique amélioré",
 	"advancements.bypowderandsteel.living_herb.title": "Comme si de l'herbe était verte",
 	"advancements.bypowderandsteel.living_herb.description": "Obtenez de l'herbe vivante d'un monstre de la forêt",
 	"advancements.bypowderandsteel.caliberry_vine.title": "Michel Baie",

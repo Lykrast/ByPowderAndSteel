@@ -38,9 +38,6 @@
 	"item.bypowderandsteel.buccaneer_cutlass": "Buccaneer Cutlass",
 	"item.bypowderandsteel.densgsten_sword": "Densgsten Sword",
 	"item.bypowderandsteel.phasesaber": "Phasesaber",
-	"item.bypowderandsteel.phasesaber_caliberry": "Caliberrous Phasesaber",
-	"item.bypowderandsteel.phasesaber_desert": "Desert Phasesaber",
-	"item.bypowderandsteel.phasesaber_arctic": "Arctic Phasesaber",
 	"item.bypowderandsteel.phasesaber_gravitic": "Gravitic Phasesaber",
 
 	"item.bypowderandsteel.marauder_helmet": "Marauder Cap",
@@ -236,8 +233,6 @@
 	"advancements.bypowderandsteel.damaged_device.description": "Acquire a Damaged Device from mobs underground",
 	"advancements.bypowderandsteel.diamond_gun.title": "This is Real Firepower",
 	"advancements.bypowderandsteel.diamond_gun.description": "Craft a Diamond Gun Assembly, essential for stronger guns",
-	"advancements.bypowderandsteel.upgrade_phasesaber.title": "A Fine Addition to my Collection",
-	"advancements.bypowderandsteel.upgrade_phasesaber.description": "Craft an upgraded Phasesaber",
 	"advancements.bypowderandsteel.living_herb.title": "Like If Grass Was Green",
 	"advancements.bypowderandsteel.living_herb.description": "Acquire Living Herb from mobs in a forest",
 	"advancements.bypowderandsteel.caliberry_vine.title": "Berry Get!",
