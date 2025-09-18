@@ -165,8 +165,8 @@ public class SkybenderEntity extends AnimatedMonster {
 				if (doHurtTarget(entity)) {
 					//gravitic saber effect
 					double mult = Math.max(0, 1 - entity.getAttributeValue(Attributes.KNOCKBACK_RESISTANCE));
-					entity.push(0, 0.5 * mult, 0);
-					entity.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 20, 0));
+					entity.push(0, 0.6 * mult, 0);
+					entity.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 30, 0));
 				}
 			}
 		}

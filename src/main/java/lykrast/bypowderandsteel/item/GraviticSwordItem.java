@@ -10,6 +10,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
@@ -24,9 +25,12 @@ public class GraviticSwordItem extends SwordItem {
 
 	@Override
 	public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-		double mult = Math.max(0, 1 - target.getAttributeValue(Attributes.KNOCKBACK_RESISTANCE));
-		target.push(0, 0.5 * mult, 0);
-		target.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 20, 0));
+		//same check as crits
+		if (!(attacker instanceof Player player) || player.getAttackStrengthScale(0.5f) >= 0.9) {
+			double mult = Math.max(0, 1 - target.getAttributeValue(Attributes.KNOCKBACK_RESISTANCE));
+			target.push(0, 0.6 * mult, 0);
+			target.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 30, 0));
+		}
 		return super.hurtEnemy(stack, target, attacker);
 	}
 
