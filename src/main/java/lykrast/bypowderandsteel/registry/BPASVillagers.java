@@ -51,8 +51,8 @@ public class BPASVillagers {
 		//THE FUCKING VANILLA TRADES ARE PACKAGE PRIVATE CLASSES AAAAAAAAA
 		if (event.getType() == gunsmith.get()) {
 			//TODO redo all that when I get the artisan guns and bullets in
-			trades.get(1).add(new VillagerTradeBuilder(16, 2, 0.05).buyManyForOne(Items.GUNPOWDER, 12, 16).build());
-			trades.get(1).add(new VillagerTradeBuilder(16, 2, 0.05).buyManyForOne(BPASItems.gunsteelIngot, 8, 12).build());
+			trades.get(1).add(new VillagerTradeBuilder(16, 2, 0.05).buyManyForOne(Items.GUNPOWDER, 16, 20).build());
+			trades.get(1).add(new VillagerTradeBuilder(16, 2, 0.05).buyManyForOne(BPASItems.gunsteelIngot, 16, 20).build());
 			trades.get(1).add(new VillagerTradeBuilder(12, 1, 0.05).sell(BPASItems.gunsteelBullet, 12, 20).emeraldPrice(1, 1).build());
 			
 			trades.get(2).add(new VillagerTradeBuilder(12, 10, 0.05).buyManyForOne(Items.IRON_INGOT, 3, 5).build());
@@ -63,13 +63,20 @@ public class BPASVillagers {
 			trades.get(3).add(new VillagerTradeBuilder(12, 10, 0.05).sell(GWRItems.explosiveBullet, 8, 12).emeraldPrice(1, 1).build());
 			trades.get(3).add(new VillagerTradeBuilder(12, 10, 0.05).sell(GWRItems.prismarineBullet, 8, 12).emeraldPrice(1, 1).build());
 			trades.get(3).add(new VillagerTradeBuilder(12, 10, 0.05).sell(BPASItems.caliberry, 8, 12).emeraldPrice(1, 1).build());
-			
-			trades.get(4).add(new VillagerTradeBuilder(12, 30, 0.05).buyManyForOne(Items.DIAMOND, 1, 1).build());
-			trades.get(4).add(new VillagerTradeBuilder(12, 30, 0.05).buyManyForOne(BPASItems.damagedDevice, 8, 12).build());
 
-			trades.get(5).add(new EnchantedItemTrade(GWRItems.diamondShotgun, 20, 5, 19, 3, 30, 0.2));
-			trades.get(5).add(new EnchantedItemTrade(GWRItems.diamondSniper, 20, 5, 19, 3, 30, 0.2));
-			trades.get(5).add(new EnchantedItemTrade(GWRItems.diamondGatling, 20, 5, 19, 3, 30, 0.2));
+			trades.get(4).add(new VillagerTradeBuilder(12, 30, 0.05).buyManyForOne(BPASItems.livingHerb, 16, 20).build());
+			trades.get(4).add(new VillagerTradeBuilder(12, 30, 0.05).buyManyForOne(BPASItems.cowbonesHorn, 16, 20).build());
+			trades.get(4).add(new VillagerTradeBuilder(12, 30, 0.05).buyManyForOne(BPASItems.milspecIce, 16, 20).build());
+			trades.get(4).add(new VillagerTradeBuilder(12, 30, 0.05).buyManyForOne(BPASItems.sunkenDoubloon, 16, 20).build());
+			trades.get(4).add(new VillagerTradeBuilder(12, 30, 0.05).buyManyForOne(BPASItems.densgstenCube, 16, 20).build());
+			trades.get(4).add(new VillagerTradeBuilder(12, 30, 0.05).buyManyForOne(BPASItems.damagedDevice, 16, 20).build());
+
+			trades.get(5).add(new EnchantedItemTrade(BPASItems.cornGatling, 4, 5, 19, 3, 30, 0.2));
+			trades.get(5).add(new EnchantedItemTrade(BPASItems.desertShotgun, 4, 5, 19, 3, 30, 0.2));
+			trades.get(5).add(new EnchantedItemTrade(BPASItems.arcticSniper, 4, 5, 19, 3, 30, 0.2));
+			trades.get(5).add(new EnchantedItemTrade(BPASItems.buccaneerCannon, 4, 5, 19, 3, 30, 0.2));
+			trades.get(5).add(new EnchantedItemTrade(BPASItems.densgstenShotgun, 4, 5, 19, 3, 30, 0.2));
+			trades.get(5).add(new EnchantedItemTrade(BPASItems.raygun, 6, 5, 19, 3, 30, 0.2));
 		}
 	}
 
