@@ -11,7 +11,6 @@ import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
-import net.minecraft.world.entity.ai.goal.LeapAtTargetGoal;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
@@ -24,6 +23,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 
 public class PatrollerEntity extends Monster {
+	//TODO I'm not happy with their basic ass behavior but I don't have any ideas so it'll do for now
 
 	public PatrollerEntity(EntityType<? extends PatrollerEntity> type, Level world) {
 		super(type, world);
@@ -33,7 +33,7 @@ public class PatrollerEntity extends Monster {
 	@Override
 	protected void registerGoals() {
 		goalSelector.addGoal(1, new FloatGoal(this));
-		goalSelector.addGoal(3, new LeapAtTargetGoal(this, 0.4F));
+		//goalSelector.addGoal(3, new LeapAtTargetGoal(this, 0.4F)); //they leap sideways and it looks so bad
 		goalSelector.addGoal(4, new MeleeAttackGoal(this, 1, true));
 		goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(this, 1));
 		goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 8));
