@@ -9,7 +9,7 @@ version="${file.jarVersion}"
 displayName="By Powder and Steel"
 displayURL="https://modrinth.com/mod/by-powder-and-steel"
 logoFile="iconbyzaya.png"
-credits="Zaya https://zaya.gallery/ that I commissioned for the mod icon, freesound.org for sounds"
+credits="Zaya https://zaya.gallery/ that I commissioned for the mod icon, freesound.org for all the creative common sounds"
 authors="Lykrast"
 description='''
 Addon for Guns Without Roses. Adds a variety of biome-specific mobs, some of them wearing guns that you can craft for yourself!
