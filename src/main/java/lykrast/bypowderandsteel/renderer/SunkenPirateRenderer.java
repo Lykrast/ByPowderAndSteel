@@ -24,7 +24,6 @@ import net.minecraft.world.phys.Vec3;
 
 public class SunkenPirateRenderer extends HumanoidMobRenderer<SunkenPirateEntity, SunkenPirateModel> {
 	private static final ResourceLocation TEXTURE = ByPowderAndSteel.rl("textures/entity/sunken_pirate.png"), GLOW = ByPowderAndSteel.rl("textures/entity/sunken_pirate_glow.png");
-	//TODO own texture for beam
 	private static final ResourceLocation BEAM_TEXTURE = ByPowderAndSteel.rl("textures/entity/sunken_pirate_laser.png");
 	private static final RenderType BEAM_RENDER_TYPE = RenderType.entityCutoutNoCull(BEAM_TEXTURE);
 

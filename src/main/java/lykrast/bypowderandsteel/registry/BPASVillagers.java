@@ -50,7 +50,7 @@ public class BPASVillagers {
 		Int2ObjectMap<List<ItemListing>> trades = event.getTrades();
 		//THE FUCKING VANILLA TRADES ARE PACKAGE PRIVATE CLASSES AAAAAAAAA
 		if (event.getType() == gunsmith.get()) {
-			//TODO redo all that when I get the artisan guns and bullets in
+			//This'll do for now, no artisan bullets/guns made after all
 			trades.get(1).add(new VillagerTradeBuilder(16, 2, 0.05).buyManyForOne(Items.GUNPOWDER, 16, 20).build());
 			trades.get(1).add(new VillagerTradeBuilder(16, 2, 0.05).buyManyForOne(BPASItems.gunsteelIngot, 16, 20).build());
 			trades.get(1).add(new VillagerTradeBuilder(12, 1, 0.05).sell(BPASItems.gunsteelBullet, 12, 20).emeraldPrice(1, 1).build());
