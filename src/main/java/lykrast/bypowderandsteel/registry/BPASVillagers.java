@@ -63,6 +63,7 @@ public class BPASVillagers {
 			trades.get(3).add(new VillagerTradeBuilder(12, 10, 0.05).sell(GWRItems.explosiveBullet, 8, 12).emeraldPrice(1, 1).build());
 			trades.get(3).add(new VillagerTradeBuilder(12, 10, 0.05).sell(GWRItems.prismarineBullet, 8, 12).emeraldPrice(1, 1).build());
 			trades.get(3).add(new VillagerTradeBuilder(12, 10, 0.05).sell(BPASItems.caliberry, 8, 12).emeraldPrice(1, 1).build());
+			trades.get(3).add(new VillagerTradeBuilder(12, 10, 0.05).sell(BPASItems.densgstenBullet, 8, 12).emeraldPrice(1, 1).build());
 
 			trades.get(4).add(new VillagerTradeBuilder(12, 30, 0.05).buyManyForOne(BPASItems.livingHerb, 16, 20).build());
 			trades.get(4).add(new VillagerTradeBuilder(12, 30, 0.05).buyManyForOne(BPASItems.cowbonesHorn, 16, 20).build());
