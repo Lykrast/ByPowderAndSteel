@@ -19,6 +19,7 @@ public class BPASConfig {
 	}
 
 	public final IntValue saberSentryMaxHeight, blasterSentryMaxHeight;
+	public final BooleanValue kubejsArmor;
 
 	public BPASConfig(ForgeConfigSpec.Builder builder) {
 		builder.comment("Mobs");
@@ -27,6 +28,13 @@ public class BPASConfig {
 				"They're intended to be found at deepslate layer but you can put them somewhere else if you want");
 		blasterSentryMaxHeight = intval(builder, "blasterSentryMaxHeight", 8, -1024, 1024, "Maximum y level at which Blaster Sentries can spawn",
 				"They're intended to be found at deepslate layer but you can put them somewhere else if you want");
+		builder.pop();
+		builder.comment("Specific debug and/or packdev related stuff");
+		builder.comment("READ THESE CAREFULLY you probably don't need to touch them");
+		builder.push("miscstuffyoushouldntmesswith");
+		kubejsArmor = boolval(builder, "hackThatMakesArmorsModifiableByKubeJSButMessesWithTheirNormalAttributes", false, "Use the default attribute maps in the armors, which in practice does 2 things:",
+				"1) allows KubeJS to actually modify the armor attributes (because it access transformers that map)",
+				"2) remove the gun-related attribute from them so you gotta manually add them back with KubeJS (because that's why I went around that map in the first place)");
 		builder.pop();
 	}
 
@@ -39,7 +47,6 @@ public class BPASConfig {
 		return builder.translation(name).comment(comments).comment("Default: " + def).defineInRange(name, def, min, max);
 	}
 
-	@SuppressWarnings("unused")
 	private BooleanValue boolval(ForgeConfigSpec.Builder builder, String name, boolean def, String... comments) {
 		return builder.translation(name).comment(comments).comment("Default: " + def).define(name, def);
 	}

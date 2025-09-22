@@ -5,6 +5,7 @@ import java.util.function.Supplier;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 
+import lykrast.bypowderandsteel.config.BPASConfigValues;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -43,7 +44,9 @@ public class AttributeArmorItem extends ArmorItem {
 
 	@Override
 	public Multimap<Attribute, AttributeModifier> getDefaultAttributeModifiers(EquipmentSlot slot) {
-		return slot == type.getSlot() ? newAttributes : super.getDefaultAttributeModifiers(slot);
+		//and damn it kubejs access transformer that super attribute map, the one I'm bypassing cause I don't wanna mixin/access transformer something like that
+		//so you can see the hacky config here on top of the normal check
+		return !BPASConfigValues.KUBEJS_ARMOR && slot == type.getSlot() ? newAttributes : super.getDefaultAttributeModifiers(slot);
 	}
 
 }
