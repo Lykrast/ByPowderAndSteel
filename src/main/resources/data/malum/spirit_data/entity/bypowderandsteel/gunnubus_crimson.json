@@ -1,0 +1,14 @@
+{
+	"registry_name": "bypowderandsteel:gunnubus_crimson",
+	"primary_type": "infernal",
+	"spirits": [
+		{
+			"spirit": "infernal",
+			"count": 3
+		},
+		{
+			"spirit": "wicked",
+			"count": 2
+		}
+	]
+}

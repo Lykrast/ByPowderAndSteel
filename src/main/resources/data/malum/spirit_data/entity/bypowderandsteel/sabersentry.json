@@ -1,0 +1,18 @@
+{
+	"registry_name": "bypowderandsteel:sabersentry",
+	"primary_type": "earthen",
+	"spirits": [
+		{
+			"spirit": "earthen",
+			"count": 2
+		},
+		{
+			"spirit": "infernal",
+			"count": 1
+		},
+		{
+			"spirit": "wicked",
+			"count": 1
+		}
+	]
+}

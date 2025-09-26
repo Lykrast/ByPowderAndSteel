@@ -1,0 +1,14 @@
+{
+	"registry_name": "bypowderandsteel:shrubhulk",
+	"primary_type": "earthen",
+	"spirits": [
+		{
+			"spirit": "earthen",
+			"count": 3
+		},
+		{
+			"spirit": "wicked",
+			"count": 1
+		}
+	]
+}

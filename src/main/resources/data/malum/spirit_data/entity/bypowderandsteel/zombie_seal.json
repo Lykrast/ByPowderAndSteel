@@ -1,0 +1,14 @@
+{
+	"registry_name": "bypowderandsteel:zombie_seal",
+	"primary_type": "wicked",
+	"spirits": [
+		{
+			"spirit": "aqueous",
+			"count": 1
+		},
+		{
+			"spirit": "wicked",
+			"count": 2
+		}
+	]
+}

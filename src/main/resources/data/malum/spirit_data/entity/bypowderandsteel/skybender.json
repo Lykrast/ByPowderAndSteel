@@ -1,0 +1,18 @@
+{
+	"registry_name": "bypowderandsteel:skybender",
+	"primary_type": "eldritch",
+	"spirits": [
+		{
+			"spirit": "aerial",
+			"count": 1
+		},
+		{
+			"spirit": "eldritch",
+			"count": 1
+		},
+		{
+			"spirit": "arcane",
+			"count": 1
+		}
+	]
+}
