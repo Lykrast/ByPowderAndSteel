@@ -1,10 +1,13 @@
 package lykrast.bypowderandsteel.renderer;
 
+import java.util.Locale;
+
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 
 import lykrast.bypowderandsteel.ByPowderAndSteel;
 import lykrast.bypowderandsteel.entity.SaberSentryEntity;
+import net.minecraft.ChatFormatting;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
@@ -14,6 +17,7 @@ import net.minecraft.resources.ResourceLocation;
 
 public class SaberSentryGlowLayer extends RenderLayer<SaberSentryEntity, SaberSentryModel> {
 	private final RenderType[] renders;
+	private final RenderType olivia;
 
 	public SaberSentryGlowLayer(RenderLayerParent<SaberSentryEntity, SaberSentryModel> parent, ResourceLocation baseTexture, String cosmeticPrefix) {
 		super(parent);
@@ -40,6 +44,7 @@ public class SaberSentryGlowLayer extends RenderLayer<SaberSentryEntity, SaberSe
 		renders[19] = rl(cosmeticPrefix, "riftnecrodancer"); //it's the stripey thing in the ui
 		renders[20] = rl(cosmeticPrefix, "pluraljourneysimple"); //apparently there's not 1 plural flag but friend used this one and it looked neat
 		//no agender because it's 7 stripes and I only have 6 pixels :(
+		olivia = rl(cosmeticPrefix, "olivia");
 	}
 	
 	private RenderType rl(String prefix, String add) {
@@ -49,7 +54,8 @@ public class SaberSentryGlowLayer extends RenderLayer<SaberSentryEntity, SaberSe
 	@Override
 	public void render(PoseStack pose, MultiBufferSource p_116984_, int p_116985_, SaberSentryEntity entity, float p_116987_, float p_116988_, float p_116989_, float p_116990_, float p_116991_,
 			float p_116992_) {
-		VertexConsumer vertexconsumer = p_116984_.getBuffer(renders[entity.getCosmetic()]);
+		String name = ChatFormatting.stripFormatting(entity.getName().getString()).toLowerCase(Locale.ROOT);
+		VertexConsumer vertexconsumer = p_116984_.getBuffer("olivia".equals(name) ? olivia :renders[entity.getCosmetic()]);
 		this.getParentModel().renderToBuffer(pose, vertexconsumer, 15728640, OverlayTexture.NO_OVERLAY, 1, 1, 1, 1);
 	}
 
