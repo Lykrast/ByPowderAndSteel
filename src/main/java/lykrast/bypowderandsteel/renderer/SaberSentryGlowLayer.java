@@ -43,6 +43,9 @@ public class SaberSentryGlowLayer extends RenderLayer<SaberSentryEntity, SaberSe
 		renders[18] = rl(cosmeticPrefix, "brazil");
 		renders[19] = rl(cosmeticPrefix, "riftnecrodancer"); //it's the stripey thing in the ui
 		renders[20] = rl(cosmeticPrefix, "pluraljourneysimple"); //apparently there's not 1 plural flag but friend used this one and it looked neat
+		renders[21] = rl(cosmeticPrefix, "panafrican");
+		renders[22] = rl(cosmeticPrefix, "ukraine");
+		renders[23] = rl(cosmeticPrefix, "neapolitan");
 		//no agender because it's 7 stripes and I only have 6 pixels :(
 		olivia = rl(cosmeticPrefix, "olivia");
 	}
