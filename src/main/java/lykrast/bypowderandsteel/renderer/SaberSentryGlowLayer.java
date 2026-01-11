@@ -46,6 +46,7 @@ public class SaberSentryGlowLayer extends RenderLayer<SaberSentryEntity, SaberSe
 		renders[21] = rl(cosmeticPrefix, "panafrican");
 		renders[22] = rl(cosmeticPrefix, "ukraine");
 		renders[23] = rl(cosmeticPrefix, "neapolitan");
+		renders[24] = rl(cosmeticPrefix, "lesbian2"); //it looked pretty https://archive.is/20181102205136/https://medium.com/@lydiandragon/a-lesbian-flag-for-everyone-cef397b89459
 		//no agender because it's 7 stripes and I only have 6 pixels :(
 		olivia = rl(cosmeticPrefix, "olivia");
 	}
