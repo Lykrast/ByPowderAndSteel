@@ -97,8 +97,8 @@ public class GunomeEntity extends Monster implements GunMob {
 			GunomeEntity rider = BPASEntities.gunome.get().create(level());
 			if (rider != null) {
 				rider.moveTo(getX(), getY(), getZ(), getYRot(), 0);
-				rider.finalizeSpawn(world, difficulty, spawnType, null, null);
 				rider.startRiding(this);
+				rider.finalizeSpawn(world, difficulty, spawnType, groupData, null);
 			}
 		}
 
