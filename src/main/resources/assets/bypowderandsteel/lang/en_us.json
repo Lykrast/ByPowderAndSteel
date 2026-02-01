@@ -40,6 +40,14 @@
 	"item.bypowderandsteel.phasesaber": "Phasesaber",
 	"item.bypowderandsteel.phasesaber_gravitic": "Gravitic Phasesaber",
 
+	"item.bypowderandsteel.iron_marksblade": "Iron Marksblade",
+	"item.bypowderandsteel.diamond_marksblade": "Diamond Marksblade",
+	"item.bypowderandsteel.netherite_marksblade": "Netherite Marksblade",
+	"item.bypowderandsteel.densgsten_marksblade": "Densgsten Marksblade",
+
+	"tooltip.bypowderandsteel.marksblade.1": "Marks target on hit",
+	"tooltip.bypowderandsteel.marksblade.2": "+%1$s damage to next bullet hit",
+
 	"item.bypowderandsteel.marauder_helmet": "Marauder Cap",
 	"item.bypowderandsteel.marauder_chestplate": "Marauder Vest",
 	"item.bypowderandsteel.marauder_leggings": "Marauder Pants",
@@ -252,6 +260,8 @@
 	"advancements.bypowderandsteel.graviolium_cell.title": "Some Sort of Space Program",
 	"advancements.bypowderandsteel.graviolium_cell.description": "Acquire a Graviolium Cell from mobs in the outer End",
 
+	"effect.bypowderandsteel.marked": "Marked",
+
 	"subtitles.bypowderandsteel.item.peashooter.shoot": "Peashooter fired",
 	"subtitles.bypowderandsteel.item.corn_gatling.shoot": "Corn gatling fired",
 	"subtitles.bypowderandsteel.item.revolver.shoot": "Revolver fired",
@@ -290,6 +300,7 @@
 	"tag.c.storage_blocks.gunsteel": "Gunsteel Storage Blocks",
 
 	"tag.bypowderandsteel.raw_caliberry": "Raw Caliberry",
+	"tag.bypowderandsteel.marksblades": "Marksblades",
 
 	"tag.bypowderandsteel.stonecutting.gunsteel_bricks": "Stonecuttable Gunsteel Bricks",
 	"tag.bypowderandsteel.stonecutting.living_herb_framed": "Stonecuttable Framed Living Herb",

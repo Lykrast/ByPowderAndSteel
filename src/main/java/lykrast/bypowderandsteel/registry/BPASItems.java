@@ -31,6 +31,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.common.ForgeTier;
@@ -50,6 +51,8 @@ public class BPASItems {
 	public static RegistryObject<BulletItem> gunsteelBullet, caliberry, caliberryLarge, densgstenBullet, densgstenExplosiveBullet, phaseBullet, graviticBullet;
 	//swords
 	public static RegistryObject<SwordItem> buccaneerCutlass, densgstenSword, phasesaber, phasesaberGravitic;
+	//marksblades
+	public static RegistryObject<MarksbladeItem> ironMarksblade, diamondMarksblade, netheriteMarksblade, densgstenMarksblade;
 	//armor
 	public static ArmorMaterial marauder, sentry, infernal;
 	public static RegistryObject<ArmorItem> marauderHelmet, marauderChestplate, marauderLeggings, marauderBoots;
@@ -142,6 +145,12 @@ public class BPASItems {
 //				.attribute(ForgeMod.ENTITY_REACH, new AttributeModifier(AttributeSwordItem.UUID1, "Weapon modifier", 0.8, AttributeModifier.Operation.ADDITION))
 //				.done(), "phasesaber_arctic");
 		phasesaberGravitic = initItem(() -> new GraviticSwordItem(phase, 3, -2.4F, defP()), "phasesaber_gravitic");
+		
+		//Marksblades
+		ironMarksblade = initItem(() -> new MarksbladeItem(Tiers.IRON, 1, -2.4F, 0, defP()), "iron_marksblade"); //4 damage + 4 mark
+		diamondMarksblade = initItem(() -> new MarksbladeItem(Tiers.DIAMOND, 1, -2.4F, 1, defP()), "diamond_marksblade"); //5 damage + 5 mark
+		netheriteMarksblade = initItem(() -> new MarksbladeItem(Tiers.NETHERITE, 1, -2.4F, 2, defP().fireResistant()), "netherite_marksblade"); //6 damage + 6 mark
+		densgstenMarksblade = initItem(() -> new MarksbladeItem(densgsten, 5, -3.4F, 4, defP()), "densgsten_marksblade"); //8 damage + 8 mark
 		
 		//Armor
 		//TODO sounds

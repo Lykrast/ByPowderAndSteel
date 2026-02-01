@@ -6,6 +6,7 @@ import org.apache.logging.log4j.Logger;
 import lykrast.bypowderandsteel.config.BPASConfig;
 import lykrast.bypowderandsteel.config.BPASConfigValues;
 import lykrast.bypowderandsteel.registry.BPASBlocks;
+import lykrast.bypowderandsteel.registry.BPASEffects;
 import lykrast.bypowderandsteel.registry.BPASEntities;
 import lykrast.bypowderandsteel.registry.BPASItems;
 import lykrast.bypowderandsteel.registry.BPASSounds;
@@ -32,6 +33,7 @@ public class ByPowderAndSteel {
 		bus.addListener(BPASItems::makeCreativeTab);
 		BPASEntities.REG.register(bus);
 		BPASSounds.REG.register(bus);
+		BPASEffects.REG.register(bus);
 		BPASVillagers.POI.register(bus);
 		BPASVillagers.PROFESSION.register(bus);
 
