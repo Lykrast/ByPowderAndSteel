@@ -56,7 +56,8 @@ public class BPASBlocks {
 	//plains
 	//TODO storage crate
 	public static RegistryObject<Block> markstone, markstoneChiseled, markstoneTiles, markstoneTilesSmall, markstoneBricks, markstonePillar, markstoneLamp;
-	//TODO slabs stairs walls
+	public static RegistryObject<Block> markstoneStairs, markstoneSlab, markstoneWall, markstoneTilesStairs, markstoneTilesSlab, markstoneTilesSmallStairs, markstoneTilesSmallSlab,
+		markstoneBricksStairs, markstoneBricksSlab, markstoneBricksWall;
 	//underground
 	public static RegistryObject<Block> damagedDeviceCrate;
 	public static RegistryObject<Block> electronicCasing, electronicScreen, electronicOscilloscope, electronicRadar, electronicLamp;
@@ -157,12 +158,23 @@ public class BPASBlocks {
 		densgstenLamp = makeBlock("densgsten_lamp", () -> new Block(Block.Properties.copy(densgstenBlock.get()).lightLevel((state) -> 15)));
 		
 		//plains
-		//TODO storage, slabs, stairs, walls
+		//TODO storage
+		//TODO tweak texture to be more rocky and less flat
 		markstone = makeBlock("markstone", () -> new RotatedPillarBlock(Block.Properties.copy(Blocks.CALCITE)));
+		markstoneStairs = makeBlock("markstone_stairs", () -> new StairBlock(() -> markstone.get().defaultBlockState(), Block.Properties.copy(markstone.get())));
+		markstoneSlab = makeBlock("markstone_slab", () -> new SlabBlock(Block.Properties.copy(markstone.get())));
+		markstoneWall = makeBlock("markstone_wall", () -> new WallBlock(Block.Properties.copy(markstone.get()).forceSolidOn()));
 		markstoneChiseled = makeBlock("markstone_chiseled", () -> new Block(Block.Properties.copy(markstone.get())));
 		markstoneTiles = makeBlock("markstone_tiles", () -> new Block(Block.Properties.copy(markstone.get())));
+		markstoneTilesStairs = makeBlock("markstone_tiles_stairs", () -> new StairBlock(() -> markstoneTiles.get().defaultBlockState(), Block.Properties.copy(markstone.get())));
+		markstoneTilesSlab = makeBlock("markstone_tiles_slab", () -> new SlabBlock(Block.Properties.copy(markstone.get())));
 		markstoneTilesSmall = makeBlock("markstone_tiles_small", () -> new Block(Block.Properties.copy(markstone.get())));
+		markstoneTilesSmallStairs = makeBlock("markstone_tiles_small_stairs", () -> new StairBlock(() -> markstoneTilesSmall.get().defaultBlockState(), Block.Properties.copy(markstone.get())));
+		markstoneTilesSmallSlab = makeBlock("markstone_tiles_small_slab", () -> new SlabBlock(Block.Properties.copy(markstone.get())));
 		markstoneBricks = makeBlock("markstone_bricks", () -> new Block(Block.Properties.copy(markstone.get())));
+		markstoneBricksStairs = makeBlock("markstone_bricks_stairs", () -> new StairBlock(() -> markstoneBricks.get().defaultBlockState(), Block.Properties.copy(markstone.get())));
+		markstoneBricksSlab = makeBlock("markstone_bricks_slab", () -> new SlabBlock(Block.Properties.copy(markstone.get())));
+		markstoneBricksWall = makeBlock("markstone_bricks_wall", () -> new WallBlock(Block.Properties.copy(markstone.get()).forceSolidOn()));
 		markstonePillar = makeBlock("markstone_pillar", () -> new RotatedPillarBlock(Block.Properties.copy(markstone.get())));
 		markstoneLamp = makeBlock("markstone_lamp", () -> new Block(Block.Properties.copy(markstone.get()).lightLevel((state) -> 15)));
 

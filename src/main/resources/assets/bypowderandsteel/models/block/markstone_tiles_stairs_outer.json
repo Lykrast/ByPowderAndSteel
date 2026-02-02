@@ -1,0 +1,8 @@
+{
+	"parent": "minecraft:block/outer_stairs",
+	"textures": {
+		"bottom": "bypowderandsteel:block/markstone_tiles",
+		"side": "bypowderandsteel:block/markstone_tiles",
+		"top": "bypowderandsteel:block/markstone_tiles"
+	}
+}

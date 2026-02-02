@@ -1,0 +1,8 @@
+{
+	"parent": "minecraft:block/slab",
+	"textures": {
+		"bottom": "bypowderandsteel:block/markstone_tiles_small",
+		"side": "bypowderandsteel:block/markstone_tiles_small",
+		"top": "bypowderandsteel:block/markstone_tiles_small"
+	}
+}
