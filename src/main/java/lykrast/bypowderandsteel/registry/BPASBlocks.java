@@ -53,6 +53,10 @@ public class BPASBlocks {
 	public static RegistryObject<Block> densgstenCrate;
 	public static RegistryObject<Block> densgstenBlock, densgstenTiles, densgstenChiseled, densgstenLamp;
 	public static RegistryObject<Block> densgstenTilesStairs, densgstenTilesSlab;
+	//plains
+	//TODO storage crate
+	public static RegistryObject<Block> markstone, markstoneChiseled, markstoneTiles, markstoneTilesSmall, markstoneBricks, markstonePillar, markstoneLamp;
+	//TODO slabs stairs walls
 	//underground
 	public static RegistryObject<Block> damagedDeviceCrate;
 	public static RegistryObject<Block> electronicCasing, electronicScreen, electronicOscilloscope, electronicRadar, electronicLamp;
@@ -151,6 +155,16 @@ public class BPASBlocks {
 		densgstenTilesSlab = makeBlock("densgsten_tiles_slab", () -> new SlabBlock(Block.Properties.copy(densgstenTiles.get())));
 		densgstenChiseled = makeBlock("densgsten_chiseled", () -> new Block(Block.Properties.copy(densgstenBlock.get())));
 		densgstenLamp = makeBlock("densgsten_lamp", () -> new Block(Block.Properties.copy(densgstenBlock.get()).lightLevel((state) -> 15)));
+		
+		//plains
+		//TODO storage, slabs, stairs, walls
+		markstone = makeBlock("markstone", () -> new RotatedPillarBlock(Block.Properties.copy(Blocks.CALCITE)));
+		markstoneChiseled = makeBlock("markstone_chiseled", () -> new Block(Block.Properties.copy(markstone.get())));
+		markstoneTiles = makeBlock("markstone_tiles", () -> new Block(Block.Properties.copy(markstone.get())));
+		markstoneTilesSmall = makeBlock("markstone_tiles_small", () -> new Block(Block.Properties.copy(markstone.get())));
+		markstoneBricks = makeBlock("markstone_bricks", () -> new Block(Block.Properties.copy(markstone.get())));
+		markstonePillar = makeBlock("markstone_pillar", () -> new RotatedPillarBlock(Block.Properties.copy(markstone.get())));
+		markstoneLamp = makeBlock("markstone_lamp", () -> new Block(Block.Properties.copy(markstone.get()).lightLevel((state) -> 15)));
 
 		//underground
 		damagedDeviceCrate = makeBlock("damaged_device_crate", () -> new Block(Block.Properties.of().mapColor(DyeColor.LIGHT_BLUE).instrument(NoteBlockInstrument.BASEDRUM).strength(2,0.3f)));

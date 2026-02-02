@@ -34,6 +34,7 @@ public class MarksbladeItem extends SwordItem {
 		//same check as crits
 		if (!(attacker instanceof Player player) || player.getAttackStrengthScale(0.5f) >= 0.9) {
 			target.addEffect(new MobEffectInstance(BPASEffects.marked.get(), 5 * 20, markedLevel));
+			//TODO a hook for subclasses to directly put effects here for convenience
 		}
 		return super.hurtEnemy(stack, target, attacker);
 	}

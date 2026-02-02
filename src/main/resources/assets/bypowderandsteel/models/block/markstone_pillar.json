@@ -1,0 +1,7 @@
+{
+	"parent": "minecraft:block/cube_column",
+	"textures": {
+		"end": "bypowderandsteel:block/markstone_pillar_top",
+		"side": "bypowderandsteel:block/markstone_pillar_side"
+	}
+}

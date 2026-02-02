@@ -1,0 +1,16 @@
+{
+	"variants": {
+		"axis=y": {
+			"model": "bypowderandsteel:block/markstone"
+		},
+		"axis=z": {
+			"model": "bypowderandsteel:block/markstone",
+			"x": 90
+		},
+		"axis=x": {
+			"model": "bypowderandsteel:block/markstone",
+			"x": 90,
+			"y": 90
+		}
+	}
+}
