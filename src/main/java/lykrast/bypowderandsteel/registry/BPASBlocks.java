@@ -159,7 +159,7 @@ public class BPASBlocks {
 		
 		//plains
 		//TODO storage
-		//TODO tweak texture to be more rocky and less flat
+		//TODO eh on the raw markstone
 		markstone = makeBlock("markstone", () -> new RotatedPillarBlock(Block.Properties.copy(Blocks.CALCITE)));
 		markstoneStairs = makeBlock("markstone_stairs", () -> new StairBlock(() -> markstone.get().defaultBlockState(), Block.Properties.copy(markstone.get())));
 		markstoneSlab = makeBlock("markstone_slab", () -> new SlabBlock(Block.Properties.copy(markstone.get())));
