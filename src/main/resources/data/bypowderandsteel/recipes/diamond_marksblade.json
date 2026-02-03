@@ -1,0 +1,13 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"D",
+		"D",
+		"A"
+	],
+	"key": {
+		"D": { "tag": "forge:gems/diamond" },
+		"A": { "item": "bypowderandsteel:assembly_marksblade" }
+	},
+	"result": { "item": "bypowderandsteel:diamond_marksblade" }
+}

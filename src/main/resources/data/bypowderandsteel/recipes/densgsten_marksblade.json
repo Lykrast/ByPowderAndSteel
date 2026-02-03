@@ -1,0 +1,14 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"DID",
+		"DID",
+		" A "
+	],
+	"key": {
+		"I": { "tag": "forge:ingots/iron" },
+		"D": { "item": "bypowderandsteel:densgsten_cube" },
+		"A": { "item": "bypowderandsteel:assembly_marksblade" }
+	},
+	"result": { "item": "bypowderandsteel:densgsten_marksblade" }
+}

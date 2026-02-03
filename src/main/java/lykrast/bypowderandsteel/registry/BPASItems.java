@@ -76,7 +76,7 @@ public class BPASItems {
 	//mountain
 	public static RegistryObject<Item> densgstenCube, densgstenCocktrail;
 	//plains
-	public static RegistryObject<Item> markspebble;
+	public static RegistryObject<Item> markspebble, assemblyMarksblade;
 	//underground
 	public static RegistryObject<Item> damagedDevice, sentryPlating, phasesaberTemplate, batterySoda, bilkshake;
 	//nether
@@ -259,6 +259,7 @@ public class BPASItems {
 		densgstenCocktrail = initItem(() -> new DrinkItem(defP().food(food(2, 0.1))), "densgsten_cocktail");
 		
 		markspebble = initItem(() -> new Item(defP()), "markspebble");
+		assemblyMarksblade = initItem(() -> new Item(defP()), "assembly_marksblade");
 
 		damagedDevice = initItem(() -> new Item(defP()), "damaged_device");
 		sentryPlating = initItem(() -> new Item(defP()), "sentry_fiber_plating");

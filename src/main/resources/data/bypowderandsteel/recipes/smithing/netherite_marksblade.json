@@ -1,0 +1,7 @@
+{
+	"type": "minecraft:smithing_transform",
+	"base": { "item": "bypowderandsteel:diamond_marksblade" },
+	"template": { "item": "minecraft:netherite_upgrade_smithing_template" },
+	"addition": { "tag": "forge:ingots/netherite" },
+	"result": { "item": "bypowderandsteel:netherite_marksblade" }
+}

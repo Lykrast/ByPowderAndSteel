@@ -1,0 +1,14 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"MGF",
+		"MGF",
+		"MG "
+	],
+	"key": {
+		"M": { "item": "bypowderandsteel:markspebble" },
+		"G": { "tag": "forge:ingots/gunsteel" },
+		"F": { "item": "minecraft:flint" }
+	},
+	"result": { "item": "bypowderandsteel:assembly_marksblade" }
+}

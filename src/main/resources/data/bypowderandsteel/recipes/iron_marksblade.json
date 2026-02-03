@@ -1,0 +1,13 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"I",
+		"I",
+		"A"
+	],
+	"key": {
+		"I": { "tag": "forge:ingots/iron" },
+		"A": { "item": "bypowderandsteel:assembly_marksblade" }
+	},
+	"result": { "item": "bypowderandsteel:iron_marksblade" }
+}
