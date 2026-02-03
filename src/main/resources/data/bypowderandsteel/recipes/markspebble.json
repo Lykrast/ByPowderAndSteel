@@ -1,0 +1,7 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{ "item": "bypowderandsteel:markspebble_crate" }
+	],
+	"result": { "item": "bypowderandsteel:markspebble", "count": 9 }
+}

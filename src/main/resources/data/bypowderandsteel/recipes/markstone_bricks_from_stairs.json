@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"group": "bypowderandsteel_markstone_bricks",
+	"pattern": [
+		"##",
+		"##"
+	],
+	"key": {
+		"#": { "item": "bypowderandsteel:markstone_bricks_stairs" }
+	},
+	"result": { "item": "bypowderandsteel:markstone_bricks", "count": 3 }
+}

@@ -1,0 +1,6 @@
+{
+	"type": "minecraft:stonecutting",
+	"count": 1,
+	"ingredient": { "tag": "bypowderandsteel:stonecutting/markstone" },
+	"result": "bypowderandsteel:markstone_chiseled"
+}

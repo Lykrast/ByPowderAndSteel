@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"#  ",
+		"## ",
+		"###"
+	],
+	"key": {
+		"#": { "item": "bypowderandsteel:markstone_tiles_small" }
+	},
+	"result": { "item": "bypowderandsteel:markstone_tiles_small_stairs", "count": 8 }
+}

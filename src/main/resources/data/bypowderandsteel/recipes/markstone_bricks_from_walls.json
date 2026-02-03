@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"group": "bypowderandsteel_markstone_bricks",
+	"ingredients": [
+		{ "item": "bypowderandsteel:markstone_bricks_wall" }
+	],
+	"result": { "item": "bypowderandsteel:markstone_bricks" }
+}

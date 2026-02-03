@@ -1,0 +1,11 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"###",
+		"###"
+	],
+	"key": {
+		"#": { "item": "bypowderandsteel:markstone" }
+	},
+	"result": { "item": "bypowderandsteel:markstone_wall", "count": 6 }
+}

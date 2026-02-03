@@ -1,0 +1,13 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		" # ",
+		"#T#",
+		" # "
+	],
+	"key": {
+		"#": { "item": "bypowderandsteel:markspebble" },
+		"T": { "item": "minecraft:torch" }
+	},
+	"result": { "item": "bypowderandsteel:markstone_lamp" }
+}
