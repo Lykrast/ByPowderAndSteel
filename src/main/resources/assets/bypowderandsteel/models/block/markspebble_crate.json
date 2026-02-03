@@ -1,0 +1,8 @@
+{
+	"parent": "minecraft:block/cube_bottom_top",
+	"textures": {
+		"bottom": "bypowderandsteel:block/markspebble_crate_bottom",
+		"side": "bypowderandsteel:block/markspebble_crate_side",
+		"top": "bypowderandsteel:block/markspebble_crate_top"
+	}
+}

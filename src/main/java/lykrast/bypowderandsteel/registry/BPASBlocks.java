@@ -54,7 +54,7 @@ public class BPASBlocks {
 	public static RegistryObject<Block> densgstenBlock, densgstenTiles, densgstenChiseled, densgstenLamp;
 	public static RegistryObject<Block> densgstenTilesStairs, densgstenTilesSlab;
 	//plains
-	//TODO storage crate
+	public static RegistryObject<Block> markspebbleCrate;
 	public static RegistryObject<Block> markstone, markstoneChiseled, markstoneTiles, markstoneTilesSmall, markstoneBricks, markstonePillar, markstoneLamp;
 	public static RegistryObject<Block> markstoneStairs, markstoneSlab, markstoneWall, markstoneTilesStairs, markstoneTilesSlab, markstoneTilesSmallStairs, markstoneTilesSmallSlab,
 		markstoneBricksStairs, markstoneBricksSlab, markstoneBricksWall;
@@ -158,7 +158,7 @@ public class BPASBlocks {
 		densgstenLamp = makeBlock("densgsten_lamp", () -> new Block(Block.Properties.copy(densgstenBlock.get()).lightLevel((state) -> 15)));
 		
 		//plains
-		//TODO storage
+		markspebbleCrate = makeBlock("markspebble_crate", () -> new Block(Block.Properties.copy(Blocks.OAK_PLANKS)));
 		//TODO eh on the raw markstone
 		markstone = makeBlock("markstone", () -> new RotatedPillarBlock(Block.Properties.copy(Blocks.CALCITE)));
 		markstoneStairs = makeBlock("markstone_stairs", () -> new StairBlock(() -> markstone.get().defaultBlockState(), Block.Properties.copy(markstone.get())));
