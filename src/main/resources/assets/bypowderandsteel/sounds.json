@@ -1,4 +1,9 @@
 {
+	"item.marksblade.proc": {
+		"category": "players",
+		"subtitle": "subtitles.bypowderandsteel.item.marksblade.proc",
+		"sounds": [ { "name": "bypowderandsteel:gun/marksblade_proc", "volume": 0.5 } ]
+	},
 	"item.peashooter.shoot": {
 		"category": "players",
 		"subtitle": "subtitles.bypowderandsteel.item.peashooter.shoot",

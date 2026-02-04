@@ -10,6 +10,7 @@ public class BPASSounds {
 	//TODO would like some more dedicated sounds (like on patrollers or skybenders or cowbones) but that'll do
 	//Guns
 	public static final DeferredRegister<SoundEvent> REG = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, ByPowderAndSteel.MODID);
+	public static RegistryObject<SoundEvent> marksbladeProc = initSound("item.marksblade.proc");
 	public static RegistryObject<SoundEvent> peashooter = initSound("item.peashooter.shoot"), cornGatling = initSound("item.corn_gatling.shoot");
 	public static RegistryObject<SoundEvent> desertRevolver = initSound("item.desert_revolver.shoot"), desertShotgun = initSound("item.desert_shotgun.shoot");
 	public static RegistryObject<SoundEvent> arcticPistol = initSound("item.arctic_pistol.shoot"), arcticSniper = initSound("item.arctic_sniper.shoot");

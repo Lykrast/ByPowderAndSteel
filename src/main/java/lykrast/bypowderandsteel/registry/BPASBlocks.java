@@ -159,7 +159,6 @@ public class BPASBlocks {
 		
 		//plains
 		markspebbleCrate = makeBlock("markspebble_crate", () -> new Block(Block.Properties.copy(Blocks.OAK_PLANKS)));
-		//TODO eh on the raw markstone
 		markstone = makeBlock("markstone", () -> new RotatedPillarBlock(Block.Properties.copy(Blocks.CALCITE)));
 		markstoneStairs = makeBlock("markstone_stairs", () -> new StairBlock(() -> markstone.get().defaultBlockState(), Block.Properties.copy(markstone.get())));
 		markstoneSlab = makeBlock("markstone_slab", () -> new SlabBlock(Block.Properties.copy(markstone.get())));
