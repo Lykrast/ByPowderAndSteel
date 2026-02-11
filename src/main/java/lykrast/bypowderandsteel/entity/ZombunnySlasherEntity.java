@@ -58,7 +58,7 @@ public class ZombunnySlasherEntity extends Monster {
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
-		return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 20).add(Attributes.ARMOR, 2).add(Attributes.MOVEMENT_SPEED, 0.32);
+		return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 20).add(Attributes.MOVEMENT_SPEED, 0.32);
 	}
 
 	@SuppressWarnings("deprecation")
