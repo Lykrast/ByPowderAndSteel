@@ -1,0 +1,19 @@
+{
+	"parent": "bypowderandsteel:main/gunsteel",
+	"display": {
+		"icon": { "item": "bypowderandsteel:markspebble" },
+		"title": { "translate": "advancements.bypowderandsteel.markspebble.title" },
+		"description": { "translate": "advancements.bypowderandsteel.markspebble.description" },
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": false
+	},
+	"criteria": {
+		"get_item": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": { "items": [{ "items": ["bypowderandsteel:markspebble"] }] }
+		}
+	},
+	"requirements": [["get_item"]]
+}
