@@ -37,9 +37,11 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.Vec3;
 
-public class ZombunnySlasherEntity extends Monster {
-	//TODO make the jump, animate the jump
+public class ZombunnySlasherEntity extends AnimatedMonster {
+	//animations
+	public static final int ANIM_NEUTRAL = 0, ANIM_WINDUP = 1, ANIM_JUMP = 2, ANIM_LAND = 3;
 
 	public ZombunnySlasherEntity(EntityType<? extends ZombunnySlasherEntity> type, Level world) {
 		super(type, world);
@@ -48,7 +50,7 @@ public class ZombunnySlasherEntity extends Monster {
 	@Override
 	protected void registerGoals() {
 		goalSelector.addGoal(1, new FloatGoal(this));
-		goalSelector.addGoal(4, new MeleeAttackGoal(this, 1, true));
+		goalSelector.addGoal(4, new ChaseAndLeap(this, 1, true));
 		goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(this, 1));
 		goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 8));
 		goalSelector.addGoal(6, new RandomLookAroundGoal(this));
@@ -80,6 +82,12 @@ public class ZombunnySlasherEntity extends Monster {
 	}
 
 	@Override
+	protected void setupNewAnimation() {
+		if (clientAnim == ANIM_WINDUP || clientAnim == ANIM_NEUTRAL) animDur = 5;
+		else animDur = 2;
+	}
+
+	@Override
 	protected ResourceLocation getDefaultLootTable() {
 		return ByPowderAndSteel.rl("entities/zombunny_slasher");
 	}
@@ -87,6 +95,12 @@ public class ZombunnySlasherEntity extends Monster {
 	@Override
 	public MobType getMobType() {
 		return MobType.UNDEAD;
+	}
+
+	@Override
+	public int getMaxFallDistance() {
+		//they're immune to fall damage
+		return 32;
 	}
 
 	@Override
@@ -147,5 +161,118 @@ public class ZombunnySlasherEntity extends Monster {
 	@Override
 	protected void playStepSound(BlockPos pos, BlockState state) {
 		this.playSound(SoundEvents.ZOMBIE_STEP, 0.15F, 1);
+	}
+
+	private static class ChaseAndLeap extends MeleeAttackGoal {
+		private ZombunnySlasherEntity buny;
+		//0 approach, 1 windup, 2 leap, 3 recover
+		private int phase;
+		//ticksUntilNextAttack is private so I'm making my own countdown
+		private int time;
+
+		public ChaseAndLeap(ZombunnySlasherEntity buny, double speed, boolean seeThroughWalls) {
+			super(buny, speed, seeThroughWalls);
+			this.buny = buny;
+		}
+
+		@Override
+		public void start() {
+			super.start();
+			phase = 0;
+			time = 0;
+		}
+
+		@Override
+		public void stop() {
+			super.stop();
+			buny.setAnimation(ANIM_NEUTRAL);
+		}
+
+		//TODO sounds
+
+		@Override
+		public void tick() {
+			if (time > 0) time--;
+			super.tick();
+		}
+
+		@Override
+		protected void checkAndPerformAttack(LivingEntity target, double distanceSqr) {
+			//this is only called when target is alive, so we do the transition animations above
+			switch (phase) {
+				case 0:
+					//running at target
+					if (distanceSqr < 20) {
+						//ready for the jump
+						//TODO check los?
+						phase = 1;
+						time = 10;
+						buny.setAnimation(ANIM_WINDUP);
+						buny.getLookControl().setLookAt(target.getX(), target.getEyeY(), target.getZ(), 50, 0);
+					}
+					break;
+				case 1:
+					//bracing for jump
+					if (distanceSqr > 36) {
+						//target too far, disengage jump
+						//TODO check los?
+						phase = 0;
+						buny.setAnimation(ANIM_NEUTRAL);
+					}
+					else if (time <= 0) {
+						//leap!
+						time = 10;
+						phase = 2;
+						buny.setAnimation(ANIM_JUMP);
+						//from LeapAtTargetGoal
+						Vec3 vec3 = buny.getDeltaMovement();
+						Vec3 vec31 = new Vec3(target.getX() - buny.getX(), 0, target.getZ() - buny.getZ());
+						if (vec31.lengthSqr() > 1.0E-7D) {
+							vec31 = vec31.normalize().scale(1.3).add(vec3.scale(0.2));
+						}
+
+						buny.setDeltaMovement(vec31.x, Math.max(0, target.getY() - buny.getY()) * 0.2 + 0.4, vec31.z);
+					}
+					else {
+						buny.getNavigation().stop();
+						//buny.getLookControl().setLookAt(target.getX(), target.getEyeY(), target.getZ());
+					}
+					break;
+				case 2:
+					//in the air
+					if (time <= 0 || buny.onGround()) {
+						//landed, switch to recovery
+						phase = 3;
+						time = 10;
+						buny.setAnimation(ANIM_LAND);
+						buny.getNavigation().stop();
+					}
+					else {
+						super.checkAndPerformAttack(target, distanceSqr);
+					}
+					break;
+				case 3:
+					//jump recovery
+					if (time <= 0) {
+						phase = 0;
+						//check if we'll chain another jump
+						if (distanceSqr < 20) {
+							phase = 1;
+							time = 10;
+							buny.setAnimation(ANIM_WINDUP);
+							buny.getLookControl().setLookAt(target.getX(), target.getEyeY(), target.getZ(), 50, 0);
+						}
+						else buny.setAnimation(ANIM_NEUTRAL);
+					}
+					else buny.getNavigation().stop();
+					break;
+			}
+		}
+
+		@Override
+		public boolean canContinueToUse() {
+			if (phase > 0 && time > 0) return true;
+			return super.canContinueToUse();
+		}
 	}
 }
