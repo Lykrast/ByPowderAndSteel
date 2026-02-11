@@ -1,0 +1,10 @@
+{
+	"type": "forge:add_spawns",
+	"biomes": "#bypowderandsteel:has_zombunny",
+	"spawners": {
+		"type": "bypowderandsteel:zombunny_slasher",
+		"weight": 40,
+		"minCount": 2,
+		"maxCount": 4
+	}
+}
