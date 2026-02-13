@@ -17,7 +17,7 @@ import net.minecraft.resources.ResourceLocation;
 
 public class SaberSentryGlowLayer extends RenderLayer<SaberSentryEntity, SaberSentryModel> {
 	private final RenderType[] renders;
-	private final RenderType olivia;
+	private final RenderType olivia, aika;
 
 	public SaberSentryGlowLayer(RenderLayerParent<SaberSentryEntity, SaberSentryModel> parent, ResourceLocation baseTexture, String cosmeticPrefix) {
 		super(parent);
@@ -49,7 +49,8 @@ public class SaberSentryGlowLayer extends RenderLayer<SaberSentryEntity, SaberSe
 		renders[24] = rl(cosmeticPrefix, "lesbian2"); //it looked pretty https://archive.is/20181102205136/https://medium.com/@lydiandragon/a-lesbian-flag-for-everyone-cef397b89459
 		renders[25] = rl(cosmeticPrefix, "spumoni"); //colors also from Papa's Freezeria Deluxe
 		//no agender because it's 7 stripes and I only have 6 pixels :(
-		olivia = rl(cosmeticPrefix, "olivia");
+		olivia = rl(cosmeticPrefix, "olivia"); //friend
+		aika = rl(cosmeticPrefix, "aika"); //from Pretty Pretty Please I Don't Want to be a Magical Girl
 	}
 	
 	private RenderType rl(String prefix, String add) {
@@ -60,7 +61,7 @@ public class SaberSentryGlowLayer extends RenderLayer<SaberSentryEntity, SaberSe
 	public void render(PoseStack pose, MultiBufferSource p_116984_, int p_116985_, SaberSentryEntity entity, float p_116987_, float p_116988_, float p_116989_, float p_116990_, float p_116991_,
 			float p_116992_) {
 		String name = ChatFormatting.stripFormatting(entity.getName().getString()).toLowerCase(Locale.ROOT);
-		VertexConsumer vertexconsumer = p_116984_.getBuffer("olivia".equals(name) ? olivia :renders[entity.getCosmetic()]);
+		VertexConsumer vertexconsumer = p_116984_.getBuffer("olivia".equals(name) ? olivia : "aika".equals(name) ? aika : renders[entity.getCosmetic()]);
 		this.getParentModel().renderToBuffer(pose, vertexconsumer, 15728640, OverlayTexture.NO_OVERLAY, 1, 1, 1, 1);
 	}
 

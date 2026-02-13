@@ -10,7 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 
 public class SaberSentryRenderer extends MobRenderer<SaberSentryEntity, SaberSentryModel> {
 	private static final ResourceLocation TEXTURE = ByPowderAndSteel.rl("textures/entity/sabersentry.png"), GLOW = ByPowderAndSteel.rl("textures/entity/sabersentry_glow.png");
-	private static final String GLOW_PREFIX = "textures/entity/sabersentry_glow_";
+	private static final String GLOW_PREFIX = "textures/entity/saberglow/";
 
 	public SaberSentryRenderer(EntityRendererProvider.Context context) {
 		super(context, new SaberSentryModel(context.bakeLayer(SaberSentryModel.MODEL)), 0.7f);
