@@ -47,7 +47,7 @@ import net.minecraft.world.phys.Vec3;
 public class SaberSentryEntity extends AnimatedMonster {
 	//127 or something should be enough
 	private static final EntityDataAccessor<Byte> DATA_COSMETIC = SynchedEntityData.defineId(SaberSentryEntity.class, EntityDataSerializers.BYTE);
-	public static final int COSMETICS = 24; //well 25 with 0 being the default, but that's the cap for array index
+	public static final int COSMETICS = 25; //well 26 with 0 being the default, but that's the cap for array index
 	//animations
 	public static final int ANIM_NEUTRAL = 0, ANIM_RUN = 1, ANIM_WINDUP = 2, ANIM_SLASH = 3, ANIM_SPIN_START = 4, ANIM_SPINNING = 5, ANIM_SPIN_STOP = 6;
 	public int spinTime;

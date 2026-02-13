@@ -45,8 +45,9 @@ public class SaberSentryGlowLayer extends RenderLayer<SaberSentryEntity, SaberSe
 		renders[20] = rl(cosmeticPrefix, "pluraljourneysimple"); //apparently there's not 1 plural flag but friend used this one and it looked neat
 		renders[21] = rl(cosmeticPrefix, "panafrican");
 		renders[22] = rl(cosmeticPrefix, "ukraine");
-		renders[23] = rl(cosmeticPrefix, "neapolitan");
+		renders[23] = rl(cosmeticPrefix, "neapolitan"); //colors from Papa's Freezeria Deluxe
 		renders[24] = rl(cosmeticPrefix, "lesbian2"); //it looked pretty https://archive.is/20181102205136/https://medium.com/@lydiandragon/a-lesbian-flag-for-everyone-cef397b89459
+		renders[25] = rl(cosmeticPrefix, "spumoni"); //colors also from Papa's Freezeria Deluxe
 		//no agender because it's 7 stripes and I only have 6 pixels :(
 		olivia = rl(cosmeticPrefix, "olivia");
 	}
