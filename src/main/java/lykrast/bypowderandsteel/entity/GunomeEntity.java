@@ -38,6 +38,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraftforge.event.ForgeEventFactory;
 
 public class GunomeEntity extends Monster implements GunMob {
 
@@ -98,7 +99,7 @@ public class GunomeEntity extends Monster implements GunMob {
 			if (rider != null) {
 				rider.moveTo(getX(), getY(), getZ(), getYRot(), 0);
 				rider.startRiding(this);
-				rider.finalizeSpawn(world, difficulty, spawnType, groupData, null);
+				ForgeEventFactory.onFinalizeSpawn(rider, world, difficulty, spawnType, groupData, null);
 			}
 		}
 
