@@ -33,6 +33,7 @@ public class BPASEntities {
 	public static RegistryObject<EntityType<PatrollerEntity>> patroller;
 	//plains
 	public static RegistryObject<EntityType<ZombunnySlasherEntity>> zombunnySlasher;
+	public static RegistryObject<EntityType<ZombunnyGunnerEntity>> zombunnyGunner;
 	//underground
 	public static RegistryObject<EntityType<SaberSentryEntity>> sabersentry;
 	public static RegistryObject<EntityType<BlasterSentryEntity>> blastersentry;
@@ -62,6 +63,7 @@ public class BPASEntities {
 		patroller = REG.register("patroller", () -> EntityType.Builder.of(PatrollerEntity::new, MobCategory.MONSTER).sized(0.99F, 1.375F).clientTrackingRange(8).build(""));
 		//plains
 		zombunnySlasher = REG.register("zombunny_slasher", () -> EntityType.Builder.of(ZombunnySlasherEntity::new, MobCategory.MONSTER).sized(0.6F, 1.99F).clientTrackingRange(8).build(""));
+		zombunnyGunner = REG.register("zombunny_gunner", () -> EntityType.Builder.of(ZombunnyGunnerEntity::new, MobCategory.MONSTER).sized(0.6F, 1.99F).clientTrackingRange(8).build(""));
 		//underground
 		sabersentry = REG.register("sabersentry", () -> EntityType.Builder.of(SaberSentryEntity::new, MobCategory.MONSTER).sized(0.9F, 3.3F).clientTrackingRange(8).build(""));
 		blastersentry = REG.register("blastersentry", () -> EntityType.Builder.of(BlasterSentryEntity::new, MobCategory.MONSTER).sized(0.75F, 1.99F).clientTrackingRange(8).build(""));
@@ -90,6 +92,7 @@ public class BPASEntities {
 		event.put(sunkenPirate.get(), SunkenPirateEntity.createAttributes().build());
 		event.put(patroller.get(), PatrollerEntity.createAttributes().build());
 		event.put(zombunnySlasher.get(), ZombunnySlasherEntity.createAttributes().build());
+		event.put(zombunnyGunner.get(), ZombunnyGunnerEntity.createAttributes().build());
 		event.put(sabersentry.get(), SaberSentryEntity.createAttributes().build());
 		event.put(blastersentry.get(), BlasterSentryEntity.createAttributes().build());
 		event.put(gunnubusCrimson.get(), GunnubusCrimsonEntity.createAttributes().build());
@@ -112,6 +115,7 @@ public class BPASEntities {
 		event.register(zombieSeal.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
 		event.register(patroller.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
 		event.register(zombunnySlasher.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+		event.register(zombunnyGunner.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
 		event.register(gunnubusCrimson.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
 		event.register(skybender.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
 	}
