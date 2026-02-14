@@ -28,6 +28,7 @@ public class ZombunnyModel<T extends Mob> extends HumanoidModel<T> {
 		head.addOrReplaceChild("leftEar", CubeListBuilder.create().texOffs(56, 16).mirror().addBox(-1.5F, -8, -1, 3, 8, 1, CubeDeformation.NONE).mirror(false), PartPose.offsetAndRotation(2.5F, -8, 2, 0, 0.2618F, 0));
 		
 		body.addOrReplaceChild("breast", CubeListBuilder.create().texOffs(16, 32).addBox(-4, 0, 0, 8, 5, 3, new CubeDeformation(-0.1F)), PartPose.offsetAndRotation(0, 0, -2, -0.5236F, 0, 0));
+		body.addOrReplaceChild("tail", CubeListBuilder.create().texOffs(0, 32).addBox(-2, 8, 2, 4, 4, 2, CubeDeformation.NONE), PartPose.offset(0, 0, 0));
 		
 		return LayerDefinition.create(meshdefinition, 64, 64);
 	}
