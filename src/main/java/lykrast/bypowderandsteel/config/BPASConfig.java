@@ -19,6 +19,7 @@ public class BPASConfig {
 	}
 
 	public final IntValue saberSentryMaxHeight, blasterSentryMaxHeight;
+	public final BooleanValue zombunnySquad;
 	public final BooleanValue kubejsArmor;
 
 	public BPASConfig(ForgeConfigSpec.Builder builder) {
@@ -28,6 +29,7 @@ public class BPASConfig {
 				"They're intended to be found at deepslate layer but you can put them somewhere else if you want");
 		blasterSentryMaxHeight = intval(builder, "blasterSentryMaxHeight", 8, -1024, 1024, "Maximum y level at which Blaster Sentries can spawn",
 				"They're intended to be found at deepslate layer but you can put them somewhere else if you want");
+		zombunnySquad = boolval(builder, "zombunnySquad", true, "Make natural Zombunny Gunners spawn with a few Zombunny Slashers");
 		builder.pop();
 		builder.comment("Specific debug and/or packdev related stuff");
 		builder.comment("READ THESE CAREFULLY you probably don't need to touch them");
