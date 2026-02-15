@@ -8,6 +8,7 @@ import lykrast.bypowderandsteel.entity.ai.GunGoal;
 import lykrast.bypowderandsteel.misc.BPASUtils;
 import lykrast.bypowderandsteel.registry.BPASEffects;
 import lykrast.bypowderandsteel.registry.BPASEntities;
+import lykrast.bypowderandsteel.registry.BPASSounds;
 import lykrast.gunswithoutroses.item.BulletItem;
 import lykrast.gunswithoutroses.registry.GWRAttributes;
 import lykrast.gunswithoutroses.registry.GWRItems;
@@ -181,20 +182,20 @@ public class ZombunnyGunnerEntity extends Monster implements GunMob {
 		else return false;
 	}
 
-	//TODO Sounds
+	//TODO can't pitch down the vanilla sounds enough :(
 	@Override
 	protected SoundEvent getAmbientSound() {
-		return SoundEvents.ZOMBIE_AMBIENT;
+		return BPASSounds.zombunnyIdle.get();
 	}
 
 	@Override
 	protected SoundEvent getHurtSound(DamageSource source) {
-		return SoundEvents.ZOMBIE_HURT;
+		return BPASSounds.zombunnyHurt.get();
 	}
 
 	@Override
 	protected SoundEvent getDeathSound() {
-		return SoundEvents.ZOMBIE_DEATH;
+		return BPASSounds.zombunnyDeath.get();
 	}
 
 	@Override
@@ -240,6 +241,8 @@ public class ZombunnyGunnerEntity extends Monster implements GunMob {
 				}
 				mob.setDeltaMovement(vec31.x, 0.5, vec31.z);
 				mob.setPose(Pose.STANDING);
+				//TODO dedicated jump sound
+				mob.playSound(SoundEvents.RABBIT_JUMP, 1, 1);
 				strafingTime = 0;
 				//only mix up forward/backwards after leaping
 				if (mob.getRandom().nextFloat() < 0.3) strafingBackwards = !strafingBackwards;

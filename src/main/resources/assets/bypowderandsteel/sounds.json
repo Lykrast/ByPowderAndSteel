@@ -166,6 +166,30 @@
 			{ "name": "bypowderandsteel:patroller/idle6", "volume": 2.5 }
 		]
 	},
+	"entity.zombunny.idle": {
+		"subtitle": "subtitles.bypowderandsteel.entity.zombunny.idle",
+		"sounds": [
+			{ "name": "minecraft:mob/rabbit/idle1", "volume": 0.5, "pitch": 0.1 },
+			{ "name": "minecraft:mob/rabbit/idle2", "volume": 0.5, "pitch": 0.1 },
+			{ "name": "minecraft:mob/rabbit/idle3", "volume": 0.5, "pitch": 0.1 },
+			{ "name": "minecraft:mob/rabbit/idle4", "volume": 0.5, "pitch": 0.1 }
+		]
+	},
+	"entity.zombunny.hurt": {
+		"subtitle": "subtitles.bypowderandsteel.entity.zombunny.hurt",
+		"sounds": [
+			{ "name": "minecraft:mob/rabbit/hurt1", "volume": 0.5, "pitch": 0.1 },
+			{ "name": "minecraft:mob/rabbit/hurt2", "volume": 0.5, "pitch": 0.1 },
+			{ "name": "minecraft:mob/rabbit/hurt3", "volume": 0.5, "pitch": 0.1 },
+			{ "name": "minecraft:mob/rabbit/hurt4", "volume": 0.5, "pitch": 0.1 }
+		]
+	},
+	"entity.zombunny.death": {
+		"subtitle": "subtitles.bypowderandsteel.entity.zombunny.death",
+		"sounds": [
+			{ "name": "minecraft:mob/rabbit/bunnymurder", "volume": 0.5, "pitch": 0.1 }
+		]
+	},
 	"entity.sentry.idle": {
 		"subtitle": "subtitles.bypowderandsteel.entity.sentry.idle",
 		"sounds": [

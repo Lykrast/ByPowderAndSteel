@@ -5,6 +5,7 @@ import javax.annotation.Nullable;
 import lykrast.bypowderandsteel.ByPowderAndSteel;
 import lykrast.bypowderandsteel.registry.BPASEffects;
 import lykrast.bypowderandsteel.registry.BPASItems;
+import lykrast.bypowderandsteel.registry.BPASSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
@@ -142,20 +143,20 @@ public class ZombunnySlasherEntity extends AnimatedMonster {
 		else return false;
 	}
 
-	//TODO Sounds
+	//TODO can't pitch down the vanilla sounds enough :(
 	@Override
 	protected SoundEvent getAmbientSound() {
-		return SoundEvents.ZOMBIE_AMBIENT;
+		return BPASSounds.zombunnyIdle.get();
 	}
 
 	@Override
 	protected SoundEvent getHurtSound(DamageSource source) {
-		return SoundEvents.ZOMBIE_HURT;
+		return BPASSounds.zombunnyHurt.get();
 	}
 
 	@Override
 	protected SoundEvent getDeathSound() {
-		return SoundEvents.ZOMBIE_DEATH;
+		return BPASSounds.zombunnyDeath.get();
 	}
 
 	@Override
@@ -188,8 +189,6 @@ public class ZombunnySlasherEntity extends AnimatedMonster {
 			buny.setAnimation(ANIM_NEUTRAL);
 		}
 
-		//TODO sounds
-
 		@Override
 		public void tick() {
 			if (time > 0) time--;
@@ -204,18 +203,17 @@ public class ZombunnySlasherEntity extends AnimatedMonster {
 					//running at target
 					if (distanceSqr < 20) {
 						//ready for the jump
-						//TODO check los?
 						phase = 1;
 						time = 10;
 						buny.setAnimation(ANIM_WINDUP);
 						buny.getLookControl().setLookAt(target.getX(), target.getEyeY(), target.getZ(), 50, 0);
+						//TODO windup sound
 					}
 					break;
 				case 1:
 					//bracing for jump
 					if (distanceSqr > 36) {
 						//target too far, disengage jump
-						//TODO check los?
 						phase = 0;
 						buny.setAnimation(ANIM_NEUTRAL);
 					}
@@ -232,6 +230,8 @@ public class ZombunnySlasherEntity extends AnimatedMonster {
 						}
 
 						buny.setDeltaMovement(vec31.x, Math.max(0, target.getY() - buny.getY()) * 0.2 + 0.4, vec31.z);
+						//TODO dedicated jump sound
+						mob.playSound(SoundEvents.RABBIT_JUMP, 1, 1);
 					}
 					else {
 						buny.getNavigation().stop();
