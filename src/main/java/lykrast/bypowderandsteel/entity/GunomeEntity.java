@@ -99,7 +99,7 @@ public class GunomeEntity extends Monster implements GunMob {
 			if (rider != null) {
 				rider.moveTo(getX(), getY(), getZ(), getYRot(), 0);
 				rider.startRiding(this);
-				ForgeEventFactory.onFinalizeSpawn(rider, world, difficulty, spawnType, groupData, null);
+				ForgeEventFactory.onFinalizeSpawn(rider, world, difficulty, MobSpawnType.JOCKEY, groupData, null);
 			}
 		}
 
