@@ -13,14 +13,14 @@ import net.minecraft.world.item.ItemStack;
 public class GunGoal<T extends Mob & GunMob> extends Goal {
 	//Based on the RangedBowAttackGoal
 	protected final T mob;
-	private final double speedModifier;
-	private int attackIntervalMin;
-	private final double strafeRadiusSqr, attackRadiusSqr;
-	private int attackTime = -1;
-	private int seeTime;
-	private boolean strafingClockwise;
-	private boolean strafingBackwards;
-	private int strafingTime = -1;
+	protected final double speedModifier;
+	protected int attackIntervalMin;
+	protected final double strafeRadiusSqr, attackRadiusSqr;
+	protected int attackTime = -1;
+	protected int seeTime;
+	protected boolean strafingClockwise;
+	protected boolean strafingBackwards;
+	protected int strafingTime = -1;
 
 	public GunGoal(T mob, double speed, int minAttackInterval, double strafeRange, double attackRange) {
 		//-1 strafe to disable strafing, -1 range to disable the max range
@@ -69,6 +69,42 @@ public class GunGoal<T extends Mob & GunMob> extends Goal {
 	public boolean requiresUpdateEveryTick() {
 		return true;
 	}
+	
+	protected void doStrafing(LivingEntity target, double targetDistance) {
+		//separated so I can do something different with the bunnies
+		if (strafeRadiusSqr > 0 && targetDistance <= strafeRadiusSqr && seeTime >= 20) {
+			mob.getNavigation().stop();
+			++strafingTime;
+		}
+		else {
+			mob.getNavigation().moveTo(target, speedModifier);
+			strafingTime = -1;
+		}
+
+		//mixing strafing
+		if (strafingTime >= 20) {
+			if (mob.getRandom().nextFloat() < 0.3) strafingClockwise = !strafingClockwise;
+			if (mob.getRandom().nextFloat() < 0.3) strafingBackwards = !strafingBackwards;
+			strafingTime = 0;
+		}
+
+		if (strafingTime > -1) {
+			if (targetDistance > strafeRadiusSqr * 0.75) strafingBackwards = false;
+			else if (targetDistance < strafeRadiusSqr * 0.25) strafingBackwards = true;
+
+			mob.getMoveControl().strafe(strafingBackwards ? -0.5F : 0.5F, strafingClockwise ? 0.5F : -0.5F);
+			Entity vehicle = mob.getControlledVehicle();
+			if (vehicle instanceof Mob) {
+				Mob mob = (Mob) vehicle;
+				mob.lookAt(target, 30, 30);
+			}
+
+			mob.lookAt(target, 30, 30);
+		}
+		else {
+			mob.getLookControl().setLookAt(target, 30, 30);
+		}
+	}
 
 	@Override
 	public void tick() {
@@ -84,38 +120,7 @@ public class GunGoal<T extends Mob & GunMob> extends Goal {
 			else --seeTime;
 
 			//strafing
-			if (strafeRadiusSqr > 0 && targetDistance <= strafeRadiusSqr && seeTime >= 20) {
-				mob.getNavigation().stop();
-				++strafingTime;
-			}
-			else {
-				mob.getNavigation().moveTo(target, speedModifier);
-				strafingTime = -1;
-			}
-
-			//mixing strafing
-			if (strafingTime >= 20) {
-				if (mob.getRandom().nextFloat() < 0.3) strafingClockwise = !strafingClockwise;
-				if (mob.getRandom().nextFloat() < 0.3) strafingBackwards = !strafingBackwards;
-				strafingTime = 0;
-			}
-
-			if (strafingTime > -1) {
-				if (targetDistance > strafeRadiusSqr * 0.75) strafingBackwards = false;
-				else if (targetDistance < strafeRadiusSqr * 0.25) strafingBackwards = true;
-
-				mob.getMoveControl().strafe(strafingBackwards ? -0.5F : 0.5F, strafingClockwise ? 0.5F : -0.5F);
-				Entity vehicle = mob.getControlledVehicle();
-				if (vehicle instanceof Mob) {
-					Mob mob = (Mob) vehicle;
-					mob.lookAt(target, 30, 30);
-				}
-
-				mob.lookAt(target, 30, 30);
-			}
-			else {
-				mob.getLookControl().setLookAt(target, 30, 30);
-			}
+			doStrafing(target, targetDistance);
 			
 			//shoot
 			if (--attackTime <= 0 && seeTime >= 20 && los && (attackRadiusSqr < 0 || targetDistance <= attackRadiusSqr)) {

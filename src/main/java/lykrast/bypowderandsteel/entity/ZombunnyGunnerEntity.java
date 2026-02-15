@@ -3,7 +3,6 @@ package lykrast.bypowderandsteel.entity;
 import javax.annotation.Nullable;
 
 import lykrast.bypowderandsteel.ByPowderAndSteel;
-import lykrast.bypowderandsteel.entity.ai.AvoidTargetGoal;
 import lykrast.bypowderandsteel.entity.ai.GunGoal;
 import lykrast.bypowderandsteel.misc.BPASUtils;
 import lykrast.bypowderandsteel.registry.BPASEffects;
@@ -15,6 +14,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageSource;
@@ -23,8 +23,10 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.MobType;
+import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.SpawnGroupData;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -41,10 +43,9 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.Vec3;
 
-public class ZombunnyGunnerEntity extends Monster implements GunMob {
-	//TODO real behavior, for now just copy pasted gunomes
-
+public class ZombunnyGunnerEntity extends Monster implements GunMob {	
 	public ZombunnyGunnerEntity(EntityType<? extends ZombunnyGunnerEntity> type, Level world) {
 		super(type, world);
 	}
@@ -52,8 +53,7 @@ public class ZombunnyGunnerEntity extends Monster implements GunMob {
 	@Override
 	protected void registerGoals() {
 		goalSelector.addGoal(1, new FloatGoal(this));
-		goalSelector.addGoal(3, new AvoidTargetGoal(this, 4, 10, 1.2));
-		goalSelector.addGoal(4, new GunGoal<>(this, 1, 4, 10));
+		goalSelector.addGoal(4, new ZombunnyGunGoal(this, 1, 4, 6, 7));
 		goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(this, 1));
 		goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 8));
 		goalSelector.addGoal(6, new RandomLookAroundGoal(this));
@@ -75,7 +75,7 @@ public class ZombunnyGunnerEntity extends Monster implements GunMob {
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
-		return BPASUtils.baseGunMobAttributes().add(Attributes.MAX_HEALTH, 20).add(Attributes.MOVEMENT_SPEED, 0.28).add(GWRAttributes.dmgTotal.get(), 0.5).add(GWRAttributes.fireDelay.get(), 2.5);
+		return BPASUtils.baseGunMobAttributes().add(Attributes.MAX_HEALTH, 20).add(Attributes.MOVEMENT_SPEED, 0.28).add(GWRAttributes.dmgTotal.get(), 1.0/3).add(GWRAttributes.fireDelay.get(), 3);
 	}
 
 	@SuppressWarnings("deprecation")
@@ -170,5 +170,70 @@ public class ZombunnyGunnerEntity extends Monster implements GunMob {
 	@Override
 	protected void playStepSound(BlockPos pos, BlockState state) {
 		this.playSound(SoundEvents.ZOMBIE_STEP, 0.15F, 1);
+	}
+	
+	private static class ZombunnyGunGoal extends GunGoal<ZombunnyGunnerEntity> {
+		public ZombunnyGunGoal(ZombunnyGunnerEntity mob, double speed, int minAttackInterval, double strafeRange, double attackRange) {
+			super(mob, speed, minAttackInterval, strafeRange, attackRange);
+		}
+		
+		@Override
+		public void stop() {
+			super.stop();
+			mob.setPose(Pose.STANDING);
+		}
+		
+		@Override
+		protected void doStrafing(LivingEntity target, double targetDistance) {
+			if (strafeRadiusSqr > 0 && targetDistance <= strafeRadiusSqr && seeTime >= 20) {
+				mob.getNavigation().stop();
+				//don't increment strafe while in the air so the jumps are more spaced
+				if (mob.onGround()) ++strafingTime;
+			}
+			else {
+				mob.getNavigation().moveTo(target, speedModifier);
+				strafingTime = -1;
+				mob.setPose(Pose.STANDING);
+			}
+
+			//mixing strafing replaced with the leaping
+			if (strafingTime >= 20) {
+				if (mob.getRandom().nextFloat() < 0.3) strafingClockwise = !strafingClockwise;
+				Vec3 vec3 = mob.getDeltaMovement();
+				Vec3 vec31 = new Vec3(target.getX() - mob.getX(), 0, target.getZ() - mob.getZ());
+				if (vec31.lengthSqr() > 1.0E-7D) {
+					vec31 = vec31.normalize().scale(0.6);
+					if (strafingBackwards) vec31 = vec31.yRot(Mth.PI);
+					else if (strafingClockwise) vec31 = vec31.yRot(Mth.HALF_PI * 0.75f); //I'm actually not sure the clockwise/counterclockwise aren't inverted but eeeeeh
+					else vec31 = vec31.yRot(-Mth.HALF_PI * 0.75f);
+					vec31 = vec31.add(vec3.scale(0.2));
+				}
+				mob.setDeltaMovement(vec31.x, 0.5, vec31.z);
+				mob.setPose(Pose.STANDING);
+				strafingTime = 0;
+				//only mix up forward/backwards after leaping
+				if (mob.getRandom().nextFloat() < 0.3) strafingBackwards = !strafingBackwards;
+			}
+			else if (strafingTime == 10) {
+				//crouch before jumping
+				mob.setPose(Pose.CROUCHING);
+			}
+
+			if (strafingTime > -1) {
+				if (targetDistance > strafeRadiusSqr * 0.75) strafingBackwards = false;
+				else if (targetDistance < strafeRadiusSqr * 0.25) strafingBackwards = true;
+
+				Entity vehicle = mob.getControlledVehicle();
+				if (vehicle instanceof Mob) {
+					Mob mob = (Mob) vehicle;
+					mob.lookAt(target, 30, 30);
+				}
+
+				mob.lookAt(target, 30, 30);
+			}
+			else {
+				mob.getLookControl().setLookAt(target, 30, 30);
+			}
+		}
 	}
 }
