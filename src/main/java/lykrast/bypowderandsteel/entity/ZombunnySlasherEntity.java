@@ -143,7 +143,6 @@ public class ZombunnySlasherEntity extends AnimatedMonster {
 		else return false;
 	}
 
-	//TODO can't pitch down the vanilla sounds enough :(
 	@Override
 	protected SoundEvent getAmbientSound() {
 		return BPASSounds.zombunnyIdle.get();

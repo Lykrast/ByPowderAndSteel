@@ -312,7 +312,7 @@
 	"subtitles.bypowderandsteel.entity.zombie_seal.spot": "Sniper spots target",
 	"subtitles.bypowderandsteel.entity.zombie_seal.unspot": "Sniper lost target",
 	"subtitles.bypowderandsteel.entity.patroller.idle": "Patroller beeps",
-	"subtitles.bypowderandsteel.entity.zombunny.idle": "Zombunny squeaks",
+	"subtitles.bypowderandsteel.entity.zombunny.idle": "Zombunny growls",
 	"subtitles.bypowderandsteel.entity.zombunny.hurt": "Zombunny hurt",
 	"subtitles.bypowderandsteel.entity.zombunny.death": "Zombunny dies",
 	"subtitles.bypowderandsteel.entity.sentry.idle": "Robot buzzes",

@@ -182,7 +182,6 @@ public class ZombunnyGunnerEntity extends Monster implements GunMob {
 		else return false;
 	}
 
-	//TODO can't pitch down the vanilla sounds enough :(
 	@Override
 	protected SoundEvent getAmbientSound() {
 		return BPASSounds.zombunnyIdle.get();
