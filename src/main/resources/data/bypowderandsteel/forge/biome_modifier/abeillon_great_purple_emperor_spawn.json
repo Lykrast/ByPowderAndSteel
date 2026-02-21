@@ -1,0 +1,10 @@
+{
+	"type": "forge:add_spawns",
+	"biomes": "#bypowderandsteel:has_abeillon",
+	"spawners": {
+		"type": "bypowderandsteel:abeillon_great_purple_emperor",
+		"weight": 3,
+		"minCount": 1,
+		"maxCount": 1
+	}
+}
