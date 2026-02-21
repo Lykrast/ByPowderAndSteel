@@ -69,7 +69,7 @@ public class BPASEntities {
 		zombunnySlasher = REG.register("zombunny_slasher", () -> EntityType.Builder.of(ZombunnySlasherEntity::new, MobCategory.MONSTER).sized(0.6F, 1.99F).clientTrackingRange(8).build(""));
 		zombunnyGunner = REG.register("zombunny_gunner", () -> EntityType.Builder.of(ZombunnyGunnerEntity::new, MobCategory.MONSTER).sized(0.6F, 1.99F).clientTrackingRange(8).build(""));
 		//jungle
-		abeillonSmallWhite = REG.register("abeillon_small_white", () -> EntityType.Builder.of(AbeillonSmallWhiteEntity::new, MobCategory.MONSTER).sized(1.75F*0.75f, 0.7F*0.75f).clientTrackingRange(8).build(""));
+		abeillonSmallWhite = REG.register("abeillon_small_white", () -> EntityType.Builder.of(AbeillonSmallWhiteEntity::new, MobCategory.MONSTER).sized(0.99f, 0.7F*0.75f).clientTrackingRange(8).build(""));
 		abeillonMonarch = REG.register("abeillon_monarch", () -> EntityType.Builder.of(AbeillonMonarchEntity::new, MobCategory.MONSTER).sized(1.75F, 0.7F).clientTrackingRange(8).build(""));
 		abeillonGPEmperor = REG.register("abeillon_great_purple_emperor", () -> EntityType.Builder.of(AbeillonGPEmperorEntity::new, MobCategory.MONSTER).sized(1.75F*1.5f, 0.7F*1.5f).clientTrackingRange(8).build(""));
 		//normal size is 1.75F, 0.7F
@@ -118,9 +118,10 @@ public class BPASEntities {
 		event.register(sabersentry.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, SaberSentryEntity::spawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
 		event.register(blastersentry.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, BlasterSentryEntity::spawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
 		//let abeillons spawn on leaves
-		event.register(abeillonSmallWhite.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING, Monster::checkMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
-		event.register(abeillonMonarch.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING, Monster::checkMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
-		event.register(abeillonGPEmperor.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING, Monster::checkMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+		SpawnPlacements.Type abeillonType = SpawnPlacements.Type.create("ABEILLON", AbeillonAbstractEntity::canSpawnAt);
+		event.register(abeillonSmallWhite.get(), abeillonType, Heightmap.Types.MOTION_BLOCKING, AbeillonAbstractEntity::spawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+		event.register(abeillonMonarch.get(), abeillonType, Heightmap.Types.MOTION_BLOCKING, AbeillonAbstractEntity::spawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+		event.register(abeillonGPEmperor.get(), abeillonType, Heightmap.Types.MOTION_BLOCKING, AbeillonAbstractEntity::spawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
 		//the rest it's just vanilla stuff, but still putting so they don't spawn on leaves or under the end islands (for skybenders)
 		//cause default seems to be no restriction
 		event.register(gunome.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);

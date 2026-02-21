@@ -23,7 +23,7 @@ public class AbeillonSmallWhiteEntity extends AbeillonAbstractEntity {
 
 	@Override
 	protected void registerGoals() {
-		goalSelector.addGoal(1, new SpiderAttackGoal(this, 1, true));
+		goalSelector.addGoal(1, new SpiderAttackGoal(this, 1, true, 1.5));
 		goalSelector.addGoal(2, new HoverWanderGoal(this));
 		goalSelector.addGoal(3, new FloatGoal(this));
 		goalSelector.addGoal(4, new LookAtPlayerGoal(this, Player.class, 8));

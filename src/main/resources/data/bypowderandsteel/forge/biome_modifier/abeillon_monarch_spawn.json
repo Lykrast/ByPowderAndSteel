@@ -4,7 +4,7 @@
 	"spawners": {
 		"type": "bypowderandsteel:abeillon_monarch",
 		"weight": 30,
-		"minCount": 2,
+		"minCount": 3,
 		"maxCount": 4
 	}
 }

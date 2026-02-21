@@ -118,7 +118,8 @@ public class AbeillonModel<T extends Mob> extends EntityModel<T> {
 		//this part from bees for the wings
 		boolean landed = entity.onGround();
 		if (landed) {
-			wingLeft.zRot = 10 * Mth.DEG_TO_RAD;
+			float f = ageInTicks * Mth.TWO_PI * 0.04f;
+			wingLeft.zRot = (Mth.cos(f) + 1) * 5 * Mth.DEG_TO_RAD;
 			wingRight.zRot = -wingLeft.zRot;
 			//walking legs, from spider
 			float f3 = -(Mth.cos(limbSwing * 0.6662F * 2 + 0) * 0.4F) * limbSwingAmount;

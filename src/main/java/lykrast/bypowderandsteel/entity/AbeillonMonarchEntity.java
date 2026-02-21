@@ -23,7 +23,7 @@ public class AbeillonMonarchEntity extends AbeillonAbstractEntity {
 	@Override
 	protected void registerGoals() {
 		//TODO more sophisticated attack
-		goalSelector.addGoal(1, new SpiderAttackGoal(this, 1, true));
+		goalSelector.addGoal(1, new SpiderAttackGoal(this, 1, true, 2));
 		goalSelector.addGoal(2, new HoverWanderGoal(this));
 		goalSelector.addGoal(3, new FloatGoal(this));
 		goalSelector.addGoal(4, new LookAtPlayerGoal(this, Player.class, 8));
