@@ -44,8 +44,8 @@ public class AbeillonGPEmperorEntity extends AbeillonAbstractEntity {
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
-		return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 100).add(Attributes.ATTACK_DAMAGE, 8).add(Attributes.MOVEMENT_SPEED, 0.35).add(Attributes.FLYING_SPEED, 0.7)
-				.add(Attributes.KNOCKBACK_RESISTANCE, 0.5);
+		return Monster.createMonsterAttributes().add(Attributes.FOLLOW_RANGE, 32).add(Attributes.MAX_HEALTH, 100).add(Attributes.ATTACK_DAMAGE, 8).add(Attributes.MOVEMENT_SPEED, 0.35)
+				.add(Attributes.FLYING_SPEED, 0.7).add(Attributes.KNOCKBACK_RESISTANCE, 0.5);
 	}
 
 	@Override

@@ -3,8 +3,8 @@
 	"biomes": "#bypowderandsteel:has_abeillon",
 	"spawners": {
 		"type": "bypowderandsteel:abeillon_small_white",
-		"weight": 70,
+		"weight": 90,
 		"minCount": 4,
-		"maxCount": 6
+		"maxCount": 7
 	}
 }

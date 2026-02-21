@@ -34,7 +34,8 @@ public class AbeillonMonarchEntity extends AbeillonAbstractEntity {
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
-		return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 20).add(Attributes.ATTACK_DAMAGE, 4).add(Attributes.MOVEMENT_SPEED, 0.35).add(Attributes.FLYING_SPEED, 0.7);
+		return Monster.createMonsterAttributes().add(Attributes.FOLLOW_RANGE, 32).add(Attributes.MAX_HEALTH, 20).add(Attributes.ATTACK_DAMAGE, 4).add(Attributes.MOVEMENT_SPEED, 0.35)
+				.add(Attributes.FLYING_SPEED, 0.8);
 	}
 
 	@Override
