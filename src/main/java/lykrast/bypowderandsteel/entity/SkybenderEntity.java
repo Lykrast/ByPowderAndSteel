@@ -1,16 +1,12 @@
 package lykrast.bypowderandsteel.entity;
 
-import java.util.EnumSet;
-
-import javax.annotation.Nullable;
-
 import lykrast.bypowderandsteel.ByPowderAndSteel;
+import lykrast.bypowderandsteel.entity.ai.HoverWanderGoal;
 import lykrast.bypowderandsteel.registry.BPASSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.tags.DamageTypeTags;
-import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -22,7 +18,6 @@ import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.control.FlyingMoveControl;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
-import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
@@ -30,8 +25,6 @@ import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.navigation.FlyingPathNavigation;
 import net.minecraft.world.entity.ai.navigation.PathNavigation;
-import net.minecraft.world.entity.ai.util.AirAndWaterRandomPos;
-import net.minecraft.world.entity.ai.util.HoverRandomPos;
 import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
@@ -56,7 +49,7 @@ public class SkybenderEntity extends AnimatedMonster {
 	@Override
 	protected void registerGoals() {
 		goalSelector.addGoal(1, new ShieldedChaseAndSwing(this, 1.2, false));
-		goalSelector.addGoal(2, new WanderGoal(this));
+		goalSelector.addGoal(2, new HoverWanderGoal(this));
 		goalSelector.addGoal(3, new FloatGoal(this));
 		goalSelector.addGoal(4, new LookAtPlayerGoal(this, Player.class, 8));
 		goalSelector.addGoal(4, new RandomLookAroundGoal(this));
@@ -171,39 +164,6 @@ public class SkybenderEntity extends AnimatedMonster {
 			}
 		}
 		playSound(BPASSounds.saberSwing.get(), 1, 1);
-	}
-
-	private static class WanderGoal extends Goal {
-		//based on beewander
-		protected SkybenderEntity skibidi;
-
-		private WanderGoal(SkybenderEntity skibidi) {
-			setFlags(EnumSet.of(Goal.Flag.MOVE));
-			this.skibidi = skibidi;
-		}
-
-		@Override
-		public boolean canUse() {
-			return skibidi.navigation.isDone() && skibidi.random.nextInt(10) == 0;
-		}
-
-		@Override
-		public boolean canContinueToUse() {
-			return skibidi.navigation.isInProgress();
-		}
-
-		@Override
-		public void start() {
-			Vec3 vec3 = this.findPos();
-			if (vec3 != null) skibidi.navigation.moveTo(skibidi.navigation.createPath(BlockPos.containing(vec3), 1), 1);
-		}
-
-		@Nullable
-		private Vec3 findPos() {
-			Vec3 vec3 = skibidi.getViewVector(0.0F);
-			Vec3 destination = HoverRandomPos.getPos(skibidi, 8, 7, vec3.x, vec3.z, Mth.HALF_PI, 3, 1);
-			return destination != null ? destination : AirAndWaterRandomPos.getPos(skibidi, 8, 4, -2, vec3.x, vec3.z, Mth.HALF_PI);
-		}
 	}
 
 	private static class ShieldedChaseAndSwing extends MeleeAttackGoal {
