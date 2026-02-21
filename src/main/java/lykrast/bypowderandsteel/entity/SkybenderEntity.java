@@ -122,7 +122,7 @@ public class SkybenderEntity extends AnimatedMonster {
 			}
 		};
 		nav.setCanOpenDoors(false);
-		nav.setCanFloat(false);
+		nav.setCanFloat(true);
 		nav.setCanPassDoors(true);
 		return nav;
 	}
