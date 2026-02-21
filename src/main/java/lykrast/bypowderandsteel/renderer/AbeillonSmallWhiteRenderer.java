@@ -12,7 +12,7 @@ public class AbeillonSmallWhiteRenderer extends MobRenderer<AbeillonSmallWhiteEn
 	private static final ResourceLocation TEXTURE = ByPowderAndSteel.rl("textures/entity/abeillon_small_white.png");
 
 	public AbeillonSmallWhiteRenderer(EntityRendererProvider.Context context) {
-		super(context, new AbeillonModel<>(context.bakeLayer(MODEL)), 0.8f);
+		super(context, new AbeillonModel<>(context.bakeLayer(MODEL)), 0.5f);
 	}
 
 	@Override
