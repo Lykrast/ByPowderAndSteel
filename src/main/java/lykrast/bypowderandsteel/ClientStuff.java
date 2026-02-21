@@ -35,6 +35,8 @@ public class ClientStuff {
 		//plains
 		event.registerEntityRenderer(BPASEntities.zombunnySlasher.get(), (context) -> new ZombunnySlasherRenderer(context));
 		event.registerEntityRenderer(BPASEntities.zombunnyGunner.get(), (context) -> new ZombunnyGunnerRenderer(context));
+		//jungle
+		event.registerEntityRenderer(BPASEntities.abeillonSmallWhite.get(), (context) -> new AbeillonSmallWhiteRenderer(context));
 		//underground
 		event.registerEntityRenderer(BPASEntities.sabersentry.get(), (context) -> new SaberSentryRenderer(context));
 		event.registerEntityRenderer(BPASEntities.blastersentry.get(), (context) -> new BlasterSentryRenderer(context));
@@ -81,6 +83,8 @@ public class ClientStuff {
 		event.registerLayerDefinition(ZombunnyGunnerRenderer.MODEL, () -> ZombunnyModel.createBodyLayer());
     	event.registerLayerDefinition(ZombunnyGunnerRenderer.INNER_ARMOR, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.INNER_ARMOR_DEFORMATION), 64, 32));
     	event.registerLayerDefinition(ZombunnyGunnerRenderer.OUTER_ARMOR, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 32));
+    	//jungle
+		event.registerLayerDefinition(AbeillonSmallWhiteRenderer.MODEL, () -> AbeillonModel.createBodyLayer());
     	//underground
 		event.registerLayerDefinition(SaberSentryModel.MODEL, () -> SaberSentryModel.createBodyLayer());
 		event.registerLayerDefinition(BlasterSentryModel.MODEL, () -> BlasterSentryModel.createBodyLayer());
