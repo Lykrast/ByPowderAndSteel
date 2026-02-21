@@ -1,5 +1,7 @@
 package lykrast.bypowderandsteel.renderer;
 
+import com.mojang.blaze3d.vertex.PoseStack;
+
 import lykrast.bypowderandsteel.ByPowderAndSteel;
 import lykrast.bypowderandsteel.entity.AbeillonSmallWhiteEntity;
 import net.minecraft.client.model.geom.ModelLayerLocation;
@@ -12,7 +14,7 @@ public class AbeillonSmallWhiteRenderer extends MobRenderer<AbeillonSmallWhiteEn
 	private static final ResourceLocation TEXTURE = ByPowderAndSteel.rl("textures/entity/abeillon_small_white.png");
 
 	public AbeillonSmallWhiteRenderer(EntityRendererProvider.Context context) {
-		super(context, new AbeillonModel<>(context.bakeLayer(MODEL)), 0.5f);
+		super(context, new AbeillonModel<>(context.bakeLayer(MODEL)), 0.4f);
 	}
 
 	@Override
@@ -23,5 +25,10 @@ public class AbeillonSmallWhiteRenderer extends MobRenderer<AbeillonSmallWhiteEn
 	@Override
 	protected float getFlipDegrees(AbeillonSmallWhiteEntity entity) {
 		return 180;
+	}
+
+	@Override
+	protected void scale(AbeillonSmallWhiteEntity entity, PoseStack pose, float partialTick) {
+		pose.scale(0.75f, 0.75f, 0.75f);
 	}
 }

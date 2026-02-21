@@ -45,7 +45,7 @@ public class AbeillonSmallWhiteEntity extends Monster {
 
 	@Override
 	protected void registerGoals() {
-		goalSelector.addGoal(1, new SpiderAttackGoal(this, 1, true));
+		goalSelector.addGoal(1, new SpiderAttackGoal(this, 1, true, 2*0.75));
 		goalSelector.addGoal(2, new HoverWanderGoal(this));
 		goalSelector.addGoal(3, new FloatGoal(this));
 		goalSelector.addGoal(4, new LookAtPlayerGoal(this, Player.class, 8));
@@ -122,8 +122,11 @@ public class AbeillonSmallWhiteEntity extends Monster {
 
 	//spider goals to be neutral in sunlight
 	protected static class SpiderAttackGoal extends MeleeAttackGoal {
-		public SpiderAttackGoal(PathfinderMob mob, double speed, boolean followingTargetEvenIfNotSeen) {
+		private double baseReachSqr;
+		public SpiderAttackGoal(PathfinderMob mob, double speed, boolean followingTargetEvenIfNotSeen, double baseReach) {
 			super(mob, speed, followingTargetEvenIfNotSeen);
+			//4.0 for spiders so 2 not squared
+			baseReachSqr = baseReach*baseReach;
 		}
 
 		@Override
@@ -141,7 +144,7 @@ public class AbeillonSmallWhiteEntity extends Monster {
 
 		@Override
 		protected double getAttackReachSqr(LivingEntity target) {
-			return (double) (4.0F + target.getBbWidth());
+			return baseReachSqr + target.getBbWidth();
 		}
 	}
 
