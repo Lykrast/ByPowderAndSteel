@@ -72,7 +72,6 @@ public class BPASEntities {
 		abeillonSmallWhite = REG.register("abeillon_small_white", () -> EntityType.Builder.of(AbeillonSmallWhiteEntity::new, MobCategory.MONSTER).sized(0.99f, 0.7F*0.75f).clientTrackingRange(8).build(""));
 		abeillonMonarch = REG.register("abeillon_monarch", () -> EntityType.Builder.of(AbeillonMonarchEntity::new, MobCategory.MONSTER).sized(1.75F, 0.7F).clientTrackingRange(8).build(""));
 		abeillonGPEmperor = REG.register("abeillon_great_purple_emperor", () -> EntityType.Builder.of(AbeillonGPEmperorEntity::new, MobCategory.MONSTER).sized(1.75F*1.5f, 0.7F*1.5f).clientTrackingRange(8).build(""));
-		//normal size is 1.75F, 0.7F
 		//underground
 		sabersentry = REG.register("sabersentry", () -> EntityType.Builder.of(SaberSentryEntity::new, MobCategory.MONSTER).sized(0.9F, 3.3F).clientTrackingRange(8).build(""));
 		blastersentry = REG.register("blastersentry", () -> EntityType.Builder.of(BlasterSentryEntity::new, MobCategory.MONSTER).sized(0.75F, 1.99F).clientTrackingRange(8).build(""));
