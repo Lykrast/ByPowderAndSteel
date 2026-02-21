@@ -36,6 +36,8 @@ public class BPASEntities {
 	public static RegistryObject<EntityType<ZombunnyGunnerEntity>> zombunnyGunner;
 	//jungle
 	public static RegistryObject<EntityType<AbeillonSmallWhiteEntity>> abeillonSmallWhite;
+	public static RegistryObject<EntityType<AbeillonMonarchEntity>> abeillonMonarch;
+	public static RegistryObject<EntityType<AbeillonGPEmperorEntity>> abeillonGPEmperor;
 	//underground
 	public static RegistryObject<EntityType<SaberSentryEntity>> sabersentry;
 	public static RegistryObject<EntityType<BlasterSentryEntity>> blastersentry;
@@ -68,6 +70,8 @@ public class BPASEntities {
 		zombunnyGunner = REG.register("zombunny_gunner", () -> EntityType.Builder.of(ZombunnyGunnerEntity::new, MobCategory.MONSTER).sized(0.6F, 1.99F).clientTrackingRange(8).build(""));
 		//jungle
 		abeillonSmallWhite = REG.register("abeillon_small_white", () -> EntityType.Builder.of(AbeillonSmallWhiteEntity::new, MobCategory.MONSTER).sized(1.75F*0.75f, 0.7F*0.75f).clientTrackingRange(8).build(""));
+		abeillonMonarch = REG.register("abeillon_monarch", () -> EntityType.Builder.of(AbeillonMonarchEntity::new, MobCategory.MONSTER).sized(1.75F, 0.7F).clientTrackingRange(8).build(""));
+		abeillonGPEmperor = REG.register("abeillon_great_purple_emperor", () -> EntityType.Builder.of(AbeillonGPEmperorEntity::new, MobCategory.MONSTER).sized(1.75F*1.5f, 0.7F*1.5f).clientTrackingRange(8).build(""));
 		//normal size is 1.75F, 0.7F
 		//underground
 		sabersentry = REG.register("sabersentry", () -> EntityType.Builder.of(SaberSentryEntity::new, MobCategory.MONSTER).sized(0.9F, 3.3F).clientTrackingRange(8).build(""));
@@ -99,6 +103,8 @@ public class BPASEntities {
 		event.put(zombunnySlasher.get(), ZombunnySlasherEntity.createAttributes().build());
 		event.put(zombunnyGunner.get(), ZombunnyGunnerEntity.createAttributes().build());
 		event.put(abeillonSmallWhite.get(), AbeillonSmallWhiteEntity.createAttributes().build());
+		event.put(abeillonMonarch.get(), AbeillonMonarchEntity.createAttributes().build());
+		event.put(abeillonGPEmperor.get(), AbeillonGPEmperorEntity.createAttributes().build());
 		event.put(sabersentry.get(), SaberSentryEntity.createAttributes().build());
 		event.put(blastersentry.get(), BlasterSentryEntity.createAttributes().build());
 		event.put(gunnubusCrimson.get(), GunnubusCrimsonEntity.createAttributes().build());
@@ -123,6 +129,8 @@ public class BPASEntities {
 		event.register(zombunnySlasher.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
 		event.register(zombunnyGunner.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
 		event.register(abeillonSmallWhite.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+		event.register(abeillonMonarch.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+		event.register(abeillonGPEmperor.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
 		event.register(gunnubusCrimson.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
 		event.register(skybender.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
 	}

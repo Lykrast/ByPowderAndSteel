@@ -15,14 +15,14 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 
-public class AbeillonSmallWhiteEntity extends AbeillonAbstractEntity {
-	public AbeillonSmallWhiteEntity(EntityType<? extends AbeillonSmallWhiteEntity> type, Level world) {
+public class AbeillonMonarchEntity extends AbeillonAbstractEntity {
+	public AbeillonMonarchEntity(EntityType<? extends AbeillonMonarchEntity> type, Level world) {
 		super(type, world);
-		xpReward = 3;
 	}
 
 	@Override
 	protected void registerGoals() {
+		//TODO more sophisticated attack
 		goalSelector.addGoal(1, new SpiderAttackGoal(this, 1, true));
 		goalSelector.addGoal(2, new HoverWanderGoal(this));
 		goalSelector.addGoal(3, new FloatGoal(this));
@@ -34,11 +34,11 @@ public class AbeillonSmallWhiteEntity extends AbeillonAbstractEntity {
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
-		return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 12).add(Attributes.ATTACK_DAMAGE, 2).add(Attributes.MOVEMENT_SPEED, 0.3).add(Attributes.FLYING_SPEED, 0.6);
+		return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 20).add(Attributes.ATTACK_DAMAGE, 4).add(Attributes.MOVEMENT_SPEED, 0.35).add(Attributes.FLYING_SPEED, 0.7);
 	}
 
 	@Override
 	protected ResourceLocation getDefaultLootTable() {
-		return ByPowderAndSteel.rl("entities/abeillon_small_white");
+		return ByPowderAndSteel.rl("entities/abeillon_monarch");
 	}
 }
