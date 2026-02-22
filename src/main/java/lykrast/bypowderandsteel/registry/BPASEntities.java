@@ -69,9 +69,10 @@ public class BPASEntities {
 		zombunnySlasher = REG.register("zombunny_slasher", () -> EntityType.Builder.of(ZombunnySlasherEntity::new, MobCategory.MONSTER).sized(0.6F, 1.99F).clientTrackingRange(8).build(""));
 		zombunnyGunner = REG.register("zombunny_gunner", () -> EntityType.Builder.of(ZombunnyGunnerEntity::new, MobCategory.MONSTER).sized(0.6F, 1.99F).clientTrackingRange(8).build(""));
 		//jungle
-		abeillonSmallWhite = REG.register("abeillon_small_white", () -> EntityType.Builder.of(AbeillonSmallWhiteEntity::new, MobCategory.MONSTER).sized(0.99f, 0.7F*0.75f).clientTrackingRange(8).build(""));
-		abeillonMonarch = REG.register("abeillon_monarch", () -> EntityType.Builder.of(AbeillonMonarchEntity::new, MobCategory.MONSTER).sized(1.75F, 0.7F).clientTrackingRange(8).build(""));
-		abeillonGPEmperor = REG.register("abeillon_great_purple_emperor", () -> EntityType.Builder.of(AbeillonGPEmperorEntity::new, MobCategory.MONSTER).sized(1.75F*1.5f, 0.7F*1.5f).clientTrackingRange(8).build(""));
+		abeillonSmallWhite = REG.register("abeillon_small_white", () -> EntityType.Builder.of(AbeillonSmallWhiteEntity::new, MobCategory.MONSTER).sized(1.25F*0.75f, 0.7F*0.75f).clientTrackingRange(8).build(""));
+		abeillonMonarch = REG.register("abeillon_monarch", () -> EntityType.Builder.of(AbeillonMonarchEntity::new, MobCategory.MONSTER).sized(1.25F, 0.7F).clientTrackingRange(8).build(""));
+		abeillonGPEmperor = REG.register("abeillon_great_purple_emperor", () -> EntityType.Builder.of(AbeillonGPEmperorEntity::new, MobCategory.MONSTER).sized(1.25F*1.5f, 0.7F*1.5f).clientTrackingRange(8).build(""));
+		//max width on monarch should be 1.75 but making it a bit smaller to match size on diagonals
 		//underground
 		sabersentry = REG.register("sabersentry", () -> EntityType.Builder.of(SaberSentryEntity::new, MobCategory.MONSTER).sized(0.9F, 3.3F).clientTrackingRange(8).build(""));
 		blastersentry = REG.register("blastersentry", () -> EntityType.Builder.of(BlasterSentryEntity::new, MobCategory.MONSTER).sized(0.75F, 1.99F).clientTrackingRange(8).build(""));
