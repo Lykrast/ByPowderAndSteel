@@ -79,6 +79,8 @@ public class BPASItems {
 	public static RegistryObject<Item> densgstenCube, densgstenCocktrail;
 	//plains
 	public static RegistryObject<Item> markspebble, assemblyMarksblade;
+	//jungle
+	public static RegistryObject<Item> abeillonswax;
 	//underground
 	public static RegistryObject<Item> damagedDevice, sentryPlating, phasesaberTemplate, batterySoda, bilkshake;
 	//nether
@@ -267,6 +269,8 @@ public class BPASItems {
 		
 		markspebble = initItem(() -> new Item(defP()), "markspebble");
 		assemblyMarksblade = initItem(() -> new Item(defP()), "assembly_marksblade");
+		
+		abeillonswax = initItem(() -> new Item(defP()), "abeillonswax");
 
 		damagedDevice = initItem(() -> new Item(defP()), "damaged_device");
 		sentryPlating = initItem(() -> new Item(defP()), "sentry_fiber_plating");
