@@ -14,8 +14,8 @@ public class ZombunnyModel<T extends Mob> extends HumanoidModel<T> {
 	public ZombunnyModel(ModelPart modelpart) {
 		super(modelpart);
 	}
-
-	public static LayerDefinition createBodyLayer() {
+	
+	public static MeshDefinition createMesh() {
 		MeshDefinition meshdefinition = HumanoidModel.createMesh(CubeDeformation.NONE, 0);
 		PartDefinition partdefinition = meshdefinition.getRoot();
 		PartDefinition body = partdefinition.getChild("body");
@@ -29,7 +29,10 @@ public class ZombunnyModel<T extends Mob> extends HumanoidModel<T> {
 		
 		body.addOrReplaceChild("breast", CubeListBuilder.create().texOffs(16, 32).addBox(-4, 0, 0, 8, 5, 3, new CubeDeformation(-0.1F)), PartPose.offsetAndRotation(0, 0, -2, -0.5236F, 0, 0));
 		body.addOrReplaceChild("tail", CubeListBuilder.create().texOffs(0, 32).addBox(-2, 8, 2, 4, 4, 2, CubeDeformation.NONE), PartPose.offset(0, 0, 0));
-		
-		return LayerDefinition.create(meshdefinition, 64, 64);
+		return meshdefinition;
+	}
+
+	public static LayerDefinition createBodyLayer() {
+		return LayerDefinition.create(createMesh(), 64, 64);
 	}
 }

@@ -60,7 +60,7 @@ public class BPASItems {
 	public static RegistryObject<ArmorItem> infernalHelmet, infernalChestplate, infernalLeggings, infernalBoots;
 	//spawn eggs
 	public static RegistryObject<Item> gunomeEgg, shrubhulkEgg, shrubsnapperEgg, cowbonesPistoleroEgg, cowbonesBuckarooEgg,
-		zombieSealEgg, sunkenPirateEgg, patrollerEgg, zombunnySlasherEgg, zombunnyGunnerEgg,
+		zombieSealEgg, sunkenPirateEgg, patrollerEgg, zombunnySlasherEgg, zombunnyGunnerEgg, zombunnyInquisitorEgg,
 		abeillonSmallWhiteEgg, abeillonMonarchSpawnEgg, abeillongGPEmperorSpawnEgg,
 		sabersentryEgg, blastersentryEgg, gunnubusCrimsonEgg, skybenderEgg;
 	//materials and food
@@ -78,7 +78,7 @@ public class BPASItems {
 	//mountain
 	public static RegistryObject<Item> densgstenCube, densgstenCocktrail;
 	//plains
-	public static RegistryObject<Item> markspebble, assemblyMarksblade;
+	public static RegistryObject<Item> markspebble, assemblyMarksblade, inquisitorialInsignia;
 	//jungle
 	public static RegistryObject<Item> abeillonswax;
 	//underground
@@ -230,6 +230,7 @@ public class BPASItems {
 		patrollerEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.patroller, 0x655985, 0x3C365C, defP()), "patroller_spawn_egg");
 		zombunnySlasherEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.zombunnySlasher, 0xF1F1F1, 0xF18787, defP()), "zombunny_slasher_spawn_egg");
 		zombunnyGunnerEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.zombunnyGunner, 0x877F76, 0x5D8F9F, defP()), "zombunny_gunner_spawn_egg");
+		zombunnyInquisitorEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.zombunnyInquisitor, 0x404040, 0xD8D8D8, defP()), "zombunny_inquisitor_spawn_egg");
 		abeillonSmallWhiteEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.abeillonSmallWhite, 0xEDC343, 0xF3F5F6, defP()), "abeillon_small_white_spawn_egg");
 		abeillonMonarchSpawnEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.abeillonMonarch, 0xEDC343, 0xE27C21, defP()), "abeillon_monarch_spawn_egg");
 		abeillongGPEmperorSpawnEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.abeillonGPEmperor, 0xEDC343, 0x1007C4, defP()), "abeillon_great_purple_emperor_spawn_egg");
@@ -269,6 +270,7 @@ public class BPASItems {
 		
 		markspebble = initItem(() -> new Item(defP()), "markspebble");
 		assemblyMarksblade = initItem(() -> new Item(defP()), "assembly_marksblade");
+		inquisitorialInsignia = initItem(() -> new FlavoredItem(defP()), "inquisitorial_insignia");
 		
 		abeillonswax = initItem(() -> new Item(defP()), "abeillonswax");
 
