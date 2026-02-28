@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.annotation.Nullable;
 
+import lykrast.bypowderandsteel.ByPowderAndSteel;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
@@ -14,9 +15,8 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 
 public class FlavoredItem extends Item {
-	//TODO using the illager font as a test
-	private static final ResourceLocation ALT_FONT = new ResourceLocation("minecraft", "illageralt");
-	private static final Style ROOT_STYLE = Style.EMPTY.withFont(ALT_FONT).withItalic(true).withColor(ChatFormatting.GRAY);
+	public static final ResourceLocation FONT = new ResourceLocation(ByPowderAndSteel.MODID, "izeret");
+	public static final Style STYLE = Style.EMPTY.withFont(FONT).withItalic(true).withColor(ChatFormatting.GRAY);
 
 	public FlavoredItem(Properties properties) {
 		super(properties);
@@ -29,7 +29,9 @@ public class FlavoredItem extends Item {
 		//though the translation is right there I guess so you just got spoiled
 		//and there's also many other ways to get spoiled (creative search, looking at the font file, finding font in commands...)
 		//I just hope at least one person has fun deciphering it the intended way
-		tooltip.add(Component.literal("By Powder and Steel i carry Her Words").withStyle(ChatFormatting.GRAY).withStyle(ROOT_STYLE));
+		//"me" instead of "I" cause it looks nicer, esp next to "my"
+		//"#" used as the libra symbol instead of "Her" as originally intended cause that makes the symbol meaning y'know?
+		tooltip.add(Component.literal("By Powder and Steel me carry # Words").withStyle(ChatFormatting.GRAY).withStyle(STYLE));
 	}
 
 }
