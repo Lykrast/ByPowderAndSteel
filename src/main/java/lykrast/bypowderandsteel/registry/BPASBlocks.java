@@ -58,6 +58,8 @@ public class BPASBlocks {
 	public static RegistryObject<Block> markstone, markstoneChiseled, markstoneTiles, markstoneTilesSmall, markstoneBricks, markstonePillar, markstoneLamp;
 	public static RegistryObject<Block> markstoneStairs, markstoneSlab, markstoneWall, markstoneTilesStairs, markstoneTilesSlab, markstoneTilesSmallStairs, markstoneTilesSmallSlab,
 		markstoneBricksStairs, markstoneBricksSlab, markstoneBricksWall;
+	//jungle
+	public static RegistryObject<Block> abeillonswaxBlock, abeillonswaxPolished, abeillonswaxBricks, abeillonswaxTiles;
 	//underground
 	public static RegistryObject<Block> damagedDeviceCrate;
 	public static RegistryObject<Block> electronicCasing, electronicScreen, electronicOscilloscope, electronicRadar, electronicLamp;
@@ -176,6 +178,12 @@ public class BPASBlocks {
 		markstoneBricksWall = makeBlock("markstone_bricks_wall", () -> new WallBlock(Block.Properties.copy(markstone.get()).forceSolidOn()));
 		markstonePillar = makeBlock("markstone_pillar", () -> new RotatedPillarBlock(Block.Properties.copy(markstone.get())));
 		markstoneLamp = makeBlock("markstone_lamp", () -> new Block(Block.Properties.copy(markstone.get()).lightLevel((state) -> 15)));
+		
+		//jungle
+		abeillonswaxBlock = makeBlock("abeillonswax_block", () -> new Block(Block.Properties.copy(Blocks.HONEYCOMB_BLOCK)));
+		abeillonswaxPolished = makeBlock("abeillonswax_polished", () -> new Block(Block.Properties.copy(abeillonswaxBlock.get())));
+		abeillonswaxBricks = makeBlock("abeillonswax_bricks", () -> new Block(Block.Properties.copy(abeillonswaxBlock.get())));
+		abeillonswaxTiles = makeBlock("abeillonswax_tiles", () -> new Block(Block.Properties.copy(abeillonswaxBlock.get())));
 
 		//underground
 		damagedDeviceCrate = makeBlock("damaged_device_crate", () -> new Block(Block.Properties.of().mapColor(DyeColor.LIGHT_BLUE).instrument(NoteBlockInstrument.BASEDRUM).strength(2,0.3f)));
