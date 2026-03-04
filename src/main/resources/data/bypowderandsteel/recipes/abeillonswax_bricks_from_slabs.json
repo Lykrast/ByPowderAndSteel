@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"group": "bypowderandsteel_abeillonswax_bricks",
+	"pattern": [
+		"#",
+		"#"
+	],
+	"key": {
+		"#": { "item": "bypowderandsteel:abeillonswax_bricks_slab" }
+	},
+	"result": { "item": "bypowderandsteel:abeillonswax_bricks" }
+}

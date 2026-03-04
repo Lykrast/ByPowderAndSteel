@@ -1,0 +1,6 @@
+{
+	"type": "minecraft:stonecutting",
+	"count": 1,
+	"ingredient": { "tag": "bypowderandsteel:stonecutting/abeillonswax_block" },
+	"result": "bypowderandsteel:abeillonswax_bricks_wall"
+}

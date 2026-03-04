@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"group": "bypowderandsteel_abeillonswax_block",
+	"pattern": [
+		"##",
+		"##"
+	],
+	"key": {
+		"#": { "item": "bypowderandsteel:abeillonswax_stairs" }
+	},
+	"result": { "item": "bypowderandsteel:abeillonswax_block", "count": 3 }
+}
