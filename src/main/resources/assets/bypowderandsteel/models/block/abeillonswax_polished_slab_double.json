@@ -1,0 +1,7 @@
+{
+	"parent": "minecraft:block/cube_column",
+	"textures": {
+		"end": "bypowderandsteel:block/abeillonswax_polished",
+		"side": "bypowderandsteel:block/abeillonswax_polished_slab"
+	}
+}

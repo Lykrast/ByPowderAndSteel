@@ -60,6 +60,8 @@ public class BPASBlocks {
 		markstoneBricksStairs, markstoneBricksSlab, markstoneBricksWall;
 	//jungle
 	public static RegistryObject<Block> abeillonswaxBlock, abeillonswaxPolished, abeillonswaxBricks, abeillonswaxTiles;
+	public static RegistryObject<Block> abeillonswaxStairs, abeillonswaxSlab, abeillonswaxWall, abeillonswaxPolishedStairs, abeillonswaxPolishedSlab,
+		abeillonswaxBricksStairs, abeillonswaxBricksSlab, abeillonswaxBricksWall, abeillonswaxTilesStairs, abeillonswaxTilesSlab;
 	//underground
 	public static RegistryObject<Block> damagedDeviceCrate;
 	public static RegistryObject<Block> electronicCasing, electronicScreen, electronicOscilloscope, electronicRadar, electronicLamp;
@@ -181,9 +183,19 @@ public class BPASBlocks {
 		
 		//jungle
 		abeillonswaxBlock = makeBlock("abeillonswax_block", () -> new Block(Block.Properties.copy(Blocks.HONEYCOMB_BLOCK)));
+		abeillonswaxStairs = makeBlock("abeillonswax_stairs", () -> new StairBlock(() -> abeillonswaxBlock.get().defaultBlockState(), Block.Properties.copy(abeillonswaxBlock.get())));
+		abeillonswaxSlab = makeBlock("abeillonswax_slab", () -> new SlabBlock(Block.Properties.copy(abeillonswaxBlock.get())));
+		abeillonswaxWall = makeBlock("abeillonswax_wall", () -> new WallBlock(Block.Properties.copy(abeillonswaxBlock.get()).forceSolidOn()));
 		abeillonswaxPolished = makeBlock("abeillonswax_polished", () -> new Block(Block.Properties.copy(abeillonswaxBlock.get())));
+		abeillonswaxPolishedStairs = makeBlock("abeillonswax_polished_stairs", () -> new StairBlock(() -> abeillonswaxPolished.get().defaultBlockState(), Block.Properties.copy(abeillonswaxBlock.get())));
+		abeillonswaxPolishedSlab = makeBlock("abeillonswax_polished_slab", () -> new SlabBlock(Block.Properties.copy(abeillonswaxBlock.get())));
 		abeillonswaxBricks = makeBlock("abeillonswax_bricks", () -> new Block(Block.Properties.copy(abeillonswaxBlock.get())));
+		abeillonswaxBricksStairs = makeBlock("abeillonswax_bricks_stairs", () -> new StairBlock(() -> abeillonswaxBricks.get().defaultBlockState(), Block.Properties.copy(abeillonswaxBlock.get())));
+		abeillonswaxBricksSlab = makeBlock("abeillonswax_bricks_slab", () -> new SlabBlock(Block.Properties.copy(abeillonswaxBlock.get())));
+		abeillonswaxBricksWall = makeBlock("abeillonswax_bricks_wall", () -> new WallBlock(Block.Properties.copy(abeillonswaxBlock.get()).forceSolidOn()));
 		abeillonswaxTiles = makeBlock("abeillonswax_tiles", () -> new Block(Block.Properties.copy(abeillonswaxBlock.get())));
+		abeillonswaxTilesStairs = makeBlock("abeillonswax_tiles_stairs", () -> new StairBlock(() -> abeillonswaxTiles.get().defaultBlockState(), Block.Properties.copy(abeillonswaxBlock.get())));
+		abeillonswaxTilesSlab = makeBlock("abeillonswax_tiles_slab", () -> new SlabBlock(Block.Properties.copy(abeillonswaxBlock.get())));
 
 		//underground
 		damagedDeviceCrate = makeBlock("damaged_device_crate", () -> new Block(Block.Properties.of().mapColor(DyeColor.LIGHT_BLUE).instrument(NoteBlockInstrument.BASEDRUM).strength(2,0.3f)));

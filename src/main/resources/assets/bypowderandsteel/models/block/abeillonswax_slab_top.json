@@ -1,0 +1,8 @@
+{
+	"parent": "minecraft:block/slab_top",
+	"textures": {
+		"bottom": "bypowderandsteel:block/abeillonswax",
+		"side": "bypowderandsteel:block/abeillonswax",
+		"top": "bypowderandsteel:block/abeillonswax"
+	}
+}

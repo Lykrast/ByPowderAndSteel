@@ -1,0 +1,10 @@
+{
+	"parent": "bypowderandsteel:block/milspec_ice_stairs_outer",
+	"textures": {
+		"bottom": "bypowderandsteel:block/abeillonswax_polished",
+		"side_bot": "bypowderandsteel:block/abeillonswax_polished_slab",
+		"top_bot": "bypowderandsteel:block/abeillonswax_polished",
+		"side_top": "bypowderandsteel:block/abeillonswax_polished_stairs",
+		"top_top": "bypowderandsteel:block/abeillonswax_polished_stairs"
+	}
+}

@@ -1,0 +1,7 @@
+{
+	"variants": {
+		"type=bottom": { "model": "bypowderandsteel:block/abeillonswax_slab" },
+		"type=top": { "model": "bypowderandsteel:block/abeillonswax_slab_top" },
+		"type=double": { "model": "bypowderandsteel:block/abeillonswax_block" }
+	}
+}
