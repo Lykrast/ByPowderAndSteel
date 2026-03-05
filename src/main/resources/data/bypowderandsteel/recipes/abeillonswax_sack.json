@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"###",
+		"###",
+		"###"
+	],
+	"key": {
+		"#": { "item": "bypowderandsteel:abeillonswax" }
+	},
+	"result": { "item": "bypowderandsteel:abeillonswax_sack" }
+}

@@ -59,6 +59,7 @@ public class BPASBlocks {
 	public static RegistryObject<Block> markstoneStairs, markstoneSlab, markstoneWall, markstoneTilesStairs, markstoneTilesSlab, markstoneTilesSmallStairs, markstoneTilesSmallSlab,
 		markstoneBricksStairs, markstoneBricksSlab, markstoneBricksWall;
 	//jungle
+	public static RegistryObject<Block> abeillonswaxSack;
 	public static RegistryObject<Block> abeillonswaxBlock, abeillonswaxPolished, abeillonswaxBricks, abeillonswaxTiles;
 	public static RegistryObject<Block> abeillonswaxStairs, abeillonswaxSlab, abeillonswaxWall, abeillonswaxPolishedStairs, abeillonswaxPolishedSlab,
 		abeillonswaxBricksStairs, abeillonswaxBricksSlab, abeillonswaxBricksWall, abeillonswaxTilesStairs, abeillonswaxTilesSlab;
@@ -182,6 +183,7 @@ public class BPASBlocks {
 		markstoneLamp = makeBlock("markstone_lamp", () -> new Block(Block.Properties.copy(markstone.get()).lightLevel((state) -> 15)));
 		
 		//jungle
+		abeillonswaxSack = makeBlock("abeillonswax_sack", () -> new Block(Block.Properties.copy(Blocks.YELLOW_WOOL)));
 		abeillonswaxBlock = makeBlock("abeillonswax_block", () -> new Block(Block.Properties.copy(Blocks.HONEYCOMB_BLOCK)));
 		abeillonswaxStairs = makeBlock("abeillonswax_stairs", () -> new StairBlock(() -> abeillonswaxBlock.get().defaultBlockState(), Block.Properties.copy(abeillonswaxBlock.get())));
 		abeillonswaxSlab = makeBlock("abeillonswax_slab", () -> new SlabBlock(Block.Properties.copy(abeillonswaxBlock.get())));

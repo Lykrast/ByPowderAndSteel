@@ -1,0 +1,7 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{ "item": "bypowderandsteel:abeillonswax_sack" }
+	],
+	"result": { "item": "bypowderandsteel:abeillonswax", "count": 9 }
+}
