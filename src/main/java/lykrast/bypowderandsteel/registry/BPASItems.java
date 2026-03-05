@@ -9,6 +9,7 @@ import lykrast.bypowderandsteel.ByPowderAndSteel;
 import lykrast.bypowderandsteel.item.*;
 import lykrast.bypowderandsteel.misc.BPASUtils;
 import lykrast.gunswithoutroses.item.BulletItem;
+import lykrast.gunswithoutroses.item.BurstGunItem;
 import lykrast.gunswithoutroses.item.ChargeGunItem;
 import lykrast.gunswithoutroses.item.GatlingItem;
 import lykrast.gunswithoutroses.item.GunItem;
@@ -45,8 +46,9 @@ public class BPASItems {
 	public static final DeferredRegister<Item> REG = DeferredRegister.create(ForgeRegistries.ITEMS, ByPowderAndSteel.MODID);
 	//guns
 	public static RegistryObject<GunItem> gunsteelGun, peashooter, cornGatling, desertRevolver, desertShotgun, arcticPistol, arcticSniper, buccaneerFlintlock, buccaneerCannon, densgstenRevolver,
-			densgstenShotgun, inquisitorialGun, raygun;
-	public static RegistryObject<GunItem> cornGatlingDiamond, desertShotgunDiamond, arcticSniperDiamond, buccaneerCannonDiamond, densgstenShotgunDiamond, bloodfueledRevolver, graviticRailgun;
+			densgstenShotgun, inquisitorialGun, abeillonRevolver, abeillonRifle, raygun;
+	public static RegistryObject<GunItem> cornGatlingDiamond, desertShotgunDiamond, arcticSniperDiamond, buccaneerCannonDiamond, densgstenShotgunDiamond, abeillonRifleDiamond,
+			bloodfueledRevolver, graviticRailgun;
 	//bullets
 	public static RegistryObject<BulletItem> gunsteelBullet, caliberry, caliberryLarge, densgstenBullet, densgstenExplosiveBullet, phaseBullet, graviticBullet;
 	//swords
@@ -119,8 +121,11 @@ public class BPASItems {
 		densgstenRevolver = initItem(() -> new GunItem(defP().durability(619), 0, 0.6, 18, 3, 10).projectiles(2).fireSound(BPASSounds.densgstenRevolver).repair(() -> Ingredient.of(densgstenCube.get())), "densgsten_revolver");
 		densgstenShotgun = initItem(() -> new ChargeGunItem(defP().durability(619), 0, 0.45, 20, 10, 10, 10).projectiles(5).fireSound(BPASSounds.densgstenShotgun).repair(() -> Ingredient.of(densgstenCube.get())), "densgsten_shotgun");
 		densgstenShotgunDiamond = initItem(() -> new ChargeGunItem(defP().durability(2504), 0, 0.6, 20, 10, 10, 10).projectiles(5).fireSound(BPASSounds.densgstenShotgun).repair(() -> Ingredient.of(Tags.Items.GEMS_DIAMOND)), "densgsten_shotgun_diamond");
-		//TODO sound and proper stats
+		//TODO sound and proper stats for inquisitorial and abeillons
 		inquisitorialGun = initItem(() -> new InquisitorialGunItem(defP().durability(1053), 1, 1, 18, 1, 20).fireSound(BPASSounds.arcticPistol).repair(() -> Ingredient.of(inquisitorialInsignia.get())), "inquisitorial_gun");
+		abeillonRevolver = initItem(() -> new BurstGunItem(defP().durability(586), 0, 0.5, 18, 3, 16, 2, 3).fireSound(BPASSounds.densgstenRevolver).repair(() -> Ingredient.of(abeillonswax.get())), "abeillon_revolver");
+		abeillonRifle = initItem(() -> new BurstGunItem(defP().durability(586), 0, 0.6, 20, 4, 16, 3, 2).fireSound(BPASSounds.desertShotgun).repair(() -> Ingredient.of(abeillonswax.get())), "abeillon_rifle");
+		abeillonRifleDiamond = initItem(() -> new BurstGunItem(defP().durability(2371), 0, 0.8, 20, 4, 16, 3, 2).fireSound(BPASSounds.desertShotgun).repair(() -> Ingredient.of(Tags.Items.GEMS_DIAMOND)), "abeillon_rifle_diamond");
 		raygun = initItem(() -> new RaygunItem(defP().durability(1053), 3, 1, 20, 0.75, 10).fireSound(BPASSounds.raygun).repair(() -> Ingredient.of(damagedDevice.get())), "raygun");
 		bloodfueledRevolver = initItem(() -> new BloodfueledGunItem(defP().durability(2666), 2, 1.5, 16, 3, 15, 3).fireSound(BPASSounds.bloodfueledRevolver).repair(() -> Ingredient.of(heptacle.get())), "bloodfueled_revolver");
 		graviticRailgun = initItem(() -> new RailgunItem(defP().durability(3123), 0, 4, 30, 1, 10, 25).projectileSpeed(4).fireSound(BPASSounds.railgun).repair(() -> Ingredient.of(Tags.Items.GEMS_DIAMOND)), "gravitic_railgun");
