@@ -45,14 +45,14 @@ public class BPASItems {
 	public static final DeferredRegister<Item> REG = DeferredRegister.create(ForgeRegistries.ITEMS, ByPowderAndSteel.MODID);
 	//guns
 	public static RegistryObject<GunItem> gunsteelGun, peashooter, cornGatling, desertRevolver, desertShotgun, arcticPistol, arcticSniper, buccaneerFlintlock, buccaneerCannon, densgstenRevolver,
-			densgstenShotgun, raygun;
+			densgstenShotgun, inquisitorialGun, raygun;
 	public static RegistryObject<GunItem> cornGatlingDiamond, desertShotgunDiamond, arcticSniperDiamond, buccaneerCannonDiamond, densgstenShotgunDiamond, bloodfueledRevolver, graviticRailgun;
 	//bullets
 	public static RegistryObject<BulletItem> gunsteelBullet, caliberry, caliberryLarge, densgstenBullet, densgstenExplosiveBullet, phaseBullet, graviticBullet;
 	//swords
 	public static RegistryObject<SwordItem> buccaneerCutlass, densgstenSword, phasesaber, phasesaberGravitic;
 	//marksblades
-	public static RegistryObject<MarksbladeItem> ironMarksblade, diamondMarksblade, netheriteMarksblade, densgstenMarksblade;
+	public static RegistryObject<MarksbladeItem> ironMarksblade, diamondMarksblade, netheriteMarksblade, densgstenMarksblade, inquisitorialMarksblade;
 	//armor
 	public static ArmorMaterial marauder, sentry, infernal;
 	public static RegistryObject<ArmorItem> marauderHelmet, marauderChestplate, marauderLeggings, marauderBoots;
@@ -119,6 +119,8 @@ public class BPASItems {
 		densgstenRevolver = initItem(() -> new GunItem(defP().durability(619), 0, 0.6, 18, 3, 10).projectiles(2).fireSound(BPASSounds.densgstenRevolver).repair(() -> Ingredient.of(densgstenCube.get())), "densgsten_revolver");
 		densgstenShotgun = initItem(() -> new ChargeGunItem(defP().durability(619), 0, 0.45, 20, 10, 10, 10).projectiles(5).fireSound(BPASSounds.densgstenShotgun).repair(() -> Ingredient.of(densgstenCube.get())), "densgsten_shotgun");
 		densgstenShotgunDiamond = initItem(() -> new ChargeGunItem(defP().durability(2504), 0, 0.6, 20, 10, 10, 10).projectiles(5).fireSound(BPASSounds.densgstenShotgun).repair(() -> Ingredient.of(Tags.Items.GEMS_DIAMOND)), "densgsten_shotgun_diamond");
+		//TODO sound and proper stats
+		inquisitorialGun = initItem(() -> new InquisitorialGunItem(defP().durability(1053), 1, 1, 18, 1, 20).fireSound(BPASSounds.arcticPistol).repair(() -> Ingredient.of(inquisitorialInsignia.get())), "inquisitorial_gun");
 		raygun = initItem(() -> new RaygunItem(defP().durability(1053), 3, 1, 20, 0.75, 10).fireSound(BPASSounds.raygun).repair(() -> Ingredient.of(damagedDevice.get())), "raygun");
 		bloodfueledRevolver = initItem(() -> new BloodfueledGunItem(defP().durability(2666), 2, 1.5, 16, 3, 15, 3).fireSound(BPASSounds.bloodfueledRevolver).repair(() -> Ingredient.of(heptacle.get())), "bloodfueled_revolver");
 		graviticRailgun = initItem(() -> new RailgunItem(defP().durability(3123), 0, 4, 30, 1, 10, 25).projectileSpeed(4).fireSound(BPASSounds.railgun).repair(() -> Ingredient.of(Tags.Items.GEMS_DIAMOND)), "gravitic_railgun");
@@ -157,6 +159,9 @@ public class BPASItems {
 		diamondMarksblade = initItem(() -> new MarksbladeItem(Tiers.DIAMOND, 1, -2.4F, 1, defP()), "diamond_marksblade"); //5 damage + 5 mark
 		netheriteMarksblade = initItem(() -> new MarksbladeItem(Tiers.NETHERITE, 1, -2.4F, 2, defP().fireResistant()), "netherite_marksblade"); //6 damage + 6 mark
 		densgstenMarksblade = initItem(() -> new MarksbladeItem(densgsten, 5, -3.4F, 4, defP()), "densgsten_marksblade"); //8 damage + 8 mark
+		Tier inquisitorial = new ForgeTier(2, 1053, 6, 2, 20, BlockTags.NEEDS_IRON_TOOL, () -> Ingredient.of(inquisitorialInsignia.get()));
+		//TODO proper stats and effect
+		inquisitorialMarksblade = initItem(() -> new InquisitorialMarksbladeItem(inquisitorial, 1, -2.4F, 1, defP()), "inquisitorial_marksblade"); //4 damage + 5 mark
 		
 		//Armor
 		//TODO sounds

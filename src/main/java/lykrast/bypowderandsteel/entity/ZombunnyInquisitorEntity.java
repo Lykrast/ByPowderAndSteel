@@ -97,11 +97,10 @@ public class ZombunnyInquisitorEntity extends Monster implements GunMob {
 	@Override
 	protected void populateDefaultEquipmentSlots(RandomSource random, DifficultyInstance difficulty) {
 		//no super to not have armor
-		//TODO unique items
 		//sword in main hand
-		setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(BPASItems.ironMarksblade.get()));
+		setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(BPASItems.inquisitorialMarksblade.get()));
 		//gun in off hand
-		setItemSlot(EquipmentSlot.OFFHAND, new ItemStack(GWRItems.ironGun.get()));
+		setItemSlot(EquipmentSlot.OFFHAND, new ItemStack(BPASItems.inquisitorialGun.get()));
 	}
 
 	@Override

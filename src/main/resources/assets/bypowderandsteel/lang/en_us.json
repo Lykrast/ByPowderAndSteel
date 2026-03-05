@@ -15,6 +15,7 @@
 	"item.bypowderandsteel.densgsten_revolver": "Densgsten Double Revolver",
 	"item.bypowderandsteel.densgsten_shotgun": "Densgsten Shotgun",
 	"item.bypowderandsteel.densgsten_shotgun_diamond": "Diamond Densgsten Shotgun",
+	"item.bypowderandsteel.inquisitorial_gun": "Prayer to Her Powder",
 	"item.bypowderandsteel.raygun": "Raygun",
 	"tooltip.bypowderandsteel.raygun": "Projectiles are slower",
 	"item.bypowderandsteel.bloodfueled_revolver": "Blood-Fueled Revolver",
@@ -44,6 +45,7 @@
 	"item.bypowderandsteel.diamond_marksblade": "Diamond Marksblade",
 	"item.bypowderandsteel.netherite_marksblade": "Netherite Marksblade",
 	"item.bypowderandsteel.densgsten_marksblade": "Densgsten Marksblade",
+	"item.bypowderandsteel.inquisitorial_marksblade": "Prayer to Her Steel",
 
 	"tooltip.bypowderandsteel.marksblade.1": "Marks target on hit",
 	"tooltip.bypowderandsteel.marksblade.2": "+%1$s damage to next bullet hit",
