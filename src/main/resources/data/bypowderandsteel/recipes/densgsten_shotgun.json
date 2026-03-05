@@ -2,13 +2,12 @@
 	"type": "minecraft:crafting_shaped",
 	"pattern": [
 		"MMF",
-		"GAH",
-		"M H"
+		"MAH",
+		"  H"
 	],
 	"key": {
 		"A": { "item": "bypowderandsteel:assembly_basic" },
 		"F": { "item": "minecraft:flint" },
-		"G": { "tag": "forge:ingots/gunsteel" },
 		"M": { "item": "bypowderandsteel:densgsten_cube" },
 		"H": { "tag": "minecraft:logs" }
 	},
