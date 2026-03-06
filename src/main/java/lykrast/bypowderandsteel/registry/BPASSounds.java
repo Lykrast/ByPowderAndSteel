@@ -16,6 +16,8 @@ public class BPASSounds {
 	public static RegistryObject<SoundEvent> arcticPistol = initSound("item.arctic_pistol.shoot"), arcticSniper = initSound("item.arctic_sniper.shoot");
 	public static RegistryObject<SoundEvent> buccaneerFlintlock = initSound("item.buccaneer_flintlock.shoot"), buccaneerCannon = initSound("item.buccaneer_cannon.shoot");
 	public static RegistryObject<SoundEvent> densgstenRevolver = initSound("item.densgsten_revolver.shoot"), densgstenShotgun = initSound("item.densgsten_shotgun.shoot");
+	public static RegistryObject<SoundEvent> inquisitorialGun = initSound("item.inquisitorial_gun.shoot");
+	public static RegistryObject<SoundEvent> abeillonRevolver = initSound("item.abeillon_revolver.shoot"), abeillonRifle = initSound("item.abeillon_rifle.shoot");
 	public static RegistryObject<SoundEvent> raygun = initSound("item.raygun.shoot");
 	public static RegistryObject<SoundEvent> bloodfueledRevolver = initSound("item.bloodfueled_revolver.shoot");
 	public static RegistryObject<SoundEvent> railgun = initSound("item.railgun.shoot"), railgunCharge = initSound("item.railgun.charge");

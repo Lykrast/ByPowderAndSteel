@@ -54,6 +54,21 @@
 		"subtitle": "subtitles.gunswithoutroses.item.shotgun.shoot",
 		"sounds": [ { "name": "bypowderandsteel:gun/densgsten_shotgun", "volume": 0.4 } ]
 	},
+	"item.inquisitorial_gun.shoot": {
+		"category": "players",
+		"subtitle": "subtitles.bypowderandsteel.item.pistol.shoot",
+		"sounds": [ { "name": "bypowderandsteel:gun/inquisitorial_gun", "volume": 0.15 } ]
+	},
+	"item.abeillon_revolver.shoot": {
+		"category": "players",
+		"subtitle": "subtitles.bypowderandsteel.item.revolver.shoot",
+		"sounds": [ { "name": "bypowderandsteel:gun/abeillon_revolver", "volume": 0.7 } ]
+	},
+	"item.abeillon_rifle.shoot": {
+		"category": "players",
+		"subtitle": "subtitles.bypowderandsteel.item.rifle.shoot",
+		"sounds": [ { "name": "bypowderandsteel:gun/abeillon_rifle", "volume": 0.1 } ]
+	},
 	"item.raygun.shoot": {
 		"category": "players",
 		"subtitle": "subtitles.bypowderandsteel.item.raygun.shoot",
