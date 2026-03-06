@@ -121,11 +121,11 @@ public class BPASItems {
 		densgstenRevolver = initItem(() -> new GunItem(defP().durability(619), 0, 0.6, 18, 3, 10).projectiles(2).fireSound(BPASSounds.densgstenRevolver).repair(() -> Ingredient.of(densgstenCube.get())), "densgsten_revolver");
 		densgstenShotgun = initItem(() -> new ChargeGunItem(defP().durability(619), 0, 0.45, 20, 10, 10, 10).projectiles(5).fireSound(BPASSounds.densgstenShotgun).repair(() -> Ingredient.of(densgstenCube.get())), "densgsten_shotgun");
 		densgstenShotgunDiamond = initItem(() -> new ChargeGunItem(defP().durability(2504), 0, 0.6, 20, 10, 10, 10).projectiles(5).fireSound(BPASSounds.densgstenShotgun).repair(() -> Ingredient.of(Tags.Items.GEMS_DIAMOND)), "densgsten_shotgun_diamond");
-		//TODO sound and proper stats for inquisitorial and abeillons
+		//TODO sound for this and abeillon and proper stats for inquisitorial
 		inquisitorialGun = initItem(() -> new InquisitorialGunItem(defP().durability(1053), 1, 1, 18, 1, 20).fireSound(BPASSounds.arcticPistol).repair(() -> Ingredient.of(inquisitorialInsignia.get())), "inquisitorial_gun");
-		abeillonRevolver = initItem(() -> new BurstGunItem(defP().durability(586), 0, 0.5, 18, 3, 16, 2, 3).fireSound(BPASSounds.densgstenRevolver).repair(() -> Ingredient.of(abeillonswax.get())), "abeillon_revolver");
-		abeillonRifle = initItem(() -> new BurstGunItem(defP().durability(586), 0, 0.6, 20, 4, 16, 3, 2).fireSound(BPASSounds.desertShotgun).repair(() -> Ingredient.of(abeillonswax.get())), "abeillon_rifle");
-		abeillonRifleDiamond = initItem(() -> new BurstGunItem(defP().durability(2371), 0, 0.8, 20, 4, 16, 3, 2).fireSound(BPASSounds.desertShotgun).repair(() -> Ingredient.of(Tags.Items.GEMS_DIAMOND)), "abeillon_rifle_diamond");
+		abeillonRevolver = initItem(() -> new BurstGunItem(defP().durability(586), 0, 0.75, 20, 5, 16, 2, 3).fireSound(BPASSounds.densgstenRevolver).chanceFreeShot(0.25).repair(() -> Ingredient.of(abeillonswax.get())), "abeillon_revolver");
+		abeillonRifle = initItem(() -> new BurstGunItem(defP().durability(586), 0, 0.4, 10, 3, 16, 3, 2).fireSound(BPASSounds.desertShotgun).chanceFreeShot(0.5).repair(() -> Ingredient.of(abeillonswax.get())), "abeillon_rifle");
+		abeillonRifleDiamond = initItem(() -> new BurstGunItem(defP().durability(2371), 0, 0.5, 10, 2, 16, 3, 2).fireSound(BPASSounds.desertShotgun).chanceFreeShot(0.5).repair(() -> Ingredient.of(Tags.Items.GEMS_DIAMOND)), "abeillon_rifle_diamond");
 		raygun = initItem(() -> new RaygunItem(defP().durability(1053), 3, 1, 20, 0.75, 10).fireSound(BPASSounds.raygun).repair(() -> Ingredient.of(damagedDevice.get())), "raygun");
 		bloodfueledRevolver = initItem(() -> new BloodfueledGunItem(defP().durability(2666), 2, 1.5, 16, 3, 15, 3).fireSound(BPASSounds.bloodfueledRevolver).repair(() -> Ingredient.of(heptacle.get())), "bloodfueled_revolver");
 		graviticRailgun = initItem(() -> new RailgunItem(defP().durability(3123), 0, 4, 30, 1, 10, 25).projectileSpeed(4).fireSound(BPASSounds.railgun).repair(() -> Ingredient.of(Tags.Items.GEMS_DIAMOND)), "gravitic_railgun");
