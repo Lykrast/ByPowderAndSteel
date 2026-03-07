@@ -1,0 +1,10 @@
+{
+	"type": "forge:add_spawns",
+	"biomes": "#bypowderandsteel:has_zombunny",
+	"spawners": {
+		"type": "bypowderandsteel:zombunny_inquisitor",
+		"weight": 3,
+		"minCount": 1,
+		"maxCount": 1
+	}
+}
