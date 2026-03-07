@@ -140,7 +140,7 @@ public class ZombunnyInquisitorEntity extends AnimatedMonster implements GunMob 
 			//mob attacks don't call sword hurtEnemy aaaaaa
 			//so cheating by putting the status effect here like cave spiders
 			if (target instanceof LivingEntity ltarget) {
-				ltarget.addEffect(new MobEffectInstance(BPASEffects.marked.get(), 5 * 20, 1), this);
+				ltarget.addEffect(new MobEffectInstance(BPASEffects.marked.get(), 5 * 20, 2), this);
 			}
 			return true;
 		}
