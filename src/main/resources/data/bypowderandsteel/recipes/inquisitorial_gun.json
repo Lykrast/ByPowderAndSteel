@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"IIF",
+		"QAH",
+		"IIH"
+	],
+	"key": {
+		"I": { "tag": "forge:ingots/iron" },
+		"A": { "item": "bypowderandsteel:assembly_diamond" },
+		"F": { "item": "minecraft:flint" },
+		"H": { "tag": "minecraft:logs" },
+		"Q": { "item": "bypowderandsteel:inquisitorial_insignia" }
+	},
+	"result": { "item": "bypowderandsteel:inquisitorial_gun" }
+}

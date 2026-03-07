@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"IDI",
+		"IDI",
+		"QAH"
+	],
+	"key": {
+		"I": { "tag": "forge:ingots/iron" },
+		"D": { "tag": "forge:gems/diamond" },
+		"A": { "item": "bypowderandsteel:assembly_marksblade" },
+		"H": { "tag": "minecraft:logs" },
+		"Q": { "item": "bypowderandsteel:inquisitorial_insignia" }
+	},
+	"result": { "item": "bypowderandsteel:inquisitorial_marksblade" }
+}
