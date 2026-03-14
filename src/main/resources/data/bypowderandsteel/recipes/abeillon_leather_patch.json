@@ -1,0 +1,9 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{ "tag": "forge:leather" },
+		{ "item": "bypowderandsteel:abeillonswax" },
+		{ "tag": "forge:string" }
+	],
+	"result": { "item": "bypowderandsteel:abeillon_leather_patch" }
+}

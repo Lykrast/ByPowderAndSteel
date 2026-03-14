@@ -1,0 +1,11 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"###",
+		"# #"
+	],
+	"key": {
+		"#": { "item": "bypowderandsteel:abeillon_leather_patch" }
+	},
+	"result": { "item": "bypowderandsteel:abeillon_helmet" }
+}

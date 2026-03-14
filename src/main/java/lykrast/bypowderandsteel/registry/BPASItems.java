@@ -56,8 +56,9 @@ public class BPASItems {
 	//marksblades
 	public static RegistryObject<MarksbladeItem> ironMarksblade, diamondMarksblade, netheriteMarksblade, densgstenMarksblade, inquisitorialMarksblade;
 	//armor
-	public static ArmorMaterial marauder, sentry, infernal;
+	public static ArmorMaterial marauder, abeillonArmor, sentry, infernal;
 	public static RegistryObject<ArmorItem> marauderHelmet, marauderChestplate, marauderLeggings, marauderBoots;
+	public static RegistryObject<ArmorItem> abeillonHelmet, abeillonChestplate, abeillonLeggings, abeillonBoots;
 	public static RegistryObject<ArmorItem> sentryHelmet, sentryChestplate, sentryLeggings, sentryBoots;
 	public static RegistryObject<ArmorItem> infernalHelmet, infernalChestplate, infernalLeggings, infernalBoots;
 	//spawn eggs
@@ -82,7 +83,7 @@ public class BPASItems {
 	//plains
 	public static RegistryObject<Item> markspebble, assemblyMarksblade, inquisitorialInsignia;
 	//jungle
-	public static RegistryObject<Item> abeillonswax;
+	public static RegistryObject<Item> abeillonswax, abeillonPatch;
 	//underground
 	public static RegistryObject<Item> damagedDevice, sentryPlating, phasesaberTemplate, batterySoda, bilkshake;
 	//nether
@@ -186,6 +187,27 @@ public class BPASItems {
 		marauderBoots = initItem(() -> new AttributeArmorItem(marauder, ArmorItem.Type.BOOTS, defP())
 				.attribute(GWRAttributes.dmgBase, new AttributeModifier(BPASUtils.armorUUID(ArmorItem.Type.BOOTS), "gundmg", 0.5, AttributeModifier.Operation.ADDITION))
 				.done(), "marauder_boots");
+		abeillonArmor = new CustomArmorMaterial("abeillon", 7, Map.of(
+				ArmorItem.Type.HELMET, 1,
+				ArmorItem.Type.CHESTPLATE, 3,
+				ArmorItem.Type.LEGGINGS, 2,
+				ArmorItem.Type.BOOTS, 1), 20, () -> SoundEvents.ARMOR_EQUIP_LEATHER, () -> abeillonPatch.get(), 0, 0);
+		abeillonHelmet = initItem(() -> new AttributeArmorItem(abeillonArmor, ArmorItem.Type.HELMET, defP())
+				.attribute(GWRAttributes.fireDelay, new AttributeModifier(BPASUtils.armorUUID(ArmorItem.Type.HELMET), "gunspd", -0.04, AttributeModifier.Operation.MULTIPLY_BASE))
+				.attribute(GWRAttributes.chanceUseAmmo, new AttributeModifier(BPASUtils.armorUUID(ArmorItem.Type.HELMET), "ammosave", -0.04, AttributeModifier.Operation.MULTIPLY_BASE))
+				.done(), "abeillon_helmet");
+		abeillonChestplate = initItem(() -> new AttributeArmorItem(abeillonArmor, ArmorItem.Type.CHESTPLATE, defP())
+				.attribute(GWRAttributes.fireDelay, new AttributeModifier(BPASUtils.armorUUID(ArmorItem.Type.CHESTPLATE), "gunspd", -0.1, AttributeModifier.Operation.MULTIPLY_BASE))
+				.attribute(GWRAttributes.chanceUseAmmo, new AttributeModifier(BPASUtils.armorUUID(ArmorItem.Type.CHESTPLATE), "ammosave", -0.1, AttributeModifier.Operation.MULTIPLY_BASE))
+				.done(), "abeillon_chestplate");
+		abeillonLeggings = initItem(() -> new AttributeArmorItem(abeillonArmor, ArmorItem.Type.LEGGINGS, defP())
+				.attribute(GWRAttributes.fireDelay, new AttributeModifier(BPASUtils.armorUUID(ArmorItem.Type.LEGGINGS), "gunspd", -0.08, AttributeModifier.Operation.MULTIPLY_BASE))
+				.attribute(GWRAttributes.chanceUseAmmo, new AttributeModifier(BPASUtils.armorUUID(ArmorItem.Type.LEGGINGS), "ammosave", -0.08, AttributeModifier.Operation.MULTIPLY_BASE))
+				.done(), "abeillon_leggings");
+		abeillonBoots = initItem(() -> new AttributeArmorItem(abeillonArmor, ArmorItem.Type.BOOTS, defP())
+				.attribute(GWRAttributes.fireDelay, new AttributeModifier(BPASUtils.armorUUID(ArmorItem.Type.BOOTS), "gunspd", -0.03, AttributeModifier.Operation.MULTIPLY_BASE))
+				.attribute(GWRAttributes.chanceUseAmmo, new AttributeModifier(BPASUtils.armorUUID(ArmorItem.Type.BOOTS), "ammosave", -0.03, AttributeModifier.Operation.MULTIPLY_BASE))
+				.done(), "abeillon_boots");
 		//similar to iron
 		sentry = new CustomArmorMaterial("sentry", 17, Map.of(
 				ArmorItem.Type.HELMET, 2,
@@ -193,13 +215,13 @@ public class BPASItems {
 				ArmorItem.Type.LEGGINGS, 5,
 				ArmorItem.Type.BOOTS, 2), 7, () -> SoundEvents.ARMOR_EQUIP_IRON, () -> sentryPlating.get(), 0, 0);
 		sentryHelmet = initItem(() -> new AttributeArmorItem(sentry, ArmorItem.Type.HELMET, defP())
-				.attribute(GWRAttributes.spread, new AttributeModifier(BPASUtils.armorUUID(ArmorItem.Type.HELMET), "gunspread", -0.2, AttributeModifier.Operation.MULTIPLY_TOTAL))
+				.attribute(GWRAttributes.spread, new AttributeModifier(BPASUtils.armorUUID(ArmorItem.Type.HELMET), "gunspread", -0.2, AttributeModifier.Operation.MULTIPLY_BASE))
 				.done(), "sentry_helmet");
 		sentryChestplate = initItem(() -> new AttributeArmorItem(sentry, ArmorItem.Type.CHESTPLATE, defP())
-				.attribute(GWRAttributes.chanceUseAmmo, new AttributeModifier(BPASUtils.armorUUID(ArmorItem.Type.CHESTPLATE), "ammosave", -0.2, AttributeModifier.Operation.MULTIPLY_TOTAL))
+				.attribute(GWRAttributes.chanceUseAmmo, new AttributeModifier(BPASUtils.armorUUID(ArmorItem.Type.CHESTPLATE), "ammosave", -0.2, AttributeModifier.Operation.MULTIPLY_BASE))
 				.done(), "sentry_chestplate");
 		sentryLeggings = initItem(() -> new AttributeArmorItem(sentry, ArmorItem.Type.LEGGINGS, defP())
-				.attribute(GWRAttributes.fireDelay, new AttributeModifier(BPASUtils.armorUUID(ArmorItem.Type.LEGGINGS), "gunspd", -0.15, AttributeModifier.Operation.MULTIPLY_TOTAL))
+				.attribute(GWRAttributes.fireDelay, new AttributeModifier(BPASUtils.armorUUID(ArmorItem.Type.LEGGINGS), "gunspd", -0.15, AttributeModifier.Operation.MULTIPLY_BASE))
 				.done(), "sentry_leggings");
 		sentryBoots = initItem(() -> new AttributeArmorItem(sentry, ArmorItem.Type.BOOTS, defP())
 				.attribute(Attributes.KNOCKBACK_RESISTANCE, new AttributeModifier(BPASUtils.armorUUID(ArmorItem.Type.BOOTS), "Armor knockback resistance", 0.3, AttributeModifier.Operation.ADDITION))
@@ -281,6 +303,7 @@ public class BPASItems {
 		inquisitorialInsignia = initItem(() -> new FlavoredItem(defP()), "inquisitorial_insignia");
 		
 		abeillonswax = initItem(() -> new Item(defP()), "abeillonswax");
+		abeillonPatch = initItem(() -> new Item(defP()), "abeillon_leather_patch");
 
 		damagedDevice = initItem(() -> new Item(defP()), "damaged_device");
 		sentryPlating = initItem(() -> new Item(defP()), "sentry_fiber_plating");
