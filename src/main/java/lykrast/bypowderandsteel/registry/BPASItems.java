@@ -30,6 +30,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.Tiers;
@@ -83,7 +84,7 @@ public class BPASItems {
 	//plains
 	public static RegistryObject<Item> markspebble, assemblyMarksblade, inquisitorialInsignia;
 	//jungle
-	public static RegistryObject<Item> abeillonswax, abeillonPatch;
+	public static RegistryObject<Item> abeillonswax, abeillonPatch, imperialExtract;
 	//underground
 	public static RegistryObject<Item> damagedDevice, sentryPlating, phasesaberTemplate, batterySoda, bilkshake;
 	//nether
@@ -122,7 +123,7 @@ public class BPASItems {
 		densgstenRevolver = initItem(() -> new GunItem(defP().durability(619), 0, 0.6, 18, 3, 10).projectiles(2).fireSound(BPASSounds.densgstenRevolver).repair(() -> Ingredient.of(densgstenCube.get())), "densgsten_revolver");
 		densgstenShotgun = initItem(() -> new ChargeGunItem(defP().durability(619), 0, 0.45, 20, 10, 10, 10).projectiles(5).fireSound(BPASSounds.densgstenShotgun).repair(() -> Ingredient.of(densgstenCube.get())), "densgsten_shotgun");
 		densgstenShotgunDiamond = initItem(() -> new ChargeGunItem(defP().durability(2504), 0, 0.6, 20, 10, 10, 10).projectiles(5).fireSound(BPASSounds.densgstenShotgun).repair(() -> Ingredient.of(Tags.Items.GEMS_DIAMOND)), "densgsten_shotgun_diamond");
-		inquisitorialGun = initItem(() -> new InquisitorialGunItem(defP().durability(1653), 0, 1.75, 21, 1.5, 20).fireSound(BPASSounds.inquisitorialGun).repair(() -> Ingredient.of(Tags.Items.GEMS_DIAMOND)), "inquisitorial_gun");
+		inquisitorialGun = initItem(() -> new InquisitorialGunItem(defP().durability(1653).rarity(Rarity.UNCOMMON), 0, 1.75, 21, 1.5, 20).fireSound(BPASSounds.inquisitorialGun).repair(() -> Ingredient.of(Tags.Items.GEMS_DIAMOND)), "inquisitorial_gun");
 		abeillonRevolver = initItem(() -> new BurstGunItem(defP().durability(586), 0, 0.75, 20, 5, 16, 2, 3).fireSound(BPASSounds.abeillonRevolver).chanceFreeShot(0.25).repair(() -> Ingredient.of(abeillonswax.get())), "abeillon_revolver");
 		abeillonRifle = initItem(() -> new BurstGunItem(defP().durability(586), 0, 0.4, 10, 3, 16, 3, 2).fireSound(BPASSounds.abeillonRifle).chanceFreeShot(0.5).repair(() -> Ingredient.of(abeillonswax.get())), "abeillon_rifle");
 		abeillonRifleDiamond = initItem(() -> new BurstGunItem(defP().durability(2371), 0, 0.5, 10, 2, 16, 3, 2).fireSound(BPASSounds.abeillonRifle).chanceFreeShot(0.5).repair(() -> Ingredient.of(Tags.Items.GEMS_DIAMOND)), "abeillon_rifle_diamond");
@@ -165,7 +166,7 @@ public class BPASItems {
 		netheriteMarksblade = initItem(() -> new MarksbladeItem(Tiers.NETHERITE, 1, -2.4F, 2, defP().fireResistant()), "netherite_marksblade"); //6 damage + 6 mark
 		densgstenMarksblade = initItem(() -> new MarksbladeItem(densgsten, 5, -3.4F, 4, defP()), "densgsten_marksblade"); //8 damage + 8 mark
 		Tier inquisitorial = new ForgeTier(3, 1653, 6, 3, 20, BlockTags.NEEDS_DIAMOND_TOOL, () -> Ingredient.of(Tags.Items.GEMS_DIAMOND));
-		inquisitorialMarksblade = initItem(() -> new InquisitorialMarksbladeItem(inquisitorial, 1, -2.4F, 2, defP()), "inquisitorial_marksblade"); //5 damage + 6 mark
+		inquisitorialMarksblade = initItem(() -> new InquisitorialMarksbladeItem(inquisitorial, 1, -2.4F, 2, defP().rarity(Rarity.UNCOMMON)), "inquisitorial_marksblade"); //5 damage + 6 mark
 		
 		//Armor
 		//TODO sounds
@@ -300,10 +301,11 @@ public class BPASItems {
 		
 		markspebble = initItem(() -> new Item(defP()), "markspebble");
 		assemblyMarksblade = initItem(() -> new Item(defP()), "assembly_marksblade");
-		inquisitorialInsignia = initItem(() -> new FlavoredItem(defP()), "inquisitorial_insignia");
+		inquisitorialInsignia = initItem(() -> new FlavoredItem(defP().rarity(Rarity.UNCOMMON)), "inquisitorial_insignia");
 		
 		abeillonswax = initItem(() -> new Item(defP()), "abeillonswax");
 		abeillonPatch = initItem(() -> new Item(defP()), "abeillon_leather_patch");
+		imperialExtract = initItem(() -> new Item(defP().rarity(Rarity.UNCOMMON)), "imperial_extract");
 
 		damagedDevice = initItem(() -> new Item(defP()), "damaged_device");
 		sentryPlating = initItem(() -> new Item(defP()), "sentry_fiber_plating");
