@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"IIF",
+		"QAH",
+		"IIH"
+	],
+	"key": {
+		"I": { "tag": "forge:ingots/gold" },
+		"A": { "item": "bypowderandsteel:assembly_diamond" },
+		"F": { "item": "minecraft:flint" },
+		"H": { "tag": "minecraft:coals" },
+		"Q": { "item": "bypowderandsteel:imperial_extract" }
+	},
+	"result": { "item": "bypowderandsteel:imperial_rifle" }
+}
