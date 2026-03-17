@@ -82,9 +82,9 @@ public class BPASItems {
 	//mountain
 	public static RegistryObject<Item> densgstenCube, densgstenCocktrail;
 	//plains
-	public static RegistryObject<Item> markspebble, assemblyMarksblade, inquisitorialInsignia;
+	public static RegistryObject<Item> markspebble, assemblyMarksblade, inquisitorialInsignia, inquisitorialBread;
 	//jungle
-	public static RegistryObject<Item> abeillonswax, abeillonPatch, imperialExtract;
+	public static RegistryObject<Item> abeillonswax, abeillonPatch, imperialExtract, imperialPie;
 	//underground
 	public static RegistryObject<Item> damagedDevice, sentryPlating, phasesaberTemplate, batterySoda, bilkshake;
 	//nether
@@ -303,10 +303,12 @@ public class BPASItems {
 		markspebble = initItem(() -> new Item(defP()), "markspebble");
 		assemblyMarksblade = initItem(() -> new Item(defP()), "assembly_marksblade");
 		inquisitorialInsignia = initItem(() -> new FlavoredItem(defP().rarity(Rarity.UNCOMMON)), "inquisitorial_insignia");
+		inquisitorialBread = initItem(() -> new FlavoredItem(defP().rarity(Rarity.UNCOMMON).food(food(5, 0.8))), "inquisitorial_bread");
 		
 		abeillonswax = initItem(() -> new Item(defP()), "abeillonswax");
 		abeillonPatch = initItem(() -> new Item(defP()), "abeillon_leather_patch");
 		imperialExtract = initItem(() -> new Item(defP().rarity(Rarity.UNCOMMON)), "imperial_extract");
+		imperialPie = initItem(() -> new Item(defP().rarity(Rarity.UNCOMMON).food(food(16, 0.8))), "imperial_pie");
 
 		damagedDevice = initItem(() -> new Item(defP()), "damaged_device");
 		sentryPlating = initItem(() -> new Item(defP()), "sentry_fiber_plating");

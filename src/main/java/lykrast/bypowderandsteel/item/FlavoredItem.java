@@ -29,9 +29,18 @@ public class FlavoredItem extends Item {
 		//though the translation is right there I guess so you just got spoiled
 		//and there's also many other ways to get spoiled (creative search, looking at the font file, finding font in commands...)
 		//I just hope at least one person has fun deciphering it the intended way
-		//"me" instead of "I" cause it looks nicer, esp next to "my"
-		//"#" used as the libra symbol instead of "Her" as originally intended cause that makes the symbol meaning y'know?
-		tooltip.add(Component.literal("By Powder and Steel me carry # Words").withStyle(ChatFormatting.GRAY).withStyle(STYLE));
+		if (stack.getFoodProperties(null) != null) {
+			//hacky way to distinguish the bread and insignia, will extract that properly like if I need to make more of these items
+			//until now that'll do and mostly that hides the translated message to anyone peeking at the item registration
+			//(I mean they can easily peek here too but y'know one more step, hopefully prevent unwanted spoilers)
+			//"#" used as the libra symbol instead of "Her" as originally intended cause that makes the symbol meaning y'know?
+			tooltip.add(Component.literal("To eat is to sustain our Life").withStyle(ChatFormatting.GRAY).withStyle(STYLE));
+			tooltip.add(Component.literal("Without Life # Words are lost").withStyle(ChatFormatting.GRAY).withStyle(STYLE));
+		}
+		else {
+			//"me" instead of "I" cause it looks nicer, esp next to "my"
+			tooltip.add(Component.literal("By Powder and Steel me carry # Words").withStyle(ChatFormatting.GRAY).withStyle(STYLE));
+		}
 	}
 
 }

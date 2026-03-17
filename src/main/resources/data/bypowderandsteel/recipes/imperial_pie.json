@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{ "item": "bypowderandsteel:imperial_extract" },
+		{ "item": "minecraft:sugar" },
+		{ "tag": "forge:eggs" },
+		{ "item": "bypowderandsteel:abeillonswax" },
+		{ "item": "bypowderandsteel:abeillonswax" },
+		{ "item": "bypowderandsteel:abeillonswax" }
+	],
+	"result": { "item": "bypowderandsteel:imperial_pie" }
+}

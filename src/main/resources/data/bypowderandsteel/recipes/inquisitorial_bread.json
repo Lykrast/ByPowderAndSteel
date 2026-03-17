@@ -1,0 +1,13 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{ "item": "bypowderandsteel:inquisitorial_insignia" },
+		{ "item": "minecraft:wheat" },
+		{ "item": "minecraft:wheat" },
+		{ "item": "minecraft:wheat" },
+		{ "item": "minecraft:carrot" },
+		{ "item": "minecraft:carrot" },
+		{ "item": "minecraft:carrot" }
+	],
+	"result": { "item": "bypowderandsteel:inquisitorial_bread", "count": 4 }
+}
