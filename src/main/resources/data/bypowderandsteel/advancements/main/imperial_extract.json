@@ -1,0 +1,19 @@
+{
+	"parent": "bypowderandsteel:main/abeillonswax",
+	"display": {
+		"icon": { "item": "bypowderandsteel:imperial_extract" },
+		"title": { "translate": "advancements.bypowderandsteel.imperial_extract.title" },
+		"description": { "translate": "advancements.bypowderandsteel.imperial_extract.description" },
+		"frame": "challenge",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": true
+	},
+	"criteria": {
+		"get_item": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": { "items": [{ "items": ["bypowderandsteel:imperial_extract"] }] }
+		}
+	},
+	"requirements": [["get_item"]]
+}
