@@ -1,0 +1,14 @@
+{
+	"registry_name": "bypowderandsteel:abeillon_monarch",
+	"primary_type": "aerial",
+	"spirits": [
+		{
+			"spirit": "aerial",
+			"count": 1
+		},
+		{
+			"spirit": "wicked",
+			"count": 2
+		}
+	]
+}

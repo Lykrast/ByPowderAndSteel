@@ -1,0 +1,14 @@
+{
+	"registry_name": "bypowderandsteel:abeillon_great_purple_emperor",
+	"primary_type": "aerial",
+	"spirits": [
+		{
+			"spirit": "aerial",
+			"count": 3
+		},
+		{
+			"spirit": "wicked",
+			"count": 3
+		}
+	]
+}

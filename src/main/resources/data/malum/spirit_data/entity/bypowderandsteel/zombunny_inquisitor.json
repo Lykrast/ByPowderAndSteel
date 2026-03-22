@@ -1,0 +1,18 @@
+{
+	"registry_name": "bypowderandsteel:zombunny_inquisitor",
+	"primary_type": "sacred",
+	"spirits": [
+		{
+			"spirit": "sacred",
+			"count": 4
+		},
+		{
+			"spirit": "earthen",
+			"count": 1
+		},
+		{
+			"spirit": "wicked",
+			"count": 1
+		}
+	]
+}
