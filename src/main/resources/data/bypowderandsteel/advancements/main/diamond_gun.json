@@ -4,7 +4,7 @@
 		"icon": { "item": "bypowderandsteel:desert_shotgun_diamond" },
 		"title": { "translate": "advancements.bypowderandsteel.diamond_gun.title" },
 		"description": { "translate": "advancements.bypowderandsteel.diamond_gun.description" },
-		"frame": "task",
+		"frame": "goal",
 		"show_toast": true,
 		"announce_to_chat": true,
 		"hidden": false
