@@ -3,11 +3,11 @@ package lykrast.bypowderandsteel.entity;
 import javax.annotation.Nullable;
 
 import lykrast.bypowderandsteel.ByPowderAndSteel;
+import lykrast.bypowderandsteel.registry.BPASSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.TagKey;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.Difficulty;
@@ -113,20 +113,19 @@ public abstract class AbeillonAbstractEntity extends Monster {
 		return MobType.ARTHROPOD;
 	}
 
-	//TODO sounds
 	@Override
 	protected SoundEvent getAmbientSound() {
-		return SoundEvents.SPIDER_AMBIENT;
+		return BPASSounds.abeillonIdle.get();
 	}
 
 	@Override
 	protected SoundEvent getHurtSound(DamageSource source) {
-		return SoundEvents.BEE_HURT;
+		return BPASSounds.abeillonHurt.get();
 	}
 
 	@Override
 	protected SoundEvent getDeathSound() {
-		return SoundEvents.BEE_DEATH;
+		return BPASSounds.abeillonDeath.get();
 	}
 
 	//spider goals to be neutral in sunlight

@@ -206,6 +206,30 @@
 			{ "name": "bypowderandsteel:zombunny/death", "volume": 1.0 }
 		]
 	},
+	"entity.abeillon.idle": {
+		"subtitle": "subtitles.bypowderandsteel.entity.abeillon.idle",
+		"sounds": [
+			{ "name": "minecraft:mob/bee/pollinate1", "pitch": 0.8 },
+			{ "name": "minecraft:mob/bee/pollinate2", "pitch": 0.8 },
+			{ "name": "minecraft:mob/bee/pollinate3", "pitch": 0.8 },
+			{ "name": "minecraft:mob/bee/pollinate4", "pitch": 0.8 }
+		]
+	},
+	"entity.abeillon.hurt": {
+		"subtitle": "subtitles.bypowderandsteel.entity.abeillon.hurt",
+		"sounds": [
+			{ "name": "minecraft:mob/bee/hurt1", "pitch": 0.8 },
+			{ "name": "minecraft:mob/bee/hurt2", "pitch": 0.8 },
+			{ "name": "minecraft:mob/bee/hurt3", "pitch": 0.8 }
+		]
+	},
+	"entity.abeillon.death": {
+		"subtitle": "subtitles.bypowderandsteel.entity.abeillon.death",
+		"sounds": [
+			{ "name": "minecraft:mob/bee/death1", "pitch": 0.8 },
+			{ "name": "minecraft:mob/bee/death2", "pitch": 0.8 }
+		]
+	},
 	"entity.sentry.idle": {
 		"subtitle": "subtitles.bypowderandsteel.entity.sentry.idle",
 		"sounds": [

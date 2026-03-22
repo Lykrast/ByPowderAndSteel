@@ -36,6 +36,8 @@ public class BPASSounds {
 	public static RegistryObject<SoundEvent> patrollerIdle = initSound("entity.patroller.idle");
 	//plains
 	public static RegistryObject<SoundEvent> zombunnyIdle = initSound("entity.zombunny.idle"), zombunnyHurt = initSound("entity.zombunny.hurt"), zombunnyDeath = initSound("entity.zombunny.death");
+	//jungle
+	public static RegistryObject<SoundEvent> abeillonIdle = initSound("entity.abeillon.idle"), abeillonHurt = initSound("entity.abeillon.hurt"), abeillonDeath = initSound("entity.abeillon.death");
 	//underground
 	public static RegistryObject<SoundEvent> sentryIdle = initSound("entity.sentry.idle"), sentryHurt = initSound("entity.sentry.hurt"), sentryDeath = initSound("entity.sentry.death");
 	public static RegistryObject<SoundEvent> saberSwing = initSound("entity.sabersentry.swing"); //sabersentryIdle = initSound("entity.sabersentry.idle"), blastersentryIdle = initSound("entity.blastersentry.idle");
