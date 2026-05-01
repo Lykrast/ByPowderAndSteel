@@ -21,6 +21,7 @@ public class SaberSentryGlowLayer extends RenderLayer<SaberSentryEntity, SaberSe
 
 	public SaberSentryGlowLayer(RenderLayerParent<SaberSentryEntity, SaberSentryModel> parent, ResourceLocation baseTexture, String cosmeticPrefix) {
 		super(parent);
+		//don't forget to go update that constant when adding a new one
 		renders = new RenderType[SaberSentryEntity.COSMETICS + 1]; //+1 for the base glow
 		renders[0] = RenderType.entityTranslucentEmissive(baseTexture, false);
 		renders[1] = rl(cosmeticPrefix, "aroace");
@@ -49,6 +50,7 @@ public class SaberSentryGlowLayer extends RenderLayer<SaberSentryEntity, SaberSe
 		renders[24] = rl(cosmeticPrefix, "lesbian2"); //it looked pretty https://archive.is/20181102205136/https://medium.com/@lydiandragon/a-lesbian-flag-for-everyone-cef397b89459
 		renders[25] = rl(cosmeticPrefix, "spumoni"); //colors also from Papa's Freezeria Deluxe
 		renders[26] = rl(cosmeticPrefix, "palestine");
+		renders[27] = rl(cosmeticPrefix, "voidlesbian"); //"/void(girl|doll)? ?lesbian/" by 40796c19-532f-4e42-9c39-74c9b15f572a https://void.lgbt/objects/41d856da-f6cd-4d21-b697-0851beee20da
 		//no agender because it's 7 stripes and I only have 6 pixels :(
 		olivia = rl(cosmeticPrefix, "olivia"); //friend
 		aika = rl(cosmeticPrefix, "aika"); //from Pretty Pretty Please I Don't Want to be a Magical Girl
