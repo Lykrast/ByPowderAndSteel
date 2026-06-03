@@ -51,6 +51,7 @@ public class BPASEntities {
 	//custom bullets
 	public static RegistryObject<EntityType<SlowBulletEntity>> slowBullet;
 	public static RegistryObject<EntityType<GravityBulletEntity>> gravityBullet;
+	public static RegistryObject<EntityType<FlamethrowerBulletEntity>> flamethrowerBullet;
 	
 	static {
 		//forest
@@ -90,6 +91,7 @@ public class BPASEntities {
 		//custom bullets
 		slowBullet = REG.register("bullet_slow", () -> EntityType.Builder.<SlowBulletEntity>of(SlowBulletEntity::new, MobCategory.MISC).sized(0.3125f, 0.3125f).setUpdateInterval(2).setTrackingRange(64).setShouldReceiveVelocityUpdates(true).build(""));
 		gravityBullet = REG.register("bullet_gravity", () -> EntityType.Builder.<GravityBulletEntity>of(GravityBulletEntity::new, MobCategory.MISC).sized(0.3125f, 0.3125f).setUpdateInterval(2).setTrackingRange(64).setShouldReceiveVelocityUpdates(true).build(""));
+		flamethrowerBullet = REG.register("bullet_flamethrower", () -> EntityType.Builder.<FlamethrowerBulletEntity>of(FlamethrowerBulletEntity::new, MobCategory.MISC).sized(0.3125f*FlamethrowerBulletEntity.SCALE, 0.3125f*FlamethrowerBulletEntity.SCALE).setUpdateInterval(2).setTrackingRange(64).setShouldReceiveVelocityUpdates(true).build(""));
 	}
 
 	@SubscribeEvent

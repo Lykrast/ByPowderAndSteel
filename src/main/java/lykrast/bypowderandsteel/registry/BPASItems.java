@@ -51,7 +51,7 @@ public class BPASItems {
 	public static RegistryObject<GunItem> cornGatlingDiamond, desertShotgunDiamond, arcticSniperDiamond, buccaneerCannonDiamond, densgstenShotgunDiamond, abeillonRifleDiamond, imperialRifle,
 			bloodfueledRevolver, graviticRailgun;
 	//bullets
-	public static RegistryObject<BulletItem> gunsteelBullet, caliberry, caliberryLarge, densgstenBullet, densgstenExplosiveBullet, phaseBullet, graviticBullet;
+	public static RegistryObject<BulletItem> gunsteelBullet, caliberry, caliberryLarge, densgstenBullet, densgstenExplosiveBullet, phaseBullet, soulsBreathBullet, graviticBullet;
 	//swords
 	public static RegistryObject<SwordItem> buccaneerCutlass, densgstenSword, phasesaber, phasesaberGravitic;
 	//marksblades
@@ -139,6 +139,7 @@ public class BPASItems {
 		densgstenBullet = initItem(() -> new GravityBulletItem(defP(), 8), "densgsten_bullet");
 		densgstenExplosiveBullet = initItem(() -> new GravityExplosiveBulletItem(defP(), 8), "densgsten_explosive_bullet");
 		phaseBullet = initItem(() -> new SlowBulletItem(defP(), 8), "phase_bullet");
+		soulsBreathBullet = initItem(() -> new FlamethrowerBulletItem(defP(), 7), "souls_breath_bullet");
 		graviticBullet = initItem(() -> new GraviticBulletItem(defP(), 8), "gravitic_bullet");
 		
 		//Swords

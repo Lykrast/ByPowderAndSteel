@@ -52,6 +52,7 @@ public class ClientStuff {
 		//custom bullets
 		event.registerEntityRenderer(BPASEntities.slowBullet.get(), (context) -> new ThrownItemRenderer<>(context));
 		event.registerEntityRenderer(BPASEntities.gravityBullet.get(), (context) -> new ThrownItemRenderer<>(context));
+		event.registerEntityRenderer(BPASEntities.flamethrowerBullet.get(), (context) -> new FlamethrowerBulletRenderer(context));
 	}
 
 	@SubscribeEvent
