@@ -48,6 +48,8 @@ public class ClientStuff {
 		event.registerEntityRenderer(BPASEntities.gunnubusCrimson.get(), (context) -> new GunnubusCrimsonRenderer(context));
 		//soul sand valley
 		event.registerEntityRenderer(BPASEntities.gunnubusPale.get(), (context) -> new GunnubusPaleRenderer(context));
+		event.registerEntityRenderer(BPASEntities.ensouledSkull.get(), (context) -> new EnsouledSkullRenderer(context));
+		event.registerEntityRenderer(BPASEntities.headlessSkeleton.get(), (context) -> new HeadlessSkeletonRenderer(context));
 		//end
 		event.registerEntityRenderer(BPASEntities.skybender.get(), (context) -> new SkybenderRenderer(context));
 		//mob projectiles
@@ -109,6 +111,10 @@ public class ClientStuff {
 		event.registerLayerDefinition(GunnubusPaleRenderer.MODEL, () -> GunnubusModel.createBodyLayer());
     	event.registerLayerDefinition(GunnubusPaleRenderer.INNER_ARMOR, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.INNER_ARMOR_DEFORMATION), 64, 32));
     	event.registerLayerDefinition(GunnubusPaleRenderer.OUTER_ARMOR, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 32));
+		event.registerLayerDefinition(EnsouledSkullModel.MODEL, () -> EnsouledSkullModel.createBodyLayer());
+		event.registerLayerDefinition(HeadlessSkeletonModel.MODEL, () -> HeadlessSkeletonModel.createBodyLayer());
+    	event.registerLayerDefinition(HeadlessSkeletonModel.INNER_ARMOR, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.INNER_ARMOR_DEFORMATION), 64, 32));
+    	event.registerLayerDefinition(HeadlessSkeletonModel.OUTER_ARMOR, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 32));
 		//end
 		event.registerLayerDefinition(SkybenderModel.MODEL, () -> SkybenderModel.createBodyLayer());
     	//projectiles

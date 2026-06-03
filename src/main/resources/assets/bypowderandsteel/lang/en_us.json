@@ -274,6 +274,8 @@
 	"entity.bypowderandsteel.blastersentry": "Blaster Sentry",
 	"entity.bypowderandsteel.gunnubus_crimson": "Crimson Gunnubus",
 	"entity.bypowderandsteel.gunnubus_pale": "Pale Gunnubus",
+	"entity.bypowderandsteel.ensouled_skull": "Ensouled Skull",
+	"entity.bypowderandsteel.headless_skeleton": "Headless Skeleton",
 	"entity.bypowderandsteel.skybender": "Skybender",
 
 	"entity.bypowderandsteel.bullet_slow": "Slow Bullet",
@@ -298,6 +300,8 @@
 	"item.bypowderandsteel.blastersentry_spawn_egg": "Blaster Sentry Spawn Egg",
 	"item.bypowderandsteel.gunnubus_crimson_spawn_egg": "Crimson Gunnubus Spawn Egg",
 	"item.bypowderandsteel.gunnubus_pale_spawn_egg": "Pale Gunnubus Spawn Egg",
+	"item.bypowderandsteel.ensouled_skull_spawn_egg": "Ensouled Skull Spawn Egg",
+	"item.bypowderandsteel.headless_skeleton_spawn_egg": "Headless Skeleton Spawn Egg",
 	"item.bypowderandsteel.skybender_spawn_egg": "Skybender Spawn Egg",
 
 	"entity.minecraft.villager.bypowderandsteel.gunsmith": "Gunsmith",

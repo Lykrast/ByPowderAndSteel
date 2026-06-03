@@ -66,7 +66,7 @@ public class BPASItems {
 	public static RegistryObject<Item> gunomeEgg, shrubhulkEgg, shrubsnapperEgg, cowbonesPistoleroEgg, cowbonesBuckarooEgg,
 		zombieSealEgg, sunkenPirateEgg, patrollerEgg, zombunnySlasherEgg, zombunnyGunnerEgg, zombunnyInquisitorEgg,
 		abeillonSmallWhiteEgg, abeillonMonarchSpawnEgg, abeillongGPEmperorSpawnEgg,
-		sabersentryEgg, blastersentryEgg, gunnubusCrimsonEgg, gunnubusPaleEgg, skybenderEgg;
+		sabersentryEgg, blastersentryEgg, gunnubusCrimsonEgg, gunnubusPaleEgg, ensouledSkullEgg, headlessSkeletonEgg, skybenderEgg;
 	//materials and food
 	//global
 	public static RegistryObject<Item> gunsteelScrap, gunsteelIngot, gunsteelNugget, assemblyBasic, assemblyDiamond, gunsmithingTemplate;
@@ -274,6 +274,8 @@ public class BPASItems {
 		blastersentryEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.blastersentry, 0xAAA7A6, 0xF74572, defP()), "blastersentry_spawn_egg");
 		gunnubusCrimsonEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.gunnubusCrimson, 0xDB5952, 0x4F4A47, defP()), "gunnubus_crimson_spawn_egg");
 		gunnubusPaleEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.gunnubusPale, 0xD3D3D3, 0x5BE3E8, defP()), "gunnubus_pale_spawn_egg");
+		ensouledSkullEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.ensouledSkull, 0xC1C1C1, 0x13AFB3, defP()), "ensouled_skull_spawn_egg");
+		headlessSkeletonEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.headlessSkeleton, 0xC1C1C1, 0xBCBCBC, defP()), "headless_skeleton_spawn_egg");
 		skybenderEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.skybender, 0xAAA7A6, 0x71BBF0, defP()), "skybender_spawn_egg");
 		
 		//Materials
