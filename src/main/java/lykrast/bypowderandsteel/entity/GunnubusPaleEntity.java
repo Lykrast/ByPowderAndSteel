@@ -6,7 +6,6 @@ import lykrast.bypowderandsteel.misc.BPASUtils;
 import lykrast.bypowderandsteel.registry.BPASItems;
 import lykrast.gunswithoutroses.item.BulletItem;
 import lykrast.gunswithoutroses.registry.GWRAttributes;
-import lykrast.gunswithoutroses.registry.GWRItems;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
@@ -22,21 +21,20 @@ import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
-public class GunnubusCrimsonEntity extends GunnubusAbstractEntity {
+public class GunnubusPaleEntity extends GunnubusAbstractEntity {
 	//TODO probably need a better behavior
 	
-	public GunnubusCrimsonEntity(EntityType<? extends GunnubusCrimsonEntity> type, Level world) {
+	public GunnubusPaleEntity(EntityType<? extends GunnubusPaleEntity> type, Level world) {
 		super(type, world);
 	}
 
 	@Override
 	protected void registerGoals() {
 		goalSelector.addGoal(1, new FloatGoal(this));
-		goalSelector.addGoal(4, new GunGoal<>(this, 1, 4, 16));
+		goalSelector.addGoal(4, new GunGoal<>(this, 1, 4, -1, 16));
 		goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(this, 1));
 		goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 8));
 		goalSelector.addGoal(6, new RandomLookAroundGoal(this));
@@ -48,25 +46,21 @@ public class GunnubusCrimsonEntity extends GunnubusAbstractEntity {
 	@SuppressWarnings("unchecked")
 	@Override
 	public BulletItem getBullet() {
-		return GWRItems.ironBullet.get();
+		return BPASItems.soulsBreathBullet.get();
 	}
 
 	@Override
 	protected void populateDefaultEquipmentSlots(RandomSource random, DifficultyInstance difficulty) {
-		//2/3 of the time it's iron gun, rest it's either bloodfueled or blazing
-		//want to keep the high damage ones rarer
-		Item gun = GWRItems.ironGun.get();
-		if (random.nextInt(3) == 0) gun = (random.nextBoolean() ? GWRItems.blazeGun : BPASItems.bloodfueledRevolver).get();
-		setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(gun));
+		setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(BPASUtils.randomDefaultGun(random)));
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
-		return BPASUtils.baseGunMobAttributes().add(Attributes.MAX_HEALTH, 50).add(Attributes.ARMOR, 6).add(Attributes.MOVEMENT_SPEED, 0.19).add(GWRAttributes.dmgTotal.get(), 0.75).add(GWRAttributes.fireDelay.get(), 2);
+		return BPASUtils.baseGunMobAttributes().add(Attributes.MAX_HEALTH, 50).add(Attributes.ARMOR, 6).add(Attributes.MOVEMENT_SPEED, 0.18).add(GWRAttributes.fireDelay.get(), 3.5);
 	}
 
 	@Override
 	protected ResourceLocation getDefaultLootTable() {
-		return ByPowderAndSteel.rl("entities/gunnubus_crimson");
+		return ByPowderAndSteel.rl("entities/gunnubus_pale");
 	}
 
 }

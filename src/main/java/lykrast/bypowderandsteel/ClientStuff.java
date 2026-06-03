@@ -44,7 +44,10 @@ public class ClientStuff {
 		event.registerEntityRenderer(BPASEntities.sabersentry.get(), (context) -> new SaberSentryRenderer(context));
 		event.registerEntityRenderer(BPASEntities.blastersentry.get(), (context) -> new BlasterSentryRenderer(context));
 		//nether
+		//crimson forest
 		event.registerEntityRenderer(BPASEntities.gunnubusCrimson.get(), (context) -> new GunnubusCrimsonRenderer(context));
+		//soul sand valley
+		event.registerEntityRenderer(BPASEntities.gunnubusPale.get(), (context) -> new GunnubusPaleRenderer(context));
 		//end
 		event.registerEntityRenderer(BPASEntities.skybender.get(), (context) -> new SkybenderRenderer(context));
 		//mob projectiles
@@ -98,9 +101,14 @@ public class ClientStuff {
 		event.registerLayerDefinition(SaberSentryModel.MODEL, () -> SaberSentryModel.createBodyLayer());
 		event.registerLayerDefinition(BlasterSentryModel.MODEL, () -> BlasterSentryModel.createBodyLayer());
 		//nether
+		//crimson forest
 		event.registerLayerDefinition(GunnubusCrimsonRenderer.MODEL, () -> GunnubusModel.createBodyLayer());
     	event.registerLayerDefinition(GunnubusCrimsonRenderer.INNER_ARMOR, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.INNER_ARMOR_DEFORMATION), 64, 32));
     	event.registerLayerDefinition(GunnubusCrimsonRenderer.OUTER_ARMOR, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 32));
+    	//soul sand valley
+		event.registerLayerDefinition(GunnubusPaleRenderer.MODEL, () -> GunnubusModel.createBodyLayer());
+    	event.registerLayerDefinition(GunnubusPaleRenderer.INNER_ARMOR, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.INNER_ARMOR_DEFORMATION), 64, 32));
+    	event.registerLayerDefinition(GunnubusPaleRenderer.OUTER_ARMOR, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 32));
 		//end
 		event.registerLayerDefinition(SkybenderModel.MODEL, () -> SkybenderModel.createBodyLayer());
     	//projectiles

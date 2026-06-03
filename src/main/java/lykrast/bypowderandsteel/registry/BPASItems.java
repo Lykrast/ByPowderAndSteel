@@ -66,7 +66,7 @@ public class BPASItems {
 	public static RegistryObject<Item> gunomeEgg, shrubhulkEgg, shrubsnapperEgg, cowbonesPistoleroEgg, cowbonesBuckarooEgg,
 		zombieSealEgg, sunkenPirateEgg, patrollerEgg, zombunnySlasherEgg, zombunnyGunnerEgg, zombunnyInquisitorEgg,
 		abeillonSmallWhiteEgg, abeillonMonarchSpawnEgg, abeillongGPEmperorSpawnEgg,
-		sabersentryEgg, blastersentryEgg, gunnubusCrimsonEgg, skybenderEgg;
+		sabersentryEgg, blastersentryEgg, gunnubusCrimsonEgg, gunnubusPaleEgg, skybenderEgg;
 	//materials and food
 	//global
 	public static RegistryObject<Item> gunsteelScrap, gunsteelIngot, gunsteelNugget, assemblyBasic, assemblyDiamond, gunsmithingTemplate;
@@ -88,7 +88,10 @@ public class BPASItems {
 	//underground
 	public static RegistryObject<Item> damagedDevice, sentryPlating, phasesaberTemplate, batterySoda, bilkshake;
 	//nether
+	//crimson forest
 	public static RegistryObject<Item> heptacle, infernalPatch, infernalIce;
+	//soul sand valley
+	public static RegistryObject<Item> octacle;
 	//end
 	public static RegistryObject<Item> gravioliumCell, graviticEngine;
 	
@@ -270,6 +273,7 @@ public class BPASItems {
 		sabersentryEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.sabersentry, 0xF4F4E1, 0x383635, defP()), "sabersentry_spawn_egg");
 		blastersentryEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.blastersentry, 0xAAA7A6, 0xF74572, defP()), "blastersentry_spawn_egg");
 		gunnubusCrimsonEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.gunnubusCrimson, 0xDB5952, 0x4F4A47, defP()), "gunnubus_crimson_spawn_egg");
+		gunnubusPaleEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.gunnubusPale, 0xD3D3D3, 0x5BE3E8, defP()), "gunnubus_pale_spawn_egg");
 		skybenderEgg = initItem(() -> new ForgeSpawnEggItem(BPASEntities.skybender, 0xAAA7A6, 0x71BBF0, defP()), "skybender_spawn_egg");
 		
 		//Materials
@@ -320,6 +324,8 @@ public class BPASItems {
 		heptacle = initItem(() -> new Item(defP()), "heptacle");
 		infernalPatch = initItem(() -> new Item(defP()), "infernal_enforcer_leather_patch");
 		infernalIce = initItem(() -> new ContainerFoodItem(defP().food(food(8, 0.4)).craftRemainder(Items.BOWL)), "infernal_ice_cream");
+		
+		octacle = initItem(() -> new Item(defP()), "octacle");
 		
 		gravioliumCell = initItem(() -> new Item(defP()), "graviolium_cell");
 		graviticEngine = initItem(() -> new Item(defP()), "gravitic_engine");

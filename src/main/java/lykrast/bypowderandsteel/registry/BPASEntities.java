@@ -43,7 +43,10 @@ public class BPASEntities {
 	public static RegistryObject<EntityType<SaberSentryEntity>> sabersentry;
 	public static RegistryObject<EntityType<BlasterSentryEntity>> blastersentry;
 	//nether
+	//crimson forest
 	public static RegistryObject<EntityType<GunnubusCrimsonEntity>> gunnubusCrimson;
+	//soul sand valley
+	public static RegistryObject<EntityType<GunnubusPaleEntity>> gunnubusPale;
 	//end
 	public static RegistryObject<EntityType<SkybenderEntity>> skybender;
 	//mob projectiles
@@ -80,7 +83,10 @@ public class BPASEntities {
 		sabersentry = REG.register("sabersentry", () -> EntityType.Builder.of(SaberSentryEntity::new, MobCategory.MONSTER).sized(0.9F, 3.3F).clientTrackingRange(8).build(""));
 		blastersentry = REG.register("blastersentry", () -> EntityType.Builder.of(BlasterSentryEntity::new, MobCategory.MONSTER).sized(0.75F, 1.99F).clientTrackingRange(8).build(""));
 		//nether
+		//crimson forest
 		gunnubusCrimson = REG.register("gunnubus_crimson", () -> EntityType.Builder.of(GunnubusCrimsonEntity::new, MobCategory.MONSTER).sized(1.2F, 3.99F).fireImmune().clientTrackingRange(8).build(""));
+		//soul sand valley
+		gunnubusPale = REG.register("gunnubus_pale", () -> EntityType.Builder.of(GunnubusPaleEntity::new, MobCategory.MONSTER).sized(1.2F, 3.99F).fireImmune().clientTrackingRange(8).build(""));
 		//end
 		skybender = REG.register("skybender", () -> EntityType.Builder.of(SkybenderEntity::new, MobCategory.MONSTER).sized(0.9F, 1.125F).clientTrackingRange(8).build(""));
 		
@@ -113,6 +119,7 @@ public class BPASEntities {
 		event.put(sabersentry.get(), SaberSentryEntity.createAttributes().build());
 		event.put(blastersentry.get(), BlasterSentryEntity.createAttributes().build());
 		event.put(gunnubusCrimson.get(), GunnubusCrimsonEntity.createAttributes().build());
+		event.put(gunnubusPale.get(), GunnubusPaleEntity.createAttributes().build());
 		event.put(skybender.get(), SkybenderEntity.createAttributes().build());
 	}
 	
@@ -140,6 +147,7 @@ public class BPASEntities {
 		event.register(zombunnyGunner.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
 		event.register(zombunnyInquisitor.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
 		event.register(gunnubusCrimson.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+		event.register(gunnubusPale.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
 		event.register(skybender.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
 	}
 
