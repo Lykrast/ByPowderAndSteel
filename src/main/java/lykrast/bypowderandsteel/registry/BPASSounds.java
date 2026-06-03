@@ -42,7 +42,10 @@ public class BPASSounds {
 	public static RegistryObject<SoundEvent> sentryIdle = initSound("entity.sentry.idle"), sentryHurt = initSound("entity.sentry.hurt"), sentryDeath = initSound("entity.sentry.death");
 	public static RegistryObject<SoundEvent> saberSwing = initSound("entity.sabersentry.swing"); //sabersentryIdle = initSound("entity.sabersentry.idle"), blastersentryIdle = initSound("entity.blastersentry.idle");
 	//nether
+	//crimson forest
 	public static RegistryObject<SoundEvent> gunnubusIdle = initSound("entity.gunnubus.idle"), gunnubusHurt = initSound("entity.gunnubus.hurt"), gunnubusDeath = initSound("entity.gunnubus.death");
+	//soul sand valley
+	public static RegistryObject<SoundEvent> ensouledSkullRevive = initSound("entity.ensouled_skull.revive");
 	//end
 	public static RegistryObject<SoundEvent> skybenderShield = initSound("entity.skybender.shield");
 	//public static RegistryObject<SoundEvent> skybenderIdle = initSound("entity.skybender.idle"), skybenderHurt = initSound("entity.skybender.hurt"), skybenderDeath = initSound("entity.skybender.death");

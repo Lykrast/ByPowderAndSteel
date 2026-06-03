@@ -24,4 +24,9 @@ public class EnsouledSkullRenderer extends MobRenderer<EnsouledSkullEntity, Enso
 	protected float getFlipDegrees(EnsouledSkullEntity entity) {
 		return 180;
 	}
+
+	@Override
+	protected boolean isShaking(EnsouledSkullEntity entity) {
+		return super.isShaking(entity) || entity.clientAnim == EnsouledSkullEntity.ANIM_RECOVERING;
+	}
 }

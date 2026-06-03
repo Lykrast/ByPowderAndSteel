@@ -3,8 +3,8 @@
 	"biomes": "#bypowderandsteel:has_ensouled_skull",
 	"spawners": {
 		"type": "bypowderandsteel:headless_skeleton",
-		"weight": 3,
-		"minCount": 3,
+		"weight": 4,
+		"minCount": 4,
 		"maxCount": 5
 	}
 }

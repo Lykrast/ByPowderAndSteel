@@ -1,9 +1,13 @@
 package lykrast.bypowderandsteel.entity;
 
+import java.util.EnumSet;
+
 import lykrast.bypowderandsteel.ByPowderAndSteel;
 import lykrast.bypowderandsteel.entity.ai.HoverWanderGoal;
+import lykrast.bypowderandsteel.registry.BPASSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -12,12 +16,14 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.control.FlyingMoveControl;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
+import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
@@ -39,6 +45,7 @@ public class EnsouledSkullEntity extends AnimatedMonster {
 	public static final int ANIM_NEUTRAL = 0, ANIM_OPEN = 1, ANIM_STUN = 2, ANIM_RECOVERING = 3;
 	//TODO stun/reanimate behavior
 	//TODO animate as it is approaching
+	private int stunTimer;
 
 	public EnsouledSkullEntity(EntityType<? extends EnsouledSkullEntity> type, Level world) {
 		super(type, world);
@@ -48,7 +55,8 @@ public class EnsouledSkullEntity extends AnimatedMonster {
 
 	@Override
 	protected void registerGoals() {
-		goalSelector.addGoal(1, new MeleeAttackGoal(this, 1, false));
+		goalSelector.addGoal(0, new GetStunned(this));
+		goalSelector.addGoal(1, new AnimatedChase(this, 1, false));
 		goalSelector.addGoal(2, new HoverWanderGoal(this));
 		goalSelector.addGoal(3, new FloatGoal(this));
 		goalSelector.addGoal(4, new LookAtPlayerGoal(this, Player.class, 8));
@@ -61,23 +69,33 @@ public class EnsouledSkullEntity extends AnimatedMonster {
 	@Override
 	protected void setupNewAnimation() {
 		if (clientAnim == ANIM_OPEN || clientAnim == ANIM_STUN) animDur = 3;
+		else if (clientAnim == ANIM_NEUTRAL && prevAnim == ANIM_OPEN) animDur = 2;
 		else animDur = 10;
+		if (clientAnim == ANIM_STUN) {
+			//particles, copied from villager
+			for (int i = 0; i < 6; ++i) {
+				double d0 = random.nextGaussian() * 0.02;
+				double d1 = random.nextGaussian() * 0.02;
+				double d2 = random.nextGaussian() * 0.02;
+				this.level().addParticle(ParticleTypes.LARGE_SMOKE, getRandomX(0.75), getRandomY(), getRandomZ(0.75), d0, d1, d2);
+			}
+		}
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
 		return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 12).add(Attributes.ATTACK_DAMAGE, 8).add(Attributes.MOVEMENT_SPEED, 0.4).add(Attributes.FLYING_SPEED, 0.8)
 				.add(Attributes.FOLLOW_RANGE, 20);
 	}
-	
+
 	public void eject() {
 		stopRiding();
 		push(0, 0.4, 0);
 	}
-	
+
 	public void eject(double dx, double dz) {
 		stopRiding();
-		Vec3 norm = new Vec3(dx,0,dz).normalize();
-		push(norm.x*0.2, 0.4, norm.z*0.2);
+		Vec3 norm = new Vec3(dx, 0, dz).normalize();
+		push(norm.x * 0.2, 0.4, norm.z * 0.2);
 	}
 
 	@Override
@@ -85,23 +103,27 @@ public class EnsouledSkullEntity extends AnimatedMonster {
 		boolean ret = super.hurt(source, amount);
 		//eject skull if we end up under half health
 		Entity vehicle = getVehicle();
-		if (vehicle != null && getHealth() <= getMaxHealth()/2.0 && vehicle instanceof HeadlessSkeletonEntity) {
+		if (vehicle != null && getHealth() <= getMaxHealth() / 2.0 && vehicle instanceof HeadlessSkeletonEntity) {
 			Entity damager = source.getEntity();
 			if (damager != null) eject(getX() - damager.getX(), getZ() - damager.getZ());
 			else eject();
 		}
 		return ret;
 	}
-	
-//	@Override
-//	public void die(DamageSource source) {
-//		//TODO stun behavior
-//		if (!isRemoved() && !dead && !source.is(DamageTypeTags.BYPASSES_INVULNERABILITY)) {
-//			setHealth(getMaxHealth());
-//			playSound(SoundEvents.LAVA_EXTINGUISH, getSoundVolume(), getVoicePitch());
-//		}
-//		else super.die(source);
-//	}
+
+	@Override
+	public void die(DamageSource source) {
+		if (!isRemoved() && !dead && stunTimer <= 0 && !source.is(DamageTypeTags.BYPASSES_INVULNERABILITY)) {
+			setHealth(getMaxHealth());
+			//TODO custom sound event
+			playSound(SoundEvents.FIRE_EXTINGUISH, getSoundVolume(), getVoicePitch());
+			stunTimer = 4 * 20;
+			Entity damager = source.getEntity();
+			if (damager != null) eject(getX() - damager.getX(), getZ() - damager.getZ());
+			else eject();
+		}
+		else super.die(source);
+	}
 
 	@Override
 	protected ResourceLocation getDefaultLootTable() {
@@ -117,6 +139,24 @@ public class EnsouledSkullEntity extends AnimatedMonster {
 	@Override
 	public MobType getMobType() {
 		return MobType.UNDEAD;
+	}
+
+	@Override
+	public void customServerAiStep() {
+		if (stunTimer > 0) stunTimer--;
+		super.customServerAiStep();
+	}
+
+	@Override
+	public void readAdditionalSaveData(CompoundTag compound) {
+		super.readAdditionalSaveData(compound);
+		if (compound.contains("stun")) stunTimer = compound.getInt("stun");
+	}
+
+	@Override
+	public void addAdditionalSaveData(CompoundTag compound) {
+		super.addAdditionalSaveData(compound);
+		compound.putInt("stun", stunTimer);
 	}
 
 	@Override
@@ -165,13 +205,121 @@ public class EnsouledSkullEntity extends AnimatedMonster {
 
 	@Override
 	public void aiStep() {
+		if (stunTimer > 0) {
+			setDeltaMovement(getDeltaMovement().multiply(1, 0.8, 1));
+		}
 		//particles like blazes
-		if (level().isClientSide() && !isDeadOrDying()) {
+		if (level().isClientSide() && !isDeadOrDying() && clientAnim != ANIM_STUN && clientAnim != ANIM_RECOVERING) {
 			for (int i = 0; i < 2; ++i) {
 				level().addParticle(ParticleTypes.SOUL_FIRE_FLAME, this.getRandomX(0.5D), this.getRandomY(), this.getRandomZ(0.5D), 0.0D, 0.0D, 0.0D);
 			}
 		}
 
 		super.aiStep();
+	}
+
+	private static class GetStunned extends Goal {
+		private EnsouledSkullEntity skull;
+
+		public GetStunned(EnsouledSkullEntity skull) {
+			this.skull = skull;
+			setFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.LOOK));
+		}
+
+		@Override
+		public void start() {
+			skull.setAnimation(ANIM_STUN);
+		}
+
+		@Override
+		public void stop() {
+			skull.setAnimation(ANIM_NEUTRAL);
+			skull.playSound(BPASSounds.ensouledSkullRevive.get(), skull.getSoundVolume(), skull.getVoicePitch());
+		}
+
+		@Override
+		public void tick() {
+			if (skull.stunTimer == 2 * 20) skull.setAnimation(ANIM_RECOVERING);
+			skull.getNavigation().stop();
+		}
+
+		@Override
+		public boolean requiresUpdateEveryTick() {
+			return true;
+		}
+
+		@Override
+		public boolean canUse() {
+			return skull.stunTimer > 0;
+		}
+
+	}
+
+	private static class AnimatedChase extends MeleeAttackGoal {
+		private EnsouledSkullEntity skull;
+		//ticksUntilNextAttack is private so I'm making my own countdown
+		private int animationWait, ticksUntilNextAttack;
+		private boolean jawOpen;
+
+		public AnimatedChase(EnsouledSkullEntity skull, double speed, boolean seeThroughWalls) {
+			super(skull, speed, seeThroughWalls);
+			this.skull = skull;
+		}
+
+		@Override
+		public void start() {
+			super.start();
+			skull.setAnimation(ANIM_NEUTRAL);
+			animationWait = 0;
+			ticksUntilNextAttack = 0;
+			jawOpen = false;
+		}
+
+		@Override
+		public void stop() {
+			super.stop();
+			if (skull.stunTimer <= 0) skull.setAnimation(ANIM_NEUTRAL);
+		}
+
+		@Override
+		public void tick() {
+			if (animationWait > 0) animationWait--;
+			if (ticksUntilNextAttack > 0) ticksUntilNextAttack--;
+			super.tick();
+		}
+
+		@Override
+		protected void resetAttackCooldown() {
+			super.resetAttackCooldown();
+			ticksUntilNextAttack = adjustedTickDelay(20);
+		}
+
+		@Override
+		protected void checkAndPerformAttack(LivingEntity target, double distanceSqr) {
+			//open jaw when nearby, close it if target is too far away or if we get an attack
+			if (jawOpen) {
+				if ((distanceSqr <= getAttackReachSqr(target) && ticksUntilNextAttack <= 0) || (distanceSqr > 16 && animationWait <= 0)) {
+					skull.setAnimation(ANIM_NEUTRAL);
+					jawOpen = false;
+					animationWait = 4;
+				}
+			}
+			else if (distanceSqr < 9 && animationWait <= 0) {
+				skull.setAnimation(ANIM_OPEN);
+				jawOpen = true;
+				animationWait = 4;
+			}
+			super.checkAndPerformAttack(target, distanceSqr);
+		}
+
+		@Override
+		public boolean canUse() {
+			return skull.stunTimer <= 0 && super.canUse();
+		}
+
+		@Override
+		public boolean canContinueToUse() {
+			return skull.stunTimer <= 0 && super.canContinueToUse();
+		}
 	}
 }
