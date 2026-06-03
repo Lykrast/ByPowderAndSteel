@@ -105,6 +105,9 @@ public class EnsouledSkullModel extends EntityModel<EnsouledSkullEntity> {
 				}
 			}
 		}
+		//animation util bob model part
+		head.xRot -= Mth.sin(ageInTicks * 0.067F) * 0.025F;
+		jaw.xRot += Mth.sin(ageInTicks * 0.067F) * 0.025F;
 	}
 
 	@Override
