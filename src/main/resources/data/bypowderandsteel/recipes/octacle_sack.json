@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"###",
+		"###",
+		"###"
+	],
+	"key": {
+		"#": { "item": "bypowderandsteel:octacle" }
+	},
+	"result": { "item": "bypowderandsteel:octacle_sack" }
+}

@@ -1,0 +1,7 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{ "item": "bypowderandsteel:octacle_sack" }
+	],
+	"result": { "item": "bypowderandsteel:octacle", "count": 9 }
+}

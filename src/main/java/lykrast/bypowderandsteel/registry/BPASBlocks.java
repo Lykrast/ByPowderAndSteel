@@ -67,9 +67,12 @@ public class BPASBlocks {
 	public static RegistryObject<Block> damagedDeviceCrate;
 	public static RegistryObject<Block> electronicCasing, electronicScreen, electronicOscilloscope, electronicRadar, electronicLamp;
 	//nether
+	//crimson forest
 	public static RegistryObject<Block> heptacleSack;
 	public static RegistryObject<Block> infernalBricks, infernalTiles, infernalTilesCrossed, infernalPillar;
 	public static RegistryObject<Block> infernalBricksStairs, infernalBricksSlab, infernalBricksWall, infernalTilesStairs, infernalTilesSlab;
+	//soul sand valley
+	public static RegistryObject<Block> octacleSack;
 	//end
 	public static RegistryObject<Block> gravioliumTank;
 	public static RegistryObject<Block> proppad, proppadOrthogonal, proppadDiagonal;
@@ -208,6 +211,7 @@ public class BPASBlocks {
 		electronicLamp = makeBlock("electronic_lamp", () -> new ElectronicLampBlock(Block.Properties.copy(Blocks.LANTERN)));
 		
 		//nether
+		//crimson forest
 		heptacleSack = makeBlock("heptacle_sack", () -> new Block(Block.Properties.copy(Blocks.ORANGE_WOOL)));
 		infernalBricks = makeBlock("infernal_bricks", () -> new Block(Block.Properties.copy(Blocks.BRICKS).mapColor(MapColor.COLOR_ORANGE).sound(SoundType.NETHER_BRICKS).instrument(NoteBlockInstrument.BASEDRUM)));
 		infernalBricksStairs = makeBlock("infernal_bricks_stairs", () -> new StairBlock(() -> infernalBricks.get().defaultBlockState(), Block.Properties.copy(infernalBricks.get())));
@@ -218,6 +222,9 @@ public class BPASBlocks {
 		infernalTilesSlab = makeBlock("infernal_tiles_slab", () -> new SlabBlock(Block.Properties.copy(infernalBricks.get())));
 		infernalTilesCrossed = makeBlock("infernal_tiles_crossed", () -> new Block(Block.Properties.copy(infernalBricks.get())));
 		infernalPillar = makeBlock("infernal_pillar", () -> new RotatedPillarBlock(Block.Properties.copy(infernalBricks.get())));
+		
+		//soul sand valley
+		heptacleSack = makeBlock("octacle_sack", () -> new Block(Block.Properties.copy(Blocks.LIGHT_BLUE_WOOL)));
 		
 		//end
 		gravioliumTank = makeBlock("graviolium_tank", () -> new RotatedPillarBlock(Block.Properties.copy(Blocks.IRON_BLOCK)));
