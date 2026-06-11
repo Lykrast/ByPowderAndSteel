@@ -1,0 +1,5 @@
+{
+	"parent": "block/cube_all",
+	"render_type": "translucent",
+	"textures": { "all":"bypowderandsteel:block/soulful_glass" }
+}

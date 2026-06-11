@@ -6,17 +6,22 @@ import java.util.function.Supplier;
 
 import lykrast.bypowderandsteel.ByPowderAndSteel;
 import lykrast.bypowderandsteel.block.*;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.StainedGlassBlock;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
@@ -57,12 +62,12 @@ public class BPASBlocks {
 	public static RegistryObject<Block> markspebbleCrate;
 	public static RegistryObject<Block> markstone, markstoneChiseled, markstoneTiles, markstoneTilesSmall, markstoneBricks, markstonePillar, markstoneLamp;
 	public static RegistryObject<Block> markstoneStairs, markstoneSlab, markstoneWall, markstoneTilesStairs, markstoneTilesSlab, markstoneTilesSmallStairs, markstoneTilesSmallSlab,
-		markstoneBricksStairs, markstoneBricksSlab, markstoneBricksWall;
+			markstoneBricksStairs, markstoneBricksSlab, markstoneBricksWall;
 	//jungle
 	public static RegistryObject<Block> abeillonswaxSack;
 	public static RegistryObject<Block> abeillonswaxBlock, abeillonswaxPolished, abeillonswaxBricks, abeillonswaxTiles;
-	public static RegistryObject<Block> abeillonswaxStairs, abeillonswaxSlab, abeillonswaxWall, abeillonswaxPolishedStairs, abeillonswaxPolishedSlab,
-		abeillonswaxBricksStairs, abeillonswaxBricksSlab, abeillonswaxBricksWall, abeillonswaxTilesStairs, abeillonswaxTilesSlab;
+	public static RegistryObject<Block> abeillonswaxStairs, abeillonswaxSlab, abeillonswaxWall, abeillonswaxPolishedStairs, abeillonswaxPolishedSlab, abeillonswaxBricksStairs, abeillonswaxBricksSlab,
+			abeillonswaxBricksWall, abeillonswaxTilesStairs, abeillonswaxTilesSlab;
 	//underground
 	public static RegistryObject<Block> damagedDeviceCrate;
 	public static RegistryObject<Block> electronicCasing, electronicScreen, electronicOscilloscope, electronicRadar, electronicLamp;
@@ -73,16 +78,17 @@ public class BPASBlocks {
 	public static RegistryObject<Block> infernalBricksStairs, infernalBricksSlab, infernalBricksWall, infernalTilesStairs, infernalTilesSlab;
 	//soul sand valley
 	public static RegistryObject<Block> octacleSack;
+	public static RegistryObject<Block> soulfulGlass;
 	//end
 	public static RegistryObject<Block> gravioliumTank;
 	public static RegistryObject<Block> proppad, proppadOrthogonal, proppadDiagonal;
 
 	public static List<RegistryObject<? extends Item>> orderedBlockItems = new ArrayList<>();
-	
+
 	static {
 		//general
 		gunsmithingTable = makeBlock("gunsmithing_table", () -> new GunsmithingTableBlock(Block.Properties.copy(Blocks.CRAFTING_TABLE)));
-		
+
 		gunsteelScrapBlock = makeBlock("gunsteel_scrap_block", () -> new Block(Block.Properties.copy(Blocks.RAW_IRON_BLOCK)));
 		gunsteelBlock = makeBlock("gunsteel_block", () -> new Block(Block.Properties.copy(Blocks.IRON_BLOCK)));
 		gunsteelBricks = makeBlock("gunsteel_bricks", () -> new Block(Block.Properties.copy(Blocks.IRON_BLOCK).strength(2, 6))); //same hardness as bricks so easier to mine
@@ -95,9 +101,10 @@ public class BPASBlocks {
 
 		//forest
 		//like vines but not replaceable
-		caliberryVine = makeBlock("caliberry_vine", () -> new CaliberryVineBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().randomTicks().strength(0.2f).sound(SoundType.VINE).ignitedByLava().pushReaction(PushReaction.DESTROY)));
+		caliberryVine = makeBlock("caliberry_vine", () -> new CaliberryVineBlock(
+				BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().randomTicks().strength(0.2f).sound(SoundType.VINE).ignitedByLava().pushReaction(PushReaction.DESTROY)));
 		caliberrySack = makeBlock("caliberry_sack", () -> new Block(Block.Properties.copy(Blocks.YELLOW_WOOL)));
-		
+
 		livingHerbSack = makeBlock("living_herb_sack", () -> new Block(Block.Properties.copy(Blocks.GREEN_WOOL)));
 		livingHerb = makeBlock("living_herb_block", () -> new Block(Block.Properties.copy(Blocks.MOSS_BLOCK)));
 		livingHerbStairs = makeBlock("living_herb_stairs", () -> new StairBlock(() -> livingHerb.get().defaultBlockState(), Block.Properties.copy(livingHerb.get())));
@@ -115,7 +122,7 @@ public class BPASBlocks {
 		lhPillarDiaOrt = makeBlock("living_herb_pillar_diagonal_orthogonal", () -> new OrientablePillarBlock(Block.Properties.copy(livingHerb.get())));
 		lhPillarComOrt = makeBlock("living_herb_pillar_combined_orthogonal", () -> new OrientablePillarBlock(Block.Properties.copy(livingHerb.get())));
 		lhPillarDiaCom = makeBlock("living_herb_pillar_diagonal_combined", () -> new OrientablePillarBlock(Block.Properties.copy(livingHerb.get())));
-		
+
 		//desert
 		cowbonesHornCrate = makeBlock("cowbones_horn_crate", () -> new Block(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
 		bovony = makeBlock("bovony", () -> new Block(Block.Properties.copy(Blocks.TUFF).mapColor(MapColor.TERRACOTTA_BLACK)));
@@ -133,7 +140,7 @@ public class BPASBlocks {
 		bovonyChiseled = makeBlock("bovony_chiseled", () -> new Block(Block.Properties.copy(bovony.get())));
 		bovonyPillar = makeBlock("bovony_pillar", () -> new RotatedPillarBlock(Block.Properties.copy(bovony.get())));
 		bovonyLamp = makeBlock("bovony_lamp", () -> new RotatedPillarBlock(Block.Properties.copy(bovony.get()).lightLevel((state) -> 15)));
-		
+
 		//tundra
 		milspecIceCrate = makeBlock("milspec_ice_crate", () -> new Block(Block.Properties.copy(Blocks.DARK_OAK_PLANKS)));
 		milspecIceBlock = makeBlock("milspec_ice_block", () -> new Block(Block.Properties.copy(Blocks.BRICKS).mapColor(MapColor.ICE).sound(SoundType.GLASS).instrument(NoteBlockInstrument.CHIME)));
@@ -146,7 +153,7 @@ public class BPASBlocks {
 		milspecIceTilesSlab = makeBlock("milspec_ice_tiles_slab", () -> new SlabBlock(Block.Properties.copy(milspecIceBlock.get())));
 		milspecIceChiseled = makeBlock("milspec_ice_chiseled", () -> new Block(Block.Properties.copy(milspecIceBlock.get())));
 		milspecIcePillar = makeBlock("milspec_ice_pillar", () -> new RotatedPillarBlock(Block.Properties.copy(milspecIceBlock.get())));
-		
+
 		//ocean
 		doubloonCrate = makeBlock("sunken_doubloon_crate", () -> new Block(Block.Properties.copy(Blocks.BIRCH_PLANKS)));
 		doubloonBricks = makeBlock("doubloon_bricks", () -> new Block(Block.Properties.copy(Blocks.GOLD_BLOCK)));
@@ -155,7 +162,7 @@ public class BPASBlocks {
 		doubloonBricksWall = makeBlock("doubloon_bricks_wall", () -> new WallBlock(Block.Properties.copy(doubloonBricks.get()).forceSolidOn()));
 		doubloonTiles = makeBlock("doubloon_tiles", () -> new Block(Block.Properties.copy(doubloonBricks.get())));
 		doubloonChiseled = makeBlock("doubloon_chiseled", () -> new Block(Block.Properties.copy(doubloonBricks.get())));
-		
+
 		//mountain
 		densgstenCrate = makeBlock("densgsten_cube_crate", () -> new Block(Block.Properties.copy(Blocks.SPRUCE_PLANKS)));
 		densgstenBlock = makeBlock("densgsten_block", () -> new Block(Block.Properties.copy(Blocks.IRON_BLOCK).mapColor(MapColor.TERRACOTTA_BLUE)));
@@ -164,7 +171,7 @@ public class BPASBlocks {
 		densgstenTilesSlab = makeBlock("densgsten_tiles_slab", () -> new SlabBlock(Block.Properties.copy(densgstenTiles.get())));
 		densgstenChiseled = makeBlock("densgsten_chiseled", () -> new Block(Block.Properties.copy(densgstenBlock.get())));
 		densgstenLamp = makeBlock("densgsten_lamp", () -> new Block(Block.Properties.copy(densgstenBlock.get()).lightLevel((state) -> 15)));
-		
+
 		//plains
 		markspebbleCrate = makeBlock("markspebble_crate", () -> new Block(Block.Properties.copy(Blocks.OAK_PLANKS)));
 		markstone = makeBlock("markstone", () -> new RotatedPillarBlock(Block.Properties.copy(Blocks.CALCITE)));
@@ -184,7 +191,7 @@ public class BPASBlocks {
 		markstoneBricksWall = makeBlock("markstone_bricks_wall", () -> new WallBlock(Block.Properties.copy(markstone.get()).forceSolidOn()));
 		markstonePillar = makeBlock("markstone_pillar", () -> new RotatedPillarBlock(Block.Properties.copy(markstone.get())));
 		markstoneLamp = makeBlock("markstone_lamp", () -> new Block(Block.Properties.copy(markstone.get()).lightLevel((state) -> 15)));
-		
+
 		//jungle
 		abeillonswaxSack = makeBlock("abeillonswax_sack", () -> new Block(Block.Properties.copy(Blocks.YELLOW_WOOL)));
 		abeillonswaxBlock = makeBlock("abeillonswax_block", () -> new Block(Block.Properties.copy(Blocks.HONEYCOMB_BLOCK)));
@@ -192,7 +199,8 @@ public class BPASBlocks {
 		abeillonswaxSlab = makeBlock("abeillonswax_slab", () -> new SlabBlock(Block.Properties.copy(abeillonswaxBlock.get())));
 		abeillonswaxWall = makeBlock("abeillonswax_wall", () -> new WallBlock(Block.Properties.copy(abeillonswaxBlock.get()).forceSolidOn()));
 		abeillonswaxPolished = makeBlock("abeillonswax_polished", () -> new Block(Block.Properties.copy(abeillonswaxBlock.get())));
-		abeillonswaxPolishedStairs = makeBlock("abeillonswax_polished_stairs", () -> new StairBlock(() -> abeillonswaxPolished.get().defaultBlockState(), Block.Properties.copy(abeillonswaxBlock.get())));
+		abeillonswaxPolishedStairs = makeBlock("abeillonswax_polished_stairs",
+				() -> new StairBlock(() -> abeillonswaxPolished.get().defaultBlockState(), Block.Properties.copy(abeillonswaxBlock.get())));
 		abeillonswaxPolishedSlab = makeBlock("abeillonswax_polished_slab", () -> new SlabBlock(Block.Properties.copy(abeillonswaxBlock.get())));
 		abeillonswaxBricks = makeBlock("abeillonswax_bricks", () -> new Block(Block.Properties.copy(abeillonswaxBlock.get())));
 		abeillonswaxBricksStairs = makeBlock("abeillonswax_bricks_stairs", () -> new StairBlock(() -> abeillonswaxBricks.get().defaultBlockState(), Block.Properties.copy(abeillonswaxBlock.get())));
@@ -203,17 +211,18 @@ public class BPASBlocks {
 		abeillonswaxTilesSlab = makeBlock("abeillonswax_tiles_slab", () -> new SlabBlock(Block.Properties.copy(abeillonswaxBlock.get())));
 
 		//underground
-		damagedDeviceCrate = makeBlock("damaged_device_crate", () -> new Block(Block.Properties.of().mapColor(DyeColor.LIGHT_BLUE).instrument(NoteBlockInstrument.BASEDRUM).strength(2,0.3f)));
+		damagedDeviceCrate = makeBlock("damaged_device_crate", () -> new Block(Block.Properties.of().mapColor(DyeColor.LIGHT_BLUE).instrument(NoteBlockInstrument.BASEDRUM).strength(2, 0.3f)));
 		electronicCasing = makeBlock("electronic_casing", () -> new Block(Block.Properties.copy(Blocks.IRON_BLOCK)));
 		electronicScreen = makeBlock("electronic_screen", () -> new HorizontalFacingBlock(Block.Properties.copy(electronicCasing.get())));
 		electronicOscilloscope = makeBlock("electronic_oscilloscope", () -> new HorizontalFacingBlock(Block.Properties.copy(electronicCasing.get())));
 		electronicRadar = makeBlock("electronic_radar", () -> new HorizontalFacingBlock(Block.Properties.copy(electronicCasing.get())));
 		electronicLamp = makeBlock("electronic_lamp", () -> new ElectronicLampBlock(Block.Properties.copy(Blocks.LANTERN)));
-		
+
 		//nether
 		//crimson forest
 		heptacleSack = makeBlock("heptacle_sack", () -> new Block(Block.Properties.copy(Blocks.ORANGE_WOOL)));
-		infernalBricks = makeBlock("infernal_bricks", () -> new Block(Block.Properties.copy(Blocks.BRICKS).mapColor(MapColor.COLOR_ORANGE).sound(SoundType.NETHER_BRICKS).instrument(NoteBlockInstrument.BASEDRUM)));
+		infernalBricks = makeBlock("infernal_bricks",
+				() -> new Block(Block.Properties.copy(Blocks.BRICKS).mapColor(MapColor.COLOR_ORANGE).sound(SoundType.NETHER_BRICKS).instrument(NoteBlockInstrument.BASEDRUM)));
 		infernalBricksStairs = makeBlock("infernal_bricks_stairs", () -> new StairBlock(() -> infernalBricks.get().defaultBlockState(), Block.Properties.copy(infernalBricks.get())));
 		infernalBricksSlab = makeBlock("infernal_bricks_slab", () -> new SlabBlock(Block.Properties.copy(infernalBricks.get())));
 		infernalBricksWall = makeBlock("infernal_bricks_wall", () -> new WallBlock(Block.Properties.copy(infernalBricks.get()).forceSolidOn()));
@@ -222,22 +231,37 @@ public class BPASBlocks {
 		infernalTilesSlab = makeBlock("infernal_tiles_slab", () -> new SlabBlock(Block.Properties.copy(infernalBricks.get())));
 		infernalTilesCrossed = makeBlock("infernal_tiles_crossed", () -> new Block(Block.Properties.copy(infernalBricks.get())));
 		infernalPillar = makeBlock("infernal_pillar", () -> new RotatedPillarBlock(Block.Properties.copy(infernalBricks.get())));
-		
+
 		//soul sand valley
 		heptacleSack = makeBlock("octacle_sack", () -> new Block(Block.Properties.copy(Blocks.LIGHT_BLUE_WOOL)));
-		
+		soulfulGlass = makeBlock("soulful_glass", () -> new StainedGlassBlock(DyeColor.LIGHT_BLUE, glass().mapColor(DyeColor.LIGHT_BLUE)));
+
 		//end
 		gravioliumTank = makeBlock("graviolium_tank", () -> new RotatedPillarBlock(Block.Properties.copy(Blocks.IRON_BLOCK)));
 		proppad = makeBlock("gravitic_propulsion_pad", () -> new PropulsionPadBlock(Block.Properties.copy(gravioliumTank.get()), 1));
 		proppadOrthogonal = makeBlock("gravitic_propulsion_pad_orthogonal", () -> new PropulsionPadDirectionalBlock(Block.Properties.copy(gravioliumTank.get()), 1.2, 0.6, false));
 		proppadDiagonal = makeBlock("gravitic_propulsion_pad_diagonal", () -> new PropulsionPadDirectionalBlock(Block.Properties.copy(gravioliumTank.get()), 1.2, 0.6, true));
 	}
-	
+
 	private static RegistryObject<Block> makeBlock(String name, Supplier<Block> block) {
 		RegistryObject<Block> regged = REG.register(name, block);
 		orderedBlockItems.add(BPASItems.REG.register(name, () -> new BlockItem(regged.get(), (new Item.Properties()))));
 		return regged;
 	}
 
+	//copy() doesn't copy everything so just manually copying the thing
+	private static Block.Properties glass() {
+		return BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.HAT).strength(0.3F).sound(SoundType.GLASS).noOcclusion().isValidSpawn(BPASBlocks::never)
+				.isRedstoneConductor(BPASBlocks::never).isSuffocating(BPASBlocks::never).isViewBlocking(BPASBlocks::never);
+	}
+
+	//no need to AT these private things
+	private static boolean never(BlockState state, BlockGetter level, BlockPos pos) {
+		return false;
+	}
+
+	private static boolean never(BlockState state, BlockGetter level, BlockPos pos, EntityType<?> entityType) {
+		return false;
+	}
+
 }
-	
