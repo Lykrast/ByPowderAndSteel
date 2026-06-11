@@ -1,0 +1,7 @@
+{
+	"parent": "item/generated",
+	"render_type": "translucent",
+	"textures": {
+		"layer0": "bypowderandsteel:block/soulful_glass"
+	}
+}
