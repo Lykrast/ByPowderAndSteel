@@ -51,6 +51,8 @@ public class SaberSentryGlowLayer extends RenderLayer<SaberSentryEntity, SaberSe
 		renders[25] = rl(cosmeticPrefix, "spumoni"); //colors also from Papa's Freezeria Deluxe
 		renders[26] = rl(cosmeticPrefix, "palestine");
 		renders[27] = rl(cosmeticPrefix, "voidlesbian"); //"/void(girl|doll)? ?lesbian/" by 40796c19-532f-4e42-9c39-74c9b15f572a https://void.lgbt/objects/41d856da-f6cd-4d21-b697-0851beee20da
+		renders[28] = rl(cosmeticPrefix, "demisexual");
+		renders[29] = rl(cosmeticPrefix, "demiromantic");
 		//no agender because it's 7 stripes and I only have 6 pixels :(
 		olivia = rl(cosmeticPrefix, "olivia"); //friend
 		aika = rl(cosmeticPrefix, "aika"); //from Pretty Pretty Please I Don't Want to be a Magical Girl
