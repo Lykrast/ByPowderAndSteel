@@ -1,0 +1,8 @@
+{
+	"parent": "minecraft:block/template_glass_pane_side_alt",
+	"render_type": "translucent",
+	"textures": {
+		"edge": "bypowderandsteel:block/soulful_glass_pane_top",
+		"pane": "bypowderandsteel:block/soulful_glass_patterned"
+	}
+}

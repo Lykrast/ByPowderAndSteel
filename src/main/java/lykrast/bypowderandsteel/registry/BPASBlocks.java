@@ -79,7 +79,8 @@ public class BPASBlocks {
 	public static RegistryObject<Block> infernalBricksStairs, infernalBricksSlab, infernalBricksWall, infernalTilesStairs, infernalTilesSlab;
 	//soul sand valley
 	public static RegistryObject<Block> octacleSack;
-	public static RegistryObject<Block> soulfulGlass, soulfulGlassPane;
+	public static RegistryObject<Block> soulfulGlass, soulfulGlassPatterned;
+	public static RegistryObject<Block> soulfulGlassPane, soulfulGlassPatternedPane;
 	//end
 	public static RegistryObject<Block> gravioliumTank;
 	public static RegistryObject<Block> proppad, proppadOrthogonal, proppadDiagonal;
@@ -237,6 +238,8 @@ public class BPASBlocks {
 		heptacleSack = makeBlock("octacle_sack", () -> new Block(Block.Properties.copy(Blocks.LIGHT_BLUE_WOOL)));
 		soulfulGlass = makeBlock("soulful_glass", () -> new StainedGlassBlock(DyeColor.LIGHT_BLUE, glass().mapColor(DyeColor.LIGHT_BLUE)));
 		soulfulGlassPane = makeBlock("soulful_glass_pane", () -> new StainedGlassPaneBlock(DyeColor.LIGHT_BLUE, Block.Properties.copy(Blocks.LIGHT_BLUE_STAINED_GLASS_PANE)));
+		soulfulGlassPatterned = makeBlock("soulful_glass_patterned", () -> new StainedGlassBlock(DyeColor.LIGHT_BLUE, glass().mapColor(DyeColor.LIGHT_BLUE)));
+		soulfulGlassPatternedPane = makeBlock("soulful_glass_patterned_pane", () -> new StainedGlassPaneBlock(DyeColor.LIGHT_BLUE, Block.Properties.copy(Blocks.LIGHT_BLUE_STAINED_GLASS_PANE)));
 
 		//end
 		gravioliumTank = makeBlock("graviolium_tank", () -> new RotatedPillarBlock(Block.Properties.copy(Blocks.IRON_BLOCK)));
