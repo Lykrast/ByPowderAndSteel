@@ -91,7 +91,7 @@ public class BPASItems {
 	//crimson forest
 	public static RegistryObject<Item> heptacle, infernalPatch, infernalIce;
 	//soul sand valley
-	public static RegistryObject<Item> octacle;
+	public static RegistryObject<Item> octacle, soulfulFlan;
 	//end
 	public static RegistryObject<Item> gravioliumCell, graviticEngine;
 	
@@ -328,6 +328,7 @@ public class BPASItems {
 		infernalIce = initItem(() -> new ContainerFoodItem(defP().food(food(8, 0.4)).craftRemainder(Items.BOWL)), "infernal_ice_cream");
 		
 		octacle = initItem(() -> new Item(defP()), "octacle");
+		soulfulFlan = initItem(() -> new Item(defP().food(food(8, 0.4))), "soulful_flan");
 		
 		gravioliumCell = initItem(() -> new Item(defP()), "graviolium_cell");
 		graviticEngine = initItem(() -> new Item(defP()), "gravitic_engine");
