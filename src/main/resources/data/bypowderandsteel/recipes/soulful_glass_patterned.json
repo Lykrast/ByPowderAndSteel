@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"group": "bypowderandsteel_soulful_glass_patterned",
+	"pattern": [
+		"##",
+		"##"
+	],
+	"key": {
+		"#": { "item": "bypowderandsteel:soulful_glass" }
+	},
+	"result": { "item": "bypowderandsteel:soulful_glass_patterned", "count": 4 }
+}

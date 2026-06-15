@@ -1,0 +1,6 @@
+{
+	"type": "minecraft:stonecutting",
+	"count": 1,
+	"ingredient": { "tag": "bypowderandsteel:stonecutting/soulful_glass_pane" },
+	"result": "bypowderandsteel:soulful_glass_patterned_pane"
+}
