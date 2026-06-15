@@ -32,12 +32,15 @@
 	"item.bypowderandsteel.densgsten_bullet": "Balle en densgstène",
 	"item.bypowderandsteel.densgsten_explosive_bullet": "Balle explosive en densgstène",
 	"item.bypowderandsteel.phase_bullet": "Balle phasique",
+	"item.bypowderandsteel.souls_breath_bullet": "Balle de souffle de l'âme",
 	"item.bypowderandsteel.gravitic_bullet": "Balle gravitique",
 
 	"tooltip.bypowderandsteel.bullet.base": "Compte comme balle en fer",
 	"tooltip.bypowderandsteel.bullet.knockback": "+%1$s recul",
 	"tooltip.bypowderandsteel.bullet.gravity": "Lourde et affectée par la gravité",
 	"tooltip.bypowderandsteel.bullet.slow": "Vitesse grandement limitée",
+	"tooltip.bypowderandsteel.bullet.flamethrower.1": "Large et transperce les entités",
+	"tooltip.bypowderandsteel.bullet.flamethrower.2": "Portée limitée",
 	"tooltip.bypowderandsteel.gravitic_bullet": "Fait léviter les entités",
 
 	"item.bypowderandsteel.buccaneer_cutlass": "Sabre de boucanier",
@@ -109,6 +112,8 @@
 	"item.bypowderandsteel.heptacle": "Heptacle",
 	"item.bypowderandsteel.infernal_enforcer_leather_patch": "Patch en cuir de bourreau infernal",
 	"item.bypowderandsteel.infernal_ice_cream": "Glace infernale",
+	"item.bypowderandsteel.octacle": "Octacle",
+	"item.bypowderandsteel.soulful_flan": "Flan aux âmes",
 	"item.bypowderandsteel.graviolium_cell": "Cellule de graviolium",
 	"item.bypowderandsteel.gravitic_engine": "Moteur gravitique",
 
@@ -244,6 +249,12 @@
 	"block.bypowderandsteel.infernal_tiles_stairs": "Escalier en carrelage infernal",
 	"block.bypowderandsteel.infernal_tiles_slab": "Dalle en carrelage infernal",
 
+	"block.bypowderandsteel.octacle_sack": "Sack d'octacles",
+	"block.bypowderandsteel.soulful_glass": "Verre des âmes",
+	"block.bypowderandsteel.soulful_glass_pane": "Vitre des âmes",
+	"block.bypowderandsteel.soulful_glass_patterned": "Verre des âmes carrelé",
+	"block.bypowderandsteel.soulful_glass_patterned_pane": "Vitre des âmes carrelée",
+
 	"block.bypowderandsteel.graviolium_tank": "Réservoir de graviolium",
 	"block.bypowderandsteel.gravitic_propulsion_pad": "Tremplin de propulsion gravitique",
 	"block.bypowderandsteel.gravitic_propulsion_pad.desc": "Projette dans les airs avec une vitesse fixe",
@@ -269,10 +280,14 @@
 	"entity.bypowderandsteel.sabersentry": "Sentinelle à sabre",
 	"entity.bypowderandsteel.blastersentry": "Sentinelle à fusil",
 	"entity.bypowderandsteel.gunnubus_crimson": "Gunnube carmine",
+	"entity.bypowderandsteel.gunnubus_pale": "Gunnube pâle",
+	"entity.bypowderandsteel.ensouled_skull": "Crâne animé",
+	"entity.bypowderandsteel.headless_skeleton": "Squelette sans tête",
 	"entity.bypowderandsteel.skybender": "Skybender",
 
 	"entity.bypowderandsteel.bullet_slow": "Balle lente",
 	"entity.bypowderandsteel.bullet_gravity": "Balle lourde",
+	"entity.bypowderandsteel.bullet_flamethrower": "Balle lance-flamme",
 
 	"item.bypowderandsteel.gunome_spawn_egg": "Oeuf d'apparition de gunome",
 	"item.bypowderandsteel.shrubhulk_spawn_egg": "Oeuf d'apparition de buisson écraseur",
@@ -291,6 +306,9 @@
 	"item.bypowderandsteel.sabersentry_spawn_egg": "Oeuf d'apparition de sentinelle à sabre",
 	"item.bypowderandsteel.blastersentry_spawn_egg": "Oeuf d'apparition de sentinelle à fusil",
 	"item.bypowderandsteel.gunnubus_crimson_spawn_egg": "Oeuf d'apparition de gunnube carmine",
+	"item.bypowderandsteel.gunnubus_pale_spawn_egg": "Oeuf d'apparition de gunnube pâle",
+	"item.bypowderandsteel.ensouled_skull_spawn_egg": "Oeuf d'apparition de crâne animé",
+	"item.bypowderandsteel.headless_skeleton_spawn_egg": "Oeuf d'apparition de squelette sans tête",
 	"item.bypowderandsteel.skybender_spawn_egg": "Oeuf d'apparition de skybender",
 
 	"entity.minecraft.villager.bypowderandsteel.gunsmith": "Forgeron de fusils",
@@ -330,6 +348,8 @@
 	"advancements.bypowderandsteel.heptacle.description": "Obtenez un heptacle d'un monstre d'une forêt carmin",
 	"advancements.bypowderandsteel.infernal_enforcer.title": "Lasciate ogne speranza",
 	"advancements.bypowderandsteel.infernal_enforcer.description": "Obtenez une pièce d'armure de bourreau infernal",
+	"advancements.bypowderandsteel.octacle.title": "Des âmes provient l'énergie",
+	"advancements.bypowderandsteel.octacle.description": "Obtenez un octacle d'un monstre d'une vallée des âmes",
 	"advancements.bypowderandsteel.graviolium_cell.title": "Un genre de programme spatial",
 	"advancements.bypowderandsteel.graviolium_cell.description": "Obtenez une cellule de graviolium d'un monstre de l'End extérieur",
 
@@ -372,6 +392,7 @@
 	"subtitles.bypowderandsteel.entity.gunnubus.idle": "Gunnube marmonne",
 	"subtitles.bypowderandsteel.entity.gunnubus.hurt": "Gunnube blessée",
 	"subtitles.bypowderandsteel.entity.gunnubus.death": "Gunnube meurt",
+	"subtitles.bypowderandsteel.entity.ensouled_skull.revive": "Crâne se réanime",
 	"subtitles.bypowderandsteel.entity.skybender.shield": "Dégâts bloqués",
 
 	"tag.c.raw_materials.gunsteel": "Fusilacier brut",
@@ -393,6 +414,8 @@
 	"tag.bypowderandsteel.stonecutting.abeillonswax_block": "Blocs de cire d'abeillon taillables",
 	"tag.bypowderandsteel.stonecutting.electronic_machinery": "Machines électroniques taillables",
 	"tag.bypowderandsteel.stonecutting.infernal_bricks": "Briques infernales taillables",
+	"tag.bypowderandsteel.stonecutting.soulful_glass": "Verre des âmes taillable",
+	"tag.bypowderandsteel.stonecutting.soulful_glass_pane": "Vitre des âmes taillable",
 
 	"itemGroup.bypowderandsteel": "By Powder and Steel"
 }
