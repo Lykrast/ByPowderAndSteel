@@ -1,0 +1,30 @@
+{
+	"values": [
+		"bypowderandsteel:inquisitorial_gun",
+		"bypowderandsteel:raygun",
+		"bypowderandsteel:gravitic_railgun",
+		"bypowderandsteel:buccaneer_cutlass",
+		"bypowderandsteel:phasesaber",
+		"bypowderandsteel:phasesaber_gravitic",
+		"bypowderandsteel:iron_marksblade",
+		"bypowderandsteel:inquisitorial_marksblade",
+		"bypowderandsteel:sentry_helmet",
+		"bypowderandsteel:sentry_chestplate",
+		"bypowderandsteel:sentry_leggings",
+		"bypowderandsteel:sentry_boots",
+		"bypowderandsteel:inquisitorial_insignia",
+		"bypowderandsteel:damaged_device",
+		"bypowderandsteel:sentry_fiber_plating",
+		"bypowderandsteel:phasesaber_template",
+		"bypowderandsteel:gravitic_engine",
+		"bypowderandsteel:damaged_device_crate",
+		"bypowderandsteel:electronic_casing",
+		"bypowderandsteel:electronic_screen",
+		"bypowderandsteel:electronic_oscilloscope",
+		"bypowderandsteel:electronic_radar",
+		"bypowderandsteel:electronic_lamp",
+		"bypowderandsteel:gravitic_propulsion_pad",
+		"bypowderandsteel:gravitic_propulsion_pad_orthogonal",
+		"bypowderandsteel:gravitic_propulsion_pad_diagonal"
+	]
+}
